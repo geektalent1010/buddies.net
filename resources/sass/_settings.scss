@@ -182,7 +182,7 @@ input[type=range]::-moz-range-thumb {
 		display: flex;
         .form-control {
             flex: 1;
-            background: $nav-color-50;
+            background: $primary-50;
             border: none;
             border-radius: 0;
             box-shadow: none;
@@ -263,7 +263,7 @@ input[type=range]::-moz-range-thumb {
             overflow: hidden;
             text-decoration: none;
             .profile-avatar {
-                background-color: $nav-color-75 !important;
+                background-color: $primary-75 !important;
             }
             .optional-section {
                 position: absolute;
@@ -330,7 +330,7 @@ input[type=range]::-moz-range-thumb {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                background-color: $nav-color-50;
+                background-color: $primary-50;
                 z-index: 1;
             }
 
@@ -353,7 +353,7 @@ input[type=range]::-moz-range-thumb {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: $nav-color-50;
+                background-color: $primary-50;
     
                 .first_letter {
                     font-family: "DinPro Bold", sans-serif;
@@ -446,12 +446,12 @@ input[type=range]::-moz-range-thumb {
                         cursor: pointer;
                         &:hover {
                             background: $light-green !important;
-                            color: $nav-color !important;
+                            color: $primary !important;
                             border-color: $light-green !important;
                         }
                         &:focus, &:active {
                             background: $light-green !important;
-                            color: $nav-color !important;
+                            color: $primary !important;
                             border-color: $light-green !important;
                             outline: none;
                             box-shadow: none;
@@ -464,7 +464,7 @@ input[type=range]::-moz-range-thumb {
             }
 
             .main_avatar_card_bg {
-                background-color: $nav-color-50;
+                background-color: $primary-50;
             }
     
         }
@@ -475,7 +475,7 @@ input[type=range]::-moz-range-thumb {
         }
 
         .person-info-section {
-            background-color: $nav-color-25;
+            background-color: $primary-25;
             .profile-card {
                 width: 100%;
                 padding: 32px;
@@ -549,7 +549,7 @@ input[type=range]::-moz-range-thumb {
         }
 
         .profile-card-bg {
-            background-color: $nav-color-25;
+            background-color: $primary-25;
         }
     
         .story-content-wrp { 
@@ -569,7 +569,7 @@ input[type=range]::-moz-range-thumb {
     
                 transition: all ease 0.3s;
                 padding: 32px;
-                background-color: $nav-color-25;
+                background-color: $primary-25;
                 overflow-y: auto;
     
                 .about {
@@ -654,7 +654,7 @@ input[type=range]::-moz-range-thumb {
 
     .distancetab {        
         div {
-            background-color: $nav-color-25;
+            background-color: $primary-25;
             color: $white;
             border: none;
             outline: none;
@@ -666,15 +666,15 @@ input[type=range]::-moz-range-thumb {
             margin-right: 1px;
         }
         div:hover {
-            background-color: $nav-color-75;
+            background-color: $primary-75;
         }
         .active {
-            background-color: $nav-color-75;
+            background-color: $primary-75;
         }
     }
 
     .addresstab {
-        background-color: $nav-color-50;
+        background-color: $primary-50;
         div {
             color: $white;
             border: none;
@@ -702,15 +702,15 @@ input[type=range]::-moz-range-thumb {
             font-size: 18px;
             width: calc(33.3% - 2px);
             text-align: center;
-            background-color: $nav-color-25;
+            background-color: $primary-25;
             margin-left: 1px;
             margin-right: 1px;
         }
         div:hover {
-            background-color: $nav-color-75;
+            background-color: $primary-75;
         }
         .active {
-            background-color: $nav-color-75;
+            background-color: $primary-75;
         }
     }
     .agetab {
@@ -722,15 +722,15 @@ input[type=range]::-moz-range-thumb {
             font-size: 18px;
             width: calc(25% - 2px);
             text-align: center;
-            background-color: $nav-color-25;
+            background-color: $primary-25;
             margin-left: 1px;
             margin-right: 1px;
         }
         div:hover {
-            background-color: $nav-color-75;
+            background-color: $primary-75;
         }
         .active {
-            background-color: $nav-color-75;
+            background-color: $primary-75;
         }
     }
     .basedtab {
@@ -742,20 +742,20 @@ input[type=range]::-moz-range-thumb {
             font-size: 18px;
             width: calc(50% - 2px);
             text-align: center;
-            background-color: $nav-color-25;
+            background-color: $primary-25;
             margin-left: 1px;
             margin-right: 1px;
         }
         div:hover {
-            background-color: $nav-color-75;
+            background-color: $primary-75;
         }
         .active {
-            background-color: $nav-color-75;
+            background-color: $primary-75;
         }
     }
 
     .border-color-section {        
-        background-color: $nav-color-75;
+        background-color: $primary-75;
         margin-top: 2px !important;
         margin-left: 1px !important;
         margin-right: 1px !important;
@@ -823,7 +823,7 @@ input[type=range]::-moz-range-thumb {
             }
         }
         &.active {
-            background-color: $nav-color-75;
+            background-color: $primary-75;
         }
     }
 
@@ -841,7 +841,7 @@ input[type=range]::-moz-range-thumb {
             width: 100%;
             max-width: 300px;
             height: 44px;
-            background: $nav-color;
+            background: $primary;
             display: block;
             text-transform: uppercase;
             color: $white;
@@ -851,16 +851,16 @@ input[type=range]::-moz-range-thumb {
             border-radius: 10rem;
             font-size: 16px;
             font-family: 'DinPro', sans-serif;
-            border: 0.1rem solid $nav-color;
+            border: 0.1rem solid $primary;
             cursor: pointer;
             &:hover {
                 background: $light-green !important;
-                color: $nav-color !important;
+                color: $primary !important;
                 border-color: $light-green !important;
             }
             &:focus, &:active {
                 background: $light-green !important;
-                color: $nav-color !important;
+                color: $primary !important;
                 border-color: $light-green !important;
                 outline: none;
                 box-shadow: none;
@@ -874,7 +874,7 @@ input[type=range]::-moz-range-thumb {
 		width: 100%;
         max-width: 300px;
 		height: 44px;
-		background: $nav-color;
+		background: $primary;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -886,16 +886,16 @@ input[type=range]::-moz-range-thumb {
 		border-radius: 10rem;
         font-size: 16px;
         font-family: 'DinPro', sans-serif;
-		border: 0.1rem solid $nav-color;
+		border: 0.1rem solid $primary;
 		cursor: pointer;
 		&:hover {
 			background: $light-green !important;
-			color: $nav-color !important;
+			color: $primary !important;
 			border-color: $light-green !important;
 		}
 		&:focus, &:active {
 			background: $light-green !important;
-			color: $nav-color !important;
+			color: $primary !important;
 			border-color: $light-green !important;
             outline: none;
             box-shadow: none;
@@ -919,7 +919,7 @@ input[type=range]::-moz-range-thumb {
         }
         .form-group {
             .form-control {
-                background: $nav-color-25;
+                background: $primary-25;
                 border: none;
                 -webkit-border-radius: 10rem;
                 -moz-border-radius: 10rem;
@@ -979,7 +979,7 @@ input[type=range]::-moz-range-thumb {
     }
     
     .address-search-section {
-        background-color: $nav-color;
+        background-color: $primary;
         display: none;
         width: 100%;
         z-index: 1000; 
@@ -1022,7 +1022,7 @@ input[type=range]::-moz-range-thumb {
             .update-button {
                 width: 100%;
                 height: 44px;
-                background: $nav-color;
+                background: $primary;
                 display: block;
                 text-transform: uppercase;
                 color: $white;
@@ -1032,16 +1032,16 @@ input[type=range]::-moz-range-thumb {
                 border-radius: 10rem;
                 font-size: 16px;
                 font-family: 'DinPro', sans-serif;
-                border: 0.1rem solid $nav-color;
+                border: 0.1rem solid $primary;
                 cursor: pointer;
                 &:hover {
                     background: $light-green !important;
-                    color: $nav-color !important;
+                    color: $primary !important;
                     border-color: $light-green !important;
                 }
                 &:focus, &:active {
                     background: $light-green !important;
-                    color: $nav-color !important;
+                    color: $primary !important;
                     border-color: $light-green !important;
                     outline: none;
                     box-shadow: none;
@@ -1151,7 +1151,7 @@ input[type=range]::-moz-range-thumb {
         padding: 0;
         position: relative;
         margin-top: 2px;
-        background-color: $nav-color-25;
+        background-color: $primary-25;
         .title {
             position: absolute;
             top: 0;
@@ -1191,7 +1191,7 @@ input[type=range]::-moz-range-thumb {
                 }
             }
             &.active {
-                background: $nav-color-75;
+                background: $primary-75;
             }
         }
     }
@@ -1207,19 +1207,19 @@ input[type=range]::-moz-range-thumb {
         }
     }
     .collapsing {
-        background: $nav-color-75;
+        background: $primary-75;
         line-height: 30px;
         color: $white;
         font-size: 16px;
         font-family: 'DinPro', sans-serif;
         &.active {
-            background: $nav-color-75;
+            background: $primary-75;
         }
     }
     .collapse {
         border: 0;
         &.show {
-            background: $nav-color-50;
+            background: $primary-50;
             line-height: 30px;
             color: $white;
             font-size: 16px;
@@ -1227,7 +1227,7 @@ input[type=range]::-moz-range-thumb {
             margin-top: 2px;
         }
         &.active {
-            background: $nav-color-50;
+            background: $primary-50;
         }
     }
 }

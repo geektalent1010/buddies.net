@@ -36,7 +36,7 @@
 			 width: 100%;
 			 max-width: 300px;
 			 height: 44px;
-			 background: $nav-color;
+			 background: $primary;
 			 display: flex;
 			 align-items: center;
 			 justify-content: center;
@@ -48,16 +48,16 @@
 			 border-radius: 10rem;
 			 font-size: 16px;
 			 font-family: 'DinPro', sans-serif;
-			 border: 0.1rem solid $nav-color;
+			 border: 0.1rem solid $primary;
 			 cursor: pointer;
 			 &:hover {
 				background: $light-green !important;
-				color: $nav-color !important;
+				color: $primary !important;
 				border-color: $light-green !important;
 			}
 			&:focus, &:active {
 				background: $light-green !important;
-				color: $nav-color !important;
+				color: $primary !important;
 				border-color: $light-green !important;
         outline: none;
 				box-shadow: none;
@@ -81,7 +81,7 @@
 	.download-button {
 		width: 50%;
 		height: 44px;
-		background: $nav-color;
+		background: $primary;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -93,17 +93,17 @@
 		border-radius: 10rem;
 		font-size: 16px;
 		font-family: 'DinPro', sans-serif;
-		border: 0.1rem solid $nav-color;
+		border: 0.1rem solid $primary;
 		cursor: pointer;
 		margin-bottom: 20px;
 		&:hover {
 			background: $light-green !important;
-			color: $nav-color !important;
+			color: $primary !important;
 			border-color: $light-green !important;
 		}
 		&:focus, &:active {
 			background: $light-green !important;
-			color: $nav-color !important;
+			color: $primary !important;
 			border-color: $light-green !important;
 			outline: none;
 			box-shadow: none;

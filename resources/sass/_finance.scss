@@ -13,7 +13,7 @@
       width: 100%;
       max-width: 300px;
       height: 44px;
-      background: $nav-color;
+      background: $primary;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -25,17 +25,17 @@
       border-radius: 0rem;
       font-size: 14px;
       font-family: 'DinPro', sans-serif;
-      border: 0.1rem solid $nav-color;
+      border: 0.1rem solid $primary;
       cursor: pointer;
       grid-gap: 4px;
       &:hover {
         background: $light-green !important;
-        color: $nav-color !important;
+        color: $primary !important;
         border-color: $light-green !important;
       }
       &:focus, &:active {
         background: $light-green !important;
-        color: $nav-color !important;
+        color: $primary !important;
         border-color: $light-green !important;
         outline: none;
         box-shadow: none;
@@ -97,7 +97,7 @@
 					padding: 20px;
 			    font-size: 18px;
 			    font-family: 'DinPro Medium', sans-serif;
-					background: $nav-color-50;
+					background: $primary-50;
 					margin-top: 2px;
 					border: none;
 					border-radius: 0px;
@@ -140,7 +140,7 @@
 					}
 					&.collapsed {
 						color: $white;
-						background: $nav-color-25;
+						background: $primary-25;
 						&::after {
 							content: "\f067";
 						}
@@ -173,7 +173,7 @@
         }
 			}
 			.collapsing {
-				background: $nav-color-50;
+				background: $primary-50;
 				line-height: 30px;
 				color: $white;
 				font-size: 16px;

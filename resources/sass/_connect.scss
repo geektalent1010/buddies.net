@@ -14,7 +14,7 @@
 		font-size: 18px;
 		font-family: 'DinPro Medium', sans-serif;
 		.text-blue {
-			color: $nav-color !important;
+			color: $primary !important;
 		}
 	}
 
@@ -25,7 +25,7 @@
 		.form-control {
 			flex: 1;
 			margin-right: 2px;
-			background: $nav-color-50;
+			background: $primary-50;
 			border: none;
 			border-radius: 0;
 			box-shadow: none;
@@ -66,7 +66,7 @@
     	align-items: center;
     	justify-content: center;
 	    position: relative;
-	    background-color: $nav-color-75;
+	    background-color: $primary-75;
 			border-left: 0.2rem solid transparent;
 	    cursor: pointer;
     	.search-icon {
@@ -88,7 +88,7 @@
     .form-control {
     	flex: 1;
 			margin-right: 2px;
-      background: $nav-color-50;
+      background: $primary-50;
       border: none;
 			border-radius: 0;
       box-shadow: none;
@@ -129,7 +129,7 @@
     	align-items: center;
     	justify-content: center;
 	    position: relative;
-	    background-color: $nav-color-50;
+	    background-color: $primary-50;
 	    cursor: pointer;
     	.send-icon {
 	      font-size: 30px;
@@ -169,7 +169,7 @@
 	        padding-bottom: 70px;
 	        overflow: hidden;
 	        text-decoration: none;
-		    	background-color: $nav-color-75;
+		    	background-color: $primary-75;
 
 	        .member-avatar {
 	          position: absolute;
@@ -205,7 +205,7 @@
 			    font-size: 18px;
 			    font-family: 'DinPro Medium', sans-serif;
 				 width: calc(100% - 72px);
-				 background: $nav-color-25;
+				 background: $primary-25;
 				 height: 70px;
 				 margin-left: 2px;
 				 display: flex;
@@ -223,7 +223,7 @@
 		    font-size: 10px;
 		    font-family: 'DinPro', sans-serif;
 				height: 70px;
-				background: $nav-color-25;
+				background: $primary-25;
 				.option-icon-btn {
 					cursor: pointer;
 					text-decoration: none;
@@ -246,7 +246,7 @@
 
 		.publish-content {
 			padding: 24px 32px;
-			background: $nav-color-50;
+			background: $primary-50;
 			margin-top: 2px;
 			margin-bottom: 2px;
 			.content {
@@ -269,7 +269,7 @@
 			.profile-update-button {
 					width: 100%;
 					height: 44px;
-					background: $nav-color-75;
+					background: $primary-75;
 					display: flex;
 					align-items: center;
 					justify-content: center;
@@ -281,7 +281,7 @@
 					border-radius: 10rem;
 					font-size: 16px;
 					font-family: 'DinPro', sans-serif;
-					border: 0.1rem solid $nav-color-75;
+					border: 0.1rem solid $primary-75;
 					cursor: pointer;
 					&:hover {
 							background: $success !important;

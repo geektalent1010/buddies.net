@@ -23,7 +23,7 @@
 		margin-top: 2px;
     .form-control {
     	flex: 1;
-      background: $nav-color-50;
+      background: $primary-50;
       border: none;
 			border-radius: 0;
       box-shadow: none;
@@ -64,7 +64,7 @@
     	align-items: center;
     	justify-content: center;
 	    position: relative;
-	    background-color: $nav-color-75;
+	    background-color: $primary-75;
 	    cursor: pointer;
 		 margin-left: 2px;
     	.search-icon {
@@ -105,7 +105,7 @@
 	        padding-bottom: 70px;
 	        overflow: hidden;
 	        text-decoration: none;
-		    	background-color: $nav-color-75;
+		    	background-color: $primary-75;
 
 	        .member-avatar {
 	          position: absolute;
@@ -136,7 +136,7 @@
 			    font-size: 18px;
 			    font-family: 'DinPro Medium', sans-serif;
 				 width: calc(100% - 62px);
-				 background: $nav-color-25;
+				 background: $primary-25;
 				 height: 70px;
 				 margin-left: 2px;
 				 display: flex;
@@ -153,7 +153,7 @@
 				color: $white;
 				font-size: 10px;
 				font-family: 'DinPro', sans-serif;
-				background-color: $nav-color-25;
+				background-color: $primary-25;
 				height: 70px;
 				.option-icon-btn {
 					cursor: pointer;

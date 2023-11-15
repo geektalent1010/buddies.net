@@ -36,7 +36,7 @@
             overflow: hidden;
             text-decoration: none;
             .profile-avatar {
-                background-color: $nav-color-75 !important;
+                background-color: $primary-75 !important;
             }
             img {
                 position: absolute;
@@ -79,7 +79,7 @@
                     .profile-connect-btn {
                         width: 100%;
                         height: 44px;
-                        background: $nav-color;
+                        background: $primary;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -91,16 +91,16 @@
                         border-radius: 10rem;
                         font-size: 16px;
                         font-family: 'DinPro', sans-serif;
-                        border: 0.1rem solid $nav-color;
+                        border: 0.1rem solid $primary;
                         cursor: pointer;
                         &:hover {
                             background: $light-green!important;
-                            color: $nav-color !important;
+                            color: $primary !important;
                             border-color: $light-green !important;
                         }
                         &:focus, &:active {
                             background: $light-green !important;
-                            color: $nav-color !important;
+                            color: $primary !important;
                             border-color: $light-green !important;
                             outline: none;
                             box-shadow: none;
@@ -151,7 +151,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: $nav-color-50;
+                background-color: $primary-50;
     
                 img {
                     position: relative;
@@ -173,7 +173,7 @@
             }
 
             .main_avatar_card_bg {
-                background-color: $nav-color-50;
+                background-color: $primary-50;
                 img {
                     width: 50px;
                 }
@@ -186,7 +186,7 @@
             border-right: 0.2rem solid transparent;
         }
         .person-info-section {
-            background-color: $nav-color-25;
+            background-color: $primary-25;
             .profile-card {
                 width: 100%;
                 padding: 32px;
@@ -213,7 +213,7 @@
                     .profile-connect-btn {
                         width: 100%;
                         height: 44px;
-                        background: $nav-color;
+                        background: $primary;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -225,16 +225,16 @@
                         border-radius: 10rem;
                         font-size: 16px;
                         font-family: 'DinPro', sans-serif;
-                        border: 0.1rem solid $nav-color;
+                        border: 0.1rem solid $primary;
                         cursor: pointer;
                         &:hover {
                             background: $light-green !important;
-                            color: $nav-color !important;
+                            color: $primary !important;
                             border-color: $light-green !important;
                         }
                         &:focus, &:active {
                             background: $light-green !important;
-                            color: $nav-color !important;
+                            color: $primary !important;
                             border-color: $light-green !important;
                             outline: none;
                             box-shadow: none;
@@ -279,7 +279,7 @@
                     .profile-connect-btn {
                         width: 60%;
                         height: 40px;
-                        background: $nav-color;
+                        background: $primary;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -291,16 +291,16 @@
                         border-radius: 10rem;
                         font-size: 16px;
                         font-family: 'DinPro', sans-serif;
-                        border: 0.1rem solid $nav-color;
+                        border: 0.1rem solid $primary;
                         cursor: pointer;
                         &:hover {
                             background: $light-green !important;
-                            color: $nav-color !important;
+                            color: $primary !important;
                             border-color: $light-green !important;
                         }
                         &:focus, &:active {
                             background: $light-green !important;
-                            color: $nav-color !important;
+                            color: $primary !important;
                             border-color: $light-green !important;
                             outline: none;
                             box-shadow: none;
@@ -344,7 +344,7 @@
         }
         
         .profile-card-bg {
-            background-color: $nav-color-25;
+            background-color: $primary-25;
         }
     
         .story-content-wrp { 
@@ -367,7 +367,7 @@
                 padding-left: 42px;
                 padding-top: 20px;
                 padding-bottom: 30px;
-                background-color: $nav-color-25;
+                background-color: $primary-25;
                 overflow-y: auto;
 
                 .about {
@@ -462,7 +462,7 @@
             width: 100%;
             max-width: 300px;
             height: 44px;
-            background: $nav-color;
+            background: $primary;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -474,16 +474,16 @@
             border-radius: 10rem;
             font-size: 16px;
             font-family: 'DinPro', sans-serif;
-            border: 0.1rem solid $nav-color;
+            border: 0.1rem solid $primary;
             cursor: pointer;
             &:hover {
                 background: $light-green !important;
-                color: $nav-color !important;
+                color: $primary !important;
                 border-color: $light-green !important;
             }
             &:focus, &:active {
                 background: $light-green !important;
-                color: $nav-color !important;
+                color: $primary !important;
                 border-color: $light-green !important;
                 outline: none;
                 box-shadow: none;
@@ -509,12 +509,12 @@
             cursor: pointer;
             &:hover {
                 background: $light-green !important;
-                color: $nav-color !important;
+                color: $primary !important;
                 border-color: $light-green !important;
             }
             &:focus, &:active {
                 background: $light-green !important;
-                color: $nav-color !important;
+                color: $primary !important;
                 border-color: $light-green !important;
                 outline: none;
                 box-shadow: none;
@@ -525,13 +525,13 @@
         }
     }
     .follow-btn-section {
-        background-color: $nav-color-25;
+        background-color: $primary-25;
         padding-left: 0px;
         // padding-right: 50px;
         .follow-btn {
             width: 60%;
             height: 44px;
-            background: $nav-color;
+            background: $primary;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -543,16 +543,16 @@
             border-radius: 10rem;
             font-size: 16px;
             font-family: 'DinPro', sans-serif;
-            border: 0.1rem solid $nav-color;
+            border: 0.1rem solid $primary;
             cursor: pointer;
             &:hover {
                 background: $light-green !important;
-                color: $nav-color !important;
+                color: $primary !important;
                 border-color: $light-green !important;
             }
             &:focus, &:active {
                 background: $light-green !important;
-                color: $nav-color !important;
+                color: $primary !important;
                 border-color: $light-green !important;
                 outline: none;
                 box-shadow: none;
@@ -563,7 +563,7 @@
         }
     }
     .like-section {
-        background-color: $nav-color-25;
+        background-color: $primary-25;
         padding-left: 43px;
         padding-top: 10px;
         .like {

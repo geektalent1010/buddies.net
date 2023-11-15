@@ -58,14 +58,14 @@
                 }
                 
                 &.portfolio-image:hover {
-                    background: $nav-color-75;
+                    background: $primary-75;
     
                     img {
                         opacity: 1;
                     }
                 }
                 &.portfolio-image.active {
-                    background: $nav-color-75;
+                    background: $primary-75;
                 }
             }
             .text-card {
@@ -98,7 +98,7 @@
                 }
                 
                 &.portfolio-image:hover {
-                    background: $nav-color-75;
+                    background: $primary-75;
     
                     img {
                         opacity: 1;
@@ -118,7 +118,7 @@
             padding-bottom: 100%;
             overflow: hidden;
             text-decoration: none;
-            background-color: $nav-color-75;
+            background-color: $primary-75;
             margin-top: 2px;
             .thumbnail-card {
                 position: absolute;
@@ -387,7 +387,7 @@
                 padding-bottom: 100%;
                 overflow: hidden;
                 text-decoration: none;
-                background-color: $nav-color-25;
+                background-color: $primary-25;
                 img {
                     position: absolute;
                     width: 100%;
@@ -427,14 +427,14 @@
                     }
                     
                     &.portfolio-image:hover {
-                        background: $nav-color-75;
+                        background: $primary-75;
         
                         img {
                             opacity: 1;
                         }
                     }
                     &.portfolio-image.active {
-                        background: $nav-color-75;
+                        background: $primary-75;
                     }
                 }
                 .text-card {
@@ -467,7 +467,7 @@
                     }
                     
                     &.portfolio-image:hover {
-                        background: $nav-color-75;
+                        background: $primary-75;
         
                         img {
                             opacity: 1;

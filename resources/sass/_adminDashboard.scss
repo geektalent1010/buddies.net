@@ -6,7 +6,7 @@
     .navItem {
         position: relative;
         padding: 0;
-        background-color: $nav-color-25;
+        background-color: $primary-25;
         border: 1px solid $bgColor;
         .navItem-wrp { 
             display: block;
@@ -54,7 +54,7 @@
                 }
             }
             &:hover, &:focus {
-                background-color: $nav-color-75;
+                background-color: $primary-75;
     
                 .item {
                     .item-icon {

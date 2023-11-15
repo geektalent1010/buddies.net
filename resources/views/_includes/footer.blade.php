@@ -29,15 +29,15 @@
               </a>
           @endif
           @if (isset($ACTIVE_GROUP_ROUTES) && $ACTIVE_GROUP_ROUTES)
-              <a href="{{ route('groups.index') }}">
-                  <span class="nav-icon @if (isset($ACTIVE_PAGE) && $ACTIVE_PAGE == 'all') active @endif"><i class="fa fa-circle" aria-hidden="true"></i></span>
-              </a>
-              <a href="{{ route('own.groups.index') }}">
-                  <span class="nav-icon @if (isset($ACTIVE_PAGE) && ($ACTIVE_PAGE == 'own' || $ACTIVE_PAGE == 'create' || $ACTIVE_PAGE == 'edit')) active @endif"><i class="fa fa-circle" aria-hidden="true"></i></span>
-              </a>
-              <a href="{{ route('group.chat.index', [ 'id' => 0 ]) }}">
-                  <span class="nav-icon @if (isset($ACTIVE_PAGE) && $ACTIVE_PAGE == 'chat') active @endif"><i class="fa fa-circle" aria-hidden="true"></i></span>
-              </a>
+            <a href="{{ route('groups.index') }}">
+              <span class="nav-icon @if (isset($ACTIVE_PAGE) && ($ACTIVE_PAGE == 'own' || $ACTIVE_PAGE == 'create' || $ACTIVE_PAGE == 'edit')) active @endif"><i class="fa fa-circle" aria-hidden="true"></i></span>
+            </a>
+            <a href="{{ route('friends.groups.index') }}">
+                <span class="nav-icon @if (isset($ACTIVE_PAGE) && ($ACTIVE_PAGE == 'friends')) active @endif"><i class="fa fa-circle" aria-hidden="true"></i></span>
+            </a>
+            <a href="{{ route('group.chat.index', [ 'id' => 0 ]) }}">
+                <span class="nav-icon @if (isset($ACTIVE_PAGE) && $ACTIVE_PAGE == 'chat') active @endif"><i class="fa fa-circle" aria-hidden="true"></i></span>
+            </a>
           @endif
           @if (isset($CREATE_ROUTE) && isset($ACTIVE_CREATE) && $ACTIVE_CREATE)
               <a href="{{ route($CREATE_ROUTE) }}">

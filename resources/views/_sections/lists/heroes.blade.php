@@ -32,7 +32,7 @@
       <div class="hero-detail row mr-0 ml-0">
         <div class="col-md-6 p-0">
           <p class="mb-0">{{ $hero->profile->getCountry() }}</p>
-          <p>{{ $hero->profile->getCity() }} {{ $hero->profile->postal_code }}</p>
+          <p>{{ $hero->profile->getCity() }}</p>
           <p class="mb-0">{{ $hero->referrals_count }} Referrals</p>
         </div>
         <div class="col-md-6 p-0">

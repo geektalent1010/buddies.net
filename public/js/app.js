@@ -52379,8 +52379,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\HD\dev.buddies.zone\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\HD\dev.buddies.zone\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\Dev\2023\2023-11-14-Brandfields-HD\buddies.net\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Dev\2023\2023-11-14-Brandfields-HD\buddies.net\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -7,6 +7,7 @@ use App\User;
 use App\Profile;
 use App\Group;
 use App\Member;
+use App\Invite;
 use App\Buddies;
 use Twilio\Rest\Client;
 use Illuminate\Support\Facades\Auth;
@@ -25,9 +26,9 @@ class GroupsController extends Controller
     public function index()
     {
         $authUser = Auth::user();
-        $groups = Member::where('user_id', '=', $authUser->id)->where('is_banned', '<>', 1)->get();
+        $groups = Group::where('user_id', '=', $authUser->id)->get();
 
-        return view('panel.groups.index', compact('groups', 'authUser'));
+        return view('panel.groups.own', compact('groups', 'authUser'));
     }
 
     public function showOwnGroups()
@@ -36,6 +37,18 @@ class GroupsController extends Controller
         $groups = Group::where('user_id', '=', $authUser->id)->get();
 
         return view('panel.groups.ownGroups', compact('groups', 'authUser'));
+    }
+
+    public function showFriendsGroups()
+    {
+        $authUser = Auth::user();
+        $invites = Invite::where('user_id', '=', $authUser->id)->where('is_active', '=', 1)->get();
+        $members = Member::whereHas('group', function($query) use ($authUser) {
+                $query->where('user_id', '<>', $authUser->id);
+            })
+            ->where('user_id', $authUser->id)->where('is_banned', '<>', 1)->get();
+
+        return view('panel.groups.friends', compact('members', 'invites', 'authUser'));
     }
 
     public function show()
@@ -233,6 +246,11 @@ class GroupsController extends Controller
     {
         $member = Member::where('group_id', '=', $request->groupId)->where('user_id', '=', $request->userId)->first();
         if (isset($member)) {
+            $requestInfo = Invite::where('member_id', '=', $member->id)->where('user_id', '=', $request->userId)->first();
+            if (isset($requestInfo)) {
+                $requestInfo->delete();
+            }
+
             $member->is_banned = 1;
             $member->save();
         } else {
@@ -253,8 +271,13 @@ class GroupsController extends Controller
         $user = User::find($request->userId);
         $member = Member::where('group_id', '=', $request->groupId)->where('user_id', '=', $request->userId)->first();
         if (isset($member)) {
-            $member->is_banned = 0;
-            $member->save();
+            // $member->is_banned = 0;
+            // $member->save();
+            Invite::create([
+                'requester' => $request->user()->id,
+                'user_id' => $request->userId,
+                'member_id' => $member->id
+            ]);
     
             $this->twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
                                     ->channels($member->group->channel_unique_name)
@@ -264,9 +287,15 @@ class GroupsController extends Controller
                                     ]);
         } else {
             $group = Group::find($request->groupId);
-            Member::create([
+            $member = Member::create([
                 'group_id'    => $request->groupId,
                 'user_id'     => $request->userId,
+                'is_banned'   => 1
+            ]);
+            Invite::create([
+                'requester' => $request->user()->id,
+                'user_id' => $request->userId,
+                'member_id' => $member->id
             ]);
         
             try {
@@ -304,6 +333,29 @@ class GroupsController extends Controller
             'status' => true,
             'message' => 'Member unbanned'
         ]);
+    }
+
+    public function accept(Request $request) {
+        $requestInfo = Invite::find($request->request_id);
+        if (isset($requestInfo)) {
+            $member = $requestInfo->invite_member;
+            if (isset($member)) {
+                $member->is_banned = 0;
+                $member->save();
+        
+                $this->twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
+                                        ->channels($member->group->channel_unique_name)
+                                        ->members($requestInfo->user->username)
+                                        ->update([
+                                            'roleSid' => config('app.MIX_CHANNEL_MEMBER_ROLE_SID')
+                                        ]);
+            } else {
+                return response()->json(['status' => false, 'message' => 'Member is not exist']);
+            }
+            $requestInfo->delete();
+            return response()->json(['status' => true, 'message' => 'The request successfully accepted.']);
+        }
+        return response()->json(['status' => false, 'message' => 'Member is not exist']);
     }
   
     public function delete(Request $request)

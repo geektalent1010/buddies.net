@@ -4694,7 +4694,6 @@ input[type=range]::-moz-range-thumb {
   color: #ffffff;
   font-size: 18px;
   font-family: "DinPro Medium", sans-serif;
-  min-height: calc(100vh - 250px);
 }
 
 .groups-section .top-title {
@@ -4898,6 +4897,33 @@ input[type=range]::-moz-range-thumb {
   z-index: 1;
 }
 
+.groups-section .name-input-section .option-icons-section {
+  padding-left: 16px;
+  padding-right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+  color: #ffffff;
+  font-size: 10px;
+  font-family: "DinPro", sans-serif;
+  height: 70px;
+  background-color: rgba(4, 36, 107, 0.2509803922);
+}
+
+.groups-section .name-input-section .option-icons-section .option-icon-btn {
+  text-decoration: none;
+}
+
+.groups-section .name-input-section .option-icons-section .option-icon-btn .message-icon {
+  height: 20px;
+}
+
+.groups-section .name-input-section .option-icons-section .option-icon-btn .option-icon {
+  font-size: 21px;
+  color: #ffffff;
+}
+
 .groups-section .description-input-section {
   display: flex;
 }
@@ -5022,7 +5048,7 @@ input[type=range]::-moz-range-thumb {
   align-items: center;
 }
 
-.groups-section .member-body .member-item .options-section {
+.groups-section .member-body .member-item .option-icons-section {
   padding-left: 16px;
   padding-right: 16px;
   display: flex;
@@ -5036,18 +5062,53 @@ input[type=range]::-moz-range-thumb {
   background-color: rgba(4, 36, 107, 0.2509803922);
 }
 
-.groups-section .member-body .member-item .options-section .option-icon-btn {
+.groups-section .member-body .member-item .option-icons-section .option-icon-btn {
   cursor: pointer;
   text-decoration: none;
 }
 
-.groups-section .member-body .member-item .options-section .option-icon-btn .option-icon {
+.groups-section .member-body .member-item .option-icons-section .option-icon-btn .option-icon {
   font-size: 20px;
   color: #ffffff;
 }
 
-.groups-section .member-body .member-item .options-section .option-icon-btn:hover .option-icon {
+.groups-section .member-body .member-item .option-icons-section .option-icon-btn:hover .option-icon {
   color: #00ffff;
+}
+
+.groups-section .save-btn-section .create-btn {
+  width: 300px;
+  height: 44px;
+  background: #1f1990;
+  display: block;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 10rem;
+  font-size: 14px;
+  font-family: "DinPro Light", sans-serif;
+  border: 0.1rem solid #1f1990;
+  cursor: pointer;
+}
+
+.groups-section .save-btn-section .create-btn:hover {
+  background: #00ffff !important;
+  color: #1f1990 !important;
+  border-color: #00ffff !important;
+}
+
+.groups-section .save-btn-section .create-btn:focus,
+.groups-section .save-btn-section .create-btn:active {
+  background: #00ffff !important;
+  color: #1f1990 !important;
+  border-color: #00ffff !important;
+  outline: none;
+  box-shadow: none;
+}
+
+.groups-section .save-btn-section .create-btn .disabled,
+.groups-section .save-btn-section .create-btn:disabled,
+.groups-section .save-btn-section .create-btn[disabled] {
+  opacity: 1 !important;
 }
 
 .groups-section .flat-scroll::-webkit-scrollbar-track {
@@ -5305,6 +5366,10 @@ input[type=range]::-moz-range-thumb {
     font-size: 24px;
   }
 
+  .groups-section .name-input-section .option-icons-section {
+    height: 60px;
+  }
+
   .groups-section .description-input-section {
     display: flex;
   }
@@ -5327,7 +5392,7 @@ input[type=range]::-moz-range-thumb {
     height: 60px;
   }
 
-  .groups-section .member-body .member-item .options-section {
+  .groups-section .member-body .member-item .option-icons-section {
     height: 60px;
   }
 

@@ -1,4 +1,11 @@
-@extends('layouts.app', ['ACTIVE_TITLE' => 'INFO', 'ACTIVE_LOGOUT' => 'LOGOUT'])
+@extends('layouts.app', [
+  'ACTIVE_TITLE' => 'INFO',
+  'ACTIVE_LOGOUT' => 'LOGOUT',
+  'ROUTES' => [
+    ['ROUTE' => 'topics.index', 'ACTIVE' => 'topic', 'ACTIVE_ROUTE' => true]
+  ],
+  'ACTIVE_PAGE' => 'topic'
+])
 
 @section('title', __('- Info'))
 

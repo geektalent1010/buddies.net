@@ -74,6 +74,18 @@
 
       $('#searchKey').on('keyup', function () {
         var searchKey = $(this).val().trim().toLowerCase();
+        $('.search-item').each(function() {
+          var fullName = $(this).attr('attr-fullname');
+          if (fullName) {
+            if (fullName.toLowerCase().includes(searchKey)) {
+              $(this).removeClass('d-none');
+            } else {
+              if(!$(this).hasClass('d-none')) {
+                  $(this).addClass('d-none');
+              }
+            }
+          }
+        })
         $('.member-item').each(function() {
           var fullName = $(this).attr('attr-fullname');
           if (fullName) {

@@ -16,7 +16,6 @@
 		color: $white;
 		font-size: 18px;
 		font-family: 'DinPro Medium', sans-serif;
-		min-height: calc(100vh - 250px);
 	}
 
 	.top-title {
@@ -204,6 +203,29 @@
 				}
 			}
     }
+    .option-icons-section {
+      padding-left: 16px;
+      padding-right: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 3;
+      color: $white;
+      font-size: 10px;
+      font-family: 'DinPro', sans-serif;
+      height: 70px;
+      background-color: $nav-color-25;
+      .option-icon-btn {
+          text-decoration: none;
+          .message-icon {
+              height: 20px;
+          }
+          .option-icon {
+              font-size: 21px;
+              color: $white;
+          }
+      }
+  }
 	}
 
 	.description-input-section {
@@ -316,7 +338,7 @@
 				 align-items: center;
 		    }
 			}
-	    .options-section {
+	    .option-icons-section {
 	    	padding-left: 16px;
 	    	padding-right: 16px;
 	    	display: flex;
@@ -345,6 +367,41 @@
     }
 
 	}
+
+  .save-btn-section {
+    .create-btn {
+        width: 300px;
+        height: 44px;
+        background: $primary;
+        display: block;
+        text-transform: uppercase;
+        color: $white;
+        -webkit-border-radius: 10rem;
+        -moz-border-radius: 10rem;
+        -ms-border-radius: 10rem;
+        border-radius: 10rem;
+        font-size: 14px;
+        font-family: 'DinPro Light', sans-serif;
+        border: 0.1rem solid $primary;
+        cursor: pointer;
+
+        &:hover {
+            background: $light-green !important;
+            color: $primary !important;
+            border-color: $light-green !important;
+        }
+        &:focus, &:active {
+            background: $light-green !important;
+            color: $primary !important;
+            border-color: $light-green !important;
+            outline: none;
+            box-shadow: none;
+        }
+        .disabled, &:disabled, &[disabled] {
+            opacity: 1 !important;
+        }
+    }
+}
 
 	.flat-scroll::-webkit-scrollbar-track {
   	border-radius: 5px;
@@ -574,6 +631,9 @@
 		      font-size: 24px;
 		    }
 	    }
+      .option-icons-section {
+          height: 60px;
+      }
 	  }
   	.description-input-section {
 			display: flex;
@@ -598,7 +658,7 @@
 						height: 60px;
 					}
 				}
-				.options-section {
+				.option-icons-section {
 					height: 60px;
 				}
 			} 

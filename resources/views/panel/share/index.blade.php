@@ -1,6 +1,7 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'SHARE', 'ROUTES' => [
   ['ROUTE' => 'studio.index', 'ACTIVE' => 'studio', 'ACTIVE_ROUTE' => $user->IsCompany()],
-  ['ROUTE' => 'share.index', 'ACTIVE' => 'share', 'ACTIVE_ROUTE' => $user->IsCompany()]
+  // ['ROUTE' => 'share.index', 'ACTIVE' => 'share', 'ACTIVE_ROUTE' => $user->IsCompany()]
+  ['ROUTE' => 'share.index', 'ACTIVE' => 'share', 'ACTIVE_ROUTE' => true]
 ], 'ACTIVE_PAGE' => 'share'])
 
 @section('title', __('- Share'))

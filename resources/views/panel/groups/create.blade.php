@@ -137,7 +137,7 @@
       data : form_data,
       success:function(data){
         if (data.status) {
-          window.location.href = '{{ route('own.groups.index') }}';
+          window.location.href = '{{ route('groups.index') }}';
         } else {
           toastr['error'](data.message, 'Error');
         }

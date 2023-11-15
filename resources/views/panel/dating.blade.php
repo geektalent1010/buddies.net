@@ -1,4 +1,6 @@
-@extends('layouts.app', ['ACTIVE_TITLE' => 'MORE'])
+@extends('layouts.app', ['ACTIVE_TITLE' => 'MORE', 'ROUTES' => [
+['ROUTE' => 'dating.index', 'ACTIVE' => 'dating', 'ACTIVE_ROUTE' => true],
+], 'ACTIVE_PAGE' => 'dating'])
 
 @section('title', __('- More'))
 

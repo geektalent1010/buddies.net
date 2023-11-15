@@ -63,7 +63,7 @@
                 </div>
                 <div class="member-name">{{ $user->getFullname() }}</div>
               </div>
-              <div class="options-section">
+              <div class="option-icons-section">
                 <a class="option-icon-btn add-member {{ in_array($user->id, $members) ? 'd-none' : '' }}" href="javascript:;" attr-userId="{{ $user->id }}">
                   <span class="option-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
                 </a>

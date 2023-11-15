@@ -170,8 +170,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/groups/own', 'GroupsController@showOwnGroups')->name('own.groups.index');
     Route::get('/group', 'GroupsController@show')->name('group.create.index');
     Route::get('/group/edit/{id}', 'GroupsController@edit')->name('group.edit.index');
+    Route::get('/group/friends', 'GroupsController@showFriendsGroups')->name('friends.groups.index');
     Route::post('/group/create-chat-room', 'GroupsController@createGroupChatRoom')->name('group.create.chatroom');
     Route::post('/group/update-info', 'GroupsController@updateGroupInfo')->name('group.info.update');
+    Route::post('/group/accept', 'GroupsController@accept')->name('group.invite.accept');
     Route::post('/group/ban', 'GroupsController@ban')->name('group.member.ban');
     Route::post('/group/unban', 'GroupsController@unban')->name('group.member.unban');
     Route::get('/group-chatroom/{id}', 'GroupsController@chat')->name('group.chat.index');

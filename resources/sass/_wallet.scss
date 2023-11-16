@@ -41,27 +41,27 @@
    }
    .success-section {
       background: $light-green;
-      color: $nav-color;
+      color: $primary;
    }
    .light-section {
-      background: $nav-color-50;
+      background: $primary-50;
    }
    .referral-header-section {
-      background: $nav-color-50;
+      background: $primary-50;
       display: flex;
       justify-content: space-between;
       margin-bottom: 2px;
    }
    .referral-header-section-mobile {
-      background: $nav-color-50;
+      background: $primary-50;
       display: none;
       margin-bottom: 2px;
    }
    .referral-body-section {
-      background: $nav-color-25;
+      background: $primary-25;
    }
    .primary-section {
-      background: $nav-color-25;
+      background: $primary-25;
       margin-top: 2px;
    }
    .btn-section {
@@ -69,7 +69,7 @@
 			 width: 100%;
 			 max-width: 300px;
 			 height: 44px;
-			 background: $nav-color;
+			 background: $primary;
 			 display: flex;
 			 align-items: center;
 			 justify-content: center;
@@ -81,16 +81,16 @@
 			 border-radius: 10rem;
 			 font-size: 16px;
 			 font-family: 'DinPro', sans-serif;
-			 border: 0.1rem solid $nav-color;
+			 border: 0.1rem solid $primary;
 			 cursor: pointer;
 			 &:hover {
 				background: $light-green !important;
-				color: $nav-color !important;
+				color: $primary !important;
 				border-color: $light-green !important;
 			}
 			&:focus, &:active {
 				background: $light-green !important;
-				color: $nav-color !important;
+				color: $primary !important;
 				border-color: $light-green !important;
             outline: none;
 				box-shadow: none;
@@ -105,11 +105,11 @@
 @media only screen and (max-width: 598.98px) {
    .wallet-section {
       .referral-header-section {
-         background: $nav-color-50;
+         background: $primary-50;
          display: none;
       }
       .referral-header-section-mobile {
-         background: $nav-color-50;
+         background: $primary-50;
          display: flex;
          justify-content: space-between;
       }

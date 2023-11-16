@@ -1,6 +1,6 @@
 .admin-members-section {
   .title-section {
-    background: $nav-color;
+    background: $primary;
     height: 70px;
     font-size: 16px;
     font-family: 'DinPro', sans-serif;
@@ -15,7 +15,7 @@
 		display: flex;
     .form-control {
     	flex: 1;
-      background: $nav-color-50;
+      background: $primary-50;
       margin-right: 2px;
       border: none;
 			border-radius: 0;
@@ -57,7 +57,7 @@
     	align-items: center;
     	justify-content: center;
 	    position: relative;
-	    background-color: $nav-color-75;
+	    background-color: $primary-75;
 	    cursor: pointer;
     	.search-icon {
 	      font-size: 30px;
@@ -100,7 +100,7 @@
     grid-gap: 0.25rem;
     position: relative;
     .item-label {
-      background: $nav-color;
+      background: $primary;
       width: 25%;
       height: 44px;
       font-size: 12px;
@@ -112,7 +112,7 @@
       .form-group {
         margin-bottom: 0;
         .form-control {
-          background: $nav-color-25;
+          background: $primary-25;
           border: none;
           -webkit-border-radius: 10rem;
           -moz-border-radius: 10rem;
@@ -174,17 +174,17 @@
         cursor: pointer;
         width: 44px;
         height: 44px;
-        background: $nav-color-25;
+        background: $primary-25;
         font-size: 14px;
         font-family: 'DinPro', sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
         &.active {
-          background: $nav-color-75;
+          background: $primary-75;
         }
         &:hover {
-          background: $nav-color-75;
+          background: $primary-75;
         }
       }
       .button-section {
@@ -193,7 +193,7 @@
           width: 100%;
           max-width: 300px;
           height: 44px;
-          background: $nav-color;
+          background: $primary;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -205,16 +205,16 @@
           border-radius: 0rem;
           font-size: 14px;
           font-family: 'DinPro', sans-serif;
-          border: 0.1rem solid $nav-color;
+          border: 0.1rem solid $primary;
           cursor: pointer;
           &:hover {
             background: $light-green !important;
-            color: $nav-color !important;
+            color: $primary !important;
             border-color: $light-green !important;
           }
           &:focus, &:active {
             background: $light-green !important;
-            color: $nav-color !important;
+            color: $primary !important;
             border-color: $light-green !important;
             outline: none;
             box-shadow: none;
@@ -255,7 +255,7 @@
     height: 84px;
     .payment-card {
       flex: 1;
-      background-color: $nav-color-25;
+      background-color: $primary-25;
       padding-top: 12px;
       padding-bottom: 12px;
       text-align: center;
@@ -265,12 +265,12 @@
       font-size: 14px;
       font-family: 'DinPro', sans-serif;
       &.active {
-        background-color: $nav-color-75;
+        background-color: $primary-75;
       }
     }
   }
   .unblock-user-content {
-    background-color: $nav-color-25;
+    background-color: $primary-25;
     padding: 12px;
     height: 84px;
     font-size: 12px;
@@ -279,7 +279,7 @@
   .transactions-section {
     flex: 1 1 auto;
     padding: 12px;
-    background-color: $nav-color-25;
+    background-color: $primary-25;
     font-size: 14px;
     font-family: 'DinPro', sans-serif;
     .transaction-date {
@@ -302,7 +302,7 @@
   .referrals-section {
     flex: 1 1 auto;
     padding: 12px;
-    background-color: $nav-color-25;
+    background-color: $primary-25;
     font-size: 14px;
     font-family: 'DinPro', sans-serif;
     .referral-date {
@@ -317,7 +317,7 @@
       align-items: center;
       justify-content: flex-end;
       .status {
-        color: $nav-color;
+        color: $primary;
         margin-right: 4px;
         &.active {
           color: $light-green;

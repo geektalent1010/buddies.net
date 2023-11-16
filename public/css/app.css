@@ -773,7 +773,7 @@
 
 .profile-section .contentItem .flat-scroll::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
 }
 
 .profile-section .company-info {
@@ -838,14 +838,14 @@
 .profile-section .btn-section .profile-save-btn {
   width: 50%;
   height: 44px;
-  background: #1f1990;
+  background: #04246b;
   display: block;
   text-transform: uppercase;
   color: #ffffff;
   border-radius: 10rem;
   font-size: 14px;
   font-family: "DinPro", sans-serif;
-  border: 0.1rem solid #1f1990;
+  border: 0.1rem solid #04246b;
   cursor: pointer;
 }
 
@@ -1001,11 +1001,11 @@
 }
 
 .profile-section .addresstab div:hover {
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 .profile-section .addresstab .active {
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -1457,7 +1457,7 @@ input[type=range]::-moz-range-thumb {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: #1f1990;
+  background-color: #04246b;
   cursor: pointer;
 }
 
@@ -1687,14 +1687,14 @@ input[type=range]::-moz-range-thumb {
 .setting-section .contentItem .contentItem-wrp .profile-card .connect-btn-section .profile-connect-btn {
   width: 100%;
   height: 44px;
-  background: #1f1990;
+  background: #04246b;
   display: block;
   text-transform: uppercase;
   color: #ffffff;
   border-radius: 10rem;
   font-size: 16px;
   font-family: "DinPro", sans-serif;
-  border: 0.1rem solid #1f1990;
+  border: 0.1rem solid #04246b;
   cursor: pointer;
 }
 
@@ -1911,7 +1911,7 @@ input[type=range]::-moz-range-thumb {
 
 .setting-section .contentItem .flat-scroll::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
 }
 
 .setting-section .thumbnail-card-border {
@@ -1967,15 +1967,15 @@ input[type=range]::-moz-range-thumb {
   width: 100%;
   padding-left: 36px;
   padding-right: 20px;
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 .setting-section .addresstab div:hover {
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 .setting-section .addresstab .active {
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 .setting-section .gendertab div {
@@ -2307,7 +2307,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .setting-section .address-search-section div:hover {
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 .page-content {
@@ -2430,7 +2430,6 @@ input[type=range]::-moz-range-thumb {
 }
 
 .page-content .company-profile-section .checkbox-container {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -2972,7 +2971,7 @@ input[type=range]::-moz-range-thumb {
 
 .buddies-section .flat-scroll::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
 }
 
 @media only screen and (max-width: 991.98px) {
@@ -3637,7 +3636,7 @@ input[type=range]::-moz-range-thumb {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: rgba(31, 25, 144, 0.6);
+  background-color: rgba(4, 36, 107, 0.6);
   cursor: pointer;
 }
 
@@ -3649,7 +3648,7 @@ input[type=range]::-moz-range-thumb {
   width: 100%;
   height: 100%;
   padding: 40px 32px;
-  background-color: rgba(31, 25, 144, 0.3019607843);
+  background-color: rgba(4, 36, 107, 0.2509803922);
 }
 
 .chat-section .alert-card .alert-card-body .alert-title {
@@ -3747,7 +3746,6 @@ input[type=range]::-moz-range-thumb {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 50px;
@@ -3847,7 +3845,7 @@ input[type=range]::-moz-range-thumb {
 
 .chat-section .flat-scroll::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
 }
 
 ::-webkit-scrollbar {
@@ -4296,7 +4294,6 @@ input[type=range]::-moz-range-thumb {
 }
 
 .connect-section .interest-check-section .looking-for-checks .checkbox-container {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -4324,7 +4321,7 @@ input[type=range]::-moz-range-thumb {
 
 .connect-section .flat-scroll::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
 }
 
 @media only screen and (max-width: 991.98px) {
@@ -5060,27 +5057,27 @@ input[type=range]::-moz-range-thumb {
 .groups-section .save-btn-section .create-btn {
   width: 300px;
   height: 44px;
-  background: #1f1990;
+  background: #04246b;
   display: block;
   text-transform: uppercase;
   color: #ffffff;
   border-radius: 10rem;
   font-size: 14px;
   font-family: "DinPro Light", sans-serif;
-  border: 0.1rem solid #1f1990;
+  border: 0.1rem solid #04246b;
   cursor: pointer;
 }
 
 .groups-section .save-btn-section .create-btn:hover {
   background: #00ffff !important;
-  color: #1f1990 !important;
+  color: #04246b !important;
   border-color: #00ffff !important;
 }
 
 .groups-section .save-btn-section .create-btn:focus,
 .groups-section .save-btn-section .create-btn:active {
   background: #00ffff !important;
-  color: #1f1990 !important;
+  color: #04246b !important;
   border-color: #00ffff !important;
   outline: none;
   box-shadow: none;
@@ -5109,7 +5106,7 @@ input[type=range]::-moz-range-thumb {
 
 .groups-section .flat-scroll::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
 }
 
 .groups-section .launch-button {
@@ -5233,7 +5230,6 @@ input[type=range]::-moz-range-thumb {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 50px;
@@ -5629,7 +5625,7 @@ input[type=range]::-moz-range-thumb {
 
 .companies-section .flat-scroll::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
 }
 
 @media only screen and (max-width: 991.98px) {
@@ -6018,7 +6014,7 @@ input[type=range]::-moz-range-thumb {
   padding-bottom: 80px;
   overflow: hidden;
   text-decoration: none;
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 .posts-section .member-body .member-item .plus-icon-wrp .member-avatar {
@@ -6099,7 +6095,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .posts-section .description-section .btn-header-link.active {
-  background: #1f1990;
+  background: #04246b;
 }
 
 .posts-section .post-top-content {
@@ -6552,7 +6548,7 @@ input[type=range]::-moz-range-thumb {
 
 .topics-section .flat-scroll::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
 }
 
 .topics-section .go-to-button {
@@ -6974,14 +6970,14 @@ input[type=range]::-moz-range-thumb {
 .studio-section .btn-section button {
   width: 50%;
   height: 44px;
-  background: #1f1990;
+  background: #04246b;
   display: block;
   text-transform: uppercase;
   color: #ffffff;
   border-radius: 10rem;
   font-size: 16px;
   font-family: "DinPro", sans-serif;
-  border: 0.1rem solid #1f1990;
+  border: 0.1rem solid #04246b;
   cursor: pointer;
 }
 
@@ -7009,14 +7005,14 @@ input[type=range]::-moz-range-thumb {
 .studio-section .btn-section .edit-btn {
   width: 50%;
   height: 44px;
-  background: #1f1990;
+  background: #04246b;
   display: block;
   text-transform: uppercase;
   color: #ffffff;
   border-radius: 10rem;
   font-size: 16px;
   font-family: "DinPro", sans-serif;
-  border: 0.1rem solid #1f1990;
+  border: 0.1rem solid #04246b;
   cursor: pointer;
 }
 
@@ -7767,7 +7763,7 @@ input[type=range]::-moz-range-thumb {
   padding-bottom: 80px;
   overflow: hidden;
   text-decoration: none;
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 .hearts-section .member-body .member-item .plus-icon-wrp .member-avatar {
@@ -7848,7 +7844,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .hearts-section .description-section .btn-header-link.active {
-  background: #1f1990;
+  background: #04246b;
 }
 
 .hearts-section .post-top-content {
@@ -8179,7 +8175,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .admin-members-section .user-search-section div:hover {
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 .admin-members-section .user-info-item {
@@ -8351,7 +8347,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .admin-members-section .user-info-item .address-search-section div:hover {
-  background-color: #1f1990;
+  background-color: #04246b;
 }
 
 .admin-members-section .payment-card-section {
@@ -8719,7 +8715,7 @@ input[type=range]::-moz-range-thumb {
 
 .admin-finance-section .transactions-list {
   padding: 15px;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
 }
 
 .admin-finance-section .transactions-list .transaction-title {
@@ -8805,7 +8801,7 @@ input[type=range]::-moz-range-thumb {
   height: 18px;
   border-radius: 100px;
   background-color: #00ffff;
-  color: #1f1990;
+  color: #04246b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8882,7 +8878,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .admin-finance-section .money-box {
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
   position: relative;
   overflow: hidden;
   padding: 20px 10px;
@@ -8903,7 +8899,7 @@ input[type=range]::-moz-range-thumb {
 .admin-finance-section .navigator .eachNav {
   padding: 25px 15px;
   text-align: center;
-  background-color: rgba(31, 25, 144, 0.4);
+  background-color: rgba(4, 36, 107, 0.5019607843);
   cursor: pointer;
 }
 

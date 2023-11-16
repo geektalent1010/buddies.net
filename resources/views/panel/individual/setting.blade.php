@@ -183,7 +183,7 @@
                             <p class="mb-1 registration-title">MY DETAILS</p>
                         </div>
                         <div class="login-title text-center mb-2 mt-4">
-                            <span style="font-size: 16px;">MY REFERRAL LINK<br>https://www.ventura.pro/{{ $user->customer_id ?? '123456'}}</span>
+                            <span style="font-size: 16px;">MY REFERRAL LINK<br>https://buddies.brandfields.com/{{ $user->customer_id ?? '123456'}}</span>
                         </div>
                         <div class="d-flex justify-content-center align-items-center btn-section w-100 p-0 m-0 mb-5">
                             <a class="btn btn-primary copy-btn" onclick="copyLink(this,event)" attr_href="{{url('/')}}/{{ $user->customer_id }}">COPY LINK</a>

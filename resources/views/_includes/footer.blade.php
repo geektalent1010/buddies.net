@@ -1,9 +1,12 @@
 @if (isset($ACTIVE_TITLE) && $ACTIVE_TITLE == 'DASHBOARD')
 <footer>
-    <div class="footerDesc m-auto">
-            <img src="{{ asset('images/svg/Previous.svg') }}" class="prev" alt="footer Prev logo"/>
-            <img src="{{ asset('images/svg/MoodsLogo.svg') }}" class="mood-logo mx-2" alt="footer Mood logo" />
-            <img src="{{ asset('images/svg/Next.svg') }}" class="next" alt="footer Next logo"/>
+    <div class="footerDesc m-auto d-flex justify-content-center">
+      <div class="navicon-section moods-section">
+        <img src="{{ asset('images/svg/Previous.svg') }}" class="prev" alt="footer Prev logo"/>
+        {{-- <img src="{{ asset('images/svg/MoodsLogo.svg') }}" class="mood-logo mx-2" alt="footer Mood logo" /> --}}
+        <span>MOODS</span>
+        <img src="{{ asset('images/svg/Next.svg') }}" class="next" alt="footer Next logo"/>
+      </div>
     </div>
 </footer>
 @else

@@ -71,7 +71,7 @@ class RegisterController extends Controller
                 $sponsor_set_by_cookie = true;
             }
         }
-        $countries = Country::where('active', 1)->pluck('Name')->toArray();
+        $countries = Country::where('active', 1)->get();
         $phonecodes = Country::where('active', 1)->where('phonecode', '<>', 0)->orderBy('phonecode','asc')->select('phonecode')->distinct()->get()->pluck('phonecode')->all();
 
         if ($sponsor_set_by_cookie) {

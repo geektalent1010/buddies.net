@@ -148,6 +148,15 @@ body {
     color: #00ffff;
 }
 
+.footerDesc .moods-section {
+  padding: 6px 9px;
+}
+
+.footerDesc .moods-section span {
+  font-family: "DinPro Light", sans-serif;
+  font-size: 13px;
+}
+
 .navbar ul.nav.navbar-nav li a,
 .main-hamber a {
     display: block;
@@ -279,11 +288,13 @@ footer .footerDesc img.color-mark {
 }
 
 .main-bg {
+  position: relative;
     min-width: 100%;
     min-height: calc(100vh - 80px);
     margin-top: 80px;
     padding-bottom: 40px;
     background-color: #216be9;
+    z-index: 1;
 }
 
 .main-bg-login {

@@ -9,7 +9,9 @@
         padding-right: 28px;
     }
     select.country-select {
-        display: none !important;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
     }
     select.phone-select {
         width: 140px;
@@ -364,13 +366,11 @@
                         <div class="login-page">
                             <input type="text" name="country" class="form-control" id="real-country" placeholder="Country" hidden>
                             <div class="form-group mb-0">
-                                <input type="text" class="form-control d-none" id="country" placeholder="Country" disabled>
-                                <select class="form-control country-select" name="">
-                                    <option value="0"></option>
-                                    @foreach ($countries as $country)                                    
-                                    <option value="{{$country}}">{{$country}}</option>
-                                    @endforeach
-                                </select>
+                                <select class="form-control country-select webkit_style" name="country">
+                                  @foreach($countries as $country)
+                                      <option value="{{ $country->id }}">{{ $country['name'] }}</option>
+                                  @endforeach
+                              </select>
                                 <label id="country-error" class="has-error" for="country" style="display: none"></label>
                             </div>
                         </div>
@@ -583,9 +583,9 @@
             }
         });
 
-        $(document).ready(function () {
-            create_custom_dropdowns();
-        });
+        // $(document).ready(function () {
+        //     create_custom_dropdowns();
+        // });
 
         let timer = null;
 
@@ -606,47 +606,47 @@
             $("#real-state").val(document.getElementById("state").value);
         }
         
-        $('.search-city input[type="text"]').on('keyup', function() {
-            const key = $(this).val();
-            if (timer) {
-                clearTimeout(timer)
-            }
-            timer = setTimeout(function() {
-                if(key == '') {
-                    $('.addresstab').hide();
-                } else {
-                    var options = {
-                        distance: 'CITY',
-                        keyword: key,
-                    };
-                    $.ajax({
-                        url: '{{ route("address.search") }}',
-                        method: "POST",
-                        data: options,
-                        success:function(res){                            
-                            if (res.length) {
-                                var html = '';
-                                for(var resIndex = 0; resIndex < res.length; resIndex++) {
-                                    html += 
-                                        '<div class="address py-3" attr-data="' + res[resIndex].address + '"  attr-name="' + res[resIndex].name + '">' + res[resIndex].name + '</div>';
-                                }
-                                $('.addresstab').html(html);
-                                $('.addresstab').show();
-                            }
-                            else {
-                                $("#state").attr("disabled", false);
-                                $('.dropdown-select').show();
-                                $('#country').addClass('d-none');
-                            }
-                        },
-                        error:function(err){
-                            console.log("fail");
-                            toastr['error']('Error');
-                        }
-                    })
-                }
-            }, 1000);
-        })
+        // $('.search-city input[type="text"]').on('keyup', function() {
+        //     const key = $(this).val();
+        //     if (timer) {
+        //         clearTimeout(timer)
+        //     }
+        //     timer = setTimeout(function() {
+        //         if(key == '') {
+        //             $('.addresstab').hide();
+        //         } else {
+        //             var options = {
+        //                 distance: 'CITY',
+        //                 keyword: key,
+        //             };
+        //             $.ajax({
+        //                 url: '{{ route("address.search") }}',
+        //                 method: "POST",
+        //                 data: options,
+        //                 success:function(res){                            
+        //                     if (res.length) {
+        //                         var html = '';
+        //                         for(var resIndex = 0; resIndex < res.length; resIndex++) {
+        //                             html += 
+        //                                 '<div class="address py-3" attr-data="' + res[resIndex].address + '"  attr-name="' + res[resIndex].name + '">' + res[resIndex].name + '</div>';
+        //                         }
+        //                         $('.addresstab').html(html);
+        //                         $('.addresstab').show();
+        //                     }
+        //                     else {
+        //                         $("#state").attr("disabled", false);
+        //                         $('.dropdown-select').show();
+        //                         $('#country').addClass('d-none');
+        //                     }
+        //                 },
+        //                 error:function(err){
+        //                     console.log("fail");
+        //                     toastr['error']('Error');
+        //                 }
+        //             })
+        //         }
+        //     }, 1000);
+        // })
 
         $(document).on('click', '.address', function() {
             const ids = $(this).attr('attr-data').split(',');

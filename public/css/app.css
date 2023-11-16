@@ -2430,6 +2430,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .page-content .company-profile-section .checkbox-container {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -3746,6 +3747,7 @@ input[type=range]::-moz-range-thumb {
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 50px;
@@ -4294,6 +4296,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .connect-section .interest-check-section .looking-for-checks .checkbox-container {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -5230,6 +5233,7 @@ input[type=range]::-moz-range-thumb {
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 50px;

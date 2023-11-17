@@ -1059,6 +1059,27 @@ select.webkit_style {
     background-size: 16px !important;
 }
 
+.font-dinpro-18 {
+  font-family: 'DinPro' !important;
+  font-size: 18pt !important;
+}
+
+.pd-42pt {
+  padding-bottom: 42pt !important;
+}
+
+.pt-42pt {
+  padding-top: 42pt !important;
+}
+
+.mt-42pt {
+  margin-top: 42pt !important;
+}
+
+.mb-42pt {
+  margin-bottom: 42pt !important;
+}
+
 @media only screen and (max-width: 575.98px) {
     .video-section {
         display: none;

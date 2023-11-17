@@ -19,14 +19,14 @@
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 posts-section">
     <div class="row justify-content-center m-0 pt-3 w-100">
-      <div class="col-md-6 p-0 text-center create-title">
+      <div class="col-md-6 p-0 text-center create-title font-dinpro-18">
         ALL TRADES
       </div>
     </div>
     <div class="row justify-content-center m-0 pb-3 w-100">
       @if (is_null($trades) || !count($trades))
-        <div class="col d-flex justify-content-center align-items-center no-members">
-          <div class="text-center">NO POST FOUND</div>
+        <div class="col d-flex justify-content-center align-items-center no-members font-dinpro-18">
+          <div class="text-center">[NO TRADES FOUND]</div>
         </div>
       @else
         <div class="col-md-6 p-0">

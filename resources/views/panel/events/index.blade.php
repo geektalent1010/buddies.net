@@ -18,8 +18,8 @@
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 posts-section">
     @if (is_null($posts) || !count($posts))
-      <div class="col d-flex justify-content-center align-items-center no-members">
-        <div class="text-center">NO POST FOUND</div>
+      <div class="col d-flex justify-content-center align-items-center no-members font-dinpro-18">
+        <div class="text-center">[NO EVENTS FOUND]</div>
       </div>
     @else
     <div class="row justify-content-center m-0 pt-4 pb-3 w-100">

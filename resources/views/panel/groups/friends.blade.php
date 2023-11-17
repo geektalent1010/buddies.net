@@ -12,10 +12,10 @@
   <div class="row m-0 p-0 w-100 groups-section">
     <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="text-center my-4 top-title">NEW INVITES</div>
+        <div class="text-center my-4 top-title font-dinpro-18">NEW INVITES</div>
         @if (is_null($invites) || !count($invites))
-          <div class="text-center col no-members text-blue">
-            <b>NO</b>
+          <div class="text-center col no-members text-blue font-dinpro-18 mt-42pt mb-42pt">
+            [NO NEW INVITES FOUND]
           </div>
         @else
         <div class="member-body">
@@ -45,10 +45,10 @@
           @endforeach
         </div>
         @endif
-        <div class="text-center py-3 top-title">GROUPS FROM FRIENDS</div>
+        <div class="text-center py-3 top-title font-dinpro-18">GROUPS FROM FRIENDS</div>
         @if (is_null($members) || !count($members))
-          <div class="text-center col no-members mt-5">
-              NO GROUP FOUND
+          <div class="text-center col no-members mt-5 font-dinpro-18 mt-42pt">
+              [NO GROUPS FOUND]
           </div>
         @else
           <div class="member-body flat-scroll">

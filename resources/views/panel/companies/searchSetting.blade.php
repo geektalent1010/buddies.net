@@ -32,7 +32,7 @@
                     <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == '<10KM') active @endif" onclick="select_distance(event)"><10KM</div>
                     <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == '< 50KM') active @endif" onclick="select_distance(event)"><50KM</div>
                     <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == '< 100KM') active @endif" onclick="select_distance(event)"><100KM</div>
-                    <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == '100KM >') active @endif" onclick="select_distance(event)">100KM></div>
+                    <div class="distance_tablinks py-4 @if (isset($searchSetting) && ($searchSetting->distance == '100KM >' || $searchSetting->distance == 'ALL')) active @endif" onclick="select_distance(event)">ALL</div>
                 </div>
                 
                 <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">

@@ -15,7 +15,7 @@
   <div class="row m-0 px-0 w-100 groups-section">
     <div class="row justify-content-center m-0 pt-4 pb-3 w-100">
       <div class="col-md-6 p-0 text-center top-title">
-        <div class="text-center pt-3 top-title">
+        <div class="text-center pt-3 top-title font-dinpro-18">
           MY GROUPS
         </div>
         <div class="row justify-content-center align-items-center my-4 save-btn-section w-100 p-0 m-0">
@@ -25,8 +25,8 @@
     </div>
     <div class="row justify-content-center m-0 pb-3 w-100">
       @if (is_null($groups) || !count($groups))
-        <div class="col d-flex justify-content-center align-items-center no-members">
-          <div class="text-center">NO GROUP FOUND</div>
+        <div class="col d-flex justify-content-center align-items-center no-members font-dinpro-18 mt-42pt md-42pt">
+          <div class="text-center">[NO GROUPS FOUND]</div>
         </div>
       @else
         <div class="col-md-6 p-0">

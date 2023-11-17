@@ -117,7 +117,7 @@
         font-weight: 500 !important;
     }
     .important-desc {
-        font-size: 11px !important;
+        font-size: 12px !important;
     }
 </style>
 @endsection
@@ -1223,7 +1223,7 @@
             if(!$('#refererNumber').val())
             {
                 alert('Please contact info@buddies.net');
-                document.location.href = "{{route('login')}}";
+            document.location.href = "{{route('login')}}";
             }
         });
 

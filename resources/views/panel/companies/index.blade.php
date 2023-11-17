@@ -18,7 +18,7 @@
   <div class="row m-0 px-0 w-100 companies-section">
     <div class="row justify-content-center m-0 p-0 w-100">
       @if (is_null($companies) || !count($companies))
-        <div class="col no-members mt-5 text-center">
+        <div class="col no-members mt-5 text-center font-dinpro-18">
           No Matched Companies
         </div>
       @else

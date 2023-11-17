@@ -15,12 +15,12 @@
   <div class="row m-0 px-0 w-100 connect-section">
     <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="text-center py-3 new-requests">
+        <div class="text-center py-3 new-requests font-dinpro-18">
           NEW INVITES
         </div>
         @if (is_null($requests) || !count($requests))
-          <div class="d-flex justify-content-center align-items-center no-members">
-            <div class="text-center text-blue">NO</div>                
+          <div class="d-flex justify-content-center align-items-center no-members font-dinpro-18 mt-42pt mb-42pt">
+            <div class="text-center text-blue">[NO NEW INVITES FOUND]</div>
           </div>
         @else
           <div class="member-body">
@@ -56,11 +56,11 @@
           @endforeach
           </div>
         @endif
-        <div class="text-center my-4 top-title">
+        <div class="text-center my-4 top-title font-dinpro-18">
           GET CONNECTED
         </div>
         <div class="search-input-section">
-          <input id="searchKey" type="text" class="form-control" name="searchKey" placeholder="Find a friend">
+          <input id="searchKey" type="text" class="form-control" name="searchKey" placeholder="Find new buddies">
           <div class="search-icon-section">
             <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
           </div>

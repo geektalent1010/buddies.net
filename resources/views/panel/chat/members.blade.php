@@ -16,8 +16,8 @@
   <div class="row m-0 p-0 w-100 chat-section">
     <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="text-center my-4">
-          <b>CHAT LIST<b>
+        <div class="text-center my-4 font-dinpro-18">
+          CHAT LIST
         </div>
         <div class="search-input-section">
           <input id="searchKey" type="text" class="form-control" name="searchKey" placeholder="Search">
@@ -28,7 +28,7 @@
         <div class="member-body flat-scroll" id="app">
           @if (is_null($channels) || !count($channels))
             <div class="d-flex justify-content-center align-items-center no-members">
-              <div class="text-center"><div>NO CHAT FOUND</div>
+              <div class="text-center"><div class="font-dinpro-18">[NO CHATS FOUND]</div>
               <div class="find-members">Find a buddy to start chat</div></div>
             </div>
           @else

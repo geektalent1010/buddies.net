@@ -103,7 +103,7 @@ class RegisterController extends Controller
             $introducer = User::where('customer_id', $referralCookie)->first();
         }
 
-        $this->guard()->login($user);
+        // $this->guard()->login($user);
 
         if ($response = $this->registered($request, $user, $introducer)) {
             return redirect()->route('dashboard');
@@ -137,9 +137,11 @@ class RegisterController extends Controller
             $introducerName = $introducer->profile->first_name . ' ' . $introducer->profile->last_name;
             Mail::to($introducer->email)->send(new ReferralEmail($userData, $introducerName));
 
-            echo 'Message has been sent. ';
+            // echo 'Message has been sent. ';
+            return true;
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$e->ErrorInfo}";
+            return false;
         }
     }
 

@@ -14,7 +14,7 @@
       <div class="unread-message-notify" :class="{ 'offline-status': !onlineStatus, 'online-status': onlineStatus }">
         <div class="unread-messages-number" v-if="unreadMessages != 0">{{unreadMessages}}</div>
       </div>
-	  	<a class="message-icon-btn" :href="authUser.id + '_' + memberInfo.id">
+	  	<a class="message-icon-btn" :href="'messages/' + authUser.id + '_' + memberInfo.id">
 				<span class="message-icon"><i class="fa fa-comment" aria-hidden="true"></i></span>
 			</a>
       <div class="disconnect-icon-btn" :attr-channelId="channelInfo.id">

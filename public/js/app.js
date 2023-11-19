@@ -2942,7 +2942,7 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.unreadMessages))]) : _vm._e()]), _vm._v(" "), _c("a", {
     staticClass: "message-icon-btn",
     attrs: {
-      href: _vm.authUser.id + "_" + _vm.memberInfo.id
+      href: "messages/" + _vm.authUser.id + "_" + _vm.memberInfo.id
     }
   }, [_vm._m(0)]), _vm._v(" "), _c("div", {
     staticClass: "disconnect-icon-btn",

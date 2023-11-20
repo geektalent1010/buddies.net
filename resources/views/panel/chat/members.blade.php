@@ -27,9 +27,8 @@
         </div>
         <div class="member-body flat-scroll" id="app">
           @if (is_null($channels) || !count($channels))
-            <div class="d-flex justify-content-center align-items-center no-members">
-              <div class="text-center"><div class="font-dinpro-18">[NO CHATS FOUND]</div>
-              <div class="find-members">Find a buddy to start chat</div></div>
+            <div class="d-flex justify-content-center no-members my-4">
+              <div class="text-center"><div class="font-dinpro-18">[ NO CHATS FOUND ]</div>
             </div>
           @else
             @foreach ($channels as $channel)

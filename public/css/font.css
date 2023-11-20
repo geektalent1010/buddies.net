@@ -285,6 +285,11 @@
   src: url('../fonts/DinPro/DINPro-CondMediIta.otf');
 }
 
+@font-face {
+  font-family: 'DinPro Regular';
+  src: url('../fonts/DinPro/DINPro-Regular.otf');
+}
+
 
 
 

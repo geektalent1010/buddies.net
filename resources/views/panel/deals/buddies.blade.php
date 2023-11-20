@@ -25,8 +25,8 @@
     </div>
     <div class="row justify-content-center m-0 pb-3 w-100">
       @if (is_null($deals) || !count($deals))
-        <div class="col d-flex justify-content-center align-items-center no-members font-dinpro-18">
-          <div class="text-center">[NO DEALS FOUND]</div>
+        <div class="col d-flex justify-content-center no-members font-dinpro-18 mt-42pt">
+          <div class="text-center">[ NO DEALS FOUND ]</div>
         </div>
       @else
         <div class="col-md-6 p-0">

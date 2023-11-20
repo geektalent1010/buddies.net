@@ -345,6 +345,9 @@
                 }
             }
         }
+        .hero-detail {
+          padding-left: 76px !important;
+        }
     }
 }
 
@@ -357,5 +360,19 @@
         .members-section {
             display: none;
         }
+        .connect-btn-section.desktop{
+          display: none;
+        }
+
+        .connect-btn-section.mobile{
+          display: block !important;
+        }
     }
+}
+
+
+@media only screen and (max-width: 420px) {
+  .connect-btn-section.mobile .profile-connect-btn {
+    margin-left: -7%;
+  }
 }

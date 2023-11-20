@@ -30,12 +30,12 @@
     </div>
     <div id="hero{{ $index + 1 }}" class="collapse" aria-labelledby="herohead{{ $index + 1 }}" data-parent="#heroes">
       <div class="hero-detail row mr-0 ml-0">
-        <div class="col-md-6 p-0">
+        <div class="col-md-6 p-0 col-6">
           <p class="mb-0">{{ $hero->profile->getCountry() }}</p>
           <p>{{ $hero->profile->getCity() }}</p>
           <p class="mb-0">{{ $hero->referrals_count }} Referrals</p>
         </div>
-        <div class="col-md-6 p-0">
+        <div class="col-md-6 p-0 col-6">
           <div class="follower-section d-flex justify-content-end align-items-center  mb-3 option-icon-btn">
             <span
               class="option-icon heart-icon {{ in_array($authUser->id, explode(',', $hero->profile->followers)) ? 'like' : '' }} like hero{{ $hero->profile->id }}"
@@ -46,12 +46,20 @@
               $hero->profile->followers : '0' }}</p>
           </div>
           @if ($hero->status)
-          <div class="connect-btn-section">
+          <div class="connect-btn-section desktop">
             <a href="{{ route('connect.request', ['userId' => $hero->id ]) }}"
               class="btn btn-primary profile-connect-btn">CONNECT</a>
           </div>
           @endif
         </div>
+        @if ($hero->status)
+          <div class="col-12 p-0 mt-3">
+            <div class="connect-btn-section mobile">
+              <a href="{{ route('connect.request', ['userId' => $hero->id ]) }}"
+                class="btn btn-primary profile-connect-btn">CONNECT</a>
+            </div>
+          </div>
+        @endif
       </div>
     </div>
     @endforeach

@@ -20,7 +20,7 @@
         </div>
         @if (is_null($requests) || !count($requests))
           <div class="d-flex justify-content-center align-items-center no-members font-dinpro-18 mt-42pt mb-42pt">
-            <div class="text-center text-blue">[NO NEW INVITES FOUND]</div>
+            <div class="text-center">[ NO NEW INVITES FOUND ]</div>
           </div>
         @else
           <div class="member-body">
@@ -56,7 +56,7 @@
           @endforeach
           </div>
         @endif
-        <div class="text-center my-4 top-title font-dinpro-18">
+        <div class="text-center py-4 top-title font-dinpro-18">
           GET CONNECTED
         </div>
         <div class="search-input-section">

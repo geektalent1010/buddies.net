@@ -1080,6 +1080,20 @@ select.webkit_style {
   margin-bottom: 42px !important;
 }
 
+.wave-video-section {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 120px);
+  object-fit: cover;
+}
+.wave-video-section-mobile {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 120px);
+  object-fit: cover;
+  display: none;
+}
+
 @media only screen and (max-width: 575.98px) {
     .video-section {
         display: none;

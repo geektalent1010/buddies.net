@@ -474,7 +474,8 @@
 
       $(document).ready(function() {
         const element = document.querySelector('.main-bg');
-        element.style.background = 'none';
+        if (element)
+          element.style.background = 'none';
       })
     </script>
 

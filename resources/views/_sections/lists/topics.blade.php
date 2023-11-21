@@ -8,7 +8,7 @@
 
       <div id="faq1" class="collapse" aria-labelledby="faqhead1" data-parent="#faq">
         <div class="card-body">
-          <div class="">Dashboard is the navigation tool for your entire BUDDIES suite. Just click or tap on one of the dashboard icons and you will be forwarded to the requested page.</div>
+          <div class="">Dashboard is the navigation tool for your entire Buddies suite. Just click or tap on one of the dashboard icons and you will be forwarded to the selected page.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
             <div class="icon-section">
@@ -94,7 +94,7 @@
             <div>Dashboard</div>
           </div>
           <div class="mb-3">Click or tap SAVE to store your page.</div>
-          <div class="">On the My details page you are able to select 5 interest categories. This offers a great opportunity to grow your buddies list with community members with the same interests.</div>
+          <div class="">On the my details page you are able to selected 5 interest categories. This offers a great opportunity to grow your buddies list with community members with the same interests.</div>
           <div class="mt-4 d-flex">
             <button class="go-to-button" onclick="window.location.href='{{ route('profile.index') }}'">
               {{ __('VISIT') }}
@@ -110,7 +110,7 @@
 
       <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq">
         <div class="card-body">
-          <div class="mb-3">Connect with other community members and build your buddies list. You can simply find someone by viewing the list, type a nmae, selecte a preferred distance, geneder or age.</div>
+          <div class="mb-3">Connect with other community members and build your buddies list. You can simply find someone by viewing the list, type a name, select a preferred dis- tance, gender or age.</div>
           <div class="">To connect with someone, you are obliged to write and send a message first to introduce yourself. As soon as someone receives and reads your message and accepts your request to become buddies, the two of you will be connected. Your new buddy will now be visible in your buddies list.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
@@ -164,7 +164,7 @@
 
       <div id="faq5" class="collapse" aria-labelledby="faqhead5" data-parent="#faq">
         <div class="card-body">
-          <div class="">See all your connected buddies in an alphabetical overview. Simply scroll the list or type any name in the search field to quickly find one of your buddies.</div>
+          <div class="">See all your buddies in alphabetical order. Simply type any name in the search field to quickly find one of your buddies.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
             <div class="icon-section">
@@ -210,7 +210,7 @@
       <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq">
         <div class="card-body">
           <div class="mb-3">Chat with your buddies whenever you want, and from any device you want. View the active chat list, or simply type any name to find an active chat.</div>
-          <div class="">To start a first or new chat with a buddy not visible in the chat list, go to your buddies list, find the buddy and click the chat icon and write a first message.</div>
+          <div class="">To start a first or new chat with a buddy not visible in the chat list, go to your buddies list, find the buddy, click the chat icon and write a first message.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
             <div class="icon-section">
@@ -283,7 +283,7 @@
 
       <div id="faq6" class="collapse" aria-labelledby="faqhead6" data-parent="#faq">
         <div class="card-body three-dots-container">
-          <div class="mb-3">Create connections and build a deeper sense of community. Start your own group as a dedicated space for your personal community to flourish. Groups are mostly an incubator for ideas and feedback through authentic conversations.</div>
+          <div class="mb-3">Create connections and build a deeper sense of community. Start your own group as a dedicated space for your personal community to flourish. Groups are mostly an incubator for ideas and feedback through authentic conversations.          </div>
           <div class="">Groups are only visible for added community members. To keep groups clean and to stay in line with regulations, the creator of a group is the only obliged to add or remove group members.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
@@ -353,10 +353,10 @@
 
       <div id="faq8" class="collapse" aria-labelledby="faqhead8" data-parent="#faq">
         <div class="card-body three-dots-container">
-          <div class="mb-3">Everyone has a story. In the STORIES channel, you can read personal stories from other community members and write your own. Add a nice picture and let us know where it’s taken. Introduce yourself to the community to find new buddies. You want to do something nice next weekend and want to buddy up with someone to join?</div>
+          <div class="mb-3">Everyone has a story. In the stories channel, you can read personal stories from other community members and write your own. Add a nice picture and let us know where it’s taken. Introduce yourself to the community to find new buddies. You want to do something nice next weekend and want to buddy up with someone to join?</div>
           <div class="mb-3">Don’t forget to share your experience about a great deal from the local shops or companies. This way we can say: “Thank you.” and help them grow as well.</div>
-          <div class="mb-3">Make sure you don’t violate the community guidelines. As BUDDIES, we need to be compliant with the new regulatory EU Digital Service Act, meaning that special views or political opinions can be shared in one of your private groups with like-minded buddies, not in public channels. Let’s respect the new regulations and avoid penalties.</div>
-          <div class="mb-3">As BUDDIES we want to create a positive experience for anyone.</div>
+          <div class="mb-3">Make sure you don’t violate the community guidelines. As Buddies, we need to be compliant with the new regulatory EU Digital Service Act, meaning that special views or political opinions can be shared in one of your private groups with like-minded buddies, not in public channels. Let’s respect the new regulations and avoid penalties.</div>
+          <div class="mb-3">As Buddies we want to create a positive experience for anyone.</div>
           <div class="">If you like a story, click the heart. How many hearts will you collect today?</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
@@ -426,10 +426,10 @@
 
       <div id="faq7" class="collapse" aria-labelledby="faqhead7" data-parent="#faq">
         <div class="card-body">
-          <div class="mb-3">Local shops and companies are an important part of the BUDDIES community as they offer community members special deals which can be found on the DEALS page. As a community member, you will always have an advantage on regular pricing.</div>
-          <div class="mb-3">As BUDDIES we strive to create mutual-gains formula that benefits all.</div>
-          <div class="mb-3">Find shops and companies by name. Visit their profile page to find out more and click the FOLLOW button to add them to your favorites list.</div>
-          <div class="">Feel free to refer your favorite local shops or companies to the constantly growing BUDDIES platform.</div>
+          <div class="mb-3">Local shops and companies are an important part of the buddies community as they offer community members special deals which can be found on the deals page. As a community member, you will always have an advantage on regular pricing.</div>
+          <div>As buddies we strive to create mutual-gains formula that benefits all.</div>
+          <div class="mb-3">Find shops and companies by name. Visit their profile page to find out more or click the follow button to add them to your favorites list.</div>
+          <div class="">Feel free to refer your favorite local shops or companies to the constantly growing buddies platform.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
             <div class="icon-section">
@@ -476,7 +476,7 @@
 
       <div id="faq18" class="collapse" aria-labelledby="faqhead18" data-parent="#faq">
         <div class="card-body">
-          <div class="mb-3">We love to put our buddies in the potlight. On the Heroes page you'll find a list of the most active buddies, the ones that promote the platform in a way that it makes a real difference, Buddies is all about making a difference, one person at a time, for you and everyone you know.</div>
+          <div class="mb-3">We love to put our buddies in the spotlight. On the Heroes page you’ll find a list of the most active buddies, the ones that promote the platform in a way that it makes a real difference. Buddies is all about making a difference, one person at a time, for you and everyone you know.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
             <div class="icon-section">
@@ -505,7 +505,7 @@
 
       <div id="faq20" class="collapse" aria-labelledby="faqhead20" data-parent="#faq">
         <div class="card-body">
-          <div class="mb-3">The hears channel is the one to visit for the buddies that are looking for more than just a chat. If you are looking for romance or maybe your soulmate, the hearts channel will make your heart beats a little bit faster. Available soon.</div>
+          <div class="mb-3">The hearts channel is the one to visit for buddies that are looking for more than just a chat. If you are looking for romance or maybe your soulmate, the hearts channel will make your heart beats a little bit faster. Available soon.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
             <div class="icon-section">
@@ -532,10 +532,11 @@
 
       <div id="faq12" class="collapse" aria-labelledby="faqhead12" data-parent="#faq">
         <div class="card-body">
-          <div class="mb-3">What if you can buy something and you know you always have an advantage? That’s what the DEALS channel is all about.</div>
-          <div class="mb-3">In times where big tech wants to take over the world, we as BUDDIES prefer to support our local shops and companies owned by the people we know.</div>
-          <div class="mb-3">When you like their offers in DEALS and you buy something from them, they are happy with you as a new customer. In return they give you an advantage that makes you happy again.</div>
-          <div class="">In this mutual-gains approach formula all parties work together to meet interests and maximize value creation. TOGETHER WE ARE <b>BETTER</b></div>
+          <div>What if you can buy something and you know you always have an advantage?</div>
+          <div class="mb-3">That’s what the deals channel is all about.</div>
+          <div class="mb-3">In times where big tech wants to take over the world, we as Buddies prefer to support our local shops and companies owned by the people we know.</div>
+          <div class="mb-3">When you like their offers in deals and you order from them, they are happy with you as a new customer and in return they give you an advantage that makes you happy again.</div>
+          <div class="">In this mutual-gains approach formula all parties work together to meet interests and maximize value creation. TOGETHER WE ARE BETTER.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
             <div class="icon-section">
@@ -595,9 +596,9 @@
       <div id="faq11" class="collapse" aria-labelledby="faqhead11" data-parent="#faq">
         <div class="card-body three-dots-container">
           <div class="mb-3">Sometimes you own things, you dont really need and sometimes you need things, you don’t own. With our beautiful planet and nature in mind, we don’t throw away things. Let’s make someone else happy and give things a 2nd life.</div>
-          <div class="mb-3">TRADE is a channel to exchange something with someone else. Look at it as an environmental friendly marketplace where money doesn’t play a role.</div>
-          <div class="mb-3">Maybe you have a bike you don’t use any longer. Another community member is willing to trade it for a TV. TRADE just made two people happy, plus we saved the environment. TOGETHER WE ARE BETTER</div>
-          <div class="">Maybe you just want to give away something to someone...<br/>That’s appreciated as well :)</div>
+          <div class="mb-3">Trade is a channel to exchange something with someone else. Look at it as an environmental friendly marketplace where money doesn’t play a role.</div>
+          <div class="mb-3">Maybe you have a bike you don’t use any longer. Another community member is willing to trade it for a TV. Trade just made two people happy, plus we saved the environment. TOGETHER WE ARE BETTER.</div>
+          <div class="">Maybe you just want to give away something to someone... That’s appreciated as well :)</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
             <div class="icon-section">
@@ -666,8 +667,8 @@
 
       <div id="faq13" class="collapse" aria-labelledby="faqhead13" data-parent="#faq">
         <div class="card-body three-dots-container">
-          <div class="mb-3">If you are looking for a new job, you are on the right channel. If you have or know someone who has a job to offer, you are on the right channel. JOBS is all about connecting people to JOBS and JOBS to people.</div>
-          <div class="">Maybe you think, i have a job already. Well you are “safe” for now, but no one can predict the future. So maybe next month or even next year you will appreciate this channel as it can happen to anyone. Don’t forget, the world is changing.</div>
+          <div class="mb-3">If you are looking for a new job, you are on the right channel. If you have or know someone who has a job to offer, you are on the right channel. Jobs is all about connecting people to jobs and jobs to people.</div>
+          <div class="">Maybe you think, i have a job already. Well you are “safe” for now, but no one can predict the future. Maybe next month or even next year you will appreciate this channel. Don’t forget, the world is changing.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
             <div class="icon-section">
@@ -771,7 +772,7 @@
 
       <div id="faq19" class="collapse" aria-labelledby="faqhead19" data-parent="#faq">
         <div class="card-body">
-          <div class="mb-3">Buddies Cafe is an amazing new concept that will grow in tandem with the Buddies platform. We all love to build an online community, but let's not forget about real life. As soon as a Buddies region exapnds, we are on the outlook for a local cafe or restaurant where our buddies can meet, have a chat, have a drink or even enjoy a dinner together. Buddies Cafe, let's meet one day.</div>
+          <div class="mb-3">Buddies Cafe is an amazing new concept that will grow in tandem with the Buddies platform. We all love to build an online community, but let’s not forget about real life. As soon as a Buddies region expands, we are on the outlook for a local cafe or restaurant where our buddies can meet, have a chat, have a drink or even enjoy a dinner together. Buddies Cafe, let’s meet one day.</div>
           <div class="">Stay Tuned!</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
@@ -801,7 +802,7 @@
 
       <div id="faq9" class="collapse" aria-labelledby="faqhead9" data-parent="#faq">
         <div class="card-body">
-          <div class="mb-3">Anything about technical development, updates and maintainance from your IT or Support team will be shared with you in the NEWS channel.</div>
+          <div class="mb-3">Anything about technical development, updates and maintainance from your IT or Support team will be shared with you in the news channel.</div>
           <div class="">Stay Tuned!</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
@@ -833,10 +834,10 @@
         <div class="card-body">
           <div class="mb-3">We love to show our enthusiasm to the world to let our amazing community grow. The more like-minded people, the more fun we all have.</div>
           <div class="mb-3">Quick question: Have you ever been watching a movie to recommended it later to a friend? The movie company paid you for promoting, right?</div>
-          <div class="mb-3">At BUDDIES we think different. SHARE provides you with a personal referral link that you can share with anyone you know. When people use your link and pay for a subscription, you will be rewarded with credits as a “THANK YOU.”</div>
+          <div class="mb-3">At Buddies we think different. Share provides you with a personal referral link that you can share with anyone you know. When people use your link and pay for a subscription, you will be rewarded with credits as a “Thank You.”</div>
           <div class="mb-3">As you know, we don’t use advertising companies for promotions. We believe that the enthusiasm from a happy user has much more value.</div>
-          <div class="mb-3">In SHARE, you will find a nice collection of social media ads and movies that can be shared on any social platform. Let’s give BUDDIES the right promotion. Don’t forget to place your referral link by posting, it might bring you more credits.</div>
-          <div class="">Let’s show the world our real colors and let’s go viral.</div>
+          <div class="mb-3">In share, you will find a nice collection of social media ads and movies that can be shared on any social platform. Let’s give Buddies the right exposure. Don’t forget to place your referral link while posting, it might bring you more credits.</div>
+          <div class="">Let’s show the world our real face and let’s go viral.</div>
           <div class="mt-4 d-flex">
             <button class="go-to-button" onclick="window.location.href='{{ route('share.index') }}'">
               {{ __('VISIT') }}
@@ -852,13 +853,14 @@
 
       <div id="faq14" class="collapse" aria-labelledby="faqhead14" data-parent="#faq">
         <div class="card-body">
-          <div class="mb-3">As BUDDIES we know that the world cannot be changed at once. “If we can positively touch the lives of a few so they can positively touch the lives of a few, we are on the right path to serve the many!”</div>
-          <div class="mb-3">The MORE project is a community driven project to provide more health, more education and more joy to local people in need.</div>
+          <div class="mb-3">As Buddies we know that the world cannot be changed at once. “If we can positively touch the lives of a few so they can positively touch the lives of a few, we are on the right path to serve the many!”</div>
+          <div class="mb-3">The More project is a community driven project to provide more health, more education and more joy to local people in need.</div>
           <div class="mb-2">USUAL PROJECT</div>
-          <div class="mb-3">Many projects have a business model attached. This makes that after paying huge salaries and large overhead costs, only a very small percentage of donations end up where they belong.</div>
+          <div class="mb-3">Many projects have a business model attached. This makes that after paying huge salaries and large overhead costs, only a very small percentage of funds collected end up where they belong.</div>
           <div class="mb-2">THE MORE PROJECT</div>
-          <div class="mb-3">BUDDIES uses a different approach. As community we stand together and we focus on local help. 100% will end up where it belongs. No matter if we provide a bag filled with healthy food or we organize a special day for kids with a termal illness, the community will always provide a helping hand and the needed funds to make things happen. No one expects a director salary in return.</div>
-          <div class="">WE ARE BETTER <b>TOGETHER</b><br/>Stay tuned!</div>
+          <div class="mb-3">Buddies uses a different approach. As community we stand together and we focus on local help. 100% will end up where it belongs. No matter if we provide a bag filled with healthy food or organize a special day for kids in need, the community will always provide a helping hand and funds to make things happen. No one expects something in return.</div>
+          <div class="mb-3">WE ARE BETTER TOGETHER.</div>
+          <div class="">Stay tuned!</div>
           <div class="mt-4 d-flex">
             <button class="go-to-button">
               {{ __('VISIT') }}
@@ -876,8 +878,8 @@
         <div class="card-body">
           <div class="mb-3">What’s in your wallet?</div>
           <div class="mb-3">Don’t worry, that wasn’t a real question to you directly. :)</div>
-          <div class="mb-3">In your WALLET, all credits you have earned as a reward for promoting BUDDIES throught your referral link will be visible. We are developing a future system to add a real value to your credits so the can be used on the platform.</div>
-          <div class="mb-3">For example. Everytime you want to pay a subscription, the system will check your wallet how much credits it contains. If the value is enough to pay your subscription, you can choose to use your credits instead of any other payment method.</div>
+          <div class="mb-3">In your wallet, all credits you have earned as a reward for promoting Buddies throught your referral link will be visible. We are in development of a system to add a real value to your earned credits so the can be used on the platform.</div>
+          <div class="mb-3">For example. Everytime you want to pay a subscription, the system will check your wallet how much credits it holds. If the value is enough to pay your sub- scription, you can choose to use credits instead of any other payment method.</div>
           <div class="">As we love transparency, you will find a list with everyone that signed up through your referral link including their status. In this overview you can follow how your collected credits are earned.</div>
           <div class="action-title my-3">Actions</div>
           <div class="d-flex align-items-center mb-3">
@@ -904,7 +906,7 @@
             <div class="icon-section"><span class="nav-icon active"><img src="{{ asset('images/logo/LogoMenu.svg') }}" class="img-fluid w-50" alt="Buddies.zone" title="Buddies.zone" /></span></div>
             <div>Dashboard</div>
           </div>
-          <div class="">Now, let’s share BUDDIES, have some fun and earn some credits.</div>
+          <div class="">Now, let’s share Buddies, have some fun and grow the community.</div>
           <div class="mt-4 d-flex">
             <button class="go-to-button" onclick="window.location.href='{{ route('tokens.index') }}'">
               {{ __('VISIT') }}

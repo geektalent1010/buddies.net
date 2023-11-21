@@ -730,7 +730,7 @@
         </div>
       </div>
     </div>
-    <div class="card">
+    {{-- <div class="card">
       <div class="card-header" id="faqhead10">
         <a href="#" class="btn btn-header-link member-item collapsed" data-toggle="collapse" data-target="#faq10" aria-expanded="true" aria-controls="faq10" attr-fullname="EVENTS">EVENTS</a>
       </div>
@@ -764,7 +764,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <div class="card">
       <div class="card-header" id="faqhead19">
         <a href="#" class="btn btn-header-link member-item collapsed" data-toggle="collapse" data-target="#faq19" aria-expanded="true" aria-controls="faq19" attr-fullname="CAFE">BUDDIES CAFE</a>

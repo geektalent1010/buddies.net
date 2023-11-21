@@ -23,7 +23,7 @@
         <div class="row justify-content-center m-0 w-100">
             <div class="col-md-6 p-0" id="setting-item">
                 <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
-                    <p>SELECT DISTANCE</p>
+                    <p class="font-dinpro-18">SELECT DISTANCE</p>
                 </div>
                 <div class="row justify-content-center m-0 distancetab tab-4">
                     <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == '<10KM') active @endif" onclick="select_distance(event)"><10KM</div>
@@ -33,7 +33,7 @@
                 </div>
                 
                 <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
-                    <p>SELECT 1 CATEGORY</p>
+                    <p class="font-dinpro-18">SELECT 1 CATEGORY</p>
                 </div>
                 <div class="w-100 accordion" id="category">
                 <div class="card">

@@ -1940,7 +1940,7 @@ input[type=range]::-moz-range-thumb {
   outline: none;
   cursor: pointer;
   font-size: 18px;
-  width: calc(33.3% - 2px);
+  width: calc(33% - 2px);
   text-align: center;
   margin-left: 1px;
   margin-right: 1px;
@@ -1952,6 +1952,10 @@ input[type=range]::-moz-range-thumb {
 
 .setting-section .distancetab .active {
   background-color: rgba(4, 36, 107, 0.7490196078);
+}
+
+.setting-section .distancetab.tab-4 div {
+  width: calc(25% - 2px);
 }
 
 .setting-section .addresstab {

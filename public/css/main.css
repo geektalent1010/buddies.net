@@ -1072,12 +1072,12 @@ select.webkit_style {
   padding-top: 42pt !important;
 }
 
-.mt-42pt {
-  margin-top: 42pt !important;
+.mt-42px {
+  margin-top: 42px !important;
 }
 
-.mb-42pt {
-  margin-bottom: 42pt !important;
+.mb-42px {
+  margin-bottom: 42px !important;
 }
 
 @media only screen and (max-width: 575.98px) {

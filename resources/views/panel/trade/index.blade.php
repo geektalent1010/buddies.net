@@ -25,7 +25,7 @@
     </div>
     <div class="row justify-content-center m-0 pb-3 w-100">
       @if (is_null($trades) || !count($trades))
-        <div class="col d-flex justify-content-center no-members font-dinpro-18 mt-42pt">
+        <div class="col d-flex justify-content-center no-members font-dinpro-18 mt-42px">
           <div class="text-center">[ NO TRADES FOUND ]</div>
         </div>
       @else

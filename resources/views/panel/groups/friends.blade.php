@@ -14,7 +14,7 @@
       <div class="col-md-6 p-0">
         <div class="text-center my-4 top-title font-dinpro-18">NEW INVITES</div>
         @if (is_null($invites) || !count($invites))
-          <div class="text-center col no-members text-blue font-dinpro-18 mt-42pt mb-42pt">
+          <div class="text-center col no-members text-blue font-dinpro-18 mt-42px mb-42px">
             [ NO NEW INVITES FOUND ]
           </div>
         @else
@@ -47,7 +47,7 @@
         @endif
         <div class="text-center py-3 top-title font-dinpro-18">GROUPS FROM FRIENDS</div>
         @if (is_null($members) || !count($members))
-          <div class="text-center col no-members mt-5 font-dinpro-18 mt-42pt">
+          <div class="text-center col no-members mt-5 font-dinpro-18 mt-42px">
               [ NO GROUPS FOUND ]
           </div>
         @else

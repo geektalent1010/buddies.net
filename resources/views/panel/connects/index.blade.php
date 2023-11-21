@@ -19,7 +19,7 @@
           NEW INVITES
         </div>
         @if (is_null($requests) || !count($requests))
-          <div class="d-flex justify-content-center align-items-center no-members font-dinpro-18 mt-42pt mb-42pt">
+          <div class="d-flex justify-content-center align-items-center no-members font-dinpro-18 mt-42px mb-42px">
             <div class="text-center">[ NO NEW INVITES FOUND ]</div>
           </div>
         @else

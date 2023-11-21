@@ -22,9 +22,6 @@
     <div class="row m-0 p-0 w-100 setting-section search-section">
         <div class="row justify-content-center m-0 w-100">
             <div class="col-md-6 p-0" id="setting-item">
-                <div class="row justify-content-center border-color-section px-4 m-0 pt-4 pb-2">
-                    <p>SEARCH SETTINGS</p>
-                </div>
                 <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
                     <p>SELECT DISTANCE</p>
                 </div>

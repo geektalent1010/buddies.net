@@ -1,21 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);.wave-video-section {
-  position: absolute;
-  width: 100%;
-  height: calc(100vh - 120px);
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.wave-video-section-mobile {
-  position: absolute;
-  width: 100%;
-  height: calc(100vh - 120px);
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: none;
-}
-
-.dashboard-section {
+@import url(https://fonts.googleapis.com/css?family=Nunito);.dashboard-section {
   width: 50%;
   padding-top: 20px;
   padding-bottom: 20px;

@@ -425,6 +425,14 @@
         document.querySelector('.main-img-mobile').style.display='none';
       }
 
+      function mainVideoHidden() {
+        document.querySelector('.wave-video-section').style.display='none';
+      }
+
+      function mainVideoMobileHidden() {
+        document.querySelector('.wave-video-section-mobile').style.display='none';
+      }
+
       function updateVideoSource() {
         document.querySelector('.main-img').src = '{{ asset('') }}' + desktopPosterArray[srcIndex] + '?' + '{{time()}}';
         document.querySelector('.main-img-mobile').src = '{{ asset('') }}' + MobilePosterArray[srcIndex] + '?' + '{{time()}}';
@@ -476,6 +484,12 @@
         const element = document.querySelector('.main-bg');
         if (element)
           element.style.background = 'none';
+        if (window.location.href.includes('/login') || window.location.href.includes('/register')) {
+          mainImageHidden();
+          mainImageMobileHidden();
+          mainVideoHidden();
+          mainVideoMobileHidden();
+        }
       })
     </script>
 

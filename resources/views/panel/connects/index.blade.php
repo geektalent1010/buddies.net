@@ -15,15 +15,15 @@
   <div class="row m-0 px-0 w-100 connect-section">
     <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="text-center py-3 new-requests font-dinpro-18">
+        <div class="app-page-subtitle new-requests font-dinpro-18">
           NEW INVITES
         </div>
         @if (is_null($requests) || !count($requests))
-          <div class="d-flex justify-content-center align-items-center no-members font-dinpro-18 mt-42px mb-42px">
+          <div class="app-page-subtitle no-members font-dinpro-18">
             <div class="text-center">[ NO NEW INVITES FOUND ]</div>
           </div>
         @else
-          <div class="member-body">
+          <div class="member-body mt-30px">
           @foreach ($requests as $request)
             <div class="member-item">
                 <a class="member-link" href="{{ route('profile.index', [ 'userID' => $request->request_user->id ]) }}">
@@ -56,7 +56,7 @@
           @endforeach
           </div>
         @endif
-        <div class="text-center py-4 top-title font-dinpro-18">
+        <div class="app-page-subtitle top-title font-dinpro-18 mb-30px">
           GET CONNECTED
         </div>
         <div class="search-input-section">

@@ -13,9 +13,9 @@
 
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 groups-section">
-    <div class="row justify-content-center m-0 py-3 w-100">
+    <div class="row justify-content-center m-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="text-center pb-3 top-title">EDIT YOUR GROUP</div>
+        <div class="app-page-subtitle mb-30px top-title">EDIT YOUR GROUP</div>
         
         <div class="name-input-section">
           <div class="image-icon-section">
@@ -35,7 +35,7 @@
           <input id="groupDescription" type="text" class="form-control" name="description" placeholder="Description" value="{{ $group->description }}">
         </div>
     
-        <div class="row justify-content-center align-items-center py-5 mx-0">
+        <div class="row justify-content-center align-items-center mt-35px mb-35px mx-0">
           <button class="btn btn-primary launch-button">
             {{ __('UPDATE') }}
           </button>
@@ -48,7 +48,7 @@
           </div>
         </div>
 
-        <div class="member-body flat-scroll">
+        <div class="member-body flat-scroll mb-30px">
           @foreach ($users as $key => $user)
             <div class="member-item" attr-fullname="{{ $user->getFullname() }}">
               <div class="member-link">

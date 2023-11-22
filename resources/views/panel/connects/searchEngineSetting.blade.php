@@ -22,11 +22,11 @@
     <div class="row m-0 p-0 w-100 setting-section search-section">
         <div class="row justify-content-center m-0 w-100">
             <div class="col-md-6 p-0">
-                <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
-                    <p>MY SETTINGS</p>
+                <div class="row app-page-subtitle bg-color-section m-0">
+                    MY SETTINGS
                 </div>
-                <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
-                    <p>SELECT DISTANCE</p>
+                <div class="row app-page-subtitle mb-30px bg-color-section m-0">
+                    SELECT DISTANCE
                 </div>
                 <div class="row justify-content-center m-0 distancetab">
                     <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == 'CITY') active @endif" onclick="select_distance(event)">MY CITY</div>
@@ -45,16 +45,16 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
-                    <p>SELECT GENDER</p>
+                <div class="row app-page-subtitle bg-color-section mb-30px">
+                    SELECT GENDER
                 </div>
                 <div class="row justify-content-center gendertab m-0">
                     <div class="gender_tablinks py-4 @if (isset($searchSetting) && str_contains($searchSetting->gender, 'f')) active @endif" onclick="toggle_gender(this, 'f')">WOMEN</div>
                     <div class="gender_tablinks py-4 @if (isset($searchSetting) && str_contains($searchSetting->gender, 'm')) active @endif" onclick="toggle_gender(this, 'm')">MEN</div>
                     <div class="gender_tablinks py-4 @if (isset($searchSetting) && str_contains($searchSetting->gender, 'f,m')) active @endif" onclick="toggle_gender(this, 'f,m')">ALL</div>
                 </div>
-                <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
-                    <p>SELECT AGE</p>
+                <div class="row app-page-subtitle mb-30px bg-color-section">
+                    SELECT AGE
                 </div>
                 <div class="row justify-content-center agetab m-0">
                     <div class="py-4 @if (isset($searchSetting) && str_contains($searchSetting->age, '18')) active @endif" onclick="toggle_age(this)">18-34</div>
@@ -620,7 +620,7 @@
                 </div>--}}
             </div>
         </div>
-        <div class="row justify-content-center align-items-center my-4 btn-section w-100 p-0 m-0">
+        <div class="row justify-content-center align-items-center my-4 btn-section w-100 p-0 m-0 mt-35px">
             <button class="btn btn-primary setting-save-btn">SAVE</button>
         </div>
     </div>

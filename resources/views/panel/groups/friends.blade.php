@@ -12,13 +12,13 @@
   <div class="row m-0 p-0 w-100 groups-section">
     <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="text-center my-4 top-title font-dinpro-18">NEW INVITES</div>
+        <div class="app-page-subtitle top-title">NEW INVITES</div>
         @if (is_null($invites) || !count($invites))
-          <div class="text-center col no-members text-blue font-dinpro-18 mt-42px mb-42px">
+          <div class="col no-members text-blue app-page-subtitle">
             [ NO NEW INVITES FOUND ]
           </div>
         @else
-        <div class="member-body">
+        <div class="member-body mt-30px">
           @foreach ($invites as $invite)
             <div class="member-item">
                 <div class="member-link">
@@ -45,13 +45,13 @@
           @endforeach
         </div>
         @endif
-        <div class="text-center py-3 top-title font-dinpro-18">GROUPS FROM FRIENDS</div>
+        <div class="top-title app-page-subtitle">GROUPS FROM FRIENDS</div>
         @if (is_null($members) || !count($members))
-          <div class="text-center col no-members mt-5 font-dinpro-18 mt-42px">
+          <div class="col no-members app-page-subtitle">
               [ NO GROUPS FOUND ]
           </div>
         @else
-          <div class="member-body flat-scroll">
+          <div class="member-body flat-scroll mt-30px">
               @foreach ($members as $member)
                   <div class="member-item" attr-fullname="{{ $member->group->name }}">
                       <div class="member-link">

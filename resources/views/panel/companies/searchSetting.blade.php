@@ -22,8 +22,8 @@
     <div class="row m-0 p-0 w-100 setting-section search-section">
         <div class="row justify-content-center m-0 w-100">
             <div class="col-md-6 p-0" id="setting-item">
-                <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
-                    <p class="font-dinpro-18">SELECT DISTANCE</p>
+                <div class="row bg-color-section app-page-subtitle font-dinpro-18 mb-30px">
+                    SELECT DISTANCE
                 </div>
                 <div class="row justify-content-center m-0 distancetab tab-4">
                     <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == '<10KM') active @endif" onclick="select_distance(event)"><10KM</div>
@@ -32,8 +32,8 @@
                     <div class="distance_tablinks py-4 @if (isset($searchSetting) && ($searchSetting->distance == '100KM >' || $searchSetting->distance == 'ALL')) active @endif" onclick="select_distance(event)">ALL</div>
                 </div>
                 
-                <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
-                    <p class="font-dinpro-18">SELECT 1 CATEGORY</p>
+                <div class="row bg-color-section app-page-subtitle mb-30px">
+                    SELECT 1 CATEGORY
                 </div>
                 <div class="w-100 accordion" id="category">
                 <div class="card">

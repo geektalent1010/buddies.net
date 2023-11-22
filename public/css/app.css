@@ -769,6 +769,11 @@
   border-right: 0.2rem solid transparent;
 }
 
+.profile-section .like-section-container {
+  border-right: 0.2rem solid transparent;
+  border-left: 0.2rem solid transparent;
+}
+
 .profile-section .thumbnail-card-border {
   border-left: 0.1rem solid transparent;
   border-right: 0.1rem solid transparent;
@@ -1927,6 +1932,7 @@ input[type=range]::-moz-range-thumb {
   text-align: center;
   margin-left: 1px;
   margin-right: 1px;
+  height: 80px;
 }
 
 .setting-section .distancetab div:hover {
@@ -1976,6 +1982,7 @@ input[type=range]::-moz-range-thumb {
   background-color: rgba(4, 36, 107, 0.2509803922);
   margin-left: 1px;
   margin-right: 1px;
+  height: 80px;
 }
 
 .setting-section .gendertab div:hover {
@@ -1997,6 +2004,7 @@ input[type=range]::-moz-range-thumb {
   background-color: rgba(4, 36, 107, 0.2509803922);
   margin-left: 1px;
   margin-right: 1px;
+  height: 80px;
 }
 
 .setting-section .agetab div:hover {
@@ -2745,10 +2753,7 @@ input[type=range]::-moz-range-thumb {
 
 .buddies-section .no-members {
   color: #ffffff;
-  font-size: 18px;
-  font-family: "DinPro Medium", sans-serif;
   text-transform: uppercase;
-  min-height: calc(100vh - 230px);
 }
 
 .buddies-section .new-requests {
@@ -2767,7 +2772,7 @@ input[type=range]::-moz-range-thumb {
   border: none;
   border-radius: 0;
   box-shadow: none;
-  height: 70px;
+  height: 80px;
   font-weight: 400;
   outline: medium none;
   padding-left: 90px;
@@ -2801,8 +2806,8 @@ input[type=range]::-moz-range-thumb {
 }
 
 .buddies-section .search-input-section .search-icon-section {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3047,7 +3052,7 @@ input[type=range]::-moz-range-thumb {
   border: none;
   border-radius: 0;
   box-shadow: none;
-  height: 70px;
+  height: 80px;
   font-weight: 400;
   outline: medium none;
   padding-left: 90px;
@@ -3081,8 +3086,8 @@ input[type=range]::-moz-range-thumb {
 }
 
 .heroes-section .search-input-section .search-icon-section {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3392,8 +3397,6 @@ input[type=range]::-moz-range-thumb {
 .chat-section .no-members {
   color: #ffffff;
   font-size: 18px;
-  font-family: "DinPro Medium", sans-serif;
-  min-height: calc(100vh - 250px);
 }
 
 .chat-section .no-members .find-members {
@@ -3976,7 +3979,7 @@ input[type=range]::-moz-range-thumb {
   border: none;
   border-radius: 0;
   box-shadow: none;
-  height: 70px;
+  height: 80px;
   font-weight: 400;
   outline: medium none;
   padding-left: 90px;
@@ -4010,8 +4013,8 @@ input[type=range]::-moz-range-thumb {
 }
 
 .connect-section .search-input-section .search-icon-section {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4698,7 +4701,7 @@ input[type=range]::-moz-range-thumb {
   border: none;
   border-radius: 0;
   box-shadow: none;
-  height: 70px;
+  height: 80px;
   font-weight: 400;
   outline: medium none;
   padding-left: 90px;
@@ -4732,8 +4735,8 @@ input[type=range]::-moz-range-thumb {
 }
 
 .groups-section .search-input-section .search-icon-section {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5690,10 +5693,7 @@ input[type=range]::-moz-range-thumb {
 
 .posts-section {
   height: calc(100vh - 120px);
-  display: flex;
-  justify-content: center;
   overflow-y: scroll;
-  flex-wrap: wrap;
   z-index: 10;
   width: 100%;
   padding-left: 2.5px !important;
@@ -5707,15 +5707,11 @@ input[type=range]::-moz-range-thumb {
 .posts-section .no-members {
   color: #ffffff;
   font-size: 18px;
-  font-family: "DinPro Medium", sans-serif;
-  min-height: calc(100vh - 250px);
 }
 
 .posts-section .create-title {
   font-size: 18px;
   font-family: "DinPro", sans-serif;
-  margin-top: 8px;
-  margin-bottom: 8px;
 }
 
 .posts-section .contentItem-wrp {

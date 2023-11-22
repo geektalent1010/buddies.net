@@ -16,12 +16,10 @@
 
 @section('PAGE_CONTENT')
 
-<div class="main-bg d-flex">
-  <div class="row m-0 p-0 w-100 posts-section">
-    <div class="row justify-content-center m-0 pt-3 pb-3 w-100">
-      <div class="col-md-6 p-0 text-center create-title font-dinpro-18">
+<div class="main-bg">
+  <div class="m-0 p-0 w-100 posts-section">
+    <div class="app-page-subtitle w-100 mb-30px">
         MY STORIES
-      </div>
     </div>
     <div class="row justify-content-center m-0 pb-3 w-100">
       @if (is_null($stories) || !count($stories))
@@ -34,7 +32,7 @@
         </div>
       @else
         <div class="col-md-6 p-0">
-          <div class="row justify-content-center m-0 w-100">
+          <div class="row justify-content-center m-0 w-100 mb-35px">
             <button class="post-button" onclick="window.location.href='{{ route('story.create.index') }}'">
               {{ __('CREATE') }}
             </button>

@@ -128,12 +128,14 @@
                             </div>
                         </div>
                         @if(!$is_me)
-                        <div class="col-6 like-section">
-                            <span class="heart-icon {{ in_array($authUser->id, explode(',', $user->profile->followers)) ? 'like' : '' }} company{{ $user->profile->id }}"  attr-data="{{ $user->profile->id }}"><i class="fa fa-heart" aria-hidden="true"></i></span>
-                            <span class="likes-count{{ $user->profile->id }}">{{ $user->profile->followers && count(explode(',', $user->profile->followers)) > 0 ? count(explode(',', $user->profile->followers)) : 0 }}</span>
-                        </div>
-                        <div class="col-6 follow-btn-section">
-                            <button class="btn btn-primary follow-btn mb-4">{{ in_array($authUser->id, explode(',', $user->profile->followers)) ? 'UNFOLLOW' : 'FOLLOW' }}</button>
+                        <div class="row p-0 w-100 like-section-container">
+                          <div class="col-6 like-section">
+                              <span class="heart-icon {{ in_array($authUser->id, explode(',', $user->profile->followers)) ? 'like' : '' }} company{{ $user->profile->id }}"  attr-data="{{ $user->profile->id }}"><i class="fa fa-heart" aria-hidden="true"></i></span>
+                              <span class="likes-count{{ $user->profile->id }}">{{ $user->profile->followers && count(explode(',', $user->profile->followers)) > 0 ? count(explode(',', $user->profile->followers)) : 0 }}</span>
+                          </div>
+                          <div class="col-6 follow-btn-section">
+                              <button class="btn btn-primary follow-btn mb-4">{{ in_array($authUser->id, explode(',', $user->profile->followers)) ? 'UNFOLLOW' : 'FOLLOW' }}</button>
+                          </div>
                         </div>
                         @endif
                         <div class="col-12 col-sm-12 p-0">

@@ -18,8 +18,8 @@
 <div class="main-bg d-flex">
   <div class="row flex-column m-0 px-0 w-100 buddies-section">
     @if (is_null($users) || !count($users))
-    <div class="col no-members text-center mt-5 font-dinpro-18">
-      [NO BUDDIES FOUND]
+    <div class="col no-members app-page-subtitle">
+      [ NO BUDDIES FOUND ]
     </div>
     @else
     <div class="row justify-content-center m-0 p-0 w-100">

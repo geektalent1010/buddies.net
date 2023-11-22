@@ -245,7 +245,7 @@
                     </div>
                 </div>
                 @if($is_me)
-                    <div class="row justify-content-center align-items-center mt-4 mb-5 btn-section w-100 p-0 m-0">
+                    <div class="row justify-content-center align-items-center mt-35px mb-5 btn-section w-100 p-0 m-0">
                         <button class="profile-edit-btn" onclick="window.location.href='{{ route('profile.edit.index') }}'">EDIT</button>
                     </div>
                 @endif

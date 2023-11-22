@@ -335,6 +335,7 @@
         var backgroundImage = '{{ asset('') }}' + desktopPosterArray[srcIndex]
         // document.body.style.backgroundImage = `url(${backgroundImage})`  //changing bg image
         document.body.style.backgroundColor = '#04246b' //changing bg color
+        document.body.style.position = "relative";
     </script>
 
     @include('_includes.navbar')

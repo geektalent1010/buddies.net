@@ -1,8 +1,8 @@
 
 <div class="member-body flat-scroll">
   @if (is_null($users) || !count($users))
-  <div class="col no-members text-center mt-5">
-    No Connect Users
+  <div class="col app-page-subtitle no-members font-dinpro-18 mb-30px">
+    [ NO CONNECT USERS ]
   </div>
   @else
     @foreach ($users as $user)

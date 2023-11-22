@@ -16,7 +16,7 @@
   <div class="row m-0 p-0 w-100 chat-section">
     <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="text-center my-4 font-dinpro-18">
+        <div class="text-center app-page-subtitle mb-30px">
           CHAT LIST
         </div>
         <div class="search-input-section">
@@ -27,8 +27,8 @@
         </div>
         <div class="member-body flat-scroll" id="app">
           @if (is_null($channels) || !count($channels))
-            <div class="d-flex justify-content-center no-members my-4">
-              <div class="text-center"><div class="font-dinpro-18">[ NO CHATS FOUND ]</div>
+            <div class="app-page-subtitle mb-30px no-members">
+              <div class="text-center">[ NO CHATS FOUND ]</div>
             </div>
           @else
             @foreach ($channels as $channel)

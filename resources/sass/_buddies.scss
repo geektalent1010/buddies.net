@@ -11,10 +11,7 @@
 	padding-right: 2px !important;
 	.no-members {
 		color: $white;
-		font-size: 18px;
-		font-family: 'DinPro Medium', sans-serif;
 		text-transform: uppercase;
-		min-height: calc(100vh - 230px);
 	}
 	.new-requests {
 		font-family: 'DinPro', sans-serif !important;
@@ -30,7 +27,7 @@
       border: none;
 			border-radius: 0;
       box-shadow: none;
-      height: 70px;
+      height: 80px;
       font-weight: 400;
       outline: medium none;
       padding-left: 90px;
@@ -61,8 +58,8 @@
       }
     }
     .search-icon-section {
-    	width: 70px;
-    	height: 70px;
+    	width: 80px;
+    	height: 80px;
     	display: flex;
     	align-items: center;
     	justify-content: center;

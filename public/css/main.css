@@ -315,14 +315,16 @@ footer .footerDesc img.color-mark {
 .main-img {
     position: absolute;
     width: 100%;
-    height: calc(100vh - 120px);
+    height: 100%;
+    /* height: calc(100vh - 120px); */
     object-fit: cover;
 }
 
 .main-img-mobile {
     position: absolute;
     width: 100%;
-    height: calc(100vh - 120px);
+    height: 100%;
+    /* height: calc(100vh - 120px); */
     object-fit: cover;
     display: none;
 }
@@ -1064,14 +1066,6 @@ select.webkit_style {
   font-size: 18px !important;
 }
 
-.pd-42pt {
-  padding-bottom: 42pt !important;
-}
-
-.pt-42pt {
-  padding-top: 42pt !important;
-}
-
 .mt-42px {
   margin-top: 42px !important;
 }
@@ -1080,18 +1074,53 @@ select.webkit_style {
   margin-bottom: 42px !important;
 }
 
+.mt-30px {
+  margin-top: 30px !important;
+}
+
+.mb-30px {
+  margin-bottom: 30px !important;
+}
+
+.mt-35px {
+  margin-top: 35px !important;
+}
+
+.mb-35px {
+  margin-bottom: 35px !important;
+}
+
+.mt-80px {
+  margin-top: 80px !important;
+}
+
+.mb-80px {
+  margin-bottom: 80px !important;
+}
+
 .wave-video-section {
   position: absolute;
   width: 100%;
-  height: calc(100vh - 120px);
+  height: 100%;
+  /* height: calc(100vh - 120px); */
   object-fit: cover;
 }
 .wave-video-section-mobile {
   position: absolute;
   width: 100%;
-  height: calc(100vh - 120px);
+  height: 100%;
+  /* height: calc(100vh - 120px); */
   object-fit: cover;
   display: none;
+}
+
+.app-page-subtitle {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-family: 'DinPro Regular' !important;
+  font-size: 18px !important;
 }
 
 @media only screen and (max-width: 575.98px) {

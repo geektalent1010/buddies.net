@@ -1,9 +1,6 @@
 .posts-section {
 	height: calc(100vh - 120px);
-	display: flex;
-	justify-content: center;
 	overflow-y: scroll;
-	flex-wrap: wrap;
 	z-index: 10;
 	width: 100%;
 	padding-left: 2.5px !important;
@@ -14,15 +11,13 @@
 	.no-members {
   	color: $white;
     font-size: 18px;
-    font-family: 'DinPro Medium', sans-serif;
-		min-height: calc(100vh - 250px);
 	}
 
   .create-title {
     font-size: 18px;
     font-family: 'DinPro', sans-serif;
-		margin-top: 8px;
-    margin-bottom: 8px;
+		// margin-top: 8px;
+    // margin-bottom: 8px;
   }
 	
 	.contentItem-wrp { 

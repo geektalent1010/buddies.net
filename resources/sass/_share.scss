@@ -3,7 +3,6 @@
 	font-size: 18px;
 	text-align: center;
 	font-family: 'DinPro Medium', sans-serif;
-	margin-top: 15px;
 }
 .share-section {
 	height: calc(100vh - 120px);
@@ -93,7 +92,7 @@
 		font-family: 'DinPro', sans-serif;
 		border: 0.1rem solid $primary;
 		cursor: pointer;
-		margin-bottom: 20px;
+
 		&:hover {
 			background: $light-green !important;
 			color: $primary !important;

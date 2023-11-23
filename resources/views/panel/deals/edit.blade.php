@@ -17,10 +17,10 @@
 
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 posts-section">
-    <div class="row justify-content-center m-0 py-3 w-100">
+    <div class="row justify-content-center m-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="text-center pb-3 create-title">EDIT A DEAL</div>
-        <div class="member-body">
+        <div class="text-center app-page-subtitle create-title">EDIT A DEAL</div>
+        <div class="member-body mt-35px">
           <div class="member-item">
             <div class="member-link">
               <div class="member-avatar-wrp">
@@ -82,14 +82,14 @@
               @endif
           </div>
         </div>
-        <div class="like-section mb-3">
+        <div class="like-section">
           <span class="heart-icon"><i class="fa fa-heart" aria-hidden="true"></i></span>
           <span>{{ $deal->followers && count(explode(',', $deal->followers)) > 0 ? count(explode(',', $deal->followers)) : 0 }}</span>
         </div>
       </div>
     </div>
     
-    <div class="row justify-content-center align-items-center pb-5 mx-0">
+    <div class="row justify-content-center align-items-center pb-5 mx-0 w-100 mt-35px">
       <button class="btn btn-primary post-button">
         {{ __('PUBLISH') }}
       </button>

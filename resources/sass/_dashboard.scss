@@ -2,10 +2,9 @@
     width: 50%;
     padding-top: 20px;
     padding-bottom: 20px;
-    max-height: calc(100vh - 120px);
+    // max-height: calc(100vh - 120px);
     display: flex;
     justify-content: center;
-    overflow-y: scroll;
     flex-wrap: wrap;
     border: 2px solid transparent;
     .navItem {

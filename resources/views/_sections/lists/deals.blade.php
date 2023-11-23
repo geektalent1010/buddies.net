@@ -1,6 +1,6 @@
 <div class="accordion" id="deals">
   @foreach ($deals as $index => $deal)
-  <div class="w-100 post-item mb-3">
+  <div class="w-100 post-item mb-3 mt-30px">
     <div class="text-right p-2 pr-md-0 created-at-label">{{ date_format($deal->created_at, "d/m/Y" )}}</div>
     <div class="member-body">
       <div class="member-item">

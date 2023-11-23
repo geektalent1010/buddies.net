@@ -18,11 +18,11 @@
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 posts-section">
     @if (is_null($posts) || !count($posts))
-      <div class="col d-flex justify-content-center no-members font-dinpro-18 mt-5">
-        <div class="text-center">[ NO EVENTS FOUND ]</div>
+      <div class="col d-flex app-page-subtitle justify-content-center no-members font-dinpro-18">
+        [ NO EVENTS FOUND ]
       </div>
     @else
-    <div class="row justify-content-center m-0 pt-4 pb-3 w-100">
+    <div class="row justify-content-center m-0 mt-30px pb-3 w-100">
       <div class="col-md-6 p-0">
         @include('_sections.lists.events')
       </div>

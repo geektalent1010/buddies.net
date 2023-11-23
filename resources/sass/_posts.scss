@@ -2,7 +2,8 @@
 	height: calc(100vh - 120px);
 	overflow-y: scroll;
 	z-index: 10;
-	width: 100%;
+	width: 100%;	
+	align-content: flex-start;
 	padding-left: 2.5px !important;
 	padding-right: 2.5px !important;
 	.gap {

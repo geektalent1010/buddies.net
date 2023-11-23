@@ -19,15 +19,15 @@
 @section('PAGE_CONTENT')
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 share-section">
-    <div class="row justify-content-center m-0 p-0 py-3 w-100">
+    <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
-        <p class="link-title mt-4">INVITE FRIENDS AND EARN CREDITS</p>
-        <p class="link-address">www.buddies.net/{{ $user->customer_id }}</p>
-        <div class="d-flex justify-content-center align-items-center btn-section w-100 p-0 m-0 mt-4 mb-5">
+        <div class="link-title app-page-subtitle only-spacing">INVITE FRIENDS AND EARN CREDITS</div>
+        <div class="link-address app-page-subtitle only-spacing">www.buddies.net/{{ $user->customer_id }}</div>
+        <div class="d-flex justify-content-center align-items-center btn-section w-100 p-0 m-0 mt-30px">
             <a class="btn btn-primary copy-btn" onclick="copyLink(this,event)" attr_href="{{url('/')}}/{{ $user->customer_id }}">COPY LINK</a>
         </div>
-        <p class="share-title">SHARE BUDDIES ON SOCIAL MEDIA</p>
-        <div class="d-flex align-items-center justify-content-center social-icon-section">
+        <div class="share-title app-page-subtitle only-spacing mb-30px">SHARE BUDDIES ON SOCIAL MEDIA</div>
+        <div class="d-flex align-items-center justify-content-center social-icon-section p-0">
           <img class="social-icon" src="{{ asset('images/svg/Facebook.svg') }}" alt="facebook icon">
           <img class="social-icon" src="{{ asset('images/svg/LinkedIn.svg') }}" alt="LinkedIn icon">
           <img class="social-icon" src="{{ asset('images/svg/Insta.svg') }}" alt="facebook icon">
@@ -49,35 +49,35 @@
             </div>
           @endforeach
         @endif--}}
-				<p class="share-title mt-4">AD PACK 1</p>
+				<p class="share-title app-page-subtitle only-spacing mb-30px">AD PACK 1</p>
 				<div class="image-slider-wrapper">
 					<div class="each-panel">
 						<a href="javascript:;">
 							<img src="{{ asset('images/AdPack1.png') }}">
 						</a>
-						<div class="mt-4 px-3 w-100 d-flex justify-content-center">
+						<div class="px-3 w-100 d-flex justify-content-center mt-35px">
 							<a class="btn btn-primary download-button" href="{{ asset('files/AdPack1.zip') }}" download>Download</a>
 						</div>
 					</div>
 				</div>
-				<p class="share-title mt-4">AD PACK 2</p>
+				<p class="share-title app-page-subtitle only-spacing mb-30px">AD PACK 2</p>
 				<div class="image-slider-wrapper">
 					<div class="each-panel">
 						<a href="javascript:;">
 							<img src="{{ asset('images/AdPack2.png') }}">
 						</a>
-						<div class="mt-4 px-3 w-100 d-flex justify-content-center">
+						<div class="px-3 w-100 d-flex justify-content-center mt-35px">
 							<a class="btn btn-primary download-button" href="{{ asset('files/AdPack2.zip') }}" download>Download</a>
 						</div>
 					</div>
 				</div>
-				<p class="share-title mt-4">VIDEO PACK 1</p>
+				<p class="share-title app-page-subtitle only-spacing mb-30px">VIDEO PACK 1</p>
 				<div class="image-slider-wrapper">
 					<div class="each-panel">
 						<a href="javascript:;">
 							<img src="{{ asset('images/VideoPack1.png') }}">
 						</a>
-						<div class="mt-4 px-3 w-100 d-flex justify-content-center">
+						<div class="mt-35px mb-35px px-3 w-100 d-flex justify-content-center">
 							<a class="btn btn-primary download-button" href="{{ asset('files/VideoPack1.zip') }}" download>Download</a>
 						</div>
 					</div>

@@ -2,10 +2,8 @@
   width: 50%;
   padding-top: 20px;
   padding-bottom: 20px;
-  max-height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
   flex-wrap: wrap;
   border: 2px solid transparent;
 }
@@ -2827,7 +2825,6 @@ input[type=range]::-moz-range-thumb {
 
 .buddies-section .member-body {
   width: 100%;
-  height: 100%;
   max-height: calc(100vh - 190px);
   overflow: auto;
 }
@@ -3107,7 +3104,6 @@ input[type=range]::-moz-range-thumb {
 
 .heroes-section .member-body {
   width: 100%;
-  height: 100%;
   max-height: calc(100vh - 190px);
   overflow: auto;
 }
@@ -3470,7 +3466,6 @@ input[type=range]::-moz-range-thumb {
 
 .chat-section .member-body {
   width: 100%;
-  height: 100%;
   max-height: calc(100vh - 200px);
   overflow: auto;
 }
@@ -4101,6 +4096,7 @@ input[type=range]::-moz-range-thumb {
 
 .connect-section .member-body {
   width: 100%;
+  max-height: calc(100vh - 190px);
   overflow: auto;
 }
 
@@ -4506,7 +4502,6 @@ input[type=range]::-moz-range-thumb {
   font-size: 18px;
   text-align: center;
   font-family: "DinPro Medium", sans-serif;
-  margin-top: 15px;
 }
 
 .share-section {
@@ -4603,7 +4598,6 @@ input[type=range]::-moz-range-thumb {
   font-family: "DinPro", sans-serif;
   border: 0.1rem solid #04246b;
   cursor: pointer;
-  margin-bottom: 20px;
 }
 
 .share-section .download-button:hover {
@@ -5510,7 +5504,6 @@ input[type=range]::-moz-range-thumb {
 
 .companies-section .member-body {
   width: 100%;
-  height: 100%;
   max-height: calc(100vh - 190px);
   overflow: auto;
 }
@@ -5696,6 +5689,7 @@ input[type=range]::-moz-range-thumb {
   overflow-y: scroll;
   z-index: 10;
   width: 100%;
+  align-content: flex-start;
   padding-left: 2.5px !important;
   padding-right: 2.5px !important;
 }
@@ -6360,7 +6354,7 @@ input[type=range]::-moz-range-thumb {
   border: none;
   border-radius: 0;
   box-shadow: none;
-  height: 70px;
+  height: 80px;
   font-weight: 400;
   outline: medium none;
   padding-left: 42px;
@@ -6394,8 +6388,8 @@ input[type=range]::-moz-range-thumb {
 }
 
 .topics-section .search-input-section .search-icon-section {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -315,8 +315,9 @@ footer .footerDesc img.color-mark {
 .main-img {
     position: absolute;
     width: 100%;
+    min-height: calc(100vh - 120px);
     height: 100%;
-    /* height: calc(100vh - 120px); */
+    /* top: 80px; */
     object-fit: cover;
 }
 
@@ -1102,7 +1103,8 @@ select.webkit_style {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* height: calc(100vh - 120px); */
+  top: 0px;
+  min-height: calc(100vh - 120px);
   object-fit: cover;
 }
 .wave-video-section-mobile {
@@ -1119,6 +1121,9 @@ select.webkit_style {
   display: flex;
   justify-content: center;
   align-items: end;
+}
+
+.app-page-subtitle:not(.only-spacing) {
   font-family: 'DinPro Regular' !important;
   font-size: 18px !important;
 }

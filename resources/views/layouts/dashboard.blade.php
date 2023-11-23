@@ -335,6 +335,7 @@
         var backgroundImage = '{{ asset('') }}' + desktopPosterArray[srcIndex]
         // document.body.style.backgroundImage = `url(${backgroundImage})`  //changing bg image
         document.body.style.backgroundColor = '#04246b' //changing bg color
+        document.body.style.position = "relative";
     </script>
     @include('_includes.navbar')
 
@@ -484,8 +485,12 @@
       }
 
       $(document).ready(function() {
-        const element = document.querySelector('.main-bg');
+        let element = document.querySelector('.main-bg');
         element.style.background = 'none';
+
+        // element = document.querySelector('.main-img')
+        // element.style.maxHeight = 'calc(100vh - 120px)';
+        // element.style.minHeight = 'none';
       })
     </script>
 

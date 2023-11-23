@@ -18,15 +18,15 @@
 
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 posts-section">
-    <div class="row justify-content-center m-0 pt-3 pb-3 w-100">
-      <div class="col-md-6 p-0 text-center create-title">
+    <div class="row justify-content-center m-0 w-100">
+      <div class="col-md-6 p-0 app-page-subtitle create-title">
         MY DEALS
       </div>
     </div>
     <div class="row justify-content-center m-0 pb-3 w-100">
       @if (is_null($deals) || !count($deals))
         <div class="col justify-content-center align-items-center no-members">
-          <div class="row justify-content-center m-0 w-100">
+          <div class="row justify-content-center m-0 w-100 mt-30px">
             <button class="post-button" onclick="window.location.href='{{ route('deal.create.index') }}'">
               {{ __('CREATE') }}
             </button>
@@ -34,7 +34,7 @@
         </div>
       @else
         <div class="col-md-6 p-0 accordion" id="deals">
-          <div class="row justify-content-center m-0 w-100">
+          <div class="row justify-content-center m-0 w-100 mt-30px mb-35px">
             <button class="post-button" onclick="window.location.href='{{ route('deal.create.index') }}'">
               {{ __('CREATE') }}
             </button>

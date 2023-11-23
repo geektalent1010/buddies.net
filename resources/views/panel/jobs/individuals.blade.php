@@ -17,19 +17,19 @@
 
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 posts-section">
-    <div class="row justify-content-center m-0 pt-3 w-100">
-      <div class="col-md-6 p-0 text-center create-title font-dinpro-18">
+    <div class="row justify-content-center m-0 w-100">
+      <div class="col-md-6 p-0 app-page-subtitle text-center create-title font-dinpro-18">
         JOB REQUESTS
       </div>
     </div>
     
     <div class="row justify-content-center m-0 pb-3 w-100">
       @if (is_null($jobs) || !count($jobs))
-        <div class="col d-flex justify-content-center no-members font-dinpro-18 mt-42px">
+        <div class="col d-flex app-page-subtitle justify-content-center no-members font-dinpro-18">
           <div class="text-center">[ NO JOBS FOUND ]</div>
         </div>
       @else
-        <div class="col-md-6 p-0">
+        <div class="col-md-6 p-0 mt-30px">
           @foreach ($jobs as $index => $job)
             @php $index++ @endphp
             <div class="w-100 post-item mb-3">

@@ -15,10 +15,10 @@
 @section('PAGE_CONTENT')
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 wallet-section">
-    <div class="row justify-content-center m-0 p-0 py-3 w-100">
+    <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
-        <p class="wallet-title mt-2">MY REFERRALS</p>
-        <div class="referral-header-section p-4">
+        <div class="wallet-title app-page-subtitle">MY REFERRALS</div>
+        <div class="referral-header-section p-4 mt-30px">
           <p class="wallet-text status-header-text w-50">STATUS</p>
           <p class="wallet-text w-25">MEMBERSHIP</p>
           <p class="wallet-text text-right w-25">CREDITS</p>

@@ -367,7 +367,7 @@
               </g>
             </svg>
           </div>
-          <span>CAFE</span>
+          <span>EVENTS</span>
         </div>
       </a>
       @if ($isNewEvent)

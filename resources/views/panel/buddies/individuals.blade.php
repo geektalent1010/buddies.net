@@ -20,7 +20,7 @@
       [ NO BUDDIES FOUND ]
     </div>
     @else
-    <div class="row justify-content-center m-0 p-0 w-100 mt-80px">
+    <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
         <div class="search-input-section">
           <input id="searchKey" type="text" class="form-control" name="searchKey" placeholder="Find a buddy">

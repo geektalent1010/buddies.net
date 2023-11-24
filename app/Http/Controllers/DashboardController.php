@@ -51,6 +51,7 @@ class DashboardController extends Controller
 
         $lastEvent = Post::where('type', '=', 6)->where('is_active', '=', 1)->where('created_by', '!=', $authUser->id)->orderBy('created_at', 'desc')->first();
         $lastRequest = Requests::where('user_id', '=', $authUser->id)->where('is_active', '=', 1)->orderBy('created_at', 'desc')->first();
+        
         if (isset($authUser->notification)) {
             if (isset($lastJob) && $lastJob->id != $authUser->notification->last_read_job_id) {
                 $isNewJob = true;
@@ -70,7 +71,7 @@ class DashboardController extends Controller
             if (isset($lastEvent) && $lastEvent->id != $authUser->notification->last_read_event_id) {
                 $isNewEvent = true;
             }
-            if (isset($lastRequest) && $lastRequest->id != $authUser->notification->last_read_request_id) {
+            if (isset($lastRequest) && $lastRequest->id > $authUser->notification->last_read_request_id) {
                 $isNewRequests = true;
             }
         } else {

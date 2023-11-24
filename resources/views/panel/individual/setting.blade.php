@@ -273,14 +273,26 @@
                                   <div class="login-page">
                                       <div class="form-group">
                                           <div class="d-flex">
+                                              @php
+                                                $numbers = explode(" ", $user->profile->phone);
+                                                $first_number = $numbers[0];
+                                                $last_number = count($numbers) > 1 ? $numbers[1] : '';
+                                              @endphp
                                               <select class="form-control phone-select webkit_style editable" name="">
-                                                <option value="{{ explode(" ", $user->profile->phone)[0] }}">{{ explode(" ", $user->profile->phone)[0] }}</option>
+                                                <option value="{{ $first_number }}">{{ $first_number }}</option>
                                                 @foreach ($phonecodes as $code)                                    
                                                     <option value="+{{$code}}">+{{$code}}</option>
                                                 @endforeach
                                               </select>
                                               <input type="text" name="phone" class="form-control" id="real-mobileNumber" placeholder="Phone Number" hidden>
-                                              <input type="text" class="form-control editable" id="mobileNumber" placeholder="Phone Number" tabindex="6" value="{{ explode(" ", $user->profile->phone)[1] }}">
+                                              <input
+                                                type="text"
+                                                class="form-control editable"
+                                                id="mobileNumber"
+                                                placeholder="Phone Number"
+                                                tabindex="6"
+                                                value="{{ $last_number }}"
+                                              >
                                           </div>
                                           <label id="mobile-number-error" class="has-error" for="phone" style="display: none"></label>
                                       </div>

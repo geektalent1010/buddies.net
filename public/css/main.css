@@ -279,6 +279,14 @@ footer .footerDesc img.color-mark {
     display: none;
 }
 
+footer .footerDesc .moods-section .st0 {
+  fill: #fff;
+}
+
+footer .footerDesc .moods-section .moods-icon:hover .st0 {
+  fill: #00FFFF;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }

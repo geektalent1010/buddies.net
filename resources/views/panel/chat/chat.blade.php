@@ -34,8 +34,8 @@
                   <div class="@if(Cache::has('is_online' . $channelInfo->otherUser->id)) online-status @else offline-status @endif"></div>
                 </div>
               </div>
-              
-              
+
+
             </div>
           </div>
         </div>

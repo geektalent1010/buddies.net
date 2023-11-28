@@ -1201,7 +1201,7 @@
 .crop__modal-content {
   height: 95vh;
   border-radius: 16px;
-  background: #DEDCDD;
+  background: #dedcdd;
   overflow-y: scroll;
 }
 
@@ -1230,7 +1230,7 @@
 }
 
 .crop__action {
-  background: linear-gradient(0.45turn, #D4D2D2, #EEECED);
+  background: linear-gradient(0.45turn, #d4d2d2, #eeeced);
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35), -3px -3px 8px rgba(255, 255, 255, 0.6);
   border-radius: 50%;
   padding: 16px;
@@ -1243,7 +1243,7 @@
 }
 
 .crop__action:hover {
-  color: #ED8C82;
+  color: #ed8c82;
 }
 
 .crop__action:first-child {
@@ -1288,7 +1288,7 @@ input[type=range]::-webkit-slider-thumb {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(0.45turn, #D4D2D2, #EEECED);
+  background: linear-gradient(0.45turn, #d4d2d2, #eeeced);
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35), -3px -3px 8px rgba(255, 255, 255, 0.6);
 }
 
@@ -1309,7 +1309,7 @@ input[type=range]::-moz-range-thumb {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(0.45turn, #D4D2D2, #EEECED);
+  background: linear-gradient(0.45turn, #d4d2d2, #eeeced);
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35), -3px -3px 8px rgba(255, 255, 255, 0.6);
 }
 
@@ -3384,7 +3384,6 @@ input[type=range]::-moz-range-thumb {
   height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
   flex-wrap: wrap;
   z-index: 10;
   width: 100%;
@@ -3962,8 +3961,12 @@ input[type=range]::-moz-range-thumb {
   color: #04246b !important;
 }
 
+.connect-section .below-group {
+  max-height: calc(100vh - 180px);
+  overflow: auto;
+}
+
 .connect-section .app-subtitle-main {
-  max-height: calc(100vh - 200px);
   overflow: auto;
 }
 
@@ -4250,16 +4253,16 @@ input[type=range]::-moz-range-thumb {
 }
 
 .connect-section .update-button-section .profile-update-button:hover {
-  background: #66CC00 !important;
+  background: #66cc00 !important;
   color: #ffffff !important;
-  border-color: #66CC00 !important;
+  border-color: #66cc00 !important;
 }
 
 .connect-section .update-button-section .profile-update-button:focus,
 .connect-section .update-button-section .profile-update-button:active {
-  background: #66CC00 !important;
+  background: #66cc00 !important;
   color: #ffffff !important;
-  border-color: #66CC00 !important;
+  border-color: #66cc00 !important;
   outline: none;
   box-shadow: none;
 }
@@ -4355,7 +4358,6 @@ input[type=range]::-moz-range-thumb {
   }
 
   .connect-section .app-subtitle-main {
-    max-height: calc(100vh - 190px);
     overflow: auto;
   }
 
@@ -6340,7 +6342,6 @@ input[type=range]::-moz-range-thumb {
   height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
   flex-wrap: wrap;
   z-index: 10;
   width: 100%;
@@ -7033,16 +7034,16 @@ input[type=range]::-moz-range-thumb {
 }
 
 .studio-section .btn-section button:hover {
-  background: #66CC00 !important;
+  background: #66cc00 !important;
   color: #ffffff !important;
-  border-color: #66CC00 !important;
+  border-color: #66cc00 !important;
 }
 
 .studio-section .btn-section button:focus,
 .studio-section .btn-section button:active {
-  background: #66CC00 !important;
+  background: #66cc00 !important;
   color: #ffffff !important;
-  border-color: #66CC00 !important;
+  border-color: #66cc00 !important;
   outline: none;
   box-shadow: none;
 }
@@ -7068,16 +7069,16 @@ input[type=range]::-moz-range-thumb {
 }
 
 .studio-section .btn-section .edit-btn:hover {
-  background: #66CC00 !important;
+  background: #66cc00 !important;
   color: #ffffff !important;
-  border-color: #66CC00 !important;
+  border-color: #66cc00 !important;
 }
 
 .studio-section .btn-section .edit-btn:focus,
 .studio-section .btn-section .edit-btn:active {
-  background: #66CC00 !important;
+  background: #66cc00 !important;
   color: #ffffff !important;
-  border-color: #66CC00 !important;
+  border-color: #66cc00 !important;
   outline: none;
   box-shadow: none;
 }
@@ -8896,7 +8897,7 @@ input[type=range]::-moz-range-thumb {
 
 .admin-finance-section .transactions-list #transaction .card .card-body .status {
   text-align: right;
-  color: #66CC00;
+  color: #66cc00;
 }
 
 .admin-finance-section .transactions-list #transaction .card .card-body .amount {
@@ -8970,7 +8971,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .admin-finance-section .navigator .eachNav.send {
-  background-color: #66CC00;
+  background-color: #66cc00;
 }
 
 .admin-finance-section .navigator .eachNav.deduct {

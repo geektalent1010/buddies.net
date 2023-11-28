@@ -1,14 +1,14 @@
 .studio-section {
-	height: calc(100vh - 120px);
-	display: flex;
-	justify-content: center;
-	overflow-y: scroll;
-	flex-wrap: wrap;
-	width: 100%;
+    height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    width: 100%;
     .contentItem {
         padding: 0;
         width: 25%;
-        .contentItem-wrp { 
+        .contentItem-wrp {
             display: block;
             position: relative;
             height: 0;
@@ -35,12 +35,12 @@
                 left: 0;
                 object-fit: cover;
                 object-position: center;
-    
+
                 transition: all ease 0.3s;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-    
+
                 img {
                     position: relative;
                     max-width: 40%;
@@ -54,10 +54,10 @@
                 .img-studio {
                     max-width: 15% !important;
                 }
-                
+
                 &.portfolio-image:hover {
                     background: $primary-75;
-    
+
                     img {
                         opacity: 1;
                     }
@@ -74,12 +74,12 @@
                 left: 0;
                 object-fit: cover;
                 object-position: center;
-    
+
                 transition: all ease 0.3s;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-    
+
                 img {
                     position: relative;
                     max-width: 17%;
@@ -94,10 +94,10 @@
                 .img-studio {
                     max-width: 15% !important;
                 }
-                
+
                 &.portfolio-image:hover {
                     background: $primary-75;
-    
+
                     img {
                         opacity: 1;
                     }
@@ -108,7 +108,7 @@
     .studioItem {
         padding: 0;
         margin-bottom: 65px;
-        .studioItem-wrp { 
+        .studioItem-wrp {
             display: block;
             position: relative;
             height: 0;
@@ -129,7 +129,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-    
+
                 .no-image {
                     position: relative;
                     width: 50px;
@@ -187,7 +187,6 @@
                     object-position: center;
                     transition: all ease 0.3s;
                 }
-                
             }
             .header-2 {
                 display: flex;
@@ -205,78 +204,78 @@
                 font-size: 2.7vw;
                 font-weight: bold;
                 color: white;
-                font-family: 'Montserrat Bold', sans-serif;
+                font-family: "Montserrat Bold", sans-serif;
                 position: absolute;
                 top: 3vw;
                 z-index: 5;
                 .montserrat {
-                    font-family: 'Montserrat Bold', sans-serif;
+                    font-family: "Montserrat Bold", sans-serif;
                 }
-            }   
+            }
             .studio-content-2 {
                 font-size: 1.7vw;
                 color: white;
-                font-family: 'Montserrat Regular', sans-serif;
+                font-family: "Montserrat Regular", sans-serif;
                 position: absolute;
                 top: 7.5vw;
                 z-index: 5;
                 .montserrat {
-                    font-family: 'Montserrat Regular', sans-serif;
+                    font-family: "Montserrat Regular", sans-serif;
                 }
-            } 
+            }
             .studio-footer-2 {
                 position: relative;
                 font-size: 1.7vw;
                 color: white;
-                font-family: 'Montserrat Regular', sans-serif;
+                font-family: "Montserrat Regular", sans-serif;
                 z-index: 5;
                 position: absolute;
                 bottom: 2vw;
                 .montserrat {
-                    font-family: 'Montserrat Regular', sans-serif;
+                    font-family: "Montserrat Regular", sans-serif;
                 }
-            } 
+            }
             .studio-header {
                 font-size: 2.7vw;
                 font-weight: bold !important;
                 color: white;
-                font-family: 'Montserrat Bold', sans-serif;
+                font-family: "Montserrat Bold", sans-serif;
                 position: absolute;
                 top: 3vw;
                 left: 4vw;
                 z-index: 5;
                 .montserrat {
-                    font-family: 'Montserrat Bold', sans-serif;
+                    font-family: "Montserrat Bold", sans-serif;
                 }
-            }   
+            }
             .studio-content {
                 font-size: 1.7vw;
                 color: white;
-                font-family: 'Montserrat Regular', sans-serif;
+                font-family: "Montserrat Regular", sans-serif;
                 position: absolute;
                 top: 7.5vw;
                 left: 4vw;
                 z-index: 5;
                 .montserrat {
-                    font-family: 'Montserrat Regular', sans-serif;
+                    font-family: "Montserrat Regular", sans-serif;
                 }
-            } 
+            }
             .editable {
                 color: white;
-            } 
+            }
             .studio-footer {
                 position: relative;
                 font-size: 1.7vw;
                 color: white;
-                font-family: 'Montserrat Regular', sans-serif;
+                font-family: "Montserrat Regular", sans-serif;
                 z-index: 5;
                 position: absolute;
                 bottom: 2vw;
                 left: 4vw;
                 .montserrat {
-                    font-family: 'Montserrat Regular', sans-serif;
+                    font-family: "Montserrat Regular", sans-serif;
                 }
-            }  
+            }
         }
         .small-image {
             padding-bottom: 66.67%;
@@ -298,7 +297,7 @@
             -ms-border-radius: 10rem;
             border-radius: 10rem;
             font-size: 16px;
-            font-family: 'DinPro', sans-serif;
+            font-family: "DinPro", sans-serif;
             border: 0.1rem solid $primary;
             cursor: pointer;
             &:hover {
@@ -306,16 +305,19 @@
                 color: $white !important;
                 border-color: $success !important;
             }
-            &:focus, &:active {
+            &:focus,
+            &:active {
                 background: $success !important;
                 color: $white !important;
                 border-color: $success !important;
                 outline: none;
-				box-shadow: none;
+                box-shadow: none;
             }
-			.disabled, &:disabled, &[disabled] {
-				opacity: 1 !important;
-			}
+            .disabled,
+            &:disabled,
+            &[disabled] {
+                opacity: 1 !important;
+            }
         }
         .edit-btn {
             width: 50%;
@@ -329,7 +331,7 @@
             -ms-border-radius: 10rem;
             border-radius: 10rem;
             font-size: 16px;
-            font-family: 'DinPro', sans-serif;
+            font-family: "DinPro", sans-serif;
             border: 0.1rem solid $primary;
             cursor: pointer;
             &:hover {
@@ -337,16 +339,19 @@
                 color: $white !important;
                 border-color: $success !important;
             }
-            &:focus, &:active {
+            &:focus,
+            &:active {
                 background: $success !important;
                 color: $white !important;
                 border-color: $success !important;
                 outline: none;
-				box-shadow: none;
+                box-shadow: none;
             }
-			.disabled, &:disabled, &[disabled] {
-				opacity: 1 !important;
-			}
+            .disabled,
+            &:disabled,
+            &[disabled] {
+                opacity: 1 !important;
+            }
         }
     }
 }
@@ -377,7 +382,7 @@
         .contentItem {
             padding: 0;
             width: 80px;
-            .contentItem-wrp { 
+            .contentItem-wrp {
                 display: block;
                 position: relative;
                 height: 0;
@@ -418,15 +423,15 @@
                         position: relative;
                         font-size: 25px;
                         margin-top: 15px;
-                        font-family: 'DinPro Medium', sans-serif;
+                        font-family: "DinPro Medium", sans-serif;
                     }
                     .img-studio {
                         max-width: 15% !important;
                     }
-                    
+
                     &.portfolio-image:hover {
                         background: $primary-75;
-        
+
                         img {
                             opacity: 1;
                         }
@@ -443,12 +448,12 @@
                     left: 0;
                     object-fit: cover;
                     object-position: center;
-        
+
                     transition: all ease 0.3s;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-        
+
                     img {
                         position: relative;
                         max-width: 33%;
@@ -463,10 +468,10 @@
                     .img-studio {
                         max-width: 15% !important;
                     }
-                    
+
                     &.portfolio-image:hover {
                         background: $primary-75;
-        
+
                         img {
                             opacity: 1;
                         }
@@ -479,31 +484,28 @@
                 cursor: pointer;
             }
         }
-        
     }
-    
 }
-
 
 @media only screen and (max-width: 598.98px) {
     .studio-video {
         position: absolute !important;
     }
-    .studio-section  {
+    .studio-section {
         position: relative;
         height: auto;
         top: 0px;
         .studioItem {
             margin-bottom: 0px;
             .studioItem-wrp {
-                .studio-header { 
+                .studio-header {
                     top: 6vw;
                     left: 7vw;
                     font-size: 5.6vw;
                 }
                 .studio-content {
                     top: 16vw;
-                    left: 7vw; 
+                    left: 7vw;
                     font-size: 3.55vw;
                 }
                 .studio-footer {
@@ -511,7 +513,7 @@
                     left: 7vw;
                     font-size: 3.55vw;
                 }
-                .studio-header-2 { 
+                .studio-header-2 {
                     top: 6vw;
                     font-size: 5.6vw;
                 }
@@ -539,7 +541,7 @@
                     }
                 }
             }
-        }   
+        }
         .btn-section {
             button {
                 font-size: 14px;
@@ -549,8 +551,8 @@
                 font-size: 14px;
                 width: 50%;
             }
-        }     
-    }    
+        }
+    }
     .menu {
         .left-menu {
             position: relative;
@@ -574,5 +576,5 @@
                 width: 33.333333%;
             }
         }
-    }   
+    }
 }

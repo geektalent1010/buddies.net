@@ -11,7 +11,7 @@
         position: relative;
         padding: 0;
         border: 0.1rem solid transparent;
-        .navItem-wrp { 
+        .navItem-wrp {
             display: block;
             position: relative;
             height: 0;
@@ -34,7 +34,7 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-    
+
                 .item-icon {
                     max-width: 35%;
                     width: 100%;
@@ -52,17 +52,19 @@
                     margin-bottom: 17px !important;
                 }
                 span {
-                    font-family: 'DinPro Light', sans-serif;
+                    font-family: "DinPro Light", sans-serif;
                     font-size: 16px;
                     color: $white;
                 }
             }
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 background-color: $primary-75;
-    
+
                 .item {
                     .item-icon {
-                        .st0, .st1 {
+                        .st0,
+                        .st1 {
                             fill: $white;
                         }
                     }
@@ -81,18 +83,18 @@
                 color: $light-green;
             }
         }
-    
+
         @media (min-width: 767.98px) {
             -ms-flex: 0 0 20%;
             flex: 0 0 20%;
         }
-    
+
         @media only screen and (max-width: 991.98px) {
             .navItem-wrp .item span {
                 font-size: 18px;
             }
         }
-    
+
         @media only screen and (max-width: 575.98px) {
             .navItem-wrp .item .item-icon {
                 margin-bottom: 16px;
@@ -103,10 +105,9 @@
             .navItem-wrp .item span {
                 font-size: 18px;
             }
-    
         }
     }
-    
+
     @media only screen and (max-width: 991.98px) {
         width: 100%;
         padding-top: 0;

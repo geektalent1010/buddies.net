@@ -13,61 +13,64 @@
 
 <div class="main-bg d-flex">
   <div class="row m-0 px-0 w-100 connect-section">
-    <div class="search-input-section col-md-6 p-0">
-        <input id="searchKey" type="text" class="form-control" name="searchKey" placeholder="Find new buddies">
-        <div class="search-icon-section">
-        <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
-        </div>
-    </div>
+
     <div class="row justify-content-center app-subtitle-main m-0 p-0 w-100">
-      <div class="col-md-6 p-0">
-        <div class="title-group">
-            <div class="app-page-subtitle new-requests font-dinpro-18">
-            NEW INVITES
-            </div>
-            @if (is_null($requests) || !count($requests))
-            <div class="app-page-subtitle no-members font-dinpro-18">
-                <div class="text-center">[ NO NEW INVITES FOUND ]</div>
-            </div>
-            @else
-            <div class="member-body mt-30px">
-            @foreach ($requests as $request)
-                <div class="member-item">
-                    <a class="member-link" href="{{ route('profile.index', [ 'userID' => $request->request_user->id ]) }}">
-                        <div class="member-avatar-wrp">
-                            <div class="member-avatar">
-                            @if($request->request_user->profile->main_avatar_url)
-                            <img src="{{ asset('uploads/'.$request->request_user->username.'/'.$request->request_user->profile->main_avatar_url.'?'.time()) }}">
-                            @else
-                            <p class="first_letter">{{ $request->request_user->getMono() }}</p>
-                            @endif
-                            </div>
-                        </div>
-                        <div class="member-name">{{ $request->request_user->getFullname() }}</div>
-                    </a>
-                    <div class="option-icons-section">
-                        <div class="option-icon-btn" attr-data="{{ $request->id }}">
-                        <span class="option-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="publish-content">
-                    <div class="content">
-                    @if (isset($request->context))
-                        @php
-                            echo $request->context;
-                        @endphp
-                    @endif
-                    </div>
-                </div>
-            @endforeach
-            </div>
-            @endif
-            <div class="app-page-subtitle top-title font-dinpro-18 mb-30px">
-            GET CONNECTED
+      <div class="justify-content-center col-md-6 p-0 m-0">
+        <div class="search-input-section p-0">
+            <input id="searchKey" type="text" class="form-control" name="searchKey" placeholder="Find new buddies">
+            <div class="search-icon-section">
+            <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
             </div>
         </div>
-        @include('_sections.lists.connectUsers')
+        <div class="p-0 below-group" >
+          <div class="title-group">
+              <div class="app-page-subtitle new-requests font-dinpro-18">
+              NEW INVITES
+              </div>
+              @if (is_null($requests) || !count($requests))
+              <div class="app-page-subtitle no-members font-dinpro-18">
+                  <div class="text-center">[ NO NEW INVITES FOUND ]</div>
+              </div>
+              @else
+              <div class="member-body mt-30px">
+              @foreach ($requests as $request)
+                  <div class="member-item">
+                      <a class="member-link" href="{{ route('profile.index', [ 'userID' => $request->request_user->id ]) }}">
+                          <div class="member-avatar-wrp">
+                              <div class="member-avatar">
+                              @if($request->request_user->profile->main_avatar_url)
+                              <img src="{{ asset('uploads/'.$request->request_user->username.'/'.$request->request_user->profile->main_avatar_url.'?'.time()) }}">
+                              @else
+                              <p class="first_letter">{{ $request->request_user->getMono() }}</p>
+                              @endif
+                              </div>
+                          </div>
+                          <div class="member-name">{{ $request->request_user->getFullname() }}</div>
+                      </a>
+                      <div class="option-icons-section">
+                          <div class="option-icon-btn" attr-data="{{ $request->id }}">
+                          <span class="option-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="publish-content">
+                      <div class="content">
+                      @if (isset($request->context))
+                          @php
+                              echo $request->context;
+                          @endphp
+                      @endif
+                      </div>
+                  </div>
+              @endforeach
+              </div>
+              @endif
+              <div class="app-page-subtitle top-title font-dinpro-18 mb-30px">
+              GET CONNECTED
+              </div>
+          </div>
+          @include('_sections.lists.connectUsers')
+        </div>
       </div>
     </div>
   </div>

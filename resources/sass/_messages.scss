@@ -3,7 +3,7 @@
 	height: calc(100vh - 120px);
 	display: flex;
 	justify-content: center;
-	overflow-y: scroll;
+	// overflow-y: scroll;
 	flex-wrap: wrap;
 	z-index: 10;
 	width: 100%;
@@ -95,7 +95,7 @@
 				text-decoration: none;
 				position: relative;
 				flex: 1;
-	    	.member-avatar-wrp { 
+	    	.member-avatar-wrp {
 	        display: block;
 	        position: relative;
 	        height: 0;

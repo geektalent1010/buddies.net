@@ -17,8 +17,8 @@
   <div class="row m-0 p-0 w-100 wallet-section">
     <div class="row justify-content-center m-0 p-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="wallet-title app-page-subtitle">MY REFERRALS</div>
-        <div class="referral-header-section p-4 mt-30px">
+        <div class="wallet-title app-page-subtitle mb-30px">MY REFERRALS</div>
+        <div class="referral-header-section p-4">
           <p class="wallet-text status-header-text w-50">STATUS</p>
           <p class="wallet-text w-25">MEMBERSHIP</p>
           <p class="wallet-text text-right w-25">CREDITS</p>
@@ -28,7 +28,7 @@
           <p class="wallet-text w-45">M</p>
           <p class="wallet-text text-right w-25">C</p>
         </div>
-        
+
         @if (count($user->referrers) > 0)
           @foreach($user->referrers as $referralUser)
             <div class="referral-body-section px-4 py-3 d-flex justify-content-between">

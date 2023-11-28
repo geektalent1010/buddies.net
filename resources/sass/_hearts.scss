@@ -28,8 +28,8 @@
 		margin-top: 8px;
     margin-bottom: 8px;
   }
-	
-	.contentItem-wrp { 
+
+	.contentItem-wrp {
 		display: block;
 		position: relative;
 		height: 0;
@@ -103,13 +103,13 @@
 			object-position: center;
 			transition: all ease 0.3s;
 		}
-    
+
 	}
 	.contentItem {
 		padding: 0;
 		flex: 0 0 calc(33.333333% - 0.1rem) !important;
     	max-width: calc(33.333333% - 0.1rem) !important;
-		.contentItem-wrp { 
+		.contentItem-wrp {
 				display: block;
 				position: relative;
 				height: 0;
@@ -202,7 +202,7 @@
 				text-decoration: none;
 				position: relative;
 				flex: 1;
-	    	.member-avatar-wrp { 
+	    	.member-avatar-wrp {
 	        display: block;
 	        position: relative;
 	        height: 0;
@@ -297,7 +297,7 @@
 		  		}
 	    	}
 	    }
-			.plus-icon-wrp { 
+			.plus-icon-wrp {
 				display: block;
 				position: relative;
 				height: 0;
@@ -367,7 +367,7 @@
 			right: 4px;
 			&::after {
 				content: "\f068";
-				font-family: 'FontAwesome';  
+				font-family: 'FontAwesome';
 				font-weight: 900;
 				float: right;
 				color: $white;
@@ -418,7 +418,7 @@
 
 				&::after {
 					content: "\f068";
-					font-family: 'FontAwesome';  
+					font-family: 'FontAwesome';
 					font-weight: 900;
 					float: right;
 				}
@@ -458,8 +458,8 @@
     .content {
       	font-size: 16px;
       	font-family: 'DinPro Light', sans-serif;
-				line-height: 21px;	
-				overflow-wrap: anywhere;	
+				line-height: 21px;
+				overflow-wrap: anywhere;
     }
 		.editable {
 			color: $light-green;
@@ -578,7 +578,7 @@
 				}
 			}
 		}
-		
+
   }
 }
 

@@ -90,7 +90,7 @@
     .addresstab {
         display: none;
         width: 100%;
-        z-index: 1000; 
+        z-index: 1000;
         background: #2d23a3;
         position: absolute;
         padding-top: 12px;
@@ -202,7 +202,7 @@
 
                           @csrf
 
-                          <div class="row mt-4">
+                          <div class="row mt-4 mr-0 ml-0">
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="login-title info-title">
@@ -226,9 +226,9 @@
                                           <label id="last-name-error" class="has-error" for="last_name" style="display: none"></label>
                                       </div>
                                   </div>
-                              </div>                    
+                              </div>
                           </div>
-                          <div class="row mt-4">
+                          <div class="row mt-4 mr-0 ml-0">
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="login-title info-title">
@@ -263,7 +263,7 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="row mt-4">
+                          <div class="row mt-4 mr-0 ml-0">
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="login-title info-title">
@@ -280,7 +280,7 @@
                                               @endphp
                                               <select class="form-control phone-select webkit_style editable" name="">
                                                 <option value="{{ $first_number }}">{{ $first_number }}</option>
-                                                @foreach ($phonecodes as $code)                                    
+                                                @foreach ($phonecodes as $code)
                                                     <option value="+{{$code}}">+{{$code}}</option>
                                                 @endforeach
                                               </select>
@@ -312,7 +312,7 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="row mt-4 company-details-section">
+                          <div class="row mt-4 company-details-section mr-0 ml-0">
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="login-title info-title">
@@ -344,7 +344,7 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="row mt-4">
+                          <div class="row mt-4 mr-0 ml-0">
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="login-title info-title">
@@ -402,7 +402,7 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="row mt-4">
+                          <div class="row mt-4 mr-0 ml-0">
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="login-title info-title">
@@ -471,7 +471,7 @@
               </div>
           </div>
           <div class="col-md-6 p-0" id="setting-item">
-              {{-- 
+              {{--
                 <div class="row justify-content-center bg-color-section px-4 m-0 pt-4 pb-2">
                   <p>I AM INTERESTED IN</p>
               </div>
@@ -1495,7 +1495,7 @@
             else {
                 return ((/^[a-zA-Z\-0-9 ]{3,50}$/.test(value_from_dropdown)) || (/^[\p{L}\d\- ]{3,50}$/u.test(value_from_dropdown)));
             }
-            
+
         },
         validateUsernameInput: function () {
             var validationMessage = '';
@@ -1631,7 +1631,7 @@
 
     var genders = '{{ isset($user->profile->interest_based) ? $user->profile->interest_based : '' }}'
     var selected_gender = genders ? genders.split(',') : [];
-    
+
     function select_gender(evt, value) {
         var tablinks = document.getElementsByClassName("gender_tablinks");
         for (var i = 0; i < tablinks.length; i++) {
@@ -1681,7 +1681,7 @@
         }
     })
 
-    $('.setting-save-btn').on('click', function() { 
+    $('.setting-save-btn').on('click', function() {
         var send_data = {};
         send_data['id'] = '{{$user->profile->id}}';
         // send_data['gender'] = selected_gender;
@@ -1706,7 +1706,7 @@
                 console.log(data);
             }
             })
-        }        
+        }
     })
 
 </script>

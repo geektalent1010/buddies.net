@@ -1391,6 +1391,7 @@ input[type=range]::-moz-range-thumb {
   flex-wrap: wrap;
   z-index: 10;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .setting-section .search-input-section {
@@ -2423,7 +2424,6 @@ input[type=range]::-moz-range-thumb {
 }
 
 .page-content .company-profile-section .checkbox-container {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -2449,6 +2449,8 @@ input[type=range]::-moz-range-thumb {
   background: transparent;
   margin-left: 1px;
   margin-right: 1px;
+  border-left: 0.2em solid transparent;
+  border-right: 0.2em solid transparent;
 }
 
 #category .card .card-header {
@@ -3750,7 +3752,6 @@ input[type=range]::-moz-range-thumb {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 50px;
@@ -3945,10 +3946,10 @@ input[type=range]::-moz-range-thumb {
   height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
   flex-wrap: wrap;
   z-index: 10;
   width: 100%;
+  border: 2px solid transparent;
 }
 
 .connect-section .no-members {
@@ -3959,6 +3960,11 @@ input[type=range]::-moz-range-thumb {
 
 .connect-section .no-members .text-blue {
   color: #04246b !important;
+}
+
+.connect-section .app-subtitle-main {
+  max-height: calc(100vh - 200px);
+  overflow: auto;
 }
 
 .connect-section .search-input-section {
@@ -4096,8 +4102,6 @@ input[type=range]::-moz-range-thumb {
 
 .connect-section .member-body {
   width: 100%;
-  max-height: calc(100vh - 190px);
-  overflow: auto;
 }
 
 .connect-section .member-body .member-item {
@@ -4300,7 +4304,6 @@ input[type=range]::-moz-range-thumb {
 }
 
 .connect-section .interest-check-section .looking-for-checks .checkbox-container {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -4349,6 +4352,11 @@ input[type=range]::-moz-range-thumb {
 
   .connect-section .search-input-section .search-icon-section .search-icon {
     font-size: 24px;
+  }
+
+  .connect-section .app-subtitle-main {
+    max-height: calc(100vh - 190px);
+    overflow: auto;
   }
 
   .connect-section .request-input-section {
@@ -4447,13 +4455,19 @@ input[type=range]::-moz-range-thumb {
 }
 
 .streaming-section .more-contents {
-  background-color: rgba(4, 36, 107, 0.2509803922);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
+  font-family: "DinPro Medium", sans-serif;
+  font-size: 18px;
+}
+
+.streaming-section .more-contents .hearts-icon {
+  width: 50px;
+  height: auto;
 }
 
 .streaming-section .more-contents .main-icon {
@@ -5235,7 +5249,6 @@ input[type=range]::-moz-range-thumb {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 50px;

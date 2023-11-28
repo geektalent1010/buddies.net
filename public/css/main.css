@@ -283,7 +283,7 @@ footer .footerDesc .moods-section .st0 {
   fill: #fff;
 }
 
-footer .footerDesc .moods-section .moods-icon:hover .st0 {
+footer .footerDesc .moods-section .moods-icon:active .st0 {
   fill: #00FFFF;
 }
 
@@ -299,7 +299,7 @@ footer .footerDesc .moods-section .moods-icon:hover .st0 {
   position: relative;
     min-width: 100%;
     min-height: calc(100vh - 80px);
-    margin-top: 80px;
+    margin-top: 78px;
     padding-bottom: 40px;
     background-color: #216be9;
     z-index: 1;

@@ -1,4 +1,3 @@
-
 /*  Setting page styles  */
 #imageModalContainer {
     visibility: visible !important;
@@ -14,7 +13,7 @@
 .crop__modal-content {
     height: 95vh;
     border-radius: 16px;
-    background: #DEDCDD;
+    background: #dedcdd;
     overflow-y: scroll;
 }
 .crop__modal-content .modal-header h5 {
@@ -37,8 +36,9 @@
     justify-content: center;
 }
 .crop__action {
-    background: linear-gradient(0.45turn, #D4D2D2, #EEECED);
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35), -3px -3px 8px rgba(255, 255, 255, 0.6);
+    background: linear-gradient(0.45turn, #d4d2d2, #eeeced);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35),
+        -3px -3px 8px rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     padding: 16px;
     color: #949191;
@@ -48,7 +48,7 @@
     box-shadow: 0 0 2px 3px #f7c4c9;
 }
 .crop__action:hover {
-    color: #ED8C82;
+    color: #ed8c82;
 }
 .crop__action:first-child {
     margin-right: 20px;
@@ -59,7 +59,7 @@
 .croppie-container {
     max-height: 100%;
 }
-input[type=range] {
+input[type="range"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -69,45 +69,53 @@ input[type=range] {
     box-shadow: 0 0 10px transparent;
     height: 30px;
 }
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
     display: flex;
     align-items: center;
     height: 20px;
     border-radius: 5px;
-    background-image: var(--track-background, linear-gradient(180deg, #f8d1d9, #ea8a80));
+    background-image: var(
+        --track-background,
+        linear-gradient(180deg, #f8d1d9, #ea8a80)
+    );
     cursor: ew-resize;
     box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.25), inset 1.5px 1.5px 3px white;
     border: none;
     border-radius: 6px;
 }
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     position: relative;
     top: -5px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(0.45turn, #D4D2D2, #EEECED);
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35), -3px -3px 8px rgba(255, 255, 255, 0.6);
+    background: linear-gradient(0.45turn, #d4d2d2, #eeeced);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35),
+        -3px -3px 8px rgba(255, 255, 255, 0.6);
 }
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
     -moz-appearance: none;
     display: flex;
     align-items: center;
     height: 20px;
     border-radius: 5px;
-    background-image: var(--track-background, linear-gradient(180deg, #f8d1d9, #ea8a80));
+    background-image: var(
+        --track-background,
+        linear-gradient(180deg, #f8d1d9, #ea8a80)
+    );
     cursor: ew-resize;
     box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.25), inset 1.5px 1.5px 3px white;
 }
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
     position: relative;
     top: -10px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: linear-gradient(0.45turn, #D4D2D2, #EEECED);
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35), -3px -3px 8px rgba(255, 255, 255, 0.6);
+    background: linear-gradient(0.45turn, #d4d2d2, #eeeced);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.35),
+        -3px -3px 8px rgba(255, 255, 255, 0.6);
 }
 .croppie-container .cr-boundary {
     position: relative;
@@ -117,7 +125,8 @@ input[type=range]::-moz-range-thumb {
     width: 100%;
     height: 100%;
 }
-.croppie-container .cr-viewport, .croppie-container .cr-resizer {
+.croppie-container .cr-viewport,
+.croppie-container .cr-resizer {
     position: absolute;
     border: 2px solid #fff;
     margin: auto;
@@ -156,10 +165,10 @@ input[type=range]::-moz-range-thumb {
     height: 100%;
 }
 .crop__modal-content .modal-body {
-    max-height : 65% !important;
+    max-height: 65% !important;
 }
 .changeable {
-    font-family: 'DinPro', sans-serif;
+    font-family: "DinPro", sans-serif;
     font-size: 16px;
     color: $light-green !important;
     line-height: 24px;
@@ -177,8 +186,8 @@ input[type=range]::-moz-range-thumb {
     z-index: 10;
     width: 100%;
     overflow-x: hidden;
-	.search-input-section {
-		display: flex;
+    .search-input-section {
+        display: flex;
         .form-control {
             flex: 1;
             background: $primary-50;
@@ -191,14 +200,15 @@ input[type=range]::-moz-range-thumb {
             padding-left: 36px;
             padding-right: 20px;
             font-size: 16px;
-            font-family: 'DinPro', sans-serif;
+            font-family: "DinPro", sans-serif;
             line-height: 1.4;
             color: $white;
             -webkit-transition: all 0.2s ease-in-out;
             -moz-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 box-shadow: none;
             }
 
@@ -234,7 +244,7 @@ input[type=range]::-moz-range-thumb {
                 }
             }
         }
-	}
+    }
     .interests-section {
         border-left: 0.2rem solid transparent;
         border-right: 0.2rem solid transparent;
@@ -405,14 +415,14 @@ input[type=range]::-moz-range-thumb {
                     }
                 }
                 .profile-card-title {
-                    font-family: 'DinPro Medium', sans-serif;
+                    font-family: "DinPro Medium", sans-serif;
                     font-size: 18px;
                     color: $white;
                     margin-bottom: 16px;
                     margin-top: 30px;
                 }
                 .profile-card-context {
-                    font-family: 'DinPro', sans-serif;
+                    font-family: "DinPro", sans-serif;
                     font-size: 16px;
                     color: $white;
                     margin-bottom: 12px;
@@ -440,7 +450,7 @@ input[type=range]::-moz-range-thumb {
                         -ms-border-radius: 10rem;
                         border-radius: 10rem;
                         font-size: 16px;
-                        font-family: 'DinPro', sans-serif;
+                        font-family: "DinPro", sans-serif;
                         border: 0.1rem solid $primary;
                         cursor: pointer;
                         &:hover {
@@ -448,14 +458,17 @@ input[type=range]::-moz-range-thumb {
                             color: $primary !important;
                             border-color: $light-green !important;
                         }
-                        &:focus, &:active {
+                        &:focus,
+                        &:active {
                             background: $light-green !important;
                             color: $primary !important;
                             border-color: $light-green !important;
                             outline: none;
                             box-shadow: none;
                         }
-                        .disabled, &:disabled, &[disabled] {
+                        .disabled,
+                        &:disabled,
+                        &[disabled] {
                             opacity: 1 !important;
                         }
                     }
@@ -465,7 +478,6 @@ input[type=range]::-moz-range-thumb {
             .main_avatar_card_bg {
                 background-color: $primary-50;
             }
-
         }
         .main-avatar {
             padding-bottom: 40% !important;
@@ -483,14 +495,14 @@ input[type=range]::-moz-range-thumb {
                     flex: 1;
 
                     .profile-card-title {
-                        font-family: 'DinPro Medium', sans-serif;
+                        font-family: "DinPro Medium", sans-serif;
                         font-size: 24px;
                         color: $white;
                         margin-bottom: 0;
                         line-height: 36px;
                     }
                     .profile-card-context {
-                        font-family: 'DinPro Light', sans-serif;
+                        font-family: "DinPro Light", sans-serif;
                         font-size: 18px;
                         color: $white;
                         margin-bottom: 0;
@@ -519,14 +531,14 @@ input[type=range]::-moz-range-thumb {
                 }
             }
             .profile-card-title {
-                font-family: 'DinPro Medium', sans-serif;
+                font-family: "DinPro Medium", sans-serif;
                 font-size: 21px;
                 color: $white;
                 margin-bottom: 0;
                 line-height: 42px;
             }
             .profile-card-context {
-                font-family: 'DinPro Light', sans-serif;
+                font-family: "DinPro Light", sans-serif;
                 font-size: 18px;
                 color: $white;
                 margin-bottom: 0;
@@ -574,14 +586,15 @@ input[type=range]::-moz-range-thumb {
                 .about {
                     flex: 1;
                     .story-card-title {
-                        font-family: 'DinPro Medium', sans-serif;
+                        font-family: "DinPro Medium", sans-serif;
                         font-size: 21px;
                         color: $white;
                         margin-bottom: 0;
                         line-height: 42px;
                     }
-                    .story-card-context, div {
-                        font-family: 'DinPro', sans-serif;
+                    .story-card-context,
+                    div {
+                        font-family: "DinPro", sans-serif;
                         font-size: 16px;
                         color: $white;
                         line-height: 21px;
@@ -601,20 +614,20 @@ input[type=range]::-moz-range-thumb {
                     }
                 }
                 .story-card-title {
-                    font-family: 'DinPro Medium', sans-serif;
+                    font-family: "DinPro Medium", sans-serif;
                     font-size: 21px;
                     color: $white;
                     margin-bottom: 0;
                     line-height: 42px;
                 }
-                .story-card-context, div {
-                    font-family: 'DinPro Light', sans-serif;
+                .story-card-context,
+                div {
+                    font-family: "DinPro Light", sans-serif;
                     font-size: 16px;
                     color: $white;
                     line-height: 21px;
                     overflow-wrap: anywhere;
                 }
-
             }
         }
 
@@ -673,7 +686,7 @@ input[type=range]::-moz-range-thumb {
         }
 
         &.tab-4 div {
-          width: calc(25% - 2px);
+            width: calc(25% - 2px);
         }
     }
 
@@ -767,14 +780,14 @@ input[type=range]::-moz-range-thumb {
         margin-right: 1px !important;
     }
     .bg-color-section {
-        font-family: 'DinPro Light', sans-serif;
+        font-family: "DinPro Light", sans-serif;
         p {
             font-size: 16px;
         }
     }
     .category-section {
         background-color: $borderColor;
-        position:relative;
+        position: relative;
         align-items: center;
         padding-bottom: 35px;
         padding-top: 35px;
@@ -809,7 +822,7 @@ input[type=range]::-moz-range-thumb {
 
                 &::after {
                     content: "\f068";
-                    font-family: 'FontAwesome';
+                    font-family: "FontAwesome";
                     font-weight: 900;
                     float: right;
                 }
@@ -856,7 +869,7 @@ input[type=range]::-moz-range-thumb {
             -ms-border-radius: 10rem;
             border-radius: 10rem;
             font-size: 16px;
-            font-family: 'DinPro', sans-serif;
+            font-family: "DinPro", sans-serif;
             border: 0.1rem solid $primary;
             cursor: pointer;
             &:hover {
@@ -864,58 +877,64 @@ input[type=range]::-moz-range-thumb {
                 color: $primary !important;
                 border-color: $light-green !important;
             }
-            &:focus, &:active {
+            &:focus,
+            &:active {
                 background: $light-green !important;
                 color: $primary !important;
                 border-color: $light-green !important;
                 outline: none;
                 box-shadow: none;
             }
-            .disabled, &:disabled, &[disabled] {
+            .disabled,
+            &:disabled,
+            &[disabled] {
                 opacity: 1 !important;
             }
         }
     }
     .save-button {
-		width: 100%;
+        width: 100%;
         max-width: 300px;
-		height: 44px;
-		background: $primary;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-transform: uppercase;
-		color: $white;
-		-webkit-border-radius: 10rem;
-		-moz-border-radius: 10rem;
-		-ms-border-radius: 10rem;
-		border-radius: 10rem;
+        height: 44px;
+        background: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        color: $white;
+        -webkit-border-radius: 10rem;
+        -moz-border-radius: 10rem;
+        -ms-border-radius: 10rem;
+        border-radius: 10rem;
         font-size: 16px;
-        font-family: 'DinPro', sans-serif;
-		border: 0.1rem solid $primary;
-		cursor: pointer;
-		&:hover {
-			background: $light-green !important;
-			color: $primary !important;
-			border-color: $light-green !important;
-		}
-		&:focus, &:active {
-			background: $light-green !important;
-			color: $primary !important;
-			border-color: $light-green !important;
+        font-family: "DinPro", sans-serif;
+        border: 0.1rem solid $primary;
+        cursor: pointer;
+        &:hover {
+            background: $light-green !important;
+            color: $primary !important;
+            border-color: $light-green !important;
+        }
+        &:focus,
+        &:active {
+            background: $light-green !important;
+            color: $primary !important;
+            border-color: $light-green !important;
             outline: none;
             box-shadow: none;
-		}
-        .disabled, &:disabled, &[disabled] {
+        }
+        .disabled,
+        &:disabled,
+        &[disabled] {
             opacity: 1 !important;
         }
-	}
+    }
     .detail-info-section {
         .info-title {
             margin-bottom: 12px;
             padding-left: 40px;
             span {
-                font-family: 'DinPro Light', sans-serif;
+                font-family: "DinPro Light", sans-serif;
                 font-size: 12px;
                 text-transform: uppercase;
             }
@@ -944,7 +963,8 @@ input[type=range]::-moz-range-thumb {
                 -moz-transition: all 0.2s ease-in-out;
                 transition: all 0.2s ease-in-out;
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     box-shadow: none;
                 }
 
@@ -967,7 +987,7 @@ input[type=range]::-moz-range-thumb {
                 font-size: 14px;
                 color: $light-green;
                 text-align: left;
-                font-family: 'DinPro Light', sans-serif;
+                font-family: "DinPro Light", sans-serif;
                 margin: 0;
             }
             label.valid {
@@ -975,7 +995,7 @@ input[type=range]::-moz-range-thumb {
                 font-size: 14px;
                 color: $light-green;
                 text-align: left;
-                font-family: 'DinPro Light', sans-serif;
+                font-family: "DinPro Light", sans-serif;
                 margin: 0;
             }
             .disabled {
@@ -1022,7 +1042,7 @@ input[type=range]::-moz-range-thumb {
 
             span {
                 font-size: 16px;
-                font-family: 'DinPro Light', sans-serif;
+                font-family: "DinPro Light", sans-serif;
             }
 
             .update-button {
@@ -1037,7 +1057,7 @@ input[type=range]::-moz-range-thumb {
                 -ms-border-radius: 10rem;
                 border-radius: 10rem;
                 font-size: 16px;
-                font-family: 'DinPro', sans-serif;
+                font-family: "DinPro", sans-serif;
                 border: 0.1rem solid $primary;
                 cursor: pointer;
                 &:hover {
@@ -1045,14 +1065,17 @@ input[type=range]::-moz-range-thumb {
                     color: $primary !important;
                     border-color: $light-green !important;
                 }
-                &:focus, &:active {
+                &:focus,
+                &:active {
                     background: $light-green !important;
                     color: $primary !important;
                     border-color: $light-green !important;
                     outline: none;
                     box-shadow: none;
                 }
-                .disabled, &:disabled, &[disabled] {
+                .disabled,
+                &:disabled,
+                &[disabled] {
                     opacity: 1 !important;
                 }
             }
@@ -1073,7 +1096,7 @@ input[type=range]::-moz-range-thumb {
         .tag-prefix {
             padding-left: 24px;
             span {
-                font-family: 'DinPro Medium', sans-serif;
+                font-family: "DinPro Medium", sans-serif;
                 font-size: 18px;
                 color: $white;
                 text-transform: uppercase;
@@ -1082,12 +1105,11 @@ input[type=range]::-moz-range-thumb {
 
         span {
             font-size: 16px;
-            font-family: 'DinPro Light', sans-serif;
+            font-family: "DinPro Light", sans-serif;
         }
     }
 
     .company-profile-section {
-
         .form-control {
             background: $borderColor;
             border: none;
@@ -1109,7 +1131,8 @@ input[type=range]::-moz-range-thumb {
             -moz-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 box-shadow: none;
             }
 
@@ -1130,7 +1153,7 @@ input[type=range]::-moz-range-thumb {
             width: fit-content;
             .checkbox-name {
                 font-size: 18px;
-                font-family: 'DinPro', sans-serif;
+                font-family: "DinPro", sans-serif;
                 text-transform: uppercase;
             }
         }
@@ -1138,12 +1161,11 @@ input[type=range]::-moz-range-thumb {
             padding-left: 24px;
             p {
                 font-size: 14px;
-                font-family: 'DinPro', sans-serif;
+                font-family: "DinPro", sans-serif;
             }
         }
     }
 }
-
 
 #category .card {
     border: 0;
@@ -1170,7 +1192,7 @@ input[type=range]::-moz-range-thumb {
             align-items: center;
             padding-left: 32px;
             font-size: 18px;
-            font-family: 'DinPro Medium', sans-serif;
+            font-family: "DinPro Medium", sans-serif;
             z-index: 1;
             cursor: pointer;
         }
@@ -1181,13 +1203,13 @@ input[type=range]::-moz-range-thumb {
             padding: 20px;
             padding-left: 32px;
             font-size: 21px;
-            font-family: 'DinPro Medium', sans-serif;
+            font-family: "DinPro Medium", sans-serif;
             border: 0;
             border-radius: 0px;
             height: 74px;
             &::after {
                 content: "\f068";
-                font-family: 'FontAwesome';
+                font-family: "FontAwesome";
                 font-weight: 900;
                 float: right;
                 color: $white;
@@ -1210,7 +1232,7 @@ input[type=range]::-moz-range-thumb {
         margin-bottom: -1px;
         p {
             font-size: 16px;
-            font-family: 'DinPro Light', sans-serif;
+            font-family: "DinPro Light", sans-serif;
             margin-bottom: 4px;
         }
     }
@@ -1219,7 +1241,7 @@ input[type=range]::-moz-range-thumb {
         line-height: 30px;
         color: $white;
         font-size: 16px;
-        font-family: 'DinPro', sans-serif;
+        font-family: "DinPro", sans-serif;
         &.active {
             background: $primary-75;
         }
@@ -1231,7 +1253,7 @@ input[type=range]::-moz-range-thumb {
             line-height: 30px;
             color: $white;
             font-size: 16px;
-            font-family: 'DinPro', sans-serif;
+            font-family: "DinPro", sans-serif;
             margin-top: 2px;
         }
         &.active {
@@ -1364,7 +1386,8 @@ input[type=range]::-moz-range-thumb {
                         font-size: 16px;
                         line-height: 24px;
                     }
-                    .story-card-context, div {
+                    .story-card-context,
+                    div {
                         font-size: 14px;
                         line-height: 18px;
                     }
@@ -1384,7 +1407,8 @@ input[type=range]::-moz-range-thumb {
                     font-size: 16px;
                     line-height: 24px;
                 }
-                .story-card-context, div {
+                .story-card-context,
+                div {
                     font-size: 14px;
                     line-height: 18px;
                 }
@@ -1412,13 +1436,12 @@ input[type=range]::-moz-range-thumb {
         .save-button {
             width: 50%;
         }
-        .btn-section  {
+        .btn-section {
             .setting-save-btn {
                 width: 50%;
             }
         }
     }
-
 }
 @media only screen and (max-width: 1080px) {
     .setting-section {

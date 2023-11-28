@@ -26,7 +26,7 @@
             <span class="send-icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
           </div>
         </div>
-    </div>
+      </div>
     @endforeach
   @endif
 </div>

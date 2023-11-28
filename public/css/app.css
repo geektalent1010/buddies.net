@@ -4105,6 +4105,7 @@ input[type=range]::-moz-range-thumb {
 
 .connect-section .member-body {
   width: 100%;
+  padding-bottom: 30px;
 }
 
 .connect-section .member-body .member-item {

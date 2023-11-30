@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
 
 body {
     font-family: "DinPro", sans-serif;
-    background: #04246b no-repeat scroll center center / cover ;
+    background: #04246b no-repeat scroll center center / cover;
     color: white;
 }
 
@@ -66,7 +66,7 @@ body {
     /* font-size: 28px;
     font-family: 'Concord Regular', sans-serif; */
     font-size: 21px;
-    font-family: 'DinPro', sans-serif;
+    font-family: "DinPro", sans-serif;
 }
 
 .headerSection nav.navbar .navbarItem .buddies-svg {
@@ -77,7 +77,7 @@ body {
 .headerSection nav.navbar .navbarItem a {
     color: #fff;
     display: flex;
-    font-family: 'DinPro', sans-serif;
+    font-family: "DinPro", sans-serif;
     text-decoration: none;
 }
 
@@ -117,7 +117,7 @@ body {
 
 .headerSection nav.navbar .navbarItem a .login-out-icon:hover .st0,
 .headerSection nav.navbar .navbarItem a .login-out-icon:hover .st1 {
-    fill: #00FFFF;
+    fill: #00ffff;
 }
 
 .footerDesc .navicon-section {
@@ -149,12 +149,12 @@ body {
 }
 
 .footerDesc .moods-section {
-  padding: 6px 9px;
+    padding: 6px 9px;
 }
 
 .footerDesc .moods-section span {
-  font-family: "DinPro Light", sans-serif;
-  font-size: 13px;
+    font-family: "DinPro Light", sans-serif;
+    font-size: 13px;
 }
 
 .navbar ul.nav.navbar-nav li a,
@@ -164,23 +164,23 @@ body {
     padding: 8px 10px;
     font-weight: 400;
     font-size: 14px;
-    font-family: 'DinPro', sans-serif;
+    font-family: "DinPro", sans-serif;
     text-decoration: none;
     align-self: center;
 }
 
 .navbar ul.nav.navbar-nav li a:hover {
-    color: #A7A8B2;
+    color: #a7a8b2;
 }
 
 .navbar ul.nav.navbar-nav li.contact-nav a:hover {
     /*background-color: #2e3440 !important;*/
-    color: #A7A8B2;
+    color: #a7a8b2;
 }
 
 .navbar ul.nav.navbar-nav li.active a {
     /*background-color: #2e3440 !important;*/
-    color: #A7A8B2;
+    color: #a7a8b2;
 }
 
 .navbar ul.nav.navbar-nav a span {
@@ -240,7 +240,7 @@ footer {
     width: 100%;
     height: 40px;
     z-index: 99;
-    color: #FFFFFF;
+    color: #ffffff;
     background-color: #04246b;
     padding: 8px 16px;
     display: flex;
@@ -249,9 +249,9 @@ footer {
 }
 
 footer .footerDesc {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 10px;
-    font-family: 'Montserrat SemiBold', sans-serif;
+    font-family: "Montserrat SemiBold", sans-serif;
 }
 
 footer .footerDesc:hover .color-mark {
@@ -263,7 +263,7 @@ footer .footerDesc:hover .white-mark {
 }
 
 footer .footerDesc span {
-    font-family: 'Montserrat Regular', sans-serif;
+    font-family: "Montserrat Regular", sans-serif;
 }
 
 footer .footerDesc img {
@@ -280,11 +280,11 @@ footer .footerDesc img.color-mark {
 }
 
 footer .footerDesc .moods-section .st0 {
-  fill: #fff;
+    fill: #fff;
 }
 
 footer .footerDesc .moods-section .moods-icon:active .st0 {
-  fill: #00FFFF;
+    fill: #00ffff;
 }
 
 .cursor-pointer {
@@ -296,12 +296,11 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .main-bg {
-  position: relative;
+    position: relative;
     min-width: 100%;
     min-height: calc(100vh - 80px);
     margin-top: 80px;
     padding-bottom: 40px;
-    background-color: #216be9;
     z-index: 1;
 }
 
@@ -325,17 +324,17 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
     width: 100%;
     min-height: calc(100vh - 120px);
     height: 100%;
-    /* top: 80px; */
     object-fit: cover;
+    margin-top: -10px;
 }
 
 .main-img-mobile {
     position: absolute;
     width: 100%;
     height: 100%;
-    /* height: calc(100vh - 120px); */
     object-fit: cover;
     display: none;
+    margin-top: -10px;
 }
 
 .login-page {
@@ -351,7 +350,7 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .login-title p {
-    font-family: 'DinPro Medium', sans-serif;
+    font-family: "DinPro Medium", sans-serif;
     font-size: 24px;
     text-transform: uppercase;
     margin-top: 20px;
@@ -359,12 +358,12 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .login-title span {
-    font-family: 'DinPro Light', sans-serif;
+    font-family: "DinPro Light", sans-serif;
     font-size: 12px;
 }
 
 .login-page .login-title span.join-desc {
-    font-family: 'DinPro', sans-serif;
+    font-family: "DinPro", sans-serif;
     font-size: 16px;
 }
 
@@ -374,12 +373,12 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 
 .login-page .enquiry-desc p {
     font-size: 18px;
-    font-family: 'Montserrat SemiBold', sans-serif;
+    font-family: "Montserrat SemiBold", sans-serif;
 }
 
 .login-page .enquiry-desc span {
     font-size: 16px;
-    font-family: 'Montserrat Regular', sans-serif;
+    font-family: "Montserrat Regular", sans-serif;
 }
 
 .login-page .form-group .form-control {
@@ -439,13 +438,13 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
     background: #04246b;
     display: block;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #ffffff;
     -webkit-border-radius: 10rem;
     -moz-border-radius: 10rem;
     -ms-border-radius: 10rem;
     border-radius: 10rem;
     font-size: 16px;
-    font-family: 'DinPro Light', sans-serif;
+    font-family: "DinPro Light", sans-serif;
     border: 0.1rem solid #04246b;
     cursor: pointer;
 }
@@ -472,7 +471,7 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .login-page a {
-    font-family: 'DinPro Light', sans-serif;
+    font-family: "DinPro Light", sans-serif;
     font-size: 12px;
     text-transform: uppercase;
     margin-top: 10px;
@@ -510,30 +509,30 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
     display: inline-block;
     padding: 0;
     vertical-align: middle;
-    transition: border .2s ease-in-out;
+    transition: border 0.2s ease-in-out;
 }
 
 .invalid-feedback {
-    font-family: 'DinPro', sans-serif;
+    font-family: "DinPro", sans-serif;
     color: #00ffff;
 }
 
 /* On mouse-over, add a grey background color */
-.checkbox-container:hover input~.checkbox-circle {
+.checkbox-container:hover input ~ .checkbox-circle {
     border: 1px solid #00ffff;
     background: #00ffff;
 }
 
-.checkbox-container input:disabled~.checkbox-circle {
+.checkbox-container input:disabled ~ .checkbox-circle {
     background-color: #ccc;
 }
 
 /* When the checkbox button is checked, add a blue background */
-.checkbox-container input:checked~.checkbox-circle {
+.checkbox-container input:checked ~ .checkbox-circle {
     border: 1px solid #00ffff;
     background: #00ffff;
     box-shadow: 0 0 0 1px #00ffff;
-    transition: background .2s ease-in-out;
+    transition: background 0.2s ease-in-out;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -544,7 +543,7 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.checkbox-container input:checked~.checkbox-circle:after {
+.checkbox-container input:checked ~ .checkbox-circle:after {
     display: block;
 }
 
@@ -561,7 +560,7 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
     display: inline-block;
     font-size: 12px;
     margin: 0 0 0 24px;
-    font-family: 'DinPro Light', sans-serif;
+    font-family: "DinPro Light", sans-serif;
 }
 
 .page-title {
@@ -570,7 +569,7 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .page-title span {
-    font-family: 'DinPro CondBold', sans-serif;
+    font-family: "DinPro CondBold", sans-serif;
     font-size: 32px;
     color: #fff;
     text-transform: uppercase;
@@ -582,7 +581,7 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .page-subtitle span {
-    font-family: 'DinPro Medium', sans-serif;
+    font-family: "DinPro Medium", sans-serif;
     font-size: 18px;
     color: #fff;
     text-transform: uppercase;
@@ -607,11 +606,11 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .montserrat-bold {
-    font-family: 'Montserrat Bold';
+    font-family: "Montserrat Bold";
 }
 
 .times-new-roman {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .landing-page {
@@ -697,7 +696,7 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
     background-color: #fff;
     animation-name: scroll;
     animation-duration: 2.2s;
-    animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+    animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
     animation-iteration-count: infinite;
 }
 
@@ -727,8 +726,8 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .background-loaded::before {
-    content: '';
-    background-image: url('../images/PeopleDesktop.png');
+    content: "";
+    background-image: url("../images/PeopleDesktop.png");
     display: block;
     background-position: top center;
     background-size: cover;
@@ -741,7 +740,6 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
     position: fixed;
     z-index: -10;
 }
-
 
 .parallax {
     background-attachment: fixed;
@@ -767,26 +765,26 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 
 .home-head {
     font-size: 36px;
-    font-family: 'Montserrat Regular', sans-serif;
+    font-family: "Montserrat Regular", sans-serif;
     margin-bottom: 30px;
     letter-spacing: 3px;
 }
 
 .home-head span {
-    font-family: 'Montserrat Bold', sans-serif;
+    font-family: "Montserrat Bold", sans-serif;
     letter-spacing: 3px;
 }
 
 .box-desc {
     font-size: 17px;
-    font-family: 'Montserrat Regular', sans-serif;
+    font-family: "Montserrat Regular", sans-serif;
     /* text-align: justify; */
     margin-bottom: 30px;
     line-height: 30px;
 }
 
 .box-desc span {
-    font-family: 'Montserrat SemiBold', sans-serif;
+    font-family: "Montserrat SemiBold", sans-serif;
 }
 
 .extra-heart-icon {
@@ -800,23 +798,23 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .landing-footer-head {
-    font-family: 'Montserrat Regular', sans-serif;
+    font-family: "Montserrat Regular", sans-serif;
     margin-bottom: 25px;
 }
 
 .landing-footer-head span {
-    font-family: 'Montserrat Bold', sans-serif;
+    font-family: "Montserrat Bold", sans-serif;
 }
 
 .landing-footer-content {
-    font-family: 'Montserrat Regular', sans-serif;
+    font-family: "Montserrat Regular", sans-serif;
     font-size: 14px;
     text-align: center;
     line-height: 28px;
 }
 
 .landing-footer-content span {
-    font-family: 'Montserrat SemiBold', sans-serif;
+    font-family: "Montserrat SemiBold", sans-serif;
 }
 
 .landing-page .join-now-button {
@@ -825,19 +823,19 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
     background: #04246b;
     display: block;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #ffffff;
     -webkit-border-radius: 10rem;
     -moz-border-radius: 10rem;
     -ms-border-radius: 10rem;
     border-radius: 10rem;
     font-size: 18px;
-    font-family: 'DinPro', sans-serif;
+    font-family: "DinPro", sans-serif;
     border: 0.1rem solid #04246b;
     cursor: pointer;
 }
 
 .landing-page .join-now-button span {
-    font-family: 'DinPro Bold', sans-serif;
+    font-family: "DinPro Bold", sans-serif;
 }
 
 .landing-page .join-now-button:hover {
@@ -877,7 +875,11 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .dropdown-select {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
     background-color: #fff;
@@ -931,7 +933,7 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
     -webkit-transform: origin(50% 20%);
     transform: origin(50% 20%);
     transition: all 0.125s ease-in-out;
-    content: '';
+    content: "";
     display: block;
     margin-top: -2px;
     pointer-events: none;
@@ -1012,7 +1014,7 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 }
 
 .dropdown-select .dd-searchbox:focus {
-    border-color: #12CBC4;
+    border-color: #12cbc4;
 }
 
 .dropdown-select .list ul {
@@ -1071,71 +1073,71 @@ select.webkit_style {
 }
 
 .font-dinpro-18 {
-  font-family: 'DinPro Regular' !important;
-  font-size: 18px !important;
+    font-family: "DinPro Regular" !important;
+    font-size: 18px !important;
 }
 
 .mt-42px {
-  margin-top: 42px !important;
+    margin-top: 42px !important;
 }
 
 .mb-42px {
-  margin-bottom: 42px !important;
+    margin-bottom: 42px !important;
 }
 
 .mt-30px {
-  margin-top: 30px !important;
+    margin-top: 30px !important;
 }
 
 .mb-30px {
-  margin-bottom: 30px !important;
+    margin-bottom: 30px !important;
 }
 
 .mt-35px {
-  margin-top: 35px !important;
+    margin-top: 35px !important;
 }
 
 .mb-35px {
-  margin-bottom: 35px !important;
+    margin-bottom: 35px !important;
 }
 
 .mt-80px {
-  margin-top: 80px !important;
+    margin-top: 80px !important;
 }
 
 .mb-80px {
-  margin-bottom: 80px !important;
+    margin-bottom: 80px !important;
 }
 
 .wave-video-section {
-    margin-top: -2px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  min-height: calc(100vh - 120px);
-  object-fit: cover;
+    margin-top: -10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    min-height: calc(100vh - 120px);
+    object-fit: cover;
 }
 .wave-video-section-mobile {
-    margin-top: -2px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  /* height: calc(100vh - 120px); */
-  object-fit: cover;
-  display: none;
+    margin-top: -10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* height: calc(100vh - 120px); */
+    object-fit: cover;
+    display: none;
 }
 
 .app-page-subtitle {
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: end;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
 .app-page-subtitle:not(.only-spacing) {
-  font-family: 'DinPro Regular' !important;
-  font-size: 18px !important;
+    font-family: "DinPro Regular" !important;
+    font-size: 18px !important;
 }
 
 @media only screen and (max-width: 575.98px) {
@@ -1160,8 +1162,8 @@ select.webkit_style {
     }
 
     .background-loaded-mobile::before {
-        content: '';
-        background-image: url('../images/PeoplePhone.png');
+        content: "";
+        background-image: url("../images/PeoplePhone.png");
         display: block;
         background-position: top center;
         background-size: cover;

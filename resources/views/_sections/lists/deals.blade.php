@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="post-top-content" id="posthead{{ $index + 1 }}">
       <div class="title">
         @if (isset($deal->title))

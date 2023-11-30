@@ -11,7 +11,7 @@
 <div class="main-bg d-flex">
   <div class="row m-0 p-0 w-100 groups-section">
     <div class="row justify-content-center m-0 p-0 w-100">
-      <div class="col-md-6 p-0">
+      <div class="col-md-6 p-0 mb-35px">
         <div class="app-page-subtitle top-title">NEW INVITES</div>
         @if (is_null($invites) || !count($invites))
           <div class="col no-members text-blue app-page-subtitle">

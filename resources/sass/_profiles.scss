@@ -7,11 +7,11 @@
     z-index: 10;
     width: 100%;
     .interests-section {
-        border-left: 0.2rem solid transparent;
-        border-right: 0.2rem solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
     }
     .profile-person-section {
-        border-right: 0.2rem solid transparent;
+        border-right: 2px solid transparent;
     }
     .card-border-wrp {
         border-left: 0.1rem solid transparent !important;
@@ -19,10 +19,10 @@
     }
     .contentItem {
         padding: 0;
-        border-top: 0.2rem solid transparent;
+        border-top: 2px solid transparent;
         .face {
-            border-left: 0.2rem solid transparent;
-            border-right: 0.2rem solid transparent;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
         }
         .contentItem-wrp {
             display: block;
@@ -179,8 +179,8 @@
 
         .main-avatar {
             padding-bottom: 40% !important;
-            border-left: 0.2rem solid transparent;
-            border-right: 0.2rem solid transparent;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
         }
         .person-info-section {
             background-color: $primary-25;
@@ -357,8 +357,8 @@
             height: auto;
             padding-bottom: inherit;
             overflow: hidden;
-            border-left: 0.2rem solid transparent;
-            border-right: 0.2rem solid transparent;
+            border-left: 2px solid transparent;
+            border-right: 2px solid transparent;
             .my-story-card {
                 width: 100%;
                 height: 100%;

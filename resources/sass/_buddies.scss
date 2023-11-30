@@ -2,7 +2,6 @@
     height: calc(100vh - 120px);
     display: flex;
     justify-content: center;
-    overflow-y: scroll;
     flex-wrap: wrap;
     z-index: 10;
     width: 100%;
@@ -80,14 +79,15 @@
 
     .member-body {
         width: 100%;
+        margin-top: 2px;
         // height: 100%;
-        max-height: calc(100vh - 190px);
+        max-height: calc(100vh - 204px);
         overflow: auto;
         .member-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 2px;
+            margin-bottom: 2px;
             .member-link {
                 width: 100%;
                 display: flex;
@@ -173,6 +173,9 @@
                 }
             }
         }
+        .member-item:last-child {
+            margin-bottom: 35px;
+        }
     }
 
     .publish-content {
@@ -223,7 +226,7 @@
             }
         }
         .member-body {
-            max-height: calc(100vh - 180px);
+            max-height: calc(100vh - 184px);
             .member-item {
                 .option-icons-section {
                     height: 60px;

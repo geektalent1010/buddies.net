@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center m-0 pb-3 w-100">
+    <div class="row justify-content-center m-0 mb-35px w-100">
       @if (is_null($groups) || !count($groups))
         <div class="col app-page-subtitle no-members mb-30px">
           [ NO GROUPS FOUND ]
@@ -99,6 +99,6 @@
       }
     })
   })
-  
+
 </script>
 @endsection

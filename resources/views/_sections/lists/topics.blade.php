@@ -1,6 +1,6 @@
 
 <div class="member-body flat-scroll">
-  <div class="accordion" id="faq">
+  <div class="accordion mb-35px" id="faq">
     <div class="card">
       <div class="card-header" id="faqhead1">
         <a href="#" class="btn btn-header-link member-item collapsed" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1" attr-fullname="DASHBOARD">DASHBOARD</a>

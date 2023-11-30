@@ -22,7 +22,7 @@
 
 @section('PAGE_CONTENT')
 <div class="main-bg-login d-flex justify-content-center align-items-center">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center m-0 p-0">
     <div class="enquiry-send-form">
       <div class="login-page">
         <div class="login-title text-center mb-2">
@@ -35,7 +35,7 @@
       </div>
       <div>
         <form id="enquiryform">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center p-0 m-0">
             <div class="row mx-0 input-fields-section">
               <div class="col-12">
                 <div class="login-page">
@@ -154,7 +154,7 @@
               </div>
             </div>
           </div>
-          <div class="row justify-content-center mb-5">
+          <div class="row justify-content-center mb-5 p-0 m-0">
             <div class="login-page">
               <div class="form-group row justify-content-center">
                 <div class="col-12 text-center">

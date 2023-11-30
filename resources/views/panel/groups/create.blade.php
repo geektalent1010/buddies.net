@@ -12,11 +12,11 @@
 @section('PAGE_CONTENT')
 
 <div class="main-bg d-flex">
-  <div class="row flex-column m-0 p-0 w-100 groups-section">
-    <div class="row justify-content-center m-0 py-3 w-100">
+  <div class="row m-0 p-0 w-100 groups-section">
+    <div class="row justify-content-center m-0 w-100">
       <div class="col-md-6 p-0">
-        <div class="text-center pb-3 top-title">CREATE YOUR GROUP</div>
-        
+        <div class="text-center app-page-subtitle mb-30px top-title">CREATE YOUR GROUP</div>
+
         <div class="name-input-section">
           <div class="image-icon-section">
             <div class="contentItem-wrp">
@@ -37,8 +37,8 @@
         </div>
       </div>
     </div>
-    
-    <div class="row justify-content-center align-items-center py-5 mx-0">
+
+    <div class="row justify-content-center align-items-center mt-35px mx-0">
       <button class="btn btn-primary launch-button">
         {{ __('CREATE') }}
       </button>
@@ -81,11 +81,11 @@
     if ($('.post-image').hasClass('d-none')) {
       $('.post-image').removeClass('d-none')
     }
-    
+
     const blobURL = URL.createObjectURL(file);
     const img = new Image();
     img.src = blobURL;
-    
+
     img.onload = function () {
       const MAX_WIDTH = 640;
       const MAX_HEIGHT = 640;
@@ -123,7 +123,7 @@
       toastr['error']('Please Input the Group Info', 'Error');
       return;
     }
-    
+
     var form_data = new FormData();
     form_data.append('logo', file_data);
     form_data.append('name', groupName);

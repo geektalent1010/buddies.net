@@ -18,7 +18,7 @@
       <div class="col-md-6 p-0 messages-section">
         <div>
           <div class="member-body mb-0">
-            <div class="member-item panel-bg">
+            <div class="member-item panel-bg m-0">
               <div class="member-link">
                 <div class="member-avatar-wrp">
                   <div class="member-avatar">

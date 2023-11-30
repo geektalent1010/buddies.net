@@ -2,7 +2,6 @@
     height: calc(100vh - 120px);
     display: flex;
     justify-content: center;
-    overflow-y: scroll;
     flex-wrap: wrap;
     z-index: 10;
     width: 100%;
@@ -87,9 +86,13 @@
 
     .member-body {
         width: 100%;
-        // height: 100%;
+        margin-top: 2px;
         max-height: calc(100vh - 190px);
         overflow: auto;
+
+        .accordion {
+            padding-bottom: 35px;
+        }
 
         .hero-detail {
             background: $primary-25;
@@ -150,7 +153,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 2px;
+            margin-bottom: 2px;
 
             .member-link {
                 width: 100%;

@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 }
 
 .dashboard-section .navItem {
@@ -279,12 +279,12 @@
 }
 
 .profile-section .interests-section {
-  border-left: 0.2rem solid transparent;
-  border-right: 0.2rem solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
 }
 
 .profile-section .profile-person-section {
-  border-right: 0.2rem solid transparent;
+  border-right: 2px solid transparent;
 }
 
 .profile-section .card-border-wrp {
@@ -294,12 +294,12 @@
 
 .profile-section .contentItem {
   padding: 0;
-  border-top: 0.2rem solid transparent;
+  border-top: 2px solid transparent;
 }
 
 .profile-section .contentItem .face {
-  border-left: 0.2rem solid transparent;
-  border-right: 0.2rem solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
 }
 
 .profile-section .contentItem .contentItem-wrp {
@@ -468,8 +468,8 @@
 
 .profile-section .contentItem .main-avatar {
   padding-bottom: 40% !important;
-  border-left: 0.2rem solid transparent;
-  border-right: 0.2rem solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
 }
 
 .profile-section .contentItem .person-info-section {
@@ -656,8 +656,8 @@
   height: auto;
   padding-bottom: inherit;
   overflow: hidden;
-  border-left: 0.2rem solid transparent;
-  border-right: 0.2rem solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
 }
 
 .profile-section .contentItem .story-content-wrp .my-story-card {
@@ -1379,16 +1379,16 @@ input[type=range]::-moz-range-thumb {
 }
 
 .search-section {
-  padding-left: 1px !important;
-  padding-right: 1px !important;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
 }
 
 .setting-section {
   height: calc(100vh - 120px);
-  display: flex;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
   justify-content: center;
   overflow-y: scroll;
-  flex-wrap: wrap;
   z-index: 10;
   width: 100%;
   overflow-x: hidden;
@@ -1473,7 +1473,7 @@ input[type=range]::-moz-range-thumb {
 
 .setting-section .contentItem {
   padding: 0;
-  border-top: 0.2rem solid transparent;
+  border-top: 2px solid transparent;
 }
 
 .setting-section .contentItem .face {
@@ -1927,11 +1927,19 @@ input[type=range]::-moz-range-thumb {
   outline: none;
   cursor: pointer;
   font-size: 18px;
-  width: calc(33% - 2px);
+  width: calc(33.3% - 2px);
   text-align: center;
   margin-left: 1px;
   margin-right: 1px;
   height: 80px;
+}
+
+.setting-section .distancetab div:first-child {
+  margin-left: 0;
+}
+
+.setting-section .distancetab div:nth-last-child(1) {
+  margin-right: 0;
 }
 
 .setting-section .distancetab div:hover {
@@ -1943,7 +1951,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .setting-section .distancetab.tab-4 div {
-  width: calc(25% - 2px);
+  width: calc(25% - 1.5px);
 }
 
 .setting-section .addresstab {
@@ -2447,10 +2455,6 @@ input[type=range]::-moz-range-thumb {
   border: 0;
   border-radius: 0px;
   background: transparent;
-  margin-left: 1px;
-  margin-right: 1px;
-  border-left: 0.2em solid transparent;
-  border-right: 0.2em solid transparent;
 }
 
 #category .card .card-header {
@@ -2743,7 +2747,6 @@ input[type=range]::-moz-range-thumb {
   height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
   flex-wrap: wrap;
   z-index: 10;
   width: 100%;
@@ -2827,7 +2830,8 @@ input[type=range]::-moz-range-thumb {
 
 .buddies-section .member-body {
   width: 100%;
-  max-height: calc(100vh - 190px);
+  margin-top: 2px;
+  max-height: calc(100vh - 204px);
   overflow: auto;
 }
 
@@ -2835,7 +2839,7 @@ input[type=range]::-moz-range-thumb {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .buddies-section .member-body .member-item .member-link {
@@ -2933,6 +2937,10 @@ input[type=range]::-moz-range-thumb {
   color: #00ffff;
 }
 
+.buddies-section .member-body .member-item:last-child {
+  margin-bottom: 35px;
+}
+
 .buddies-section .publish-content {
   padding: 24px 32px;
   background: rgba(4, 36, 107, 0.5019607843);
@@ -2987,7 +2995,7 @@ input[type=range]::-moz-range-thumb {
   }
 
   .buddies-section .member-body {
-    max-height: calc(100vh - 180px);
+    max-height: calc(100vh - 184px);
   }
 
   .buddies-section .member-body .member-item .option-icons-section {
@@ -3024,7 +3032,6 @@ input[type=range]::-moz-range-thumb {
   height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
   flex-wrap: wrap;
   z-index: 10;
   width: 100%;
@@ -3106,8 +3113,13 @@ input[type=range]::-moz-range-thumb {
 
 .heroes-section .member-body {
   width: 100%;
+  margin-top: 2px;
   max-height: calc(100vh - 190px);
   overflow: auto;
+}
+
+.heroes-section .member-body .accordion {
+  padding-bottom: 35px;
 }
 
 .heroes-section .member-body .hero-detail {
@@ -3164,7 +3176,7 @@ input[type=range]::-moz-range-thumb {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .heroes-section .member-body .member-item .member-link {
@@ -3467,15 +3479,16 @@ input[type=range]::-moz-range-thumb {
 
 .chat-section .member-body {
   width: 100%;
-  max-height: calc(100vh - 200px);
+  margin-top: 2px;
+  max-height: calc(100vh - 282px);
   overflow: auto;
 }
 
 .chat-section .member-body .member-item {
   display: flex;
   align-items: center;
+  margin-bottom: 2px;
   justify-content: space-between;
-  margin-top: 2px;
 }
 
 .chat-section .member-body .member-item .member-link {
@@ -3630,6 +3643,10 @@ input[type=range]::-moz-range-thumb {
   color: #ffffff;
 }
 
+.chat-section .member-body .member-item:last-child {
+  margin-bottom: 35px;
+}
+
 .chat-section .bg-border {
   background: #4936c8;
 }
@@ -3671,8 +3688,8 @@ input[type=range]::-moz-range-thumb {
 .chat-section .messages-content {
   width: 100%;
   height: 100%;
-  min-height: calc(100vh - 200px);
-  max-height: calc(100vh - 200px);
+  min-height: calc(100vh - 236px);
+  max-height: calc(100vh - 236px);
   display: flex;
   flex-direction: column;
 }
@@ -3879,7 +3896,7 @@ input[type=range]::-moz-range-thumb {
   }
 
   .chat-section .member-body {
-    max-height: calc(100vh - 180px);
+    max-height: calc(100vh - 262px);
   }
 
   .chat-section .member-body .member-item .notification-section {
@@ -3908,8 +3925,8 @@ input[type=range]::-moz-range-thumb {
   }
 
   .chat-section .messages-content {
-    min-height: calc(100vh - 180px);
-    max-height: calc(100vh - 180px);
+    min-height: calc(100vh - 216px);
+    max-height: calc(100vh - 216px);
   }
 
   .chat-section .messages-content .message-input-section .form-control {
@@ -3971,9 +3988,8 @@ input[type=range]::-moz-range-thumb {
 }
 
 .connect-section .search-input-section {
-  display: flex;
-  margin-top: 2px;
   margin-bottom: 2px;
+  display: flex;
 }
 
 .connect-section .search-input-section .form-control {
@@ -4112,7 +4128,6 @@ input[type=range]::-moz-range-thumb {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2px;
 }
 
 .connect-section .member-body .member-item .member-link {
@@ -4457,55 +4472,12 @@ input[type=range]::-moz-range-thumb {
   padding: 5px !important;
 }
 
-.streaming-section .more-contents {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  font-family: "DinPro Medium", sans-serif;
-  font-size: 18px;
-}
-
-.streaming-section .more-contents .hearts-icon {
+.streaming-section .mb-2 {
   width: 50px;
-  height: auto;
 }
 
-.streaming-section .more-contents .main-icon {
-  max-width: 45px;
-  width: 15%;
-  height: auto;
-  margin-bottom: 8px;
-  z-index: 2;
-}
-
-.streaming-section .more-contents .extra-icon {
-  position: absolute;
-  width: 35%;
-  height: auto;
-  z-index: 1;
-}
-
-.streaming-section .more-contents span {
-  font-family: "DinPro Light", sans-serif;
-  font-size: 18px;
-  color: #ffffff;
-  text-align: center;
-  z-index: 2;
-}
-
-.streaming-section .more-contents span label {
-  font-family: "DinPro Medium", sans-serif;
-}
-
-.streaming-section .more-contents .header {
-  font-family: "DinPro Medium", sans-serif;
-  font-size: 18px;
-  color: #ffffff;
-  text-transform: uppercase;
-  text-align: center;
+.streaming-section .mb-2 svg {
+  fill: white;
 }
 
 @media only screen and (max-width: 575.98px) {
@@ -5172,8 +5144,8 @@ input[type=range]::-moz-range-thumb {
 .groups-section .messages-content {
   width: 100%;
   height: 100%;
-  min-height: calc(100vh - 260px);
-  max-height: calc(100vh - 260px);
+  min-height: calc(100vh - 264px);
+  max-height: calc(100vh - 264px);
   display: flex;
   flex-direction: column;
 }
@@ -5396,8 +5368,8 @@ input[type=range]::-moz-range-thumb {
   }
 
   .groups-section .messages-content {
-    min-height: calc(100vh - 240px);
-    max-height: calc(100vh - 240px);
+    min-height: calc(100vh - 244px);
+    max-height: calc(100vh - 244px);
   }
 
   .groups-section .messages-content .message-input-section .form-control {
@@ -5438,7 +5410,6 @@ input[type=range]::-moz-range-thumb {
   height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
-  overflow-y: scroll;
   flex-wrap: wrap;
   z-index: 10;
   width: 100%;
@@ -5522,13 +5493,14 @@ input[type=range]::-moz-range-thumb {
   width: 100%;
   max-height: calc(100vh - 190px);
   overflow: auto;
+  border-top: 2px solid transparent;
 }
 
 .companies-section .member-body .member-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .companies-section .member-body .member-item .member-link {
@@ -5629,6 +5601,10 @@ input[type=range]::-moz-range-thumb {
   color: #00ffff;
 }
 
+.companies-section .member-body .member-item:last-child {
+  padding-bottom: 35px !important;
+}
+
 .companies-section .flat-scroll::-webkit-scrollbar-track {
   border-radius: 5px;
   background-color: transparent;
@@ -5706,8 +5682,8 @@ input[type=range]::-moz-range-thumb {
   z-index: 10;
   width: 100%;
   align-content: flex-start;
-  padding-left: 2.5px !important;
-  padding-right: 2.5px !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
 }
 
 .posts-section .gap {
@@ -6425,8 +6401,9 @@ input[type=range]::-moz-range-thumb {
 .topics-section .member-body {
   width: 100%;
   height: 100%;
-  max-height: calc(100vh - 190px);
+  max-height: calc(100vh - 204px);
   overflow: auto;
+  margin-top: 2px;
 }
 
 .topics-section .member-body #faq .card {
@@ -6571,6 +6548,10 @@ input[type=range]::-moz-range-thumb {
   font-family: "DinPro", sans-serif;
 }
 
+.topics-section .member-body #faq .card:first-child .card-header .btn-header-link {
+  margin-top: 0;
+}
+
 .topics-section .member-body .moods-icon {
   padding: 6px 9px;
   background: #04246b;
@@ -6663,7 +6644,7 @@ input[type=range]::-moz-range-thumb {
   }
 
   .topics-section .member-body {
-    max-height: calc(100vh - 180px);
+    max-height: calc(100vh - 184px);
   }
 
   .topics-section .member-body #faq .card .card-header .btn-header-link {

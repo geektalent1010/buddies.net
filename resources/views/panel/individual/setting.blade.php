@@ -1030,7 +1030,7 @@
               </div>
           </div>
         </div>
-        <div class="row justify-content-center align-items-center my-4 btn-section w-100 p-0 m-0">
+        <div class="row justify-content-center align-items-center mt-35px mb-35px btn-section w-100 p-0 m-0">
             <button class="btn btn-primary setting-save-btn">SAVE</button>
         </div>
     </div>

@@ -90,7 +90,7 @@
     .addresstab {
         display: none;
         width: 93%;
-        z-index: 1000; 
+        z-index: 1000;
         background: #04246b;
         position: absolute;
         padding-top: 12px;
@@ -131,7 +131,7 @@
                 <p class="mb-1">REGISTRATION</p>
                 <span>FOR NEW USERS</span>
             </div>
-            
+
             <div class="form-group row justify-content-center pt-3">
                 <div class="col-12 text-center">
                     <button class="btn btn-primary login-button select-type" attr-data="0">
@@ -142,7 +142,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="form-group row justify-content-center pt-3">
                 <div class="col-12 text-center">
                     <button class="btn btn-primary login-button select-type" attr-data="1">
@@ -284,7 +284,7 @@
                             <div class="form-group">
                                 <div class="d-flex">
                                     <select class="form-control phone-select webkit_style" name="">
-                                        @foreach ($phonecodes as $code)                                    
+                                        @foreach ($phonecodes as $code)
                                         <option value="+{{$code}}">+{{$code}}</option>
                                         @endforeach
                                     </select>
@@ -530,7 +530,7 @@
             var valThis = $('#txtSearchValue').val();
             $('.dropdown-select ul > li').each(function(){
             var text = $(this).text();
-                (text.toLowerCase().indexOf(valThis.toLowerCase()) > -1) ? $(this).show() : $(this).hide();         
+                (text.toLowerCase().indexOf(valThis.toLowerCase()) > -1) ? $(this).show() : $(this).hide();
         });
         };
         // Search
@@ -605,7 +605,7 @@
         function changeArea() {
             $("#real-state").val(document.getElementById("state").value);
         }
-        
+
         // $('.search-city input[type="text"]').on('keyup', function() {
         //     const key = $(this).val();
         //     if (timer) {
@@ -623,11 +623,11 @@
         //                 url: '{{ route("address.search") }}',
         //                 method: "POST",
         //                 data: options,
-        //                 success:function(res){                            
+        //                 success:function(res){
         //                     if (res.length) {
         //                         var html = '';
         //                         for(var resIndex = 0; resIndex < res.length; resIndex++) {
-        //                             html += 
+        //                             html +=
         //                                 '<div class="address py-3" attr-data="' + res[resIndex].address + '"  attr-name="' + res[resIndex].name + '">' + res[resIndex].name + '</div>';
         //                         }
         //                         $('.addresstab').html(html);
@@ -1092,7 +1092,7 @@
                 else {
                     return ((/^[a-zA-Z\-0-9 ]{3,50}$/.test(value_from_dropdown)) || (/^[\p{L}\d\- ]{3,50}$/u.test(value_from_dropdown)));
                 }
-                
+
             },
             validateUsernameInput: function () {
                 var validationMessage = '';
@@ -1277,7 +1277,7 @@
         //     }
 
         //     $usernameInput.on("keyup", onChangeUsernameInput);
-        //     $passwordInput.on("keyup", onChangePasswordInput);       
+        //     $passwordInput.on("keyup", onChangePasswordInput);
         // });
     </script>
 @endsection

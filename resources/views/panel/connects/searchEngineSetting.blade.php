@@ -19,7 +19,7 @@
 @endphp
 
 <div class="main-bg">
-    <div class="row m-0 p-0 w-100 setting-section search-section">
+    <div class="m-0 p-0 w-100 setting-section search-section">
         <div class="row justify-content-center m-0 w-100">
             <div class="col-md-6 p-0">
                 <div class="row app-page-subtitle bg-color-section m-0">
@@ -40,7 +40,7 @@
                             <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
                         </div>
                     </div>
-                    
+
                     <div class="w-100 addresstab">
                     </div>
                 </div>
@@ -620,7 +620,7 @@
                 </div>--}}
             </div>
         </div>
-        <div class="row justify-content-center align-items-center my-4 btn-section w-100 p-0 m-0 mt-35px">
+        <div class="row justify-content-center align-items-center mt-35px mb-35px btn-section w-100 p-0 m-0 mt-35px">
             <button class="btn btn-primary setting-save-btn">SAVE</button>
         </div>
     </div>
@@ -698,7 +698,7 @@
             selected_address = ''
         }
     }
-    
+
     function select_gender(evt, value) {
         var tablinks = document.getElementsByClassName("gender_tablinks");
         for (var i = 0; i < tablinks.length; i++) {
@@ -745,7 +745,7 @@
             selected_based = '';
         }
     }
-  
+
     $('#addressSearchIcon').click(function () {
         if($("#addressSearchKey").val() == '') {
             $('.addresstab').hide();
@@ -762,7 +762,7 @@
                     if (res.length) {
                         var html = '';
                         for(var resIndex = 0; resIndex < res.length; resIndex++) {
-                        html += 
+                        html +=
                             '<div class="address py-3" attr-data="' + res[resIndex].address + '"  attr-name="' + res[resIndex].name + '">' + res[resIndex].name + '</div>';
                         }
                         $('.addresstab').html(html);

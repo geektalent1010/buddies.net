@@ -35,14 +35,6 @@ class NewsController extends Controller
         return view('panel.news.index', $data);
     }
 
-    public function mine()
-    {
-        $data['authUser'] = $authUser = Auth::user();
-        $data['posts'] = Post::where('type', '=', 5)->where('is_active', '=', 1)->where('created_by', $authUser->id)->orderBy('created_at', 'desc')->get();
-
-        return view('panel.news.mine', $data);
-    }
-
     public function create()
     {
         $id = Auth::user()->id;

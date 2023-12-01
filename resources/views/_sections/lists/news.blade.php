@@ -42,7 +42,7 @@
               @else
                   <div class="contentItem-wrp">
                       <div class="thumbnail-card">
-                          
+
                       </div>
                   </div>
               @endif
@@ -55,7 +55,7 @@
               @else
                   <div class="contentItem-wrp">
                       <div class="thumbnail-card">
-                          
+
                       </div>
                   </div>
               @endif
@@ -68,7 +68,7 @@
               @else
                   <div class="contentItem-wrp">
                       <div class="thumbnail-card">
-                          
+
                       </div>
                   </div>
               @endif

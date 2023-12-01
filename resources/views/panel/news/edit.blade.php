@@ -1,6 +1,5 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'NEWS', 'ROUTES' => [
   ['ROUTE' => 'news.index', 'ACTIVE' => 'all', 'ACTIVE_ROUTE' => true],
-  ['ROUTE' => 'news.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => true]
 ], 'ACTIVE_PAGE' => 'mine'])
 
 @section('title', __('- News'))
@@ -306,7 +305,7 @@
           $('.update-success').removeClass('d-none');
           setTimeout(function() {
               $('.update-success').addClass('d-none');
-              window.location.href = '{{ route('news.mine') }}';
+              window.location.href = '{{ route('news.index') }}';
           }, 3000);
         }
       },

@@ -70,10 +70,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['admin']], function () {
         Route::get('/new', 'NewsController@create')->name('news.create.index');
         Route::get('/new/{id}', 'NewsController@edit')->name('news.edit.index');
-        Route::get('/news/mine', 'NewsController@mine')->name('news.mine');
         Route::get('/event', 'EventsController@create')->name('events.create.index');
         Route::get('/event/{id}', 'EventsController@edit')->name('events.edit.index');
-        Route::get('/events/mine', 'EventsController@mine')->name('events.mine');
     });
     Route::group(['middleware' => ['admin'], 'namespace' => 'Admin'], function () {
         Route::get('/admin/members/{userID?}', 'MembersController@index')->name('members.index');

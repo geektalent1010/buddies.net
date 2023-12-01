@@ -34,14 +34,6 @@ class EventsController extends Controller
         return view('panel.events.index', $data);
     }
 
-    public function mine()
-    {
-        $data['authUser'] = $authUser = Auth::user();
-        $data['posts'] = Post::where('type', '=', 6)->where('is_active', '=', 1)->where('created_by', $authUser->id)->orderBy('created_at', 'desc')->get();
-
-        return view('panel.events.mine', $data);
-    }
-
     public function create()
     {
         $id = Auth::user()->id;

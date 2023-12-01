@@ -1,6 +1,5 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'EVENTS', 'ROUTES' => [
   ['ROUTE' => 'events.index', 'ACTIVE' => 'all', 'ACTIVE_ROUTE' => true],
-  ['ROUTE' => 'events.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => true]
 ], 'ACTIVE_PAGE' => 'mine'])
 
 @section('title', __('- Events'))
@@ -308,7 +307,7 @@
           $('.update-success').removeClass('d-none');
           setTimeout(function() {
               $('.update-success').addClass('d-none');
-              window.location.href = '{{ route('events.mine') }}';
+              window.location.href = '{{ route('events.index') }}';
           }, 3000);
         }
       },

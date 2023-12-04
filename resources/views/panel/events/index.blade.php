@@ -20,7 +20,7 @@
         <div class="row justify-content-center m-0 app-page-subtitle w-100">
             <div class="col-md-6 p-0 text-center create-title font-dinpro-18">ADMIN ONLY</div>
         </div>
-        <div class="row justify-content-center m-0 mt-30px mb-35px w-100">
+        <div class="row justify-content-center m-0 mt-30px w-100">
             <button class="post-button" onclick="window.location.href='{{ route('events.create.index') }}'">
                 {{ __('CREATE') }}
             </button>
@@ -31,7 +31,7 @@
             [ NO EVENTS FOUND ]
         </div>
         @else
-        <div class="row justify-content-center m-0 pb-3 w-100">
+        <div class="row justify-content-center m-0 mb-30px w-100">
             <div class="col-md-6 p-0">
                 @include('_sections.lists.events')
             </div>

@@ -29,7 +29,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        RateLimiter::for('api', fn (Request $request) => Limit::perMinute(60)->by($request->user()?->id ?: $request->ip()));
+        RateLimiter::for(
+            'api',
+            fn (Request $request) => Limit::perMinute(60)->by($request->user()?->id ?: $request->ip())
+        );
 
         $this->routes(function (): void {
             Route::middleware('api')
@@ -41,5 +44,18 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
+
+        $this->setCorrectAppUrl();
+    }
+
+    /**
+     * Dynamically set app URL for correct routes building
+     */
+    protected function setCorrectAppUrl(): void
+    {
+        $urlArray = urlHelper();
+
+        app('url')->forceRootUrl($urlArray['url']);
+        config(['app.url' => $urlArray['url']]);
     }
 }

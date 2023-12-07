@@ -13,8 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
-    'base_domain' => env('APP_BASE_DOMAIN', null),
+    'name' => env('APP_NAME', 'Buddies'),
 
     /*
     |--------------------------------------------------------------------------

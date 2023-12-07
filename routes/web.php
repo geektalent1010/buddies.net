@@ -24,13 +24,14 @@ Route::group([], function (): void {
 
     Route::get('{referral_id}', static function ($referral_id) {
         if (User::where('customer_id', $referral_id)->exists()) {
+            $urlArray = urlHelper();
             Cookie::queue(
                 cookie(
                     'referral_id',
                     $referral_id,
                     60 * 24 * 30 * 3,
                     null,
-                    '.' . config('app.base_domain')
+                    '.' . $urlArray['baseDomain']
                 )
             );
         }

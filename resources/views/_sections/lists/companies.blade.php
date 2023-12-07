@@ -1,11 +1,10 @@
-
 <div class="member-body flat-scroll">
   @foreach ($companies as $profile)
     <div class="member-item" attr-fullname="{{ $profile->user->getFullname() }}">
       <a class="member-link" href="{{ route('profile.index', [ 'userID' => $profile->user_id ]) }}">
         <div class="member-avatar-wrp">
           <div class="member-avatar">
-            @if($profile->main_avatar_url)
+            @if ($profile->main_avatar_url)
             <img src="{{ asset('uploads/'.$profile->user->username.'/'.$profile->main_avatar_url.'?'.time()) }}">
             @else
             <p class="first_letter">{{ $profile->user->getMono() }}</p>

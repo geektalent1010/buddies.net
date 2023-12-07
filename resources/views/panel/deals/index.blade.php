@@ -1,7 +1,7 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'DEALS', 'ROUTES' => [
   ['ROUTE' => 'deals.index', 'ACTIVE' => 'all', 'ACTIVE_ROUTE' => true],
   ['ROUTE' => 'deals.buddies', 'ACTIVE' => 'buddies', 'ACTIVE_ROUTE' => true],
-  ['ROUTE' => 'deals.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => $authUser->IsCompany() || $authUser->IsAdmin()]
+  ['ROUTE' => 'deals.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => $authUser->isCompany() || $authUser->isAdmin()]
 ], 'ACTIVE_PAGE' => 'all'])
 
 @section('title', __('- Deals'))

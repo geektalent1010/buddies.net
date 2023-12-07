@@ -8,12 +8,10 @@ class AddCustomerIdToUsersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table): void {
             $table->integer('customer_id')->nullable()->after('id');
             $table->integer('sponsor_id')
                 ->unsigned()
@@ -25,12 +23,10 @@ class AddCustomerIdToUsersTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table): void {
             $table->dropColumn('customer_id');
             $table->dropColumn('sponsor_id');
             $table->dropColumn('vat_number');

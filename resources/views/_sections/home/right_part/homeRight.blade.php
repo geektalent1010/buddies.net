@@ -1,4 +1,3 @@
-
 <!-- +++ START - Home Right +++ -->
 <div class="ms-section" id="right1">
 

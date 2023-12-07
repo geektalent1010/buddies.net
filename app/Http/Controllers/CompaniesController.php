@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buddies;
+use App\Models\Profile;
+use App\Models\Requests;
+use App\Models\SearchSettings;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\User;
-use App\Profile;
-use App\Buddies;
-use App\Requests;
-use App\SearchSettings;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Session;
-use Carbon\Carbon;
 
 class CompaniesController extends Controller
 {
@@ -21,26 +18,25 @@ class CompaniesController extends Controller
         $searchSetting = SearchSettings::where('user_id', $authUser->id)->where('type', 1)->first();
         $companies = [];
         if (isset($searchSetting)) {
-            $companies = Profile::whereHas('user', function($query) {
-                    $query->where('user_type', 1);
-                    $query->where('is_admin', null);
-                })
-                ->where(function ($query) use ($searchSetting) {
+            $companies = Profile::whereHas('user', function ($query): void {
+                $query->where('user_type', 1);
+                $query->where('is_admin', null);
+            })
+                ->where(function ($query) use ($searchSetting): void {
                     /** @var Builder $query */
-                    $categories = isset($searchSetting->categories) ? explode(",", $searchSetting->categories) : [];
-                    foreach($categories as $category)
-                    {
-                        $query->orWhere('main_interests', 'LIKE', '%'.$category.'%');
+                    $categories = isset($searchSetting->categories) ? explode(',', $searchSetting->categories) : [];
+                    foreach ($categories as $category) {
+                        $query->orWhere('main_interests', 'LIKE', '%' . $category . '%');
                     }
                 })
                 ->where('user_id', '<>', $authUser->id)
                 ->orderBy('first_name', 'asc')
                 ->get();
         } else {
-            $companies = Profile::whereHas('user', function($query) {
-                    $query->where('user_type', 1);
-                    $query->where('is_admin', null);
-                })
+            $companies = Profile::whereHas('user', function ($query): void {
+                $query->where('user_type', 1);
+                $query->where('is_admin', null);
+            })
                 ->where('user_id', '<>', $authUser->id)
                 ->orderBy('first_name', 'asc')
                 ->get();
@@ -61,9 +57,9 @@ class CompaniesController extends Controller
     {
         $data = User::query()
             ->where('is_admin', null)
-            ->when($keyword = $request->get('keyword'), function ($query) use ($keyword) {
+            ->when($keyword = $request->get('keyword'), function ($query) use ($keyword): void {
                 /** @var Builder $query */
-                $query->where(function ($query) use ($keyword) {
+                $query->where(function ($query) use ($keyword): void {
                     /** @var Builder $query */
                     $query->whereRaw('name LIKE ?', "{$keyword}%");
                 });
@@ -73,7 +69,8 @@ class CompaniesController extends Controller
         return response()->json($data);
     }
 
-    public function likes(Request $request) {
+    public function likes(Request $request)
+    {
         $authUserId = Auth::user()->id;
         $profile = Profile::find($request->id);
         $followers = [];
@@ -85,10 +82,10 @@ class CompaniesController extends Controller
                 array_splice($followers, $index, 1);
                 $like = false;
             } else {
-                array_push($followers, $authUserId);
+                $followers[] = $authUserId;
             }
         } else {
-            array_push($followers, $authUserId);
+            $followers[] = $authUserId;
         }
         if ($like) {
             Buddies::create([
@@ -101,17 +98,26 @@ class CompaniesController extends Controller
             ]);
 
             $requestInfo = Requests::where('user_id', $profile->user_id)->where('requester', $authUserId)->first();
-            if (isset($requestInfo)) $requestInfo->delete();
+            if (isset($requestInfo)) {
+                $requestInfo->delete();
+            }
             $requestInfo = Requests::where('user_id', $authUserId)->where('requester', $profile->user_id)->first();
-            if (isset($requestInfo)) $requestInfo->delete();
+            if (isset($requestInfo)) {
+                $requestInfo->delete();
+            }
         } else {
             $friend = Buddies::where('user_id', '=', $authUserId)->where('connected_user_id', '=', $profile->user_id);
-            if ($friend) $friend->delete();
+            if ($friend) {
+                $friend->delete();
+            }
             $friend = Buddies::where('connected_user_id', '=', $authUserId)->where('user_id', '=', $profile->user_id);
-            if ($friend) $friend->delete();
+            if ($friend) {
+                $friend->delete();
+            }
         }
-        $profile->followers = implode(",", $followers);
+        $profile->followers = implode(',', $followers);
         $profile->save();
+
         return response()->json(['like' => $like, 'followers' => count($followers)]);
     }
 }

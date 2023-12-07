@@ -8,12 +8,10 @@ class AddDarkenModeColumnsToProfileTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->boolean('darken_mode_1')->default(false);
             $table->boolean('darken_mode_2')->default(false);
             $table->boolean('darken_mode_3')->default(false);
@@ -23,12 +21,10 @@ class AddDarkenModeColumnsToProfileTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->dropColumn('darken_mode_1');
             $table->dropColumn('darken_mode_2');
             $table->dropColumn('darken_mode_3');

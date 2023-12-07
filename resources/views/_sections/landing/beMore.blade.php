@@ -1,5 +1,4 @@
-
-    <div class="w-100 welcome-background">
+<div class="w-100 welcome-background">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-sm-7">

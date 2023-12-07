@@ -1,4 +1,3 @@
-
 <!-- +++ START - Buddies Left +++ -->
 <div class="ms-section" id="left2">
 

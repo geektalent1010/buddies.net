@@ -8,12 +8,10 @@ class RenameInterestsInSearchSettingsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('search_settings', function (Blueprint $table) {
+        Schema::table('search_settings', function (Blueprint $table): void {
             $table->renameColumn('interests', 'categories');
             $table->integer('type')->nullable()->default(0)->after('interest_based');
         });
@@ -21,12 +19,10 @@ class RenameInterestsInSearchSettingsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('search_settings', function (Blueprint $table) {
+        Schema::table('search_settings', function (Blueprint $table): void {
             $table->renameColumn('categories', 'interests');
             $table->dropColumn('type');
         });

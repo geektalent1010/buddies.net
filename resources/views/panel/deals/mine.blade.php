@@ -1,7 +1,7 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'DEALS', 'ROUTES' => [
   ['ROUTE' => 'deals.index', 'ACTIVE' => 'all', 'ACTIVE_ROUTE' => true],
   ['ROUTE' => 'deals.buddies', 'ACTIVE' => 'buddies', 'ACTIVE_ROUTE' => true],
-  ['ROUTE' => 'deals.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => $authUser->IsCompany() || $authUser->IsAdmin()]
+  ['ROUTE' => 'deals.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => $authUser->isCompany() || $authUser->isAdmin()]
 ], 'ACTIVE_PAGE' => 'mine'])
 
 @section('title', __('- Deals'))
@@ -41,13 +41,13 @@
           </div>
           @foreach ($deals as $index => $deal)
           <div class="w-100 post-item mb-3">
-            <div class="text-right p-2 pr-md-0 created-at-label">{{ date_format($deal->created_at, "d/m/Y" )}}</div>
+            <div class="text-right p-2 pr-md-0 created-at-label">{{ date_format($deal->created_at, "d/m/Y" ) }}</div>
             <div class="member-body">
               <div class="member-item">
                 <div class="member-link">
                   <div class="member-avatar-wrp">
                     <div class="member-avatar">
-                      @if($deal->user->profile->main_avatar_url)
+                      @if ($deal->user->profile->main_avatar_url)
                       <img src="{{ asset('uploads/'.$deal->user->username.'/'.$deal->user->profile->main_avatar_url.'?'.time()) }}">
                       @else
                       <p class="first_letter">{{ $deal->user->getMono() }}</p>

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TokensController extends Controller
@@ -11,10 +10,11 @@ class TokensController extends Controller
     {
         return view('panel.wallet.credits');
     }
+
     public function referrals()
     {
         $authUser = Auth::user();
-        return view('panel.wallet.referrals')
-                    ->with('user', $authUser);
+
+        return view('panel.wallet.referrals', ['user' => $authUser]);
     }
 }

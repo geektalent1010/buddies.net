@@ -1,4 +1,3 @@
-
 <!-- +++ START - Connect Left +++ -->
 <div class="ms-section" id="left3">
 

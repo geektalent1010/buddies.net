@@ -32,13 +32,13 @@
           @foreach ($jobs as $index => $job)
             @php $index++ @endphp
             <div class="w-100 post-item mb-3">
-              <div class="text-right p-2 pr-md-0 created-at-label">{{ date_format($job->created_at, "d/m/Y" )}}</div>
+              <div class="text-right p-2 pr-md-0 created-at-label">{{ date_format($job->created_at, "d/m/Y" ) }}</div>
               <div class="member-body">
                 <div class="member-item">
                   <div class="member-link">
                     <div class="member-avatar-wrp">
                       <div class="member-avatar">
-                        @if($job->user->profile->main_avatar_url)
+                        @if ($job->user->profile->main_avatar_url)
                         <img src="{{ asset('uploads/'.$job->user->username.'/'.$job->user->profile->main_avatar_url.'?'.time()) }}">
                         @else
                         <p class="first_letter">{{ $job->user->getMono() }}</p>
@@ -107,10 +107,10 @@
                     @endif
                   </div>
                 </div>
-                <a href="#" class="btn-header-link collapsed" data-toggle="collapse" data-target="#post_{{$index}}" aria-expanded="true">{{$index}}</a>
+                <a href="#" class="btn-header-link collapsed" data-toggle="collapse" data-target="#post_{{ $index }}" aria-expanded="true">{{ $index }}</a>
               </div>
               @endforeach
-              <div class="post-content collapse" id="post_{{$index}}" >
+              <div class="post-content collapse" id="post_{{ $index }}" >
                 <div class="about-us">
                   <div class="title pb-1">
                     {{ $job->type == 1 ? 'About Us' : 'About Me' }}

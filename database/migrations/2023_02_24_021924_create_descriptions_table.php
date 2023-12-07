@@ -8,12 +8,10 @@ class CreateDescriptionsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('descriptions', function (Blueprint $table) {
+        Schema::create('descriptions', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('job_id')
                 ->constrained('jobs')
@@ -29,10 +27,8 @@ class CreateDescriptionsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('descriptions');
     }

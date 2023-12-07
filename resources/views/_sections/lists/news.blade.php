@@ -1,7 +1,7 @@
 <div class="accordion" id="news">
   @foreach ($posts as $index => $post)
     <div class="w-100 post-item mt-46px">
-      <div class="text-right p-2 pr-md-0 created-at-label">{{ date_format($post->created_at, "d/m/Y" )}}</div>
+      <div class="text-right p-2 pr-md-0 created-at-label">{{ date_format($post->created_at, "d/m/Y" ) }}</div>
       <div class="member-body">
         <div class="member-item">
           <div class="member-link">
@@ -35,7 +35,7 @@
         @if (isset($post->small_featured_image1_url) || isset($post->small_featured_image2_url) || isset($post->small_featured_image3_url))
         <div class="row justify-content-center m-0 p-0 w-100 gap">
           <div class="col-4 col-sm-4 col-md-4 contentItem">
-              @if(isset($post->small_featured_image1_url))
+              @if (isset($post->small_featured_image1_url))
                   <a class="contentItem-wrp" data-fancybox href="{{ asset('uploads/posts/'.$post->small_featured_image1_url.'?'.time()) }}">
                       <img src="{{ asset('uploads/posts/'.$post->small_featured_image1_url.'?'.time()) }}">
                   </a>
@@ -48,7 +48,7 @@
               @endif
           </div>
           <div class="col-4 col-sm-4 col-md-4 contentItem">
-              @if(isset($post->small_featured_image2_url))
+              @if (isset($post->small_featured_image2_url))
                   <a class="contentItem-wrp" data-fancybox href="{{ asset('uploads/posts/'.$post->small_featured_image2_url.'?'.time()) }}">
                       <img src="{{ asset('uploads/posts/'.$post->small_featured_image2_url.'?'.time()) }}">
                   </a>
@@ -61,7 +61,7 @@
               @endif
           </div>
           <div class="col-4 col-sm-4 col-md-4 contentItem">
-              @if(isset($post->small_featured_image3_url))
+              @if (isset($post->small_featured_image3_url))
                   <a class="contentItem-wrp" data-fancybox href="{{ asset('uploads/posts/'.$post->small_featured_image3_url.'?'.time()) }}">
                       <img src="{{ asset('uploads/posts/'.$post->small_featured_image3_url.'?'.time()) }}">
                   </a>

@@ -8,12 +8,10 @@ class AddSubjectToPostsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table): void {
             $table->text('subject')->nullable()->after('description');
             $table->text('content')->nullable()->after('subject');
         });
@@ -21,12 +19,10 @@ class AddSubjectToPostsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table): void {
             $table->dropColumn('subject');
             $table->dropColumn('content');
         });

@@ -92,7 +92,7 @@
   //   });
   // })
 
-  
+
   $('.trash-icon').click(function () {
     var send_data = {};
     send_data['friend_id'] = $(this).attr('attr-data');

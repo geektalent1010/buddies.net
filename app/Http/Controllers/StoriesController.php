@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\User;
-use App\Profile;
-use App\Post;
-use App\Buddies;
+use App\Models\Buddies;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Notification;
 
 class StoriesController extends Controller
 {
@@ -19,7 +17,7 @@ class StoriesController extends Controller
 
         $lastStory = Post::where('type', '=', 1)->where('is_active', '=', 1)->where('created_by', '!=', $authUser->id)->orderBy('created_at', 'desc')->first();
         if (isset($authUser->notification)) {
-            if (isset($lastStory) && $lastStory->id != $authUser->notification->last_read_story_id) {
+            if (isset($lastStory) && $lastStory->id !== $authUser->notification->last_read_story_id) {
                 $notification = $authUser->notification;
                 $notification->last_read_story_id = $lastStory->id;
                 $notification->save();
@@ -28,14 +26,34 @@ class StoriesController extends Controller
             if (isset($lastStory)) {
                 Notification::create([
                     'user_id' => $authUser->id,
-                    'last_read_story_id' => $lastStory->id
+                    'last_read_story_id' => $lastStory->id,
                 ]);
             }
         }
 
         return view('panel.stories.index', $data);
     }
-    
+
+    public function create()
+    {
+        $id = Auth::user()->id;
+        $data['is_me'] = $id === Auth::user()->id;
+        $data['user'] = User::find($id);
+        if ( ! isset($data['user'])) {
+            $data['user'] = Auth::user();
+        }
+
+        return view('panel.stories.create', $data);
+    }
+
+    public function edit($id)
+    {
+        $data['user'] = Auth::user();
+        $data['story'] = Post::find($id);
+
+        return view('panel.stories.edit', $data);
+    }
+
     public function buddies()
     {
         $data['authUser'] = $authUser = Auth::user();
@@ -51,24 +69,5 @@ class StoriesController extends Controller
         $data['stories'] = Post::where('type', '=', 1)->where('is_active', '=', 1)->where('created_by', $authUser->id)->orderBy('created_at', 'desc')->get();
 
         return view('panel.stories.mine', $data);
-    }
-
-    public function create()
-    {
-        $id = Auth::user()->id;
-        $data['is_me'] = $id === Auth::user()->id;
-        $data['user'] = User::find($id);
-        if (!isset($data['user']))
-            $data['user'] = Auth::user();
-
-        return view('panel.stories.create', $data);
-    }
-
-    public function edit($id)
-    {
-        $data['user'] = Auth::user();
-        $data['story'] = Post::find($id);
-
-        return view('panel.stories.edit', $data);
     }
 }

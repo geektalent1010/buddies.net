@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\User;
-use App\Profile;
-use App\Post;
-use App\Buddies;
+use App\Models\Buddies;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Notification;
 
 class DealsController extends Controller
 {
@@ -19,7 +17,7 @@ class DealsController extends Controller
         $data['trashUserIds'] = [];
         $lastDeal = Post::where('type', '=', 4)->where('is_active', '=', 1)->where('created_by', '!=', $authUser->id)->orderBy('created_at', 'desc')->first();
         if (isset($authUser->notification)) {
-            if (isset($lastDeal) && $lastDeal->id != $authUser->notification->last_read_deal_id) {
+            if (isset($lastDeal) && $lastDeal->id !== $authUser->notification->last_read_deal_id) {
                 $notification = $authUser->notification;
                 $notification->last_read_deal_id = $lastDeal->id;
                 $notification->save();
@@ -28,7 +26,7 @@ class DealsController extends Controller
             if (isset($lastDeal)) {
                 Notification::create([
                     'user_id' => $authUser->id,
-                    'last_read_deal_id' => $lastDeal->id
+                    'last_read_deal_id' => $lastDeal->id,
                 ]);
             }
         }
@@ -44,8 +42,9 @@ class DealsController extends Controller
         $id = Auth::user()->id;
         $data['is_me'] = $id === Auth::user()->id;
         $data['user'] = User::find($id);
-        if (!isset($data['user']))
+        if ( ! isset($data['user'])) {
             $data['user'] = Auth::user();
+        }
 
         return view('panel.deals.create', $data);
     }
@@ -74,6 +73,4 @@ class DealsController extends Controller
 
         return view('panel.deals.mine', $data);
     }
-
-    
 }

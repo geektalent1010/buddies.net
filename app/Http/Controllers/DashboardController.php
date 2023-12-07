@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
-use App\Job;
-use App\Channel;
-use App\Requests;
-use App\Notification;
-use Illuminate\Http\Request;
+use App\Models\Channel;
+use App\Models\Job;
+use App\Models\Notification;
+use App\Models\Post;
+use App\Models\Requests;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -51,24 +50,24 @@ class DashboardController extends Controller
 
         $lastEvent = Post::where('type', '=', 6)->where('is_active', '=', 1)->where('created_by', '!=', $authUser->id)->orderBy('created_at', 'desc')->first();
         $lastRequest = Requests::where('user_id', '=', $authUser->id)->where('is_active', '=', 1)->orderBy('created_at', 'desc')->first();
-        
+
         if (isset($authUser->notification)) {
-            if (isset($lastJob) && $lastJob->id != $authUser->notification->last_read_job_id) {
+            if (isset($lastJob) && $lastJob->id !== $authUser->notification->last_read_job_id) {
                 $isNewJob = true;
             }
-            if (isset($lastStory) && $lastStory->id != $authUser->notification->last_read_story_id) {
+            if (isset($lastStory) && $lastStory->id !== $authUser->notification->last_read_story_id) {
                 $isNewStory = true;
             }
-            if (isset($lastTrade) && $lastTrade->id != $authUser->notification->last_read_trade_id) {
+            if (isset($lastTrade) && $lastTrade->id !== $authUser->notification->last_read_trade_id) {
                 $isNewTrade = true;
             }
-            if (isset($lastDeal) && $lastDeal->id != $authUser->notification->last_read_deal_id) {
+            if (isset($lastDeal) && $lastDeal->id !== $authUser->notification->last_read_deal_id) {
                 $isNewDeal = true;
             }
-            if (isset($lastNews) && $lastNews->id != $authUser->notification->last_read_news_id) {
+            if (isset($lastNews) && $lastNews->id !== $authUser->notification->last_read_news_id) {
                 $isNews = true;
             }
-            if (isset($lastEvent) && $lastEvent->id != $authUser->notification->last_read_event_id) {
+            if (isset($lastEvent) && $lastEvent->id !== $authUser->notification->last_read_event_id) {
                 $isNewEvent = true;
             }
             if (isset($lastRequest) && $lastRequest->id > $authUser->notification->last_read_request_id) {
@@ -100,9 +99,10 @@ class DashboardController extends Controller
                 $isNewRequests = true;
             }
         }
-        if ($authUser->IsAdmin()) {
+        if ($authUser->isAdmin()) {
             return view('admin.dashboard', compact('authUser', 'isNews', 'isNewEvent'));
         }
+
         return view('dashboard', compact('authUser', 'otherUser', 'channelInfo', 'channels', 'isNewRequests', 'isNewJob', 'isNewTrade', 'isNewStory', 'isNewDeal', 'isNews', 'isNewEvent'));
     }
 }

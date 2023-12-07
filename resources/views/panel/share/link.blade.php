@@ -1,5 +1,5 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'SHARE', 'ROUTES' => [
-  ['ROUTE' => 'studio.index', 'ACTIVE' => 'studio', 'ACTIVE_ROUTE' => $user->IsCompany()],
+  ['ROUTE' => 'studio.index', 'ACTIVE' => 'studio', 'ACTIVE_ROUTE' => $user->isCompany()],
   ['ROUTE' => 'share.link', 'ACTIVE' => 'link', 'ACTIVE_ROUTE' => true],
   ['ROUTE' => 'share.index', 'ACTIVE' => 'share', 'ACTIVE_ROUTE' => true]
 ], 'ACTIVE_PAGE' => 'link'])
@@ -28,7 +28,7 @@
           <p class="link-address">www.buddies.net/{{ $user->customer_id }}</p>
         </div>
         <div class="d-flex justify-content-center align-items-center btn-section w-100 p-0 m-0 mt-4 mb-5">
-            <a class="btn btn-primary copy-btn" onclick="copyLink(this,event)" attr_href="{{url('/')}}/{{ $user->customer_id }}">COPY</a>
+            <a class="btn btn-primary copy-btn" onclick="copyLink(this,event)" attr_href="{{ url('/') }}/{{ $user->customer_id }}">COPY</a>
         </div>
       </div>
     </div>

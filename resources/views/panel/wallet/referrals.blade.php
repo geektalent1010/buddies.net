@@ -30,7 +30,7 @@
         </div>
 
         @if (count($user->referrers) > 0)
-          @foreach($user->referrers as $referralUser)
+          @foreach ($user->referrers as $referralUser)
             <div class="referral-body-section px-4 py-3 d-flex justify-content-between">
               <div class="d-flex status-section w-50">
                 <span class="status-white-icon"><i class="fa-solid fa-circle"></i></span>

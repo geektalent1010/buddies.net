@@ -31,7 +31,7 @@
                     <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == '< 100KM') active @endif" onclick="select_distance(event)"><100KM</div>
                     <div class="distance_tablinks py-4 @if (isset($searchSetting) && ($searchSetting->distance == '100KM >' || $searchSetting->distance == 'ALL')) active @endif" onclick="select_distance(event)">ALL</div>
                 </div>
-                
+
                 <div class="row bg-color-section app-page-subtitle mb-30px">
                     SELECT 1 CATEGORY
                 </div>
@@ -379,7 +379,7 @@
         evt.currentTarget.className += " active";
         selected_distance = evt.currentTarget.textContent;
     }
-    
+
     $('.setting-save-btn').on('click', function() {
         var send_data = {};
         send_data['id'] = searchSettingId;

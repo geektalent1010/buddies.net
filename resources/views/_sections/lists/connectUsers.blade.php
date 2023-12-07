@@ -1,4 +1,3 @@
-
 <div class="member-body flat-scroll">
   @if (is_null($users) || !count($users))
   <div class="col app-page-subtitle no-members font-dinpro-18 mb-30px">
@@ -10,7 +9,7 @@
         <a class="member-link" href="{{ route('profile.index', [ 'userID' => $user->user_id ]) }}">
           <div class="member-avatar-wrp">
             <div class="member-avatar">
-              @if($user->main_avatar_url)
+              @if ($user->main_avatar_url)
               <img src="{{ asset('uploads/'.$user->user->username.'/'.$user->main_avatar_url.'?'.time()) }}">
               @else
               <p class="first_letter">{{ $user->user->getMono() }}</p>

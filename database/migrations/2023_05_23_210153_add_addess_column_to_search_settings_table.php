@@ -8,24 +8,20 @@ class AddAddessColumnToSearchSettingsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('search_settings', function (Blueprint $table) {
+        Schema::table('search_settings', function (Blueprint $table): void {
             $table->string('address')->nullable()->after('distance');
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('search_settings', function (Blueprint $table) {
+        Schema::table('search_settings', function (Blueprint $table): void {
             $table->dropColumn('address');
         });
     }

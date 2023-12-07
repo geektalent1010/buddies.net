@@ -1,6 +1,6 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'SHARE', 'ROUTES' => [
-  ['ROUTE' => 'studio.index', 'ACTIVE' => 'studio', 'ACTIVE_ROUTE' => $user->IsCompany()],
-  // ['ROUTE' => 'share.index', 'ACTIVE' => 'share', 'ACTIVE_ROUTE' => $user->IsCompany()]
+  ['ROUTE' => 'studio.index', 'ACTIVE' => 'studio', 'ACTIVE_ROUTE' => $user->isCompany()],
+  // ['ROUTE' => 'share.index', 'ACTIVE' => 'share', 'ACTIVE_ROUTE' => $user->isCompany()]
   ['ROUTE' => 'share.index', 'ACTIVE' => 'share', 'ACTIVE_ROUTE' => true]
 ], 'ACTIVE_PAGE' => 'share'])
 
@@ -24,7 +24,7 @@
         <div class="link-title app-page-subtitle only-spacing">INVITE FRIENDS AND EARN CREDITS</div>
         <div class="link-address app-page-subtitle only-spacing">www.buddies.net/{{ $user->customer_id }}</div>
         <div class="d-flex justify-content-center align-items-center btn-section w-100 p-0 m-0 mt-30px">
-            <a class="btn btn-primary copy-btn" onclick="copyLink(this,event)" attr_href="{{url('/')}}/{{ $user->customer_id }}">COPY LINK</a>
+            <a class="btn btn-primary copy-btn" onclick="copyLink(this,event)" attr_href="{{ url('/') }}/{{ $user->customer_id }}">COPY LINK</a>
         </div>
         <div class="share-title app-page-subtitle only-spacing mb-30px">SHARE BUDDIES ON SOCIAL MEDIA</div>
         <div class="d-flex align-items-center justify-content-center social-icon-section p-0">
@@ -36,14 +36,14 @@
         </div>
 
         {{--@if (count($fileNames) > 0)
-          @foreach($fileNames as $filename)
+          @foreach ($fileNames as $filename)
             <div class="image-slider-wrapper mt-3">
               <div class="each-panel">
                 <a data-fancybox href="{{ asset($filename['src']) }}">
                   <img src="{{ asset($filename['src']) }}">
                 </a>
                 <div class="mt-4 px-3 w-100 d-flex justify-content-center">
-                  <a class="btn btn-primary download-button" href="{{ asset($filename['src']) }}" download attr-filename="{{$filename['name']}}">Download</a>
+                  <a class="btn btn-primary download-button" href="{{ asset($filename['src']) }}" download attr-filename="{{ $filename['name'] }}">Download</a>
                 </div>
               </div>
             </div>

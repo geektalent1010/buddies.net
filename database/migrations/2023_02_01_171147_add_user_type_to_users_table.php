@@ -8,12 +8,10 @@ class AddUserTypeToUsersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table): void {
             $table->string('phone')->nullable()->after('email');
             $table->string('site_url')->nullable()->after('phone');
             $table->boolean('user_type')->nullable()->default(0)->after('is_admin');
@@ -22,12 +20,10 @@ class AddUserTypeToUsersTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table): void {
             $table->dropColumn('phone');
             $table->dropColumn('site_url');
             $table->dropColumn('user_type');

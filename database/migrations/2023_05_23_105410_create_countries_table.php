@@ -8,12 +8,10 @@ class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('countries', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table): void {
             $table->id();
             $table->string('code', 10)->index();
             $table->string('name');
@@ -24,10 +22,8 @@ class CreateCountriesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('countries');
     }

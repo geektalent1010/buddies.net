@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\User;
-use App\Profile;
-use App\Group;
-use App\Member;
-use App\Invite;
-use App\Buddies;
-use Twilio\Rest\Client;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
+use App\Models\Group;
+use App\Models\Invite;
+use App\Models\Member;
+use App\Models\User;
 use DateTime;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Twilio\Exceptions\RestException;
+use Twilio\Rest\Client;
 
 class GroupsController extends Controller
 {
@@ -31,33 +29,14 @@ class GroupsController extends Controller
         return view('panel.groups.own', compact('groups', 'authUser'));
     }
 
-    public function showOwnGroups()
-    {
-        $authUser = Auth::user();
-        $groups = Group::where('user_id', '=', $authUser->id)->get();
-
-        return view('panel.groups.ownGroups', compact('groups', 'authUser'));
-    }
-
-    public function showFriendsGroups()
-    {
-        $authUser = Auth::user();
-        $invites = Invite::where('user_id', '=', $authUser->id)->where('is_active', '=', 1)->get();
-        $members = Member::whereHas('group', function($query) use ($authUser) {
-                $query->where('user_id', '<>', $authUser->id);
-            })
-            ->where('user_id', $authUser->id)->where('is_banned', '<>', 1)->get();
-
-        return view('panel.groups.friends', compact('members', 'invites', 'authUser'));
-    }
-
     public function show()
     {
         $id = Auth::user()->id;
         $data['is_me'] = $id === Auth::user()->id;
         $data['user'] = User::find($id);
-        if (!isset($data['user']))
+        if ( ! isset($data['user'])) {
             $data['user'] = Auth::user();
+        }
 
         return view('panel.groups.create', $data);
     }
@@ -72,7 +51,7 @@ class GroupsController extends Controller
         // $friendIds = Buddies::where('user_id', '=', $authUser->id)->pluck('connected_user_id')->toArray();
         // $data['users'] = User::where('user_type', '=', 0)->whereIn('id', $friendIds)->get();
         $data['group'] = Group::find($groupId);
-        if (!isset($data['group'])) {
+        if ( ! isset($data['group'])) {
             return redirect()->route('group.create.index')->with('error', 'Group is not exist');
         }
         $data['members'] = $data['group']->members->where('is_banned', '<>', 1)->pluck('user_id')->toArray();
@@ -80,18 +59,38 @@ class GroupsController extends Controller
         return view('panel.groups.edit', $data);
     }
 
+    public function showOwnGroups()
+    {
+        $authUser = Auth::user();
+        $groups = Group::where('user_id', '=', $authUser->id)->get();
+
+        return view('panel.groups.ownGroups', compact('groups', 'authUser'));
+    }
+
+    public function showFriendsGroups()
+    {
+        $authUser = Auth::user();
+        $invites = Invite::where('user_id', '=', $authUser->id)->where('is_active', '=', 1)->get();
+        $members = Member::whereHas('group', function ($query) use ($authUser): void {
+            $query->where('user_id', '<>', $authUser->id);
+        })
+            ->where('user_id', $authUser->id)->where('is_banned', '<>', 1)->get();
+
+        return view('panel.groups.friends', compact('members', 'invites', 'authUser'));
+    }
+
     public function chat($id)
     {
         $authUser = Auth::user();
-        
+
         $channelInfo = null;
-        if (!$id) {
+        if ( ! $id) {
             $channelInfo = Group::where('user_id', '=', $authUser->id)->first();
         } else {
             $channelInfo = Group::find($id);
         }
 
-        if (!isset($channelInfo)) {
+        if ( ! isset($channelInfo)) {
             return redirect()->route('groups.index');
         }
         $data['channelInfo'] = $channelInfo;
@@ -104,7 +103,7 @@ class GroupsController extends Controller
                 ->members($authUser->username)
                 ->fetch();
 
-        } catch (\Twilio\Exceptions\RestException $e) {
+        } catch (RestException $e) {
             $member = $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
                 ->channels($channelInfo->channel_unique_name)
                 ->members
@@ -120,9 +119,9 @@ class GroupsController extends Controller
         $currentDateTime = new DateTime();
         $currentDateTime = $currentDateTime->getTimestamp();
         $uniqueName = 'group_chatroom_' . $authUser->id . '_' . $currentDateTime . uniqid();
-        
+
         $groupInfo = Group::where('channel_unique_name', '=', $uniqueName)->first();
-    
+
         $twilio = new Client(config('app.TWILIO_AUTH_SID'), config('app.TWILIO_AUTH_TOKEN'));
 
         if (isset($groupInfo)) {
@@ -130,115 +129,118 @@ class GroupsController extends Controller
                 $channel = $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
                     ->channels($uniqueName)
                     ->fetch();
-            } catch (\Twilio\Exceptions\RestException $e) {
+            } catch (RestException $e) {
                 $channel = $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
                     ->channels
                     ->create([
                         'friendlyName' => $uniqueName,
                         'uniqueName' => $uniqueName,
-                        'createdBy' => $authUser->username
-                    ]);
-            }
-    
-            // Add Admin user to the channel
-            try {
-                $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
-                    ->channels($channel->sid)
-                    ->members($authUser->username)
-                    ->fetch();
-    
-            } catch (\Twilio\Exceptions\RestException $e) {
-                $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
-                    ->channels($channel->sid)
-                    ->members
-                    ->create($authUser->username, [
-                        'roleSid' => config('app.MIX_CHANNEL_ADMIN_ROLE_SID')
-                    ]);
-            }
-            return response()->json(['status' => true, 'exist' => true]);
-        } else {
-            $logo = $request->file('logo');
-            $filename = null;
-            if (isset($logo)) {
-              if (!file_exists(base_path() . '/public/uploads/groups')) {
-                mkdir(base_path() . '/public/uploads/groups', 0777 , true);
-              }
-              $currentDateTime = new DateTime();
-              $currentDateTime = $currentDateTime->getTimestamp();
-              $filename = $currentDateTime . uniqid() . '.jpg';
-              $logo->move(base_path() . '/public/uploads/groups', $filename);
-            }
-            $group = Group::create([
-                'user_id'       => $authUser->id,
-                'channel_unique_name'     => $uniqueName,
-                'name'     => $request->name,
-                'description'     => $request->description,
-                'logo' => $filename
-            ]);
-    
-            Member::create([
-                'group_id'    => $group->id,
-                'user_id'       => $authUser->id,
-            ]);
-    
-            // Fetch channel or create a new one if it doesn't exist
-            try {
-                $channel = $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
-                    ->channels($uniqueName)
-                    ->fetch();
-            } catch (\Twilio\Exceptions\RestException $e) {
-                $channel = $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
-                    ->channels
-                    ->create([
-                        'friendlyName' => $uniqueName,
-                        'uniqueName' => $uniqueName,
-                        'createdBy' => $authUser->username
-                    ]);
-            }
-    
-            // Add Admin user to the channel
-            try {
-                $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
-                    ->channels($channel->sid)
-                    ->members($authUser->username)
-                    ->fetch();
-    
-            } catch (\Twilio\Exceptions\RestException $e) {
-                $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
-                    ->channels($channel->sid)
-                    ->members
-                    ->create($authUser->username, [
-                        'roleSid' => config('app.MIX_CHANNEL_ADMIN_ROLE_SID')
+                        'createdBy' => $authUser->username,
                     ]);
             }
 
-            return response()->json(['status' => true, 'exist' => false]);
+            // Add Admin user to the channel
+            try {
+                $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
+                    ->channels($channel->sid)
+                    ->members($authUser->username)
+                    ->fetch();
+
+            } catch (RestException $e) {
+                $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
+                    ->channels($channel->sid)
+                    ->members
+                    ->create($authUser->username, [
+                        'roleSid' => config('app.MIX_CHANNEL_ADMIN_ROLE_SID'),
+                    ]);
+            }
+
+            return response()->json(['status' => true, 'exist' => true]);
         }
+        $logo = $request->file('logo');
+        $filename = null;
+        if (isset($logo)) {
+            if ( ! file_exists(base_path() . '/public/uploads/groups')) {
+                mkdir(base_path() . '/public/uploads/groups', 0777, true);
+            }
+            $currentDateTime = new DateTime();
+            $currentDateTime = $currentDateTime->getTimestamp();
+            $filename = $currentDateTime . uniqid() . '.jpg';
+            $logo->move(base_path() . '/public/uploads/groups', $filename);
+        }
+        $group = Group::create([
+            'user_id' => $authUser->id,
+            'channel_unique_name' => $uniqueName,
+            'name' => $request->name,
+            'description' => $request->description,
+            'logo' => $filename,
+        ]);
+
+        Member::create([
+            'group_id' => $group->id,
+            'user_id' => $authUser->id,
+        ]);
+
+        // Fetch channel or create a new one if it doesn't exist
+        try {
+            $channel = $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
+                ->channels($uniqueName)
+                ->fetch();
+        } catch (RestException $e) {
+            $channel = $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
+                ->channels
+                ->create([
+                    'friendlyName' => $uniqueName,
+                    'uniqueName' => $uniqueName,
+                    'createdBy' => $authUser->username,
+                ]);
+        }
+
+        // Add Admin user to the channel
+        try {
+            $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
+                ->channels($channel->sid)
+                ->members($authUser->username)
+                ->fetch();
+
+        } catch (RestException $e) {
+            $twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
+                ->channels($channel->sid)
+                ->members
+                ->create($authUser->username, [
+                    'roleSid' => config('app.MIX_CHANNEL_ADMIN_ROLE_SID'),
+                ]);
+        }
+
+        return response()->json(['status' => true, 'exist' => false]);
+
     }
 
-    public function updateGroupInfo(Request $request) {
+    public function updateGroupInfo(Request $request)
+    {
         $group = Group::find($request->groupId);
         $logo = $request->file('logo');
         if (isset($logo)) {
-          if (!file_exists(base_path() . '/public/uploads/groups')) {
-            mkdir(base_path() . '/public/uploads/groups', 0777 , true);
-          }
-          $currentDateTime = new DateTime();
-          $currentDateTime = $currentDateTime->getTimestamp();
-          $filename = $group->logo ?? $currentDateTime . uniqid() . '.jpg';
-          $filename = $currentDateTime . uniqid() . '.jpg';
-          $logo->move(base_path() . '/public/uploads/groups', $filename);
-          $group->logo = $filename;
+            if ( ! file_exists(base_path() . '/public/uploads/groups')) {
+                mkdir(base_path() . '/public/uploads/groups', 0777, true);
+            }
+            $currentDateTime = new DateTime();
+            $currentDateTime = $currentDateTime->getTimestamp();
+            $filename = $group->logo ?? $currentDateTime . uniqid() . '.jpg';
+            $filename = $currentDateTime . uniqid() . '.jpg';
+            $logo->move(base_path() . '/public/uploads/groups', $filename);
+            $group->logo = $filename;
         }
-        if ($request->removeLogo === 'true') {
-          if ($group->logo && file_exists(base_path() . '/public/uploads/groups/' . $group->logo)) {
-            unlink(base_path() . '/public/uploads/groups/' . $group->logo);
-          }
-          $group->logo = null;
+        if ('true' === $request->removeLogo) {
+            if ($group->logo && file_exists(base_path() . '/public/uploads/groups/' . $group->logo)) {
+                unlink(base_path() . '/public/uploads/groups/' . $group->logo);
+            }
+            $group->logo = null;
         }
         $group->name = $request->name;
         $group->description = $request->description;
         $group->save();
+
         return response()->json(['status' => true]);
     }
 
@@ -257,12 +259,12 @@ class GroupsController extends Controller
             return response()->json(['status' => false, 'message' => 'Member is not exist']);
         }
         $this->twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
-                                ->channels($member->group->channel_unique_name)
-                                ->members($member->user->username)
-                                ->update([
-                                    'roleSid' => config('app.MIX_CHANNEL_BANNED_ROLE_SID')
-                                ]);
-       
+            ->channels($member->group->channel_unique_name)
+            ->members($member->user->username)
+            ->update([
+                'roleSid' => config('app.MIX_CHANNEL_BANNED_ROLE_SID'),
+            ]);
+
         return response()->json(['status' => true, 'message' => 'Member banned']);
     }
 
@@ -276,39 +278,39 @@ class GroupsController extends Controller
             Invite::create([
                 'requester' => $request->user()->id,
                 'user_id' => $request->userId,
-                'member_id' => $member->id
+                'member_id' => $member->id,
             ]);
-    
+
             $this->twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
-                                    ->channels($member->group->channel_unique_name)
-                                    ->members($user->username)
-                                    ->update([
-                                        'roleSid' => config('app.MIX_CHANNEL_MEMBER_ROLE_SID')
-                                    ]);
+                ->channels($member->group->channel_unique_name)
+                ->members($user->username)
+                ->update([
+                    'roleSid' => config('app.MIX_CHANNEL_MEMBER_ROLE_SID'),
+                ]);
         } else {
             $group = Group::find($request->groupId);
             $member = Member::create([
-                'group_id'    => $request->groupId,
-                'user_id'     => $request->userId,
-                'is_banned'   => 1
+                'group_id' => $request->groupId,
+                'user_id' => $request->userId,
+                'is_banned' => 1,
             ]);
             Invite::create([
                 'requester' => $request->user()->id,
                 'user_id' => $request->userId,
-                'member_id' => $member->id
+                'member_id' => $member->id,
             ]);
-        
+
             try {
                 $channel = $this->twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
                     ->channels($group->channel_unique_name)
                     ->fetch();
-            } catch (\Twilio\Exceptions\RestException $e) {
-                $channel = $this->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
+            } catch (RestException $e) {
+                $channel = $this->twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
                     ->channels
                     ->create([
                         'friendlyName' => $group->channel_unique_name,
                         'uniqueName' => $group->channel_unique_name,
-                        'createdBy' => $user->username
+                        'createdBy' => $user->username,
                     ]);
             }
 
@@ -318,50 +320,54 @@ class GroupsController extends Controller
                     ->channels($channel->sid)
                     ->members($user->username)
                     ->fetch();
-    
-            } catch (\Twilio\Exceptions\RestException $e) {
+
+            } catch (RestException $e) {
                 $this->twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
                     ->channels($channel->sid)
                     ->members
                     ->create($user->username, [
-                        'roleSid' => config('app.MIX_CHANNEL_MEMBER_ROLE_SID')
+                        'roleSid' => config('app.MIX_CHANNEL_MEMBER_ROLE_SID'),
                     ]);
             }
         }
-    
+
         return response()->json([
             'status' => true,
-            'message' => 'Member unbanned'
+            'message' => 'Member unbanned',
         ]);
     }
 
-    public function accept(Request $request) {
+    public function accept(Request $request)
+    {
         $requestInfo = Invite::find($request->request_id);
         if (isset($requestInfo)) {
-            $member = $requestInfo->invite_member;
+            $member = $requestInfo->inviteMember;
             if (isset($member)) {
                 $member->is_banned = 0;
                 $member->save();
-        
+
                 $this->twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
-                                        ->channels($member->group->channel_unique_name)
-                                        ->members($requestInfo->user->username)
-                                        ->update([
-                                            'roleSid' => config('app.MIX_CHANNEL_MEMBER_ROLE_SID')
-                                        ]);
+                    ->channels($member->group->channel_unique_name)
+                    ->members($requestInfo->user->username)
+                    ->update([
+                        'roleSid' => config('app.MIX_CHANNEL_MEMBER_ROLE_SID'),
+                    ]);
             } else {
                 return response()->json(['status' => false, 'message' => 'Member is not exist']);
             }
             $requestInfo->delete();
+
             return response()->json(['status' => true, 'message' => 'The request successfully accepted.']);
         }
+
         return response()->json(['status' => false, 'message' => 'Member is not exist']);
     }
-  
+
     public function delete(Request $request)
     {
         $group = Group::find($request->id);
         $group->delete();
+
         return response()->json(['success' => 'Group Successfully Deleted']);
     }
 }

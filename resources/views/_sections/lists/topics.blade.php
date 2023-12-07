@@ -1,4 +1,3 @@
-
 <div class="member-body flat-scroll">
   <div class="accordion mb-35px" id="faq">
     <div class="card">

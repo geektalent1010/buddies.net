@@ -183,7 +183,7 @@
                 @csrf
 
                 <input type="hidden" name="user_type" id="userType" value="0" />
-                <input id="refererNumber" type="text" class="form-control" value="{{$referral_id}}" placeholder="Referer Number" disabled hidden>
+                <input id="refererNumber" type="text" class="form-control" value="{{ $referral_id }}" placeholder="Referer Number" disabled hidden>
 
                 <div class="row mx-0 mt-4">
                     <div class="col-md-6">
@@ -197,7 +197,7 @@
                     <div class="col-md-6">
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="text" name="first_name" class="form-control" id="firstName" placeholder="First Name" tabindex="1" value="{{old('first_name')}}">
+                                <input type="text" name="first_name" class="form-control" id="firstName" placeholder="First Name" tabindex="1" value="{{ old('first_name') }}">
                                 <label id="first-name-error" class="has-error" for="first_name" style="display: none"></label>
                             </div>
                         </div>
@@ -205,7 +205,7 @@
                     <div class="col-md-6">
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="text" name="last_name" class="form-control" id="lastName" placeholder="Last Name" tabindex="2" value="{{old('last_name')}}">
+                                <input type="text" name="last_name" class="form-control" id="lastName" placeholder="Last Name" tabindex="2" value="{{ old('last_name') }}">
                                 <label id="last-name-error" class="has-error" for="last_name" style="display: none"></label>
                             </div>
                         </div>
@@ -220,7 +220,7 @@
                         </div>
                         <div class="login-page">
                             <div class="form-group">
-                                <!-- <input type="text" name="birthday" class="form-control" id="dateBirth" placeholder="DD/MM/YYYY" tabindex="3" value="{{old('birthday')}}"> -->
+                                <!-- <input type="text" name="birthday" class="form-control" id="dateBirth" placeholder="DD/MM/YYYY" tabindex="3" value="{{ old('birthday') }}"> -->
                                 <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="birthday">
                             </div>
                         </div>
@@ -259,7 +259,7 @@
                     <div class="col-md-6">
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="text" name="company_name" class="form-control" id="companyName" placeholder="Company Name" tabindex="4" value="{{old('company_name')}}">
+                                <input type="text" name="company_name" class="form-control" id="companyName" placeholder="Company Name" tabindex="4" value="{{ old('company_name') }}">
                                 <label id="company-name-error" class="has-error" for="company_name" style="display: none"></label>
                             </div>
                         </div>
@@ -267,7 +267,7 @@
                     <div class="col-md-6">
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="text" name="vat_number" class="form-control" id="vatNumber" placeholder="VAT Number" tabindex="5" value="{{old('vat_number')}}">
+                                <input type="text" name="vat_number" class="form-control" id="vatNumber" placeholder="VAT Number" tabindex="5" value="{{ old('vat_number') }}">
                                 <label id="vat-number-error" class="has-error" for="vat_number" style="display: none"></label>
                             </div>
                         </div>
@@ -285,7 +285,7 @@
                                 <div class="d-flex">
                                     <select class="form-control phone-select webkit_style" name="">
                                         @foreach ($phonecodes as $code)
-                                        <option value="+{{$code}}">+{{$code}}</option>
+                                            <option value="+{{ $code?->phonecode }}">+{{ $code?->phonecode }}</option>
                                         @endforeach
                                     </select>
                                     <input type="text" name="phone" class="form-control" id="real-mobileNumber" placeholder="Phone Number" hidden>
@@ -303,7 +303,7 @@
                         </div>
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Email Address" tabindex="7" value="{{old('email')}}" autocomplete="off">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Email Address" tabindex="7" value="{{ old('email') }}" autocomplete="off">
                                 <label id="email-error" class="has-error" for="email" style="display: none"></label>
                             </div>
                         </div>
@@ -321,7 +321,7 @@
                     <div class="col-md-6">
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="text" name="street_name" class="form-control" id="streetName" placeholder="Street" tabindex="8" value="{{old('street_name')}}">
+                                <input type="text" name="street_name" class="form-control" id="streetName" placeholder="Street" tabindex="8" value="{{ old('street_name') }}">
                                 <label id="street-name-error" class="has-error" for="street_name" style="display: none"></label>
                             </div>
                         </div>
@@ -329,7 +329,7 @@
                     <div class="col-md-6">
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="text" name="house_number" class="form-control" id="houseNumber" placeholder="House Number" tabindex="9" value="{{old('house_number')}}">
+                                <input type="text" name="house_number" class="form-control" id="houseNumber" placeholder="House Number" tabindex="9" value="{{ old('house_number') }}">
                                 <label id="house-number-error" class="has-error" for="house_number" style="display: none"></label>
                             </div>
                         </div>
@@ -337,7 +337,7 @@
                     <div class="col-md-6">
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="text" name="postal_code" class="form-control" id="postalCode" placeholder="Postal Code" tabindex="11" value="{{old('postal_code')}}">
+                                <input type="text" name="postal_code" class="form-control" id="postalCode" placeholder="Postal Code" tabindex="11" value="{{ old('postal_code') }}">
                                 <label id="postal-code-error" class="has-error" for="postal_code" style="display: none"></label>
                             </div>
                         </div>
@@ -367,7 +367,7 @@
                             <input type="text" name="country" class="form-control" id="real-country" placeholder="Country" hidden>
                             <div class="form-group mb-0">
                                 <select class="form-control country-select webkit_style" name="country">
-                                  @foreach($countries as $country)
+                                  @foreach ($countries as $country)
                                       <option value="{{ $country->id }}">{{ $country['name'] }}</option>
                                   @endforeach
                               </select>
@@ -388,7 +388,7 @@
                     <div class="col-md-6">
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="text" name="username" class="form-control" id="username" placeholder="User Name" tabindex="14" value="{{old('username')}}" autocomplete="off">
+                                <input type="text" name="username" class="form-control" id="username" placeholder="User Name" tabindex="14" value="{{ old('username') }}" autocomplete="off">
                                 <label id="username-error" class="has-error" for="username" style="display: none"></label>
                             </div>
                         </div>
@@ -396,7 +396,7 @@
                     <div class="col-md-6">
                         <div class="login-page">
                             <div class="form-group">
-                                <input type="password" name="password" class="form-control" id="password" placeholder="Password" tabindex="15" value="{{old('password')}}" autocomplete="new-password">
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Password" tabindex="15" value="{{ old('password') }}" autocomplete="new-password">
                                 <label id="password-error" class="has-error" for="password" style="display: none"></label>
                             </div>
                         </div>
@@ -1223,7 +1223,7 @@
             if(!$('#refererNumber').val())
             {
                 alert('Please contact info@buddies.net');
-            document.location.href = "{{route('login')}}";
+            document.location.href = "{{ route('login') }}";
             }
         });
 

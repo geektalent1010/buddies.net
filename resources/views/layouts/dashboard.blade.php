@@ -412,7 +412,7 @@
       else {
         localStorage.setItem('srcIndex', srcIndex);
       }
-      var backgroundImage = '{{ asset('') }}' + desktopPosterArray[srcIndex] + '?' + '{{time()}}';
+      var backgroundImage = '{{ asset('') }}' + desktopPosterArray[srcIndex] + '?' + '{{ time() }}';
       document.body.style.backgroundImage = `url(${backgroundImage})`  //changing bg image
       updateVideoSource();
     });
@@ -426,14 +426,14 @@
         localStorage.setItem('srcIndex', 0);
         srcIndex = 0;
       }
-      var backgroundImage = '{{ asset('') }}' + desktopPosterArray[srcIndex] + '?' + '{{time()}}';
+      var backgroundImage = '{{ asset('') }}' + desktopPosterArray[srcIndex] + '?' + '{{ time() }}';
       document.body.style.backgroundImage = `url(${backgroundImage})`  //changing bg image
       updateVideoSource();
     });
 
     function updateVideoSource() {
-      document.querySelector('.main-img').src = '{{ asset('') }}' + desktopPosterArray[srcIndex] + '?' + '{{time()}}';
-      document.querySelector('.main-img-mobile').src = '{{ asset('') }}' + MobilePosterArray[srcIndex] + '?' + '{{time()}}';
+      document.querySelector('.main-img').src = '{{ asset('') }}' + desktopPosterArray[srcIndex] + '?' + '{{ time() }}';
+      document.querySelector('.main-img-mobile').src = '{{ asset('') }}' + MobilePosterArray[srcIndex] + '?' + '{{ time() }}';
       document.querySelector('.wave-video-section').style.display = 'none';
       document.querySelector('.wave-video-section-mobile').style.display = 'none';
 
@@ -446,7 +446,7 @@
         document.querySelector('.main-img-mobile').style.display = 'none';
         if (!video) return;
         if (desktopSrcArray[srcIndex]) {
-          video.poster = '{{ asset('') }}' + desktopPosterArray[srcIndex] + '?' + '{{time()}}';
+          video.poster = '{{ asset('') }}' + desktopPosterArray[srcIndex] + '?' + '{{ time() }}';
           video.querySelector('source').src = '{{ asset('') }}' + desktopSrcArray[srcIndex];
           video.load();
           // When the video has finished loading
@@ -459,7 +459,7 @@
         document.querySelector('.main-img').style.display = 'none';
         if (!video) return;
         if (MobileSrcArray[srcIndex]) {
-          video.poster = '{{ asset('') }}' + MobilePosterArray[srcIndex] + '?' + '{{time()}}';
+          video.poster = '{{ asset('') }}' + MobilePosterArray[srcIndex] + '?' + '{{ time() }}';
           video.querySelector('source').src = '{{ asset('') }}' + MobileSrcArray[srcIndex];
           video.load();
           // When the video has finished loading

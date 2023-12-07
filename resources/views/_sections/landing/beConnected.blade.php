@@ -1,4 +1,3 @@
-
 <div class="desclimWrapper parallax">
     <div class="w-100 welcome-background">
         <div class="container">

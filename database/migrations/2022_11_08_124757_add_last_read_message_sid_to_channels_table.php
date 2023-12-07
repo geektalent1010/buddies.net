@@ -8,12 +8,10 @@ class AddLastReadMessageSidToChannelsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('channels', function (Blueprint $table) {
+        Schema::table('channels', function (Blueprint $table): void {
             $table->string('last_read_message_sid')->nullable();
             $table->boolean('is_connected')->nullable();
         });
@@ -21,12 +19,10 @@ class AddLastReadMessageSidToChannelsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('channels', function (Blueprint $table) {
+        Schema::table('channels', function (Blueprint $table): void {
             $table->dropColumn('last_read_message_sid');
             $table->dropColumn('is_connected');
         });

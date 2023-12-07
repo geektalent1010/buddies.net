@@ -1,4 +1,3 @@
-
 <div class="modal video-modal">
     <div class="video-modal-content">
         <img class="cancel-video" src="{{ asset('images/svg/cancelWhite.svg') }}" onclick="hideModal()">
@@ -31,7 +30,7 @@
         position: absolute;
         top: 50%;
         left:50%;
-        transform: translate(-50%, -50%);    
+        transform: translate(-50%, -50%);
         padding: 0px;
         width: auto;
         max-height: 100vh;
@@ -55,7 +54,7 @@
 <script type="text/javascript">
     const play_icon = document.querySelector('.play-icon');
     const stop_icon = document.querySelector('.stop-icon');
-    
+
     if (play_icon) {
         play_icon.addEventListener('mouseover', function() {
             play_icon.src = '{{ asset('') }}' + 'images/svg/PlayButtonBlue.svg';

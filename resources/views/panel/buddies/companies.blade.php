@@ -49,7 +49,7 @@
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  
+
   $('.trash-icon').click(function () {
     var send_data = {};
     send_data['friend_id'] = $(this).attr('attr-data');

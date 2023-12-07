@@ -43,7 +43,7 @@
   $('#userSearchIcon').click(function () {
     if($("#userSearchKey").val() == '') {
       $('.member-body').hide();
-    } 
+    }
     else {
       var options = {
         keyword: $("#userSearchKey").val(),
@@ -56,7 +56,7 @@
           if (res.length) {
             var html = '';
             for(var resIndex = 0; resIndex < res.length; resIndex++) {
-              html += 
+              html +=
                 '<div class="member-item">' +
                 '  <div class="member-link">' +
                 '    <div class="member-avatar-wrp">' +
@@ -66,7 +66,7 @@
               } else {
                 html += '<p class="first_letter">' + res[resIndex].first_name[0] + '</p>';
               }
-              html += 
+              html +=
                 '      </div>' +
                 '    </div>' +
                 '    <div class="member-name">' + res[resIndex].first_name + ' ' + res[resIndex].last_name + '</div>' +

@@ -8,12 +8,10 @@ class AddCompanyInfoColumnsToProfilesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->string('logo_url')->nullable()->after('other_avatar_url8');
             $table->string('street')->nullable()->after('country');
             $table->string('postal_code')->nullable()->after('street');
@@ -22,12 +20,10 @@ class AddCompanyInfoColumnsToProfilesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->dropColumn('logo_url');
             $table->dropColumn('street');
             $table->dropColumn('postal_code');

@@ -1,5 +1,5 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'STUDIO', 'ROUTES' => [
-  ['ROUTE' => 'studio.index', 'ACTIVE' => 'studio', 'ACTIVE_ROUTE' => $user->IsCompany()],
+  ['ROUTE' => 'studio.index', 'ACTIVE' => 'studio', 'ACTIVE_ROUTE' => $user->isCompany()],
   ['ROUTE' => 'share.index', 'ACTIVE' => 'share', 'ACTIVE_ROUTE' => true]
 ], 'ACTIVE_PAGE' => 'studio'])
 
@@ -61,12 +61,12 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center m-0 p-0 w-100 studio-section"> 
+    <div class="row justify-content-center m-0 p-0 w-100 studio-section">
         <div class="col-lg-6 p-0">
             <div class="row justify-content-center m-0 p-0 w-100">
                 <div class="col-12 col-sm-12 studioItem" id="studio">
                     <div class="studioItem-wrp tabcontent" id="studio1">
-                        @if(isset($user->profile->studio_image1))
+                        @if (isset($user->profile->studio_image1))
                         <div class="thumbnail-card portfolio-image">
                             <div class="image-container blur-image-1 {{ $user->profile->darken_mode_1 == 0 ? 'd-none' : '' }}"></div>
                             <img class="studio-image" alt="Studio image" src="{{ asset('uploads/'.$user->username.'/'.$user->profile->studio_image1.'?'.time()) }}">
@@ -74,11 +74,11 @@
                         @else
                         <div class="thumbnail-card portfolio-image">
                             <div class="image-container blur-image-1 {{ $user->profile->darken_mode_1 == 0 ? 'd-none' : '' }}"></div>
-                            
+
                         </div>
                         @endif
                         <div class="header-1">
-                            @if(isset($user->profile->studio_header1) && strlen($user->profile->studio_header1) > 0)
+                            @if (isset($user->profile->studio_header1) && strlen($user->profile->studio_header1) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_header1)) !!}
                             @else
                                 <p class="studio-header">HEADER</p>
@@ -86,15 +86,15 @@
                         </div>
 
                         <div class="content-1">
-                            @if(isset($user->profile->studio_content1) && strlen($user->profile->studio_content1) > 0)
+                            @if (isset($user->profile->studio_content1) && strlen($user->profile->studio_content1) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_content1)) !!}
                             @else
                                 <p class="studio-content">Content</p>
                             @endif
-                        </div>                        
+                        </div>
 
                         <div class="footer-1">
-                            @if(isset($user->profile->studio_footer1) && strlen($user->profile->studio_footer1) > 0)
+                            @if (isset($user->profile->studio_footer1) && strlen($user->profile->studio_footer1) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_footer1)) !!}
                             @else
                                 <p class="studio-footer">FOOTER</p>
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <div class="studioItem-wrp tabcontent" id="studio2">
-                        @if(isset($user->profile->studio_image2))
+                        @if (isset($user->profile->studio_image2))
                         <div class="thumbnail-card portfolio-image">
                             <div class="image-container blur-image-2 {{ $user->profile->darken_mode_2 == 0 ? 'd-none' : '' }}"></div>
                             <img class="studio-image" alt="Studio image" src="{{ asset('uploads/'.$user->username.'/'.$user->profile->studio_image2.'?'.time()) }}">
@@ -110,11 +110,11 @@
                         @else
                         <div class="thumbnail-card portfolio-image">
                             <div class="image-container blur-image-2 {{ $user->profile->darken_mode_2 == 0 ? 'd-none' : '' }}"></div>
-                            
+
                         </div>
                         @endif
                         <div class="header-2">
-                            @if(isset($user->profile->studio_header2) && strlen($user->profile->studio_header2) > 0)
+                            @if (isset($user->profile->studio_header2) && strlen($user->profile->studio_header2) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_header2)) !!}
                             @else
                                 <p class="studio-header-2">HEADER</p>
@@ -122,15 +122,15 @@
                         </div>
 
                         <div class="content-2">
-                            @if(isset($user->profile->studio_content2) && strlen($user->profile->studio_content2) > 0)
+                            @if (isset($user->profile->studio_content2) && strlen($user->profile->studio_content2) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_content2)) !!}
                             @else
                                 <p class="studio-content-2">Content</p>
                             @endif
-                        </div>                        
+                        </div>
 
                         <div class="footer-2">
-                            @if(isset($user->profile->studio_footer2) && strlen($user->profile->studio_footer2) > 0)
+                            @if (isset($user->profile->studio_footer2) && strlen($user->profile->studio_footer2) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_footer2)) !!}
                             @else
                                 <p class="studio-footer-2">FOOTER</p>
@@ -138,7 +138,7 @@
                         </div>
                     </div>
                     <div class="studioItem-wrp tabcontent small-image" id="studio3">
-                        @if(isset($user->profile->studio_image3))
+                        @if (isset($user->profile->studio_image3))
                         <div class="thumbnail-card portfolio-image">
                             <div class="image-container blur-image-3 {{ $user->profile->darken_mode_3 == 0 ? 'd-none' : '' }}"></div>
                             <img class="studio-image" alt="Studio image" src="{{ asset('uploads/'.$user->username.'/'.$user->profile->studio_image3.'?'.time()) }}">
@@ -146,11 +146,11 @@
                         @else
                         <div class="thumbnail-card portfolio-image">
                             <div class="image-container blur-image-3 {{ $user->profile->darken_mode_3 == 0 ? 'd-none' : '' }}"></div>
-                            
+
                         </div>
                         @endif
                         <div class="header-3">
-                            @if(isset($user->profile->studio_header3) && strlen($user->profile->studio_header3) > 0)
+                            @if (isset($user->profile->studio_header3) && strlen($user->profile->studio_header3) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_header3)) !!}
                             @else
                                 <p class="studio-header">HEADER</p>
@@ -158,15 +158,15 @@
                         </div>
 
                         <div class="content-3">
-                            @if(isset($user->profile->studio_content3) && strlen($user->profile->studio_content3) > 0)
+                            @if (isset($user->profile->studio_content3) && strlen($user->profile->studio_content3) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_content3)) !!}
                             @else
                                 <p class="studio-content">Content</p>
                             @endif
-                        </div>                        
+                        </div>
 
                         <div class="footer-3">
-                            @if(isset($user->profile->studio_footer3) && strlen($user->profile->studio_footer3) > 0)
+                            @if (isset($user->profile->studio_footer3) && strlen($user->profile->studio_footer3) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_footer3)) !!}
                             @else
                                 <p class="studio-footer">FOOTER</p>
@@ -174,7 +174,7 @@
                         </div>
                     </div>
                     <div class="studioItem-wrp tabcontent small-image" id="studio4">
-                        @if(isset($user->profile->studio_image4))
+                        @if (isset($user->profile->studio_image4))
                         <div class="thumbnail-card portfolio-image">
                             <div class="image-container blur-image-4 {{ $user->profile->darken_mode_4 == 0 ? 'd-none' : '' }}"></div>
                             <img class="studio-image" alt="Studio image" src="{{ asset('uploads/'.$user->username.'/'.$user->profile->studio_image4.'?'.time()) }}">
@@ -182,11 +182,11 @@
                         @else
                         <div class="thumbnail-card portfolio-image">
                             <div class="image-container blur-image-4 {{ $user->profile->darken_mode_4 == 0 ? 'd-none' : '' }}"></div>
-                            
+
                         </div>
                         @endif
                         <div class="header-4 header-2">
-                            @if(isset($user->profile->studio_header4) && strlen($user->profile->studio_header4) > 0)
+                            @if (isset($user->profile->studio_header4) && strlen($user->profile->studio_header4) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_header4)) !!}
                             @else
                                 <p class="studio-header-2">HEADER</p>
@@ -194,15 +194,15 @@
                         </div>
 
                         <div class="content-4 content-2">
-                            @if(isset($user->profile->studio_content4) && strlen($user->profile->studio_content4) > 0)
+                            @if (isset($user->profile->studio_content4) && strlen($user->profile->studio_content4) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_content4)) !!}
                             @else
                                 <p class="studio-content-2">Content</p>
                             @endif
-                        </div>                        
+                        </div>
 
                         <div class="footer-4 footer-2">
-                            @if(isset($user->profile->studio_footer4) && strlen($user->profile->studio_footer4) > 0)
+                            @if (isset($user->profile->studio_footer4) && strlen($user->profile->studio_footer4) > 0)
                                 {!! str_replace(' editable" contenteditable="true','',html_entity_decode($user->profile->studio_footer4)) !!}
                             @else
                                 <p class="studio-footer-2">FOOTER</p>
@@ -391,16 +391,16 @@
 
     function imgColorToWhite() {
         switch (currentTab) {
-            case "studio1" : 
+            case "studio1" :
                 $('.blur-image-1').addClass('d-none');
                 break;
-            case "studio2" : 
+            case "studio2" :
                 $('.blur-image-2').addClass('d-none');
                 break;
-            case "studio3" : 
+            case "studio3" :
                 $('.blur-image-3').addClass('d-none');
                 break;
-            case "studio4" : 
+            case "studio4" :
                 $('.blur-image-4').addClass('d-none');
                 break;
         }
@@ -410,22 +410,22 @@
 
     function imgColorToBlack() {
         switch (currentTab) {
-            case "studio1" : 
+            case "studio1" :
                 $('.blur-image-1').removeClass('d-none');
                 break;
-            case "studio2" : 
+            case "studio2" :
                 $('.blur-image-2').removeClass('d-none');
                 break;
-            case "studio3" : 
+            case "studio3" :
                 $('.blur-image-3').removeClass('d-none');
                 break;
-            case "studio4" : 
+            case "studio4" :
                 $('.blur-image-4').removeClass('d-none');
                 break;
         }
         $('.color-change-black').addClass('active');
         $('.color-change-white').removeClass('active');
     }
-    
+
 </script>
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'STORIES', 'ROUTES' => [
   ['ROUTE' => 'stories.index', 'ACTIVE' => 'all', 'ACTIVE_ROUTE' => true],
   ['ROUTE' => 'stories.buddies', 'ACTIVE' => 'buddies', 'ACTIVE_ROUTE' => true],
-  ['ROUTE' => 'stories.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => $authUser->IsIndividual() || $authUser->IsAdmin()]
+  ['ROUTE' => 'stories.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => $authUser->isIndividual() || $authUser->isAdmin()]
 ], 'ACTIVE_PAGE' => 'mine'])
 
 @section('title', __('- Stories'))

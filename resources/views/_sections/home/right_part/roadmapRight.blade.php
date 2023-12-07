@@ -1,4 +1,3 @@
-
 <!-- +++ START - Roadmap Right +++ -->
 <div class="ms-section" id="right6">
 

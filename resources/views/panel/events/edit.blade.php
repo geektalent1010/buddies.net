@@ -279,7 +279,7 @@
 
   $('.post-button').on('click', function() {
     var form_data = new FormData();
-    form_data.append('id', '{{ $post->id}}')
+    form_data.append('id', '{{ $post->id }}')
     form_data.append('file', file_data);
     form_data.append('file1', file1_data);
     form_data.append('file2', file2_data);

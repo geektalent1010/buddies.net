@@ -183,10 +183,10 @@
                             <p class="mb-1 registration-title">MY DETAILS</p>
                         </div>
                         <div class="login-title text-center mb-2 mt-4">
-                            <span style="font-size: 16px;">MY REFERRAL LINK<br>https://www.buddies.net/{{ $user->customer_id ?? '123456'}}</span>
+                            <span style="font-size: 16px;">MY REFERRAL LINK<br>https://www.buddies.net/{{ $user->customer_id ?? '123456' }}</span>
                         </div>
                         <div class="d-flex justify-content-center align-items-center btn-section w-100 p-0 m-0 mb-5">
-                            <a class="btn btn-primary copy-btn" onclick="copyLink(this,event)" attr_href="{{url('/')}}/{{ $user->customer_id }}">COPY LINK</a>
+                            <a class="btn btn-primary copy-btn" onclick="copyLink(this,event)" attr_href="{{ url('/') }}/{{ $user->customer_id }}">COPY LINK</a>
                         </div>
                       </div>
                   </div>
@@ -214,7 +214,7 @@
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="text" name="first_name" class="form-control" id="firstName" placeholder="First Name" tabindex="1" value="{{ $user->profile->first_name}}" readonly>
+                                          <input type="text" name="first_name" class="form-control" id="firstName" placeholder="First Name" tabindex="1" value="{{ $user->profile->first_name }}" readonly>
                                           <label id="first-name-error" class="has-error" for="first_name" style="display: none"></label>
                                       </div>
                                   </div>
@@ -222,7 +222,7 @@
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="text" name="last_name" class="form-control" id="lastName" placeholder="Last Name" tabindex="2" value="{{ $user->profile->last_name}}" readonly>
+                                          <input type="text" name="last_name" class="form-control" id="lastName" placeholder="Last Name" tabindex="2" value="{{ $user->profile->last_name }}" readonly>
                                           <label id="last-name-error" class="has-error" for="last_name" style="display: none"></label>
                                       </div>
                                   </div>
@@ -237,7 +237,7 @@
                                   </div>
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="birthday" value="{{$user->profile->birthday}}" hidden>
+                                          <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="birthday" value="{{ $user->profile->birthday }}" hidden>
                                       </div>
                                   </div>
                               </div>
@@ -281,7 +281,7 @@
                                               <select class="form-control phone-select webkit_style editable" name="">
                                                 <option value="{{ $first_number }}">{{ $first_number }}</option>
                                                 @foreach ($phonecodes as $code)
-                                                    <option value="+{{$code}}">+{{$code}}</option>
+                                                      <option value="+{{ $code?->phonecode }}">+{{ $code?->phonecode }}</option>
                                                 @endforeach
                                               </select>
                                               <input type="text" name="phone" class="form-control" id="real-mobileNumber" placeholder="Phone Number" hidden>
@@ -306,7 +306,7 @@
                                   </div>
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="email" name="email" class="form-control editable" id="email" placeholder="Email" tabindex="7" value="{{ $user->email}}">
+                                          <input type="email" name="email" class="form-control editable" id="email" placeholder="Email" tabindex="7" value="{{ $user->email }}">
                                           <label id="email-error" class="has-error" for="email" style="display: none"></label>
                                       </div>
                                   </div>
@@ -330,7 +330,7 @@
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="text" name="company_name" class="form-control editable" id="companyName" placeholder="Company Name" tabindex="4" value="{{ $user->profile->company_name}}">
+                                          <input type="text" name="company_name" class="form-control editable" id="companyName" placeholder="Company Name" tabindex="4" value="{{ $user->profile->company_name }}">
                                           <label id="company-name-error" class="has-error" for="company_name" style="display: none"></label>
                                       </div>
                                   </div>
@@ -338,7 +338,7 @@
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="text" name="site_url" class="form-control editable" id="vatNumber" placeholder="Website" tabindex="5" value="{{ $user->profile->site_url}}">
+                                          <input type="text" name="site_url" class="form-control editable" id="vatNumber" placeholder="Website" tabindex="5" value="{{ $user->profile->site_url }}">
                                           <label id="vat-number-error" class="has-error" for="site_url" style="display: none"></label>
                                       </div>
                                   </div>
@@ -356,7 +356,7 @@
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="text" name="street_name" class="form-control editable" id="streetName" placeholder="Street" tabindex="8" value="{{ $user->profile->street}}">
+                                          <input type="text" name="street_name" class="form-control editable" id="streetName" placeholder="Street" tabindex="8" value="{{ $user->profile->street }}">
                                           <label id="street-name-error" class="has-error" for="street_name" style="display: none"></label>
                                       </div>
                                   </div>
@@ -364,7 +364,7 @@
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="text" name="house_number" class="form-control editable" id="houseNumber" placeholder="House Number" tabindex="9" value="{{ $user->profile->house_number}}">
+                                          <input type="text" name="house_number" class="form-control editable" id="houseNumber" placeholder="House Number" tabindex="9" value="{{ $user->profile->house_number }}">
                                           <label id="house-number-error" class="has-error" for="house_number" style="display: none"></label>
                                       </div>
                                   </div>
@@ -372,7 +372,7 @@
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="text" name="postal_code" class="form-control editable" id="postalCode" placeholder="Postal Code" tabindex="11" value="{{ $user->profile->postal_code}}">
+                                          <input type="text" name="postal_code" class="form-control editable" id="postalCode" placeholder="Postal Code" tabindex="11" value="{{ $user->profile->postal_code }}">
                                           <label id="postal-code-error" class="has-error" for="postal_code" style="display: none"></label>
                                       </div>
                                   </div>
@@ -393,8 +393,8 @@
                                   <div class="login-page">
                                       <div class="form-group">
                                           <select class="form-control country-select webkit_style editable" name="country">
-                                              @foreach($countries as $country)
-                                                  <option value="{{ $country->id }}" @if($country->id == $user->profile->country ) selected @endif>{{ $country['name'] }}</option>
+                                              @foreach ($countries as $country)
+                                                  <option value="{{ $country->id }}" @if ($country->id == $user->profile->country ) selected @endif>{{ $country['name'] }}</option>
                                               @endforeach
                                           </select>
                                           <label id="country-error" class="has-error" for="country" style="display: none"></label>
@@ -414,7 +414,7 @@
                               <div class="col-md-6">
                                   <div class="login-page">
                                       <div class="form-group">
-                                          <input type="text" name="username" class="form-control" id="username" placeholder="User Name" tabindex="14" value="{{ $user->username}}" readonly>
+                                          <input type="text" name="username" class="form-control" id="username" placeholder="User Name" tabindex="14" value="{{ $user->username }}" readonly>
                                           <label id="username-error" class="has-error" for="username" style="display: none"></label>
                                       </div>
                                   </div>
@@ -1683,7 +1683,7 @@
 
     $('.setting-save-btn').on('click', function() {
         var send_data = {};
-        send_data['id'] = '{{$user->profile->id}}';
+        send_data['id'] = '{{ $user->profile->id }}';
         // send_data['gender'] = selected_gender;
         if (selected_gender.length < 1) {
             toastr['error']('You should select at least one gender.', 'Alert');

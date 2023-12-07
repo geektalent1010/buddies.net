@@ -25,14 +25,14 @@
             <div class="member-link">
               <div class="member-avatar-wrp">
                 <div class="member-avatar">
-                  @if($deal->user->profile->main_avatar_url)
+                  @if ($deal->user->profile->main_avatar_url)
                   <img src="{{ asset('uploads/'.$deal->user->username.'/'.$deal->user->profile->main_avatar_url.'?'.time()) }}">
                   @else
                   <p class="first_letter">{{ $deal->user->getMono() }}</p>
                   @endif
                 </div>
               </div>
-              <div class="member-name">{{  $deal->user->getFullname() }}</div>
+              <div class="member-name">{{ $deal->user->getFullname() }}</div>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row justify-content-center align-items-center pb-5 mx-0 w-100 mt-35px">
       <button class="btn btn-primary post-button">
         {{ __('PUBLISH') }}
@@ -138,11 +138,11 @@
     if ($('.post-image').hasClass('d-none')) {
       $('.post-image').removeClass('d-none')
     }
-    
+
     const blobURL = URL.createObjectURL(file);
     const img = new Image();
     img.src = blobURL;
-    
+
     img.onload = function () {
       const MAX_WIDTH = 1080;
       const MAX_HEIGHT = 675;
@@ -200,7 +200,7 @@
 
   $('.post-button').on('click', function() {
     var form_data = new FormData();
-    form_data.append('id', '{{ $deal->id}}')
+    form_data.append('id', '{{ $deal->id }}')
     form_data.append('file', file_data);
     form_data.append('removeImage', isRemoveImage);
     form_data.append('title', title);

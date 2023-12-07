@@ -25,7 +25,7 @@
             <div class="member-link">
               <div class="member-avatar-wrp">
                 <div class="member-avatar">
-                  @if($user->profile->main_avatar_url)
+                  @if ($user->profile->main_avatar_url)
                   <img src="{{ asset('uploads/'.$user->username.'/'.$user->profile->main_avatar_url.'?'.time()) }}">
                   @else
                   <p class="first_letter">{{ $user->getMono() }}</p>
@@ -44,7 +44,7 @@
             <div class="col-sm-5 col-md-3 p-0 title">Hours:</div>
             <div class="col-sm-7 col-md-9 p-0 content description-hours" contenteditable="true">Type hours...</div>
           </div>
-          <div class="row m-0 pb-2 w-100 {{ $user->IsCompany() ? '' : 'd-none' }}">
+          <div class="row m-0 pb-2 w-100 {{ $user->isCompany() ? '' : 'd-none' }}">
             <div class="col-sm-5 col-md-3 p-0 title">Employees:</div>
             <div class="col-sm-7 col-md-9 p-0 content description-employees" contenteditable="true">Type employees...</div>
           </div>
@@ -61,23 +61,23 @@
         <div class="post-content collapse" id="post-content">
           <div class="about-us">
             <div class="title pb-1">
-              {{ $user->IsCompany() ? 'About Us' : 'About Me' }}
+              {{ $user->isCompany() ? 'About Us' : 'About Me' }}
             </div>
             <div class="content job-about" contenteditable="true">Type about...</div>
           </div>
           <div class="qualifications mt-4">
             <div class="title pb-1">
-              {{ $user->IsCompany() ? 'Qualifications' : 'Qualifications' }}
+              {{ $user->isCompany() ? 'Qualifications' : 'Qualifications' }}
             </div>
             <div class="content job-qualifications" contenteditable="true">Type qualifications...</div>
           </div>
           <div class="skills mt-4">
             <div class="title pb-1">
-              {{ $user->IsCompany() ? 'Skills' : 'My Skills' }}
+              {{ $user->isCompany() ? 'Skills' : 'My Skills' }}
             </div>
             <div class="content job-skills" contenteditable="true">Type skills...</div>
           </div>
-          <div class="offer mt-4 {{ $user->IsCompany() ? '' : 'd-none' }}">
+          <div class="offer mt-4 {{ $user->isCompany() ? '' : 'd-none' }}">
             <div class="title pb-1">
               What we offer
             </div>
@@ -93,7 +93,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row justify-content-center align-items-center pb-5 mx-0 w-100 mt-35px">
       <button class="btn btn-primary post-button">
         {{ __('Post') }}

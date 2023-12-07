@@ -8,12 +8,10 @@ class AddStudioInfosToProfileTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->text('studio_header1')->nullable();
             $table->text('studio_content1')->nullable();
             $table->text('studio_footer1')->nullable();
@@ -35,12 +33,10 @@ class AddStudioInfosToProfileTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->dropColumn('studio_header1');
             $table->dropColumn('studio_content1');
             $table->dropColumn('studio_footer1');

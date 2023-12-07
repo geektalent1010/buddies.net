@@ -1,61 +1,48 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+[![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2Fa6c72835-a21e-4f6c-a2ed-f1948abd086b%3Fdate%3D1%26commit%3D1&style=flat-square)](https://forge.laravel.com/servers/738683/sites/2177792)
+## Requirements for building and running the application
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+- [Composer](https://getcomposer.org/download/) in case of you are preferring to run the app in your host. 
+  - Please note that all the below examples are with [sail](https://laravel.com/docs/10.x/sail)
+- [Docker](https://docs.docker.com/get-docker/)
 
-## About Laravel
+## Application Build and Run
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+After cloning the repository get into the `buddies.net` directory and run:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+`cp .env.dev .env`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+`./vendor/bin/sail up`
 
-## Learning Laravel
+`./vendor/bin/sail composer install`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+`./vendor/bin/sail npm i && npm run dev`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+`./vendor/bin/sail artisan migrate:fresh --seed` (optional)
 
-## Laravel Sponsors
+Without sail:
+ - `composer install`
+ - `php artisan serve`
+ - obviously the rest of the command above with direct `php` command where `php` version is `8.2`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Go to [http://localhost](http://localhost) in order to see the application running.
 
-### Premium Partners
+## Deployment
+- merging a PR into `master` branch will trigger the deployment
+- check the `forge.sh` for detailed info
+- Go to [Forge](https://forge.laravel.com/docs/introduction.html) to read the documentation 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+## Contribution
+- a coding style is enforced by [Duster](https://github.com/tighten/duster) & [PhpStan](https://phpstan.org/writing-php-code/phpdocs-basics)
+  - manual check by `./vendor/bin/sail bin duster lint` (`php ./vendor/bin/duster lint` without docker)
+  - manual fix by `./vendor/bin/sail bin duster fix` (`php ./vendor/bin/duster fix` without docker)
+- on each commit an auto check/fix will be executed without fixing the issues the commit will fail
+- to enhance the IDE's autocomplete we are using a helper to generate the ide helper file. for more [details](https://github.com/barryvdh/laravel-ide-helper)
+- the env file is encrypted, forge has the encryption key. the file is restored by forge after each deploy.
+    - important note: Do not push `.env.example` because forge will use it as `.env` [read more](https://forge.laravel.com/docs/sites/deployments.html)
+- in order to merge a PR:
+  - an approval is required
+  - `duster` status check needs to pass
+  - branch must be in sync with master
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

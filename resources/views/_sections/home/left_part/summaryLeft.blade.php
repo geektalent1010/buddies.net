@@ -1,4 +1,3 @@
-
 <!-- +++ START - Summary Left +++ -->
 <div class="ms-section" id="left7">
 

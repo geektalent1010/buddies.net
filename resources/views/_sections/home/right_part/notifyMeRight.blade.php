@@ -1,4 +1,3 @@
-
 <!-- +++ START - Notify-Me Right +++ -->
 <div class="ms-section" id="right8">
 
@@ -20,7 +19,7 @@
 					<div class="form-group pt-1">
 
 		        <div class="controls">
-		            
+		
 		        	<!-- Field  -->
 		        	<input type="text" id="mail-sub" name="email" placeholder="Type your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type your name'" class="form-control" />
 

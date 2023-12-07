@@ -1,7 +1,7 @@
 @extends('layouts.app', ['ACTIVE_TITLE' => 'TRADE', 'ROUTES' => [
   ['ROUTE' => 'trades.index', 'ACTIVE' => 'all', 'ACTIVE_ROUTE' => true],
   ['ROUTE' => 'trades.buddies', 'ACTIVE' => 'buddies', 'ACTIVE_ROUTE' => true],
-  ['ROUTE' => 'trades.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => $authUser->IsIndividual() || $authUser->IsAdmin()]
+  ['ROUTE' => 'trades.mine', 'ACTIVE' => 'mine', 'ACTIVE_ROUTE' => $authUser->isIndividual() || $authUser->isAdmin()]
 ], 'ACTIVE_PAGE' => 'mine'])
 
 @section('title', __('- Trade'))

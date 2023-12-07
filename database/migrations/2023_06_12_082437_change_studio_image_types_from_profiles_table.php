@@ -8,12 +8,10 @@ class ChangeStudioImageTypesFromProfilesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->longtext('studio_image1')->change();
             $table->longtext('studio_image2')->change();
             $table->longtext('studio_image3')->change();
@@ -23,12 +21,10 @@ class ChangeStudioImageTypesFromProfilesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->dropColumn('studio_image1');
             $table->dropColumn('studio_image2');
             $table->dropColumn('studio_image3');

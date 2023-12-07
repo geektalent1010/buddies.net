@@ -1,13 +1,13 @@
 <div class="accordion" id="trades">
   @foreach ($trades as $index => $trade)
     <div class="w-100 post-item mb-3">
-      <div class="text-right p-2 pr-md-0 created-at-label">{{ date_format($trade->created_at, "d/m/Y" )}}</div>
+      <div class="text-right p-2 pr-md-0 created-at-label">{{ date_format($trade->created_at, "d/m/Y" ) }}</div>
       <div class="member-body">
         <div class="member-item">
           <div class="member-link">
             <div class="member-avatar-wrp">
               <div class="member-avatar">
-                @if($trade->user->profile->main_avatar_url)
+                @if ($trade->user->profile->main_avatar_url)
                 <img src="{{ asset('uploads/'.$trade->user->username.'/'.$trade->user->profile->main_avatar_url.'?'.time()) }}">
                 @else
                 <p class="first_letter">{{ $trade->user->getMono() }}</p>
@@ -45,40 +45,40 @@
         @if (isset($trade->small_featured_image1_url) || isset($trade->small_featured_image2_url) || isset($trade->small_featured_image3_url))
         <div class="row justify-content-center m-0 p-0 w-100 gap">
           <div class="col-4 col-sm-4 col-md-4 contentItem">
-              @if(isset($trade->small_featured_image1_url))
+              @if (isset($trade->small_featured_image1_url))
                   <a class="contentItem-wrp" data-fancybox href="{{ asset('uploads/posts/'.$trade->small_featured_image1_url.'?'.time()) }}">
                       <img src="{{ asset('uploads/posts/'.$trade->small_featured_image1_url.'?'.time()) }}">
                   </a>
               @else
                   <div class="contentItem-wrp">
                       <div class="thumbnail-card">
-                          
+
                       </div>
                   </div>
               @endif
           </div>
           <div class="col-4 col-sm-4 col-md-4 contentItem">
-              @if(isset($trade->small_featured_image2_url))
+              @if (isset($trade->small_featured_image2_url))
                   <a class="contentItem-wrp" data-fancybox href="{{ asset('uploads/posts/'.$trade->small_featured_image2_url.'?'.time()) }}">
                       <img src="{{ asset('uploads/posts/'.$trade->small_featured_image2_url.'?'.time()) }}">
                   </a>
               @else
                   <div class="contentItem-wrp">
                       <div class="thumbnail-card">
-                          
+
                       </div>
                   </div>
               @endif
           </div>
           <div class="col-4 col-sm-4 col-md-4 contentItem">
-              @if(isset($trade->small_featured_image3_url))
+              @if (isset($trade->small_featured_image3_url))
                   <a class="contentItem-wrp" data-fancybox href="{{ asset('uploads/posts/'.$trade->small_featured_image3_url.'?'.time()) }}">
                       <img src="{{ asset('uploads/posts/'.$trade->small_featured_image3_url.'?'.time()) }}">
                   </a>
               @else
                   <div class="contentItem-wrp">
                       <div class="thumbnail-card">
-                          
+
                       </div>
                   </div>
               @endif

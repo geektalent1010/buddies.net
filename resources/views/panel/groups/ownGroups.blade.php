@@ -42,7 +42,7 @@
                 <div class="member-link">
                   <div class="member-avatar-wrp">
                     <div class="member-avatar">
-                      @if($group->logo)
+                      @if ($group->logo)
                       <img src="{{ asset('uploads/groups/'.$group->logo.'?'.time()) }}">
                       @else
                       <p class="first_letter">{{ substr($group->name, 0, 1) }}</p>

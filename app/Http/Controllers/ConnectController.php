@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buddies;
+use App\Models\City;
+use App\Models\Country;
+use App\Models\Profile;
+use App\Models\Requests;
+use App\Models\SearchSettings;
+use App\Models\State;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\User;
-use App\Profile;
-use App\Buddies;
-use App\Requests;
-use App\SearchSettings;
-use App\City;
-use App\State;
-use App\Country;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Notification;
 
 class ConnectController extends Controller
 {
@@ -22,7 +22,7 @@ class ConnectController extends Controller
         $requests = Requests::where('user_id', '=', $authUser->id)->where('is_active', '=', 1)->get();
         $lastRequest = Requests::where('user_id', '=', $authUser->id)->where('is_active', '=', 1)->orderBy('created_at', 'desc')->first();
         if (isset($authUser->notification)) {
-            if (isset($lastRequest) && $lastRequest->id != $authUser->notification->last_read_request_id) {
+            if (isset($lastRequest) && $lastRequest->id !== $authUser->notification->last_read_request_id) {
                 $notification = $authUser->notification;
                 $notification->last_read_request_id = $lastRequest->id;
                 $notification->save();
@@ -31,7 +31,7 @@ class ConnectController extends Controller
             if (isset($lastRequest)) {
                 Notification::create([
                     'user_id' => $authUser->id,
-                    'last_read_request_id' => $lastRequest->id
+                    'last_read_request_id' => $lastRequest->id,
                 ]);
             }
         }
@@ -39,31 +39,31 @@ class ConnectController extends Controller
         $searchSetting = SearchSettings::where('user_id', $authUser->id)->where('type', 0)->first();
         $users = [];
         if (isset($searchSetting)) {
-            $ages = isset($searchSetting->age) ? explode(",", $searchSetting->age) : [];
-            $genders = isset($searchSetting->gender) ? explode(",", $searchSetting->gender) : [];
+            $ages = isset($searchSetting->age) ? explode(',', $searchSetting->age) : [];
+            $genders = isset($searchSetting->gender) ? explode(',', $searchSetting->gender) : [];
 
-            $users = Profile::whereHas('user', function ($query) {
+            $users = Profile::whereHas('user', function ($query): void {
                 $query->where('user_type', 0);
                 $query->where('is_admin', null);
             })
-                ->where(function ($query) use ($ages) {
+                ->where(function ($query) use ($ages): void {
                     /** @var Builder $query */
                     foreach ($ages as $age) {
-                        $terms = explode("-", $age);
-                        $query->orWhere(function ($query) use ($terms) {
+                        $terms = explode('-', $age);
+                        $query->orWhere(function ($query) use ($terms): void {
                             $query->whereYear('birthday', '<=', date('Y') - $terms[0]);
                             $query->whereYear('birthday', '>=', date('Y') - $terms[1]);
                         });
                     }
                 })
-                ->where(function ($query) use ($genders, $authUser) {
+                ->where(function ($query) use ($genders, $authUser): void {
                     /** @var Builder $query */
                     foreach ($genders as $gender) {
                         $query->orWhere('gender', '=', $gender);
                         $query->where('interest_based', 'LIKE', '%' . $authUser->profile->gender . '%');
                     }
                 })
-                ->where(function ($query) use ($searchSetting, $authUser) {
+                ->where(function ($query) use ($searchSetting): void {
                     /** @var Builder $query */
                     // if ($searchSetting->interest_based === 'YES') {
                     //     $interests = isset($searchSetting->categories) ? explode(",", $searchSetting->categories) : [];
@@ -72,9 +72,9 @@ class ConnectController extends Controller
                     //         $query->orWhere('other_interests', 'LIKE', '%'.$interest.'%');
                     //     }
                     // }
-    
-                    if ($searchSetting->distance && $searchSetting->distance != 'GLOBAL') {
-                        $addressArray = explode(",", $searchSetting->address);
+
+                    if ($searchSetting->distance && 'GLOBAL' !== $searchSetting->distance) {
+                        $addressArray = explode(',', $searchSetting->address);
                         switch ($searchSetting->distance) {
                             case 'CITY':
                                 $query->where('city', '=', $addressArray[0])
@@ -96,7 +96,7 @@ class ConnectController extends Controller
                 ->where('user_id', '<>', $authUser->id)
                 ->whereNotIn('user_id', $friendIds)->orderBy('first_name', 'asc')->get();
         } else {
-            $users = Profile::whereHas('user', function ($query) {
+            $users = Profile::whereHas('user', function ($query): void {
                 $query->where('user_type', 0);
                 $query->where('is_admin', null);
             })
@@ -109,7 +109,7 @@ class ConnectController extends Controller
     public function request($userId)
     {
         $data['user'] = User::find($userId);
-        if (!isset($data['user'])) {
+        if ( ! isset($data['user'])) {
             return redirect()->route('connect.index');
         }
 
@@ -121,8 +121,8 @@ class ConnectController extends Controller
         $data['user'] = $user = Auth::user();
         $data['searchSetting'] = $setting = SearchSettings::where('user_id', $user->id)->where('type', 0)->first();
         $data['address'] = '';
-        if (isset($setting) && $setting->distance != 'GLOBAL') {
-            $addressArray = explode(",", $setting->address);
+        if (isset($setting) && 'GLOBAL' !== $setting->distance) {
+            $addressArray = explode(',', $setting->address);
             switch ($setting->distance) {
                 case 'CITY':
                     $city = $addressArray[0] ? City::find($addressArray[0])->name : '';
@@ -151,7 +151,7 @@ class ConnectController extends Controller
         $distance = $request->get('distance');
         $keyword = $request->get('keyword');
         $data = [];
-        if ($distance == 'CITY') {
+        if ('CITY' === $distance) {
             $cities = City::query()
                 ->where('name', 'LIKE', "%{$keyword}%")
                 ->get();
@@ -159,10 +159,10 @@ class ConnectController extends Controller
                 foreach ($cities as $city) {
                     $name = $city->name . ', ' . $city->state->name . ', ' . $city->state->country->name;
                     $address = $city->id . ',' . $city->state->id . ',' . $city->state->country->id;
-                    array_push($data, array('name' => $name, 'address' => $address));
+                    $data[] = ['name' => $name, 'address' => $address];
                 }
             }
-        } else if ($distance == 'AREA') {
+        } elseif ('AREA' === $distance) {
             $states = State::query()
                 ->where('name', 'LIKE', "%{$keyword}%")
                 ->get();
@@ -170,16 +170,16 @@ class ConnectController extends Controller
                 foreach ($states as $state) {
                     $name = $state->name . ', ' . $state->country->name;
                     $address = $state->id . ',' . $state->country->id;
-                    array_push($data, array('name' => $name, 'address' => $address));
+                    $data[] = ['name' => $name, 'address' => $address];
                 }
             }
-        } else if ($distance == 'COUNTRY') {
+        } elseif ('COUNTRY' === $distance) {
             $countries = Country::query()
                 ->where('name', 'LIKE', "%{$keyword}%")
                 ->get();
             if (count($countries)) {
                 foreach ($countries as $country) {
-                    array_push($data, array('name' => $country->name, 'address' => $country->id));
+                    $data[] = ['name' => $country->name, 'address' => $country->id];
                 }
             }
         }
@@ -190,17 +190,17 @@ class ConnectController extends Controller
     public function filter(Request $request)
     {
         $keyword = $request->get('keyword');
-        $data = Profile::whereHas('user', function ($query) use ($keyword) {
+        $data = Profile::whereHas('user', function ($query) use ($keyword): void {
             /** @var Builder $query */
             $query->where('is_admin', null);
-            $query->where(function ($query) use ($keyword) {
+            $query->where(function ($query) use ($keyword): void {
                 /** @var Builder $query */
                 $query->whereRaw('concat(email," ",customer_id) LIKE ?', "%{$keyword}%");
             });
         })
-            ->orWhere(function ($query) use ($keyword) {
+            ->orWhere(function ($query) use ($keyword): void {
                 /** @var Builder $query */
-                $query->where(function ($query) use ($keyword) {
+                $query->where(function ($query) use ($keyword): void {
                     /** @var Builder $query */
                     $query->whereRaw('concat(first_name," ",last_name) LIKE ?', "{$keyword}%");
                 });
@@ -215,10 +215,12 @@ class ConnectController extends Controller
         $authUser = $request->user();
         $existingRequest = Requests::where('user_id', $request->user_id)->where('requester', $authUser->id)->first();
         $friend = Buddies::where('user_id', '=', $authUser->id)->where('connected_user_id', $request->user_id)->first();
-        if (isset($existingRequest))
+        if (isset($existingRequest)) {
             return response()->json(['error' => 'The request already has been sent.']);
-        if (isset($friend))
+        }
+        if (isset($friend)) {
             return response()->json(['error' => 'You already have been connected.']);
+        }
         Requests::create([
             'requester' => $authUser->id,
             'user_id' => $request->user_id,
@@ -240,19 +242,21 @@ class ConnectController extends Controller
             $searchSetting->age = $request->age;
             $searchSetting->interest_based = $request->interest_based;
             $searchSetting->save();
-            return response()->json(['success' => 'The Search Setting successfully updated', 'settingId' => $searchSetting->id]);
-        } else {
-            $searchSetting = SearchSettings::create([
-                'user_id' => $user->id,
-                'categories' => $request->categories,
-                'distance' => $request->distance,
-                'address' => $request->address,
-                'gender' => $request->gender,
-                'age' => $request->age,
-                'interest_based' => $request->interest_based,
-                'type' => $request->type
-            ]);
+
             return response()->json(['success' => 'The Search Setting successfully updated', 'settingId' => $searchSetting->id]);
         }
+        $searchSetting = SearchSettings::create([
+            'user_id' => $user->id,
+            'categories' => $request->categories,
+            'distance' => $request->distance,
+            'address' => $request->address,
+            'gender' => $request->gender,
+            'age' => $request->age,
+            'interest_based' => $request->interest_based,
+            'type' => $request->type,
+        ]);
+
+        return response()->json(['success' => 'The Search Setting successfully updated', 'settingId' => $searchSetting->id]);
+
     }
 }

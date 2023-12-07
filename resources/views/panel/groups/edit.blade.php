@@ -16,7 +16,7 @@
     <div class="row justify-content-center m-0 w-100">
       <div class="col-md-6 p-0">
         <div class="app-page-subtitle mb-30px top-title">EDIT YOUR GROUP</div>
-        
+
         <div class="name-input-section">
           <div class="image-icon-section">
             <div class="contentItem-wrp">
@@ -34,13 +34,13 @@
         <div class="description-input-section">
           <input id="groupDescription" type="text" class="form-control" name="description" placeholder="Description" value="{{ $group->description }}">
         </div>
-    
+
         <div class="row justify-content-center align-items-center mt-35px mb-35px mx-0">
           <button class="btn btn-primary launch-button">
             {{ __('UPDATE') }}
           </button>
         </div>
-        
+
         <div class="search-input-section">
           <input id="searchKey" type="text" class="form-control" name="searchKey" placeholder="Search Name">
           <div class="search-icon-section">
@@ -54,7 +54,7 @@
               <div class="member-link">
                 <div class="member-avatar-wrp">
                   <div class="member-avatar">
-                    @if($user->profile->main_avatar_url)
+                    @if ($user->profile->main_avatar_url)
                     <img src="{{ asset('uploads/'.$user->username.'/'.$user->profile->main_avatar_url.'?'.time()) }}">
                     @else
                     <p class="first_letter">{{ $user->getMono() }}</p>
@@ -97,7 +97,7 @@
 
   var file_data = null;
   var isRemoveImage = false;
-  
+
   $(".avatar-upload").click(function() {
     $("input[id='post-featured-image']").click();
   });
@@ -118,11 +118,11 @@
     if ($('.post-image').hasClass('d-none')) {
       $('.post-image').removeClass('d-none')
     }
-    
+
     const blobURL = URL.createObjectURL(file);
     const img = new Image();
     img.src = blobURL;
-    
+
     img.onload = function () {
       const MAX_WIDTH = 640;
       const MAX_HEIGHT = 640;
@@ -161,7 +161,7 @@
       return;
     }
     var form_data = new FormData();
-    form_data.append('groupId', '{{ $group->id}}')
+    form_data.append('groupId', '{{ $group->id }}')
     form_data.append('logo', file_data);
     form_data.append('removeLogo', isRemoveImage);
     form_data.append('name', groupName);

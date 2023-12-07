@@ -1,4 +1,3 @@
-
 <div class="w-100 landing-footer-section">
     <div class="container">
         <div class="row align-items-center justify-content-center">

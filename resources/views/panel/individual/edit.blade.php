@@ -47,7 +47,7 @@
             <div class="col-md-6 p-0">
                 <div class="row p-0 m-0 block">
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 contentItem avatar">
-                        @if(isset($user->profile->main_avatar_url))
+                        @if (isset($user->profile->main_avatar_url))
                             <div class="contentItem-wrp face">
                                 <div class="optional-section">
                                     <span class="option-icon trash-avatar" attr-data="main_avatar"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 contentItem block">
-                    @if(isset($user->profile->banner_img_url))
+                    @if (isset($user->profile->banner_img_url))
                         <div class="contentItem-wrp main-avatar">
                             <div class="optional-section banner-section">
                                 <span class="option-icon trash-avatar" attr-data="banner_img"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="d-flex birthday">
                                     <span><i class="fa-solid fa-gift"></i></span>
-                                    <p class="profile-card-context">{{ date_format($birthday, "j F Y" )}}</p>
+                                    <p class="profile-card-context">{{ date_format($birthday, "j F Y" ) }}</p>
                                 </div>
                             </div>
                             @if (isset($user->profile->story_content))
@@ -118,7 +118,7 @@
                                 Type here
                             </div>
                             @endif
-                        </div>                        
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-12 p-0 block">
@@ -128,7 +128,7 @@
                                 <div class="profile-content">
                                     <p class="profile-card-title">My Interests</p>
                                     @if ($user->profile->other_interests && count($other_interests) > 0)
-                                        @foreach($other_interests as $tag)
+                                        @foreach ($other_interests as $tag)
                                             <p class="profile-card-context">{{ isset($categories[$tag]) ? $categories[$tag] : '' }}</p>
                                         @endforeach
                                     @else
@@ -152,7 +152,7 @@
                         <div class="col-12 col-sm-12 p-0">
                             <div class="row justify-content-center m-0 p-0 w-100 card-border-wrp">
                                 <div class="col-3 col-sm-3 col-md-3 contentItem thumbnail-card-border">
-                                    @if(isset($user->profile->other_avatar_url1))
+                                    @if (isset($user->profile->other_avatar_url1))
                                         <div class="contentItem-wrp">
                                             <div class="optional-section">
                                                 <span class="option-icon trash-avatar" attr-data="thumbnail1"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -171,7 +171,7 @@
                                     @endif
                                 </div>
                                 <div class="col-3 col-sm-3 col-md-3 contentItem thumbnail-card-border">
-                                    @if(isset($user->profile->other_avatar_url2))
+                                    @if (isset($user->profile->other_avatar_url2))
                                         <div class="contentItem-wrp">
                                             <div class="optional-section">
                                                 <span class="option-icon trash-avatar" attr-data="thumbnail2"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -190,7 +190,7 @@
                                     @endif
                                 </div>
                                 <div class="col-3 col-sm-3 col-md-3 contentItem thumbnail-card-border">
-                                    @if(isset($user->profile->other_avatar_url3))
+                                    @if (isset($user->profile->other_avatar_url3))
                                         <div class="contentItem-wrp">
                                             <div class="optional-section">
                                                 <span class="option-icon trash-avatar" attr-data="thumbnail3"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -209,7 +209,7 @@
                                     @endif
                                 </div>
                                 <div class="col-3 col-sm-3 col-md-3 contentItem thumbnail-card-border">
-                                    @if(isset($user->profile->other_avatar_url4))
+                                    @if (isset($user->profile->other_avatar_url4))
                                         <div class="contentItem-wrp">
                                             <div class="optional-section">
                                                 <span class="option-icon trash-avatar" attr-data="thumbnail4"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -228,7 +228,7 @@
                                     @endif
                                 </div>
                                 <div class="col-3 col-sm-3 col-md-3 contentItem thumbnail-card-border">
-                                    @if(isset($user->profile->other_avatar_url5))
+                                    @if (isset($user->profile->other_avatar_url5))
                                         <div class="contentItem-wrp">
                                             <div class="optional-section">
                                                 <span class="option-icon trash-avatar" attr-data="thumbnail5"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -247,7 +247,7 @@
                                     @endif
                                 </div>
                                 <div class="col-3 col-sm-3 col-md-3 contentItem thumbnail-card-border">
-                                    @if(isset($user->profile->other_avatar_url6))
+                                    @if (isset($user->profile->other_avatar_url6))
                                         <div class="contentItem-wrp">
                                             <div class="optional-section">
                                                 <span class="option-icon trash-avatar" attr-data="thumbnail6"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -266,7 +266,7 @@
                                     @endif
                                 </div>
                                 <div class="col-3 col-sm-3 col-md-3 contentItem thumbnail-card-border">
-                                    @if(isset($user->profile->other_avatar_url7))
+                                    @if (isset($user->profile->other_avatar_url7))
                                         <div class="contentItem-wrp">
                                             <div class="optional-section">
                                                 <span class="option-icon trash-avatar" attr-data="thumbnail7"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -285,7 +285,7 @@
                                     @endif
                                 </div>
                                 <div class="col-3 col-sm-3 col-md-3 contentItem thumbnail-card-border">
-                                    @if(isset($user->profile->other_avatar_url8))
+                                    @if (isset($user->profile->other_avatar_url8))
                                         <div class="contentItem-wrp">
                                             <div class="optional-section">
                                                 <span class="option-icon trash-avatar" attr-data="thumbnail8"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -396,8 +396,8 @@
                                     <input type="text" class="form-control disabled" id="country" placeholder="Country" value="{{ empty($country) ? isset($user->profile->country) ? $user->profile->country : 'Country' : $country }}" disabled>
                                     <select class="form-control" name="">
                                         <option value="0"></option>
-                                        @foreach ($countries as $country)                                    
-                                        <option value="{{$country}}">{{$country}}</option>
+                                        @foreach ($countries as $country)
+                                        <option value="{{ $country }}">{{ $country }}</option>
                                         @endforeach
                                     </select>
                                     <label id="country-error" class="has-error" for="country" style="display: none"></label>
@@ -464,7 +464,7 @@
                             </div>
                         </div>
                     </div>
-                </form> 
+                </form>
                 --}}
                 <div class="row justify-content-center align-items-center mt-4 mb-5 btn-section w-100 p-0 m-0">
                     <button class="btn btn-primary save-button button-submit" data-button="submit" onclick="window.location.href='{{ route('profile.index') }}'">SAVE</button>
@@ -472,7 +472,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 <div class="modal fade" id="imageModalContainer" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -578,7 +578,7 @@
         var valThis = $('#txtSearchValue').val();
         $('.dropdown-select ul > li').each(function(){
         var text = $(this).text();
-            (text.toLowerCase().indexOf(valThis.toLowerCase()) > -1) ? $(this).show() : $(this).hide();         
+            (text.toLowerCase().indexOf(valThis.toLowerCase()) > -1) ? $(this).show() : $(this).hide();
     });
     };
     // Search
@@ -645,7 +645,7 @@
 
     $('.other-interested-update').on('click', function() {
         var send_data = {};
-        send_data['id'] = '{{$user->profile->id}}';
+        send_data['id'] = '{{ $user->profile->id }}';
         send_data['other_interests'] = other_interested.join(',');
         $.ajax({
           type: 'PUT',
@@ -703,12 +703,12 @@
                 $('#crop__result').attr('src', resp);
                 $('.modal').modal('hide');
                 $('#crop__result').show();
-                
+
                 $("input[id='selectedFile']").val('');
                 var blobURL = resp;
                 const img = new Image();
                 img.src = blobURL;
-                
+
                 img.onload = function () {
                     const MAX_WIDTH = 1280;
                     const MAX_HEIGHT = 1280;
@@ -773,7 +773,7 @@
             return;
         }
         $("input[id='profile-avatar-file']").val('')
-        
+
         var blobURL;
         if (!file_data || file_data == undefined) {
             blobURL = img_src;
@@ -781,10 +781,10 @@
         else {
             blobURL = URL.createObjectURL(file_data);
         }
-        
+
         const img = new Image();
         img.src = blobURL;
-        
+
         img.onload = function () {
             const MAX_WIDTH = 1280;
             const MAX_HEIGHT = 1280;
@@ -832,7 +832,7 @@
 
     $(".trash-avatar").click(function() {
         var send_data = {};
-        send_data['id'] = '{{$user->profile->id}}';
+        send_data['id'] = '{{ $user->profile->id }}';
         send_data['field'] = $(this).attr('attr-data');
         $.ajax({
           type: 'PUT',
@@ -852,7 +852,7 @@
         if (contents != $(this).html()) {
             contents = $(this).html();
             var send_data = {};
-            send_data['id'] = '{{$user->profile->id}}';
+            send_data['id'] = '{{ $user->profile->id }}';
             send_data['story_content'] = contents
             $.ajax({
               type: 'PUT',
@@ -872,7 +872,7 @@
         if (job_title != $(this).html()) {
             job_title = $(this).html();
             var send_data = {};
-            send_data['id'] = '{{$user->profile->id}}';
+            send_data['id'] = '{{ $user->profile->id }}';
             send_data['job_title'] = job_title
             $.ajax({
               type: 'PUT',
@@ -892,7 +892,7 @@
         if (city != $(this).html()) {
             city = $(this).html();
             var send_data = {};
-            send_data['id'] = '{{$user->profile->id}}';
+            send_data['id'] = '{{ $user->profile->id }}';
             send_data['city'] = city
             $.ajax({
               type: 'PUT',
@@ -912,7 +912,7 @@
         if (country != $(this).html()) {
             country = $(this).html();
             var send_data = {};
-            send_data['id'] = '{{$user->profile->id}}';
+            send_data['id'] = '{{ $user->profile->id }}';
             send_data['country'] = country
             $.ajax({
               type: 'PUT',
@@ -955,7 +955,7 @@
                         if (res.length) {
                             var html = '';
                             for(var resIndex = 0; resIndex < res.length; resIndex++) {
-                                html += 
+                                html +=
                                     '<div class="address py-3" attr-data="' + res[resIndex].address + '"  attr-name="' + res[resIndex].name + '">' + res[resIndex].name + '</div>';
                             }
                             $('.address-search-section').html(html);
@@ -1363,7 +1363,7 @@
             this.passwordError.removeClass('valid');
             this.passwordError.show();
         },
-        validatePasswordConfirmInput: function () { 
+        validatePasswordConfirmInput: function () {
             var validationMessage = '';
             var password = this.passwordInput.val();
             var password_confirm = this.passwordConfirmInput.val();

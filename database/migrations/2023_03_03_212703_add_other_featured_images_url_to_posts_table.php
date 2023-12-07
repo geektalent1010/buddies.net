@@ -8,12 +8,10 @@ class AddOtherFeaturedImagesUrlToPostsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table): void {
             $table->string('small_featured_image1_url')->nullable()->after('featured_image_url');
             $table->string('small_featured_image2_url')->nullable()->after('small_featured_image1_url');
             $table->string('small_featured_image3_url')->nullable()->after('small_featured_image2_url');
@@ -23,12 +21,10 @@ class AddOtherFeaturedImagesUrlToPostsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table): void {
             $table->dropColumn('small_featured_image1_url');
             $table->dropColumn('small_featured_image2_url');
             $table->dropColumn('small_featured_image3_url');

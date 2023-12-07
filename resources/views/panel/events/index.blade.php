@@ -16,7 +16,7 @@
 
 <div class="main-bg d-flex">
     <div class="row m-0 p-0 w-100 posts-section">
-        @if ($authUser->IsAdmin())
+        @if ($authUser->isAdmin())
         <div class="row justify-content-center m-0 app-page-subtitle w-100">
             <div class="col-md-6 p-0 text-center create-title font-dinpro-18">ADMIN ONLY</div>
         </div>

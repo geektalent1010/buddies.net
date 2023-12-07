@@ -25,7 +25,7 @@
             <div class="member-link">
               <div class="member-avatar-wrp">
                 <div class="member-avatar">
-                  @if($user->profile->main_avatar_url)
+                  @if ($user->profile->main_avatar_url)
                   <img src="{{ asset('uploads/'.$user->username.'/'.$user->profile->main_avatar_url.'?'.time()) }}">
                   @else
                   <p class="first_letter">{{ $user->getMono() }}</p>
@@ -155,7 +155,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row justify-content-center align-items-center pb-5 mx-0 w-100 mt-35px">
       <button class="btn btn-primary post-button">
         {{ __('Update') }}
@@ -250,9 +250,9 @@
 
   $('.post-button').on('click', function() {
     var form_data = new FormData();
-    form_data.append('id', '{{ $job->id}}')
+    form_data.append('id', '{{ $job->id }}')
     var send_data = {};
-    send_data['id'] = '{{ $job->id}}';
+    send_data['id'] = '{{ $job->id }}';
     send_data['title'] = job_title;
     send_data['about_us'] = job_about;
     send_data['qualifications'] = job_qualifications;

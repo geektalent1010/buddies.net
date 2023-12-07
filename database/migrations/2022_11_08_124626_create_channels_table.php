@@ -8,12 +8,10 @@ class CreateChannelsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('channels', function (Blueprint $table) {
+        Schema::create('channels', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -28,10 +26,8 @@ class CreateChannelsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('channels');
     }

@@ -8,24 +8,20 @@ class AddLastReadMessageDateToChannelsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('channels', function (Blueprint $table) {
+        Schema::table('channels', function (Blueprint $table): void {
             $table->dateTime('last_message_readed_at')->nullable()->after('last_read_message_sid');
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('channels', function (Blueprint $table) {
+        Schema::table('channels', function (Blueprint $table): void {
             $table->dropColumn('last_message_readed_at');
         });
     }

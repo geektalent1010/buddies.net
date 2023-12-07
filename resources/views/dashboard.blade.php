@@ -399,7 +399,7 @@
       @endif
     </div>
     <div class="col-4 navItem">
-      @if ($authUser->IsCompany())
+      @if ($authUser->isCompany())
       <a class="navItem-wrp" href="{{ route('studio.index') }}">
         <div class="item">
           <div class="item-icon">

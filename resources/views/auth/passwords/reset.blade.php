@@ -26,7 +26,7 @@
                         @enderror
                     </div>
                 </div>
-                
+
 
                 <div class="form-group row justify-content-center">
                     <div class="col-12">

@@ -8,12 +8,10 @@ class AddOtherAvatarUrlToProfilesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->string('other_avatar_url7')->nullable()->after('other_avatar_url6');
             $table->string('other_avatar_url8')->nullable()->after('other_avatar_url7');
         });
@@ -21,12 +19,10 @@ class AddOtherAvatarUrlToProfilesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table): void {
             $table->dropColumn('other_avatar_url7');
             $table->dropColumn('other_avatar_url8');
         });

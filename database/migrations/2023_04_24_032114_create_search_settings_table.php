@@ -8,12 +8,10 @@ class CreateSearchSettingsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('search_settings', function (Blueprint $table) {
+        Schema::create('search_settings', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('user_id')
                 ->constrained('users')
@@ -29,10 +27,8 @@ class CreateSearchSettingsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('search_settings');
     }

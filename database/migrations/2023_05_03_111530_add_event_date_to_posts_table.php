@@ -8,12 +8,10 @@ class AddEventDateToPostsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table): void {
             $table->text('title')->nullable()->change();
             $table->text('description')->nullable()->change();
             $table->text('address')->nullable()->after('description');
@@ -23,12 +21,10 @@ class AddEventDateToPostsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table): void {
             $table->text('title')->change();
             $table->text('description')->change();
             $table->dropColumn('address');

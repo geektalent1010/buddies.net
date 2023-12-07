@@ -1,26 +1,16 @@
 <?php
 
 namespace App\Http\Middleware;
-use Illuminate\Support\Facades\Auth;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
-class Roles 
+class Roles
 {
-    private function checkRole($role) {
-        switch ($role) {
-            case 'individual': return Auth::user()->IsIndividual();
-            case 'company': return Auth::user()->IsCompany();
-            case 'admin': return Auth::user()->IsAdmin();
-        }
-        return false;
-    }
-
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
      * @return mixed
      */
     public function handle($request, Closure $next, ...$roles)
@@ -31,7 +21,18 @@ class Roles
                 return $next($request);
             }
         }
-        
+
         return redirect()->route('dashboard')->with('error', 'You cannot access this page');
+    }
+
+    private function checkRole($role)
+    {
+        switch ($role) {
+            case 'individual': return Auth::user()->isIndividual();
+            case 'company': return Auth::user()->isCompany();
+            case 'admin': return Auth::user()->isAdmin();
+        }
+
+        return false;
     }
 }

@@ -24,14 +24,14 @@
                 <div class="member-link">
                     <div class="member-avatar-wrp">
                         <div class="member-avatar">
-                          @if($invite->invite_member->group->logo)
-                          <img src="{{ asset('uploads/groups/'.$invite->invite_member->group->logo.'?'.time()) }}">
+                          @if ($invite->inviteMember->group->logo)
+                          <img src="{{ asset('uploads/groups/'.$invite->inviteMember->group->logo.'?'.time()) }}">
                           @else
-                          <p class="first_letter">{{ substr($invite->invite_member->group->name, 0, 1) }}</p>
+                          <p class="first_letter">{{ substr($invite->inviteMember->group->name, 0, 1) }}</p>
                           @endif
                         </div>
                     </div>
-                    <div class="member-name">{{ $invite->invite_member->group->name }}</div>
+                    <div class="member-name">{{ $invite->inviteMember->group->name }}</div>
                 </div>
                 <div class="option-icons-section">
                     <div class="option-icon-btn accept-invite" attr-data="{{ $invite->id }}">
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="description-input-section">
-              <input id="groupDescription" type="text" class="form-control desc-body" name="description" value="{{ $invite->invite_member->group->description }}" readonly>
+              <input id="groupDescription" type="text" class="form-control desc-body" name="description" value="{{ $invite->inviteMember->group->description }}" readonly>
             </div>
           @endforeach
         </div>
@@ -57,7 +57,7 @@
                       <div class="member-link">
                           <div class="member-avatar-wrp">
                               <div class="member-avatar">
-                                @if($member->group->logo)
+                                @if ($member->group->logo)
                                 <img src="{{ asset('uploads/groups/'.$member->group->logo.'?'.time()) }}">
                                 @else
                                 <p class="first_letter">{{ substr($member->group->name, 0, 1) }}</p>

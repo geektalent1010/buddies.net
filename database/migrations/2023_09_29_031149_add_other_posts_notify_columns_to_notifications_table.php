@@ -8,12 +8,10 @@ class AddOtherPostsNotifyColumnsToNotificationsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('notifications', function (Blueprint $table) {
+        Schema::table('notifications', function (Blueprint $table): void {
             $table->integer('last_read_event_id')->nullable()->after('last_read_news_id');
             $table->integer('last_read_story_id')->nullable()->after('last_read_event_id');
             $table->integer('last_read_trade_id')->nullable()->after('last_read_story_id');
@@ -24,12 +22,10 @@ class AddOtherPostsNotifyColumnsToNotificationsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('notifications', function (Blueprint $table) {
+        Schema::table('notifications', function (Blueprint $table): void {
             $table->dropColumn('last_read_event_id');
             $table->dropColumn('last_read_story_id');
             $table->dropColumn('last_read_trade_id');

@@ -16,9 +16,9 @@
     <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('images/BuddiesAppLogo.svg') }}">
     <!-- Retina iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/BuddiesAppLogo.svg') }}">
-    <!-- Standard iPad Touch Icon--> 
+    <!-- Standard iPad Touch Icon-->
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/BuddiesAppLogo.svg') }}">
-    <!-- Standard iPhone Touch Icon--> 
+    <!-- Standard iPhone Touch Icon-->
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('images/BuddiesAppLogo.svg') }}">
 
     <!-- Fonts -->
@@ -69,7 +69,7 @@
     <!-- Google Maps API and Skin -->
 
     <!-- PhotoSwipe Core JS file -->
-    <script type="text/javascript" src="{{ asset('js/photoswipe.js') }}"></script> 
+    <script type="text/javascript" src="{{ asset('js/photoswipe.js') }}"></script>
 
     <!-- PhotoSwipe UI JS file -->
     <script type="text/javascript" src="{{ asset('js/photoswipe-ui-default.js') }}"></script>

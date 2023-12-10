@@ -7,7 +7,12 @@ npm ci && npm run production
 
 echo 'Clearing caches';
 
+rm .env
+
 if [ -f artisan ]; then
+    // decrypt env
+    $FORGE_PHP artisan env:decrypt
+
     $FORGE_PHP artisan migrate --force
 
     # Clear caches

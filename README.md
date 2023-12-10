@@ -1,4 +1,4 @@
-[![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2Fa6c72835-a21e-4f6c-a2ed-f1948abd086b%3Fdate%3D1%26commit%3D1&style=flat-square)](https://forge.laravel.com/servers/738683/sites/2177792)
+[![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2F5e07ebc0-3188-41e4-b66f-e5bbf3131a7b%3Fdate%3D1%26commit%3D1&style=flat-square)](https://forge.laravel.com/servers/741292/sites/2186960)
 ## Requirements for building and running the application
 
 - [Composer](https://getcomposer.org/download/) in case of you are preferring to run the app in your host. 

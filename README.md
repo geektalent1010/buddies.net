@@ -11,7 +11,7 @@ After cloning the repository get into the `buddies.net` directory and run:
 
 `cp .env.dev .env`
 
-`./vendor/bin/sail up`
+`./vendor/bin/sail up` || `./scripts/dev.sh`
 
 `./vendor/bin/sail composer install`
 
@@ -19,10 +19,9 @@ After cloning the repository get into the `buddies.net` directory and run:
 
 `./vendor/bin/sail artisan migrate:fresh --seed` (optional)
 
-Without sail:
- - `composer install`
- - `php artisan serve`
- - obviously the rest of the command above with direct `php` command where `php` version is `8.2`
+Without docker:
+`./scripts/dev.sh`
+obviously the rest of the command above with direct `php` command where `php` version is `8.2`
 
 Go to [http://localhost](http://localhost) in order to see the application running.
 
@@ -39,10 +38,11 @@ Go to [http://localhost](http://localhost) in order to see the application runni
 - to enhance the IDE's autocomplete we are using a helper to generate the ide helper file. for more [details](https://github.com/barryvdh/laravel-ide-helper)
 - the env file is encrypted, forge has the encryption key. the file is restored by forge after each deploy.
     - important note: Do not push `.env.example` because forge will use it as `.env` [read more](https://forge.laravel.com/docs/sites/deployments.html)
-- in order to merge a PR:
+- in order to merge a PR into master:
   - an approval is required
   - `duster` status check needs to pass
   - branch must be in sync with master
+- staging deployment can be performed by using `Deploy to Staging` github action from the workflows
 
 
 

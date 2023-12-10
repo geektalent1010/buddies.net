@@ -1,15 +1,9 @@
 echo 'Starting deployment ... ';
 
-if [ $FORGE_SITE_BRANCH = 'master' ]; then
-    git pull origin $FORGE_SITE_BRANCH
-else
-    git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" && git fetch
-    git switch master --discard-changes
-    git branch -D $FORGE_SITE_BRANCH &>/dev/null || true
-    git switch $FORGE_SITE_BRANCH --discard-changes
-fi
+echo 'Pulling remote';
+git pull origin $FORGE_SITE_BRANCH
 
-exit 1
+echo 'Running composer & npm';
 
 $FORGE_COMPOSER install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
@@ -18,12 +12,10 @@ $FORGE_COMPOSER install --no-dev --no-interaction --prefer-dist --optimize-autol
 
 npm ci && npm run production
 
-rm .env
-
 echo 'Running artisan commands';
-
 if [ -f artisan ]; then
-    # Decrypt env file
+    # decrypt env file
+    rm .env
     $FORGE_PHP artisan env:decrypt
 
     # Migrations
@@ -52,3 +44,4 @@ if [ -f artisan ]; then
 fi
 
 echo 'Deployment done. ';
+

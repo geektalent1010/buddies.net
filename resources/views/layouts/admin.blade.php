@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'BUDDIES') }} @yield('title')</title>
+    <title>{{ generateAppTitle() }} @yield('title')</title>
 
     <!-- ================= Favicons ================== -->
     <!-- Standard -->

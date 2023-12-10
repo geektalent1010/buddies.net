@@ -36,6 +36,8 @@ return [
     'MIX_CHANNEL_ADMIN_ROLE_SID' => env('MIX_CHANNEL_ADMIN_ROLE_SID', null),
     'MIX_CHANNEL_MEMBER_ROLE_SID' => env('MIX_CHANNEL_MEMBER_ROLE_SID', null),
     'MIX_CHANNEL_BANNED_ROLE_SID' => env('MIX_CHANNEL_BANNED_ROLE_SID', null),
+    'COMMIT_HASH' => env('FORGE_DEPLOY_COMMIT', null),
+    'COMMIT_BRANCH' => env('FORGE_SITE_BRANCH', null),
 
     /*
     |--------------------------------------------------------------------------

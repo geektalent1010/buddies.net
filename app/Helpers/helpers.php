@@ -32,3 +32,17 @@ if ( ! function_exists('urlHelper')) {
         return $parsedUrl;
     }
 }
+
+if ( ! function_exists('generateAppTitle')) {
+    function generateAppTitle($default = 'BUDDIES'): string
+    {
+        if ('master' !== config('app.COMMIT_BRANCH', 'master')) {
+            return implode(
+                '-',
+                ['build', config('app.COMMIT_BRANCH', 'master'), config('app.COMMIT_HASH', '')]
+            );
+        }
+
+        return config('app.name', $default);
+    }
+}

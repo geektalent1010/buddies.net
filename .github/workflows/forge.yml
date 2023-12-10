@@ -9,8 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       # Trigger Laravel Forge Deploy
       - name: Deploy
         uses: jbrooksuk/laravel-forge-action@v1.0.2
         with:
-          trigger_url: ${{ secrets.STAGING_TRIGGER_URL }}
+          trigger_url: ${{ secrets.STAGING_TRIGGER_URL }}&forge_deploy_branch=${{ steps.extract_branch.outputs.branch }}

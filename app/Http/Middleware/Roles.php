@@ -31,6 +31,7 @@ class Roles
             case 'individual': return Auth::user()->isIndividual();
             case 'company': return Auth::user()->isCompany();
             case 'admin': return Auth::user()->isAdmin();
+            case 'super': return 'admin' === auth()->user()->username && auth()->user()->isAdmin();
         }
 
         return false;

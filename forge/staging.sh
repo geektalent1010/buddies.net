@@ -9,6 +9,8 @@ git switch master --discard-changes
 if [ $BRANCH != 'master' ]; then
     git branch -D $BRANCH &>/dev/null || true
     git switch $BRANCH --discard-changes
+    export FORGE_SITE_BRANCH=$FORGE_VAR_BRANCH
+    echo "FORGE_SITE_BRANCH $FORGE_SITE_BRANCH"
 else
     git pull origin master
 fi

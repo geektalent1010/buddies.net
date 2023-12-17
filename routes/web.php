@@ -59,6 +59,9 @@ Route::group(['middleware' => ['auth']], function (): void {
         Route::get('trade/{id}', 'TradeController@edit')->name('trade.edit.index');
         Route::get('trades/mine', 'TradeController@mine')->name('trades.mine');
     });
+    Route::group(['middleware' => ['roles:super']], function (): void {
+        Route::get('admin/db', fn () => redirect('adminer'));
+    });
     Route::group(['middleware' => ['roles:company,admin']], function (): void {
         Route::get('deal', 'DealsController@create')->name('deal.create.index');
         Route::get('deal/{id}', 'DealsController@edit')->name('deal.edit.index');

@@ -12,10 +12,10 @@ class ChangeStudioImageTypesFromProfilesTable extends Migration
     public function up(): void
     {
         Schema::table('profiles', function (Blueprint $table): void {
-            $table->longtext('studio_image1')->change();
-            $table->longtext('studio_image2')->change();
-            $table->longtext('studio_image3')->change();
-            $table->longtext('studio_image4')->change();
+            $table->longtext('studio_image1')->change()->nullable();
+            $table->longtext('studio_image2')->change()->nullable();
+            $table->longtext('studio_image3')->change()->nullable();
+            $table->longtext('studio_image4')->change()->nullable();
         });
     }
 

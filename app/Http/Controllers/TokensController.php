@@ -8,7 +8,9 @@ class TokensController extends Controller
 {
     public function index()
     {
-        return view('panel.wallet.credits');
+        $authUser = Auth::user();
+
+        return view('panel.wallet.credits', ['user' => $authUser]);
     }
 
     public function referrals()

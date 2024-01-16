@@ -36,6 +36,7 @@ return [
     'MIX_CHANNEL_ADMIN_ROLE_SID' => env('MIX_CHANNEL_ADMIN_ROLE_SID', null),
     'MIX_CHANNEL_MEMBER_ROLE_SID' => env('MIX_CHANNEL_MEMBER_ROLE_SID', null),
     'MIX_CHANNEL_BANNED_ROLE_SID' => env('MIX_CHANNEL_BANNED_ROLE_SID', null),
+    'ADMIN_PASSWORD' => env('ADMIN_PASSWORD', 'secret'),
 
     /*
     |--------------------------------------------------------------------------

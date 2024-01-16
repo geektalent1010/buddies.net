@@ -263,12 +263,12 @@ class RegisterController extends Controller
                 ]);
         }
 
-        // 6 digit random number, unique in DB
+        // 7 digit random number, unique in DB
         $attempt = 1;
         $attempt_max = 5;
         $customer_id = null;
         do {
-            $customer_id = rand(100000, 999999);
+            $customer_id = rand(1000000, 9999999);
             $attempt++;
         } while (User::where('customer_id', $customer_id)->exists() && $attempt <= $attempt_max);
 

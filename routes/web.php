@@ -40,6 +40,15 @@ Route::group([], function (): void {
     })->where('referral_id', '[0-9]{6}+')->name('referral:referral-link');
 
     Route::get('landing', 'LandingController@landing')->name('landing');
+
+    Route::get('deployment', function () {
+        if ( ! app()->isProduction()) {
+            return response()
+                ->json(Storage::json('deployment.json'), 200, [], JSON_PRETTY_PRINT);
+        }
+
+        return redirect()->route('home');
+    });
 });
 
 Route::group(['middleware' => ['web'], 'namespace' => 'Auth'], function (): void {

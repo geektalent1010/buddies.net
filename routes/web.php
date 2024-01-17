@@ -37,7 +37,7 @@ Route::group([], function (): void {
         }
 
         return redirect()->route('home');
-    })->where('referral_id', '[0-9]{6}+')->name('referral:referral-link');
+    })->where('referral_id', '[0-9]{7}+')->name('referral:referral-link');
 
     Route::get('landing', 'LandingController@landing')->name('landing');
 
@@ -94,8 +94,14 @@ Route::group(['middleware' => ['auth']], function (): void {
     });
     Route::group(['middleware' => ['admin'], 'namespace' => 'Admin'], function (): void {
         Route::get('admin/members/{userID?}', 'MembersController@index')->name('members.index');
-        Route::post('admin/members/update-detail-info', 'MembersController@updateUserDetailInfo')->name('admin.members.infoUpdate');
-        Route::put('admin/members/update_account_status', 'MembersController@updateAccountStatus')->name('admin.members.statusUpdate');
+        Route::post(
+            'admin/members/update-detail-info',
+            'MembersController@updateUserDetailInfo'
+        )->name('admin.members.infoUpdate');
+        Route::put(
+            'admin/members/update_account_status',
+            'MembersController@updateAccountStatus'
+        )->name('admin.members.statusUpdate');
         Route::get('admin/joining-reports', 'ReportsController@index')->name('joining.reports.index');
         Route::get('admin/downline-reports', 'ReportsController@downline')->name('downline.reports.index');
         Route::get('admin/sales-reports', 'ReportsController@sales')->name('sales.reports.index');
@@ -107,8 +113,14 @@ Route::group(['middleware' => ['auth']], function (): void {
         Route::get('admin/salesReportFilters', 'ReportsController@salesFilters')->name('salesReport.filters');
         Route::post('admin/salesReportTable', 'ReportsController@salesFetch')->name('salesReport.fetch');
 
-        Route::post('admin/downloadJoiningReportPdf', 'ReportsController@downloadJoiningReportPdf')->name('joiningReport.download.pdf');
-        Route::get('admin/downloadJoiningReportExcel', 'ReportsController@downloadJoiningReportExcel')->name('joiningReport.download.excel');
+        Route::post(
+            'admin/downloadJoiningReportPdf',
+            'ReportsController@downloadJoiningReportPdf'
+        )->name('joiningReport.download.pdf');
+        Route::get(
+            'admin/downloadJoiningReportExcel',
+            'ReportsController@downloadJoiningReportExcel'
+        )->name('joiningReport.download.excel');
         Route::post('admin/printJoiningReport', 'ReportsController@printJoiningReport')->name('joiningReport.print');
 
         Route::get('admin/products', 'ProductsController@index')->name('products.index');
@@ -124,13 +136,25 @@ Route::group(['middleware' => ['auth']], function (): void {
     Route::get('profile/edit', 'UserController@edit')->name('profile.edit.index');
     Route::get('profile/setting', 'UserController@setting')->name('profile.setting.index');
     Route::get('profile/{userID?}', 'UserController@index')->name('profile.index');
-    Route::post('profile/update-detail-info', 'UserController@updateUserProfileDetailInfo')->name('profile.update.detail');
+    Route::post(
+        'profile/update-detail-info',
+        'UserController@updateUserProfileDetailInfo'
+    )->name('profile.update.detail');
 
     // Setting Routes
     Route::post('user-verify', 'UserController@verify')->name('user.verify');
-    Route::put('settings/profile-address-update', 'UserController@updateProfileAddress')->name('setting.profile.address');
-    Route::put('settings/other-interested-update', 'UserController@updateOtherInterested')->name('setting.other.interested');
-    Route::put('settings/main-interested-update', 'UserController@updateMainInterested')->name('setting.main.interested');
+    Route::put(
+        'settings/profile-address-update',
+        'UserController@updateProfileAddress'
+    )->name('setting.profile.address');
+    Route::put(
+        'settings/other-interested-update',
+        'UserController@updateOtherInterested'
+    )->name('setting.other.interested');
+    Route::put(
+        'settings/main-interested-update',
+        'UserController@updateMainInterested'
+    )->name('setting.main.interested');
     Route::post('settings/profile-avatar-upload', 'UserController@uploadProfileAvatar')->name('setting.profile.avatar');
     Route::put('settings/profile-avatar-remove', 'UserController@removeProfileAvatar')->name('setting.remove.avatar');
     Route::put('settings/update_story', 'UserController@updateStoryContent')->name('setting.update.story');

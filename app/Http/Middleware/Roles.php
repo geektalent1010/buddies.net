@@ -28,10 +28,14 @@ class Roles
     private function checkRole($role)
     {
         switch ($role) {
-            case 'individual': return Auth::user()->isIndividual();
-            case 'company': return Auth::user()->isCompany();
-            case 'admin': return Auth::user()->isAdmin();
-            case 'super': return 'admin' === auth()->user()->username && auth()->user()->isAdmin();
+            case 'individual':
+                return Auth::user()->isIndividual();
+            case 'company':
+                return Auth::user()->isCompany();
+            case 'admin':
+                return Auth::user()->isAdmin();
+            case 'super':
+                return in_array(auth()->user()->username, ['admin', 'dev1']) && auth()->user()->isAdmin();
         }
 
         return false;

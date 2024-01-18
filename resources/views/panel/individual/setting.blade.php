@@ -312,38 +312,6 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="row mt-4 company-details-section mr-0 ml-0">
-                              <div class="col-md-6">
-                                  <div class="login-page">
-                                      <div class="login-title info-title">
-                                          <span>THE COMPANY YOU REPRESENT</span>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="login-page">
-                                    <div class="login-title info-title">
-                                        <span>WEBSITE</span>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="login-page">
-                                      <div class="form-group">
-                                          <input type="text" name="company_name" class="form-control editable" id="companyName" placeholder="Company Name" tabindex="4" value="{{ $user->profile->company_name }}">
-                                          <label id="company-name-error" class="has-error" for="company_name" style="display: none"></label>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="login-page">
-                                      <div class="form-group">
-                                          <input type="text" name="site_url" class="form-control editable" id="vatNumber" placeholder="Website" tabindex="5" value="{{ $user->profile->site_url }}">
-                                          <label id="vat-number-error" class="has-error" for="site_url" style="display: none"></label>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
                           <div class="row mt-4 mr-0 ml-0">
                               <div class="col-md-6">
                                   <div class="login-page">

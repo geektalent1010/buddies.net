@@ -14,7 +14,7 @@
 @endsection
 
 @section('PAGE_CONTENT')
-<div class="main-bg">
+<div class="main-bg studio-main-bg">
     <div class="menu">
         <div class="m-0 p-0 tab left-menu menuItem">
             <div class="contentItem">
@@ -74,6 +74,7 @@
                         @else
                         <div class="thumbnail-card portfolio-image">
                             <div class="image-container blur-image-1 {{ $user->profile->darken_mode_1 == 0 ? 'd-none' : '' }}"></div>
+                            <img class="option-icon image-upload plus-studio-image-2 {{ $user->profile->studio_image2 ? 'd-none' : '' }}" attr-data="studio-image-2" src="{{ asset('images/svg/ImageGreen.svg') }}">
 
                         </div>
                         @endif

@@ -6,6 +6,7 @@
   justify-content: center;
   flex-wrap: wrap;
   border: 1px solid transparent;
+  overflow-y: auto;
 }
 
 .dashboard-section .navItem {
@@ -127,6 +128,7 @@
     width: 100%;
     padding-top: 0;
     padding-bottom: 0;
+    height: calc(100vh - 120px);
   }
 }
 
@@ -6974,6 +6976,14 @@ input[type=range]::-moz-range-thumb {
   font-family: "Montserrat Regular", sans-serif;
 }
 
+.studio-section .studioItem .studioItem-wrp .content-img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+}
+
 .studio-section .studioItem .studioItem-wrp .editable {
   color: white;
 }
@@ -7069,6 +7079,10 @@ input[type=range]::-moz-range-thumb {
 .studio-section .btn-section .edit-btn:disabled,
 .studio-section .btn-section .edit-btn[disabled] {
   opacity: 1 !important;
+}
+
+.studio-main-bg {
+  display: flex;
 }
 
 .menu .left-menu {
@@ -7215,6 +7229,10 @@ input[type=range]::-moz-range-thumb {
 }
 
 @media only screen and (max-width: 598.98px) {
+  .studio-main-bg {
+    display: block;
+  }
+
   .studio-video {
     position: absolute !important;
   }

@@ -6,10 +6,13 @@
     justify-content: center;
     flex-wrap: wrap;
     border: 1px solid transparent;
+    overflow-y: auto;
+
     .navItem {
         position: relative;
         padding: 0;
         border: 0.1rem solid transparent;
+
         .navItem-wrp {
             display: block;
             position: relative;
@@ -19,6 +22,7 @@
             overflow: hidden;
             text-decoration: none;
             background-color: $primary-25;
+
             .item {
                 position: absolute;
                 width: 100%;
@@ -38,45 +42,54 @@
                     max-width: 35%;
                     width: 100%;
                     margin-bottom: 20px;
+
                     .st0 {
                         fill: $white;
                     }
+
                     .st1 {
                         fill: $white;
                         fill-rule: evenodd;
                         clip-rule: evenodd;
                     }
                 }
+
                 .buddies-icon {
                     margin-bottom: 17px !important;
                 }
+
                 span {
                     font-family: "DinPro Light", sans-serif;
                     font-size: 16px;
                     color: $white;
                 }
             }
+
             &:hover,
             &:focus {
                 background-color: $primary-75;
 
                 .item {
                     .item-icon {
+
                         .st0,
                         .st1 {
                             fill: $white;
                         }
                     }
+
                     span {
                         color: $white;
                     }
                 }
             }
         }
+
         .notification-section {
             position: absolute;
             top: 5px;
             right: 10px;
+
             .notify-status {
                 font-size: 18px;
                 color: $light-green;
@@ -98,20 +111,33 @@
             .navItem-wrp .item .item-icon {
                 margin-bottom: 16px;
             }
+
             .navItem-wrp .item .buddies-icon {
                 margin-bottom: 10px !important;
             }
+
             .navItem-wrp .item span {
                 font-size: 18px;
             }
         }
     }
 
+
+
     @media only screen and (max-width: 991.98px) {
         width: 100%;
         padding-top: 0;
         padding-bottom: 0;
-    }
+    height: calc(100vh - 120px);
+}
+
+    // @media screen and (min-width: 1366px) {
+    //     width: 55%;
+    // }
+
+    // @media screen and (min-width: 1800px) {
+    //     width: 60%;
+    // }
 }
 
 @media only screen and (max-width: 1080px) {
@@ -124,6 +150,7 @@
     .wave-video-section {
         display: none;
     }
+
     .wave-video-section-mobile {
         display: block;
     }

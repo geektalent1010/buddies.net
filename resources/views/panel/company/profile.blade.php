@@ -106,7 +106,6 @@
                                 <p class="profile-card-context">{{ $user->profile->street }} {{ $user->profile->house_number }}</p>
                                 <p class="profile-card-context">{{ $user->profile->postal_code }}</p>
                                 <p class="profile-card-context">{{ empty($city) ? isset($user->profile->city) ? $user->profile->city : 'City' : $city }}</p>
-                                <p class="profile-card-context">{{ empty($state) ? isset($user->profile->state) ? $user->profile->state : 'Area' : $state }}</p>
                                 <p class="profile-card-context">{{ empty($country) ? isset($user->profile->country) ? $user->profile->country : 'Country' : $country }}</p>
                             </div>
                         </div>

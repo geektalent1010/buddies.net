@@ -260,6 +260,13 @@
                     font-family: "Montserrat Regular", sans-serif;
                 }
             }
+            .content-img {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                top: calc(50% - 40px);
+                left: calc(50% - 40px);
+            }
             .editable {
                 color: white;
             }
@@ -354,6 +361,10 @@
             }
         }
     }
+}
+
+.studio-main-bg {
+    display: flex;
 }
 
 .menu {
@@ -488,6 +499,9 @@
 }
 
 @media only screen and (max-width: 598.98px) {
+    .studio-main-bg {
+        display: block;
+    }
     .studio-video {
         position: absolute !important;
     }

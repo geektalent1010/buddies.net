@@ -6,7 +6,7 @@
 /public/uploads
 /public/js/app.js
 /public/js/app.js.LICENSE.txt
-/public/js/app.scss
+/public/css/app.css
 /storage/*.key
 /vendor
 .env

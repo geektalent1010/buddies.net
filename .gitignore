@@ -4,6 +4,9 @@
 /public/hot
 /public/storage
 /public/uploads
+public/js/app.js
+public/js/app.js.LICENSE.txt
+public/js/app.scss
 /storage/*.key
 /vendor
 .env

@@ -12,6 +12,7 @@ class HeroesController extends Controller
         $data['authUser'] = Auth::user();
         $topHeroes = User::withCount('referrals') // Count the number of referrals
             ->has('referrals')
+            ->where('is_admin', '!=', 1)
             ->orderByDesc('referrals_count') // Order by the number of referrals in descending order
             ->limit(10)
             ->get();

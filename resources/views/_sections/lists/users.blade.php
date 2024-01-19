@@ -15,7 +15,7 @@
       </a>
       <div class="option-icons-section">
         <div class="option-icon-btn comment-icon" attr-connectUserId="{{ $user->id }}">
-          <img class="chat-icon" src="{{ asset('images/svg/ChatIcon.svg') }}">
+          <span class="option-icon"><i aria-hidden="true" class="fa fa-comment"></i></span>
         </div>
         <div class="option-icon-btn trash-icon" attr-data="{{ $user->id }}">
           <span class="option-icon"><i class="fa fa-trash" aria-hidden="true"></i></span>

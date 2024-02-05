@@ -467,11 +467,13 @@
         display: flex;
         flex-direction: column;
         .message-input-section {
+            background: $primary-50;
             display: flex;
             margin-bottom: 2px;
             .form-control {
                 flex: 1;
-                background: $primary-50;
+                background: transparent;
+                overflow-y: scroll;
                 border: none;
                 -webkit-border-radius: 0;
                 -moz-border-radius: 0;
@@ -480,8 +482,8 @@
                 height: 80px;
                 font-weight: 400;
                 outline: medium none;
-                padding: 16px;
-                padding-left: 32px;
+                margin: 16px 16px 19px 32px;
+                padding: 0;
                 font-size: 16px;
                 font-family: "DinPro", sans-serif;
                 line-height: 1.4;
@@ -509,13 +511,12 @@
                 }
             }
             .send-button-section {
-                width: 80px;
+                width: 112px;
                 height: 80px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 position: relative;
-                background-color: $primary-50;
                 cursor: pointer;
                 .send-icon {
                     font-size: 30px;
@@ -673,11 +674,11 @@
             .message-input-section {
                 .form-control {
                     height: 60px;
-                    padding-left: 16px;
+                    margin-left: 16px;
                 }
                 .send-button-section {
                     width: 60px;
-                    height: 60px;
+                    height: 90px;
                     .send-icon {
                         font-size: 24px;
                     }

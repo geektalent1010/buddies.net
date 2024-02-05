@@ -298,7 +298,8 @@ footer .footerDesc .moods-section .moods-icon:active .st0 {
 .main-bg {
     position: relative;
     min-width: 100%;
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px); /* Fallback for browsers that do not support Custom Properties */
+    min-height: calc(var(--vh, 1vh) * 100 - 80px);
     margin-top: 80px;
     padding-bottom: 40px;
     z-index: 1;

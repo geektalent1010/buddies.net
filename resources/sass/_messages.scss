@@ -276,27 +276,28 @@
         flex-direction: column;
         .message-input-section {
             display: flex;
+            background: $primary-25;
             .form-control {
                 flex: 1;
-                background: $primary-25;
                 border: none;
                 -webkit-border-radius: 0;
                 -moz-border-radius: 0;
                 -ms-border-radius: 0;
+                background: transparent;
+                overflow-y: scroll;
                 box-shadow: none;
                 height: 80px;
                 font-weight: 400;
                 outline: medium none;
-                padding: 16px;
-                padding-left: 32px;
+                margin: 16px 16px 19px 32px;
                 font-size: 16px;
                 font-family: "DinPro", sans-serif;
                 line-height: 1.4;
                 color: $white;
+                padding: 0;
                 -webkit-transition: all 0.2s ease-in-out;
                 -moz-transition: all 0.2s ease-in-out;
                 transition: all 0.2s ease-in-out;
-                margin-bottom: 3px;
 
                 &:hover,
                 &:focus {
@@ -318,12 +319,11 @@
             }
             .send-button-section {
                 width: 80px;
-                height: 80px;
+                height: 112px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 position: relative;
-                background-color: $primary-25;
                 cursor: pointer;
                 .send-icon {
                     font-size: 30px;
@@ -392,6 +392,7 @@
                     margin-bottom: 8px;
                     .message-content {
                         flex: 1;
+                        word-break: break-word;
                     }
                     .message-time {
                         display: flex;
@@ -490,13 +491,18 @@
             min-height: calc(100vh - 181px);
             max-height: calc(100vh - 181px);
             .message-input-section {
+                background: $primary-25;
                 .form-control {
+                    background: transparent;
                     height: 60px;
-                    padding-left: 16px;
+                    margin: 16px;
+                    overflow-y: scroll;
+                    padding: 0;
                 }
                 .send-button-section {
+                    background: transparent;
                     width: 60px;
-                    height: 60px;
+                    height: 90px;
                     .send-icon {
                         font-size: 24px;
                     }

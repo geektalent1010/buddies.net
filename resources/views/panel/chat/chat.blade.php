@@ -54,6 +54,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript">
+        window.addEventListener('resize', () => {
+            let vh = window.innerHeight * 0.01;
+            document.getElementsByClassName('main-bg d-flex pb-0')[0].style.setProperty('--vh', `${vh}px`);
+        });
+
       $.ajaxSetup({
         headers: {
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -42,7 +42,7 @@
 @endphp
 <div class="main-bg">
     <div class="row m-0 mx-auto p-0 setting-section">
-        <input type="file" id="profile-avatar-file" style="display: none;" accept=".jpg,.jpeg,.png" onchange="image_upload()" />
+        <input type="file" id="profile-avatar-file" style="display: none;" accept=".jpg,.jpeg,.png,.heif" onchange="image_upload()" />
         <div class="row justify-content-center m-0 p-0 w-100">
             <div class="col-md-6 p-0">
                 <div class="row p-0 m-0 block">
@@ -58,7 +58,7 @@
                         @else
                             <div class="cropme contentItem-wrp profile-avatar-wrp face">
                                 <div class="thumbnail-card profile-avatar" attr-data="main_avatar">
-                                    <input id="selectedFile" class="file-selector__input" type='file' accept=".png, .jpg, .jpeg, .svg">
+                                    <input id="selectedFile" class="file-selector__input" type='file' accept=".png, .jpg, .jpeg, .svg, .heif">
                                     <img id='crop__result' src=''>
                                     <img class="option-icon" attr-data="main_avatar" src="{{ asset('images/svg/ImageGreen.svg') }}">
                                 </div>
@@ -765,17 +765,17 @@
         $("input[id='profile-avatar-file']").click();
     });
 
-    function image_upload(data) {
+    function image_upload() {
         var img_src = $(".cropme").find("img").attr("src");
         var file_data = $('#profile-avatar-file').prop('files')[0];
-        if (file_data && file_data.size > 2097152) {
-            toastr['error']('File too large. File must be less than 2MB.', 'Error');
+        if (file_data && file_data.size > 10485760) {
+            toastr['error']('File too large. File must be less than 10MB.', 'Error');
             return;
         }
         $("input[id='profile-avatar-file']").val('')
 
         var blobURL;
-        if (!file_data || file_data == undefined) {
+        if (!file_data) {
             blobURL = img_src;
         }
         else {

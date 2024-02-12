@@ -731,6 +731,7 @@
             selected_age.push(age);
             element.className += " active";
         }
+        selected_age = selected_age.filter((value, index, original) => original.indexOf(value) === index);
     }
 
     function select_based(evt) {

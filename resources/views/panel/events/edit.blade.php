@@ -59,7 +59,7 @@
               @endif
           </div>
         </div>
-        <input type="file" id="post-featured-image" style="display: none;" accept=".jpg,.jpeg,.png" onchange="avatar_upload()" />
+        <input type="file" id="post-featured-image" style="display: none;" accept=".jpg,.jpeg,.png,.heif" onchange="avatar_upload()" />
         <div class="w-100">
           <div class="contentItem-wrp">
             <div class="optional-section">
@@ -144,8 +144,8 @@
       toastr['error']('You must upload image file', 'Error');
       return;
     }
-    if (file.size > 2097152) {
-      toastr['error']('File too large. File must be less than 2MB.', 'Error');
+    if (file.size > 10485760) {
+      toastr['error']('File too large. File must be less than 10MB.', 'Error');
       return;
     }
     if (target_featured_image == 'thumbnail') {

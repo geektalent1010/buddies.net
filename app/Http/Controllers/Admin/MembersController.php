@@ -43,9 +43,9 @@ class MembersController extends Controller
             $user->password = Hash::make($request->password);
         }
         $user->email = $request->email;
-        $user->phone = $request->phone;
         $user->save();
         $profile = $user->profile;
+        $profile->phone = $request->phone;
         $profile->first_name = $request->first_name;
         $profile->last_name = $request->last_name;
         $profile->city = $request->city;

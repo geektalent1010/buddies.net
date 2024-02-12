@@ -49,6 +49,11 @@ class ConnectController extends Controller
                 ->where(function ($query) use ($ages): void {
                     /** @var Builder $query */
                     foreach ($ages as $age) {
+                        // If age is set to all, do not apply any filtering
+                        if ('ALL' === $age) {
+                            continue;
+                        }
+
                         $terms = explode('-', $age);
                         $query->orWhere(function ($query) use ($terms): void {
                             $query->whereYear('birthday', '<=', date('Y') - $terms[0]);

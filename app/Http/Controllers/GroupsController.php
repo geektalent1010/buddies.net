@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buddies;
 use App\Models\Group;
 use App\Models\Invite;
 use App\Models\Member;
@@ -32,27 +33,39 @@ class GroupsController extends Controller
     public function show()
     {
         $id = Auth::user()->id;
-        $data['is_me'] = $id === Auth::user()->id;
         $data['user'] = User::find($id);
         if ( ! isset($data['user'])) {
             $data['user'] = Auth::user();
         }
+
+        $friendIds = Buddies::where('user_id', '=', Auth::user()->id)
+            ->pluck('connected_user_id')
+            ->toArray();
+        $data['users'] = User::where('users.user_type', '=', 0)
+            ->whereIn('users.id', $friendIds)
+            ->join('profiles', 'users.id', '=', 'profiles.user_id')
+            ->orderBy('profiles.first_name')
+            ->orderBy('profiles.last_name')
+            ->get();
 
         return view('panel.groups.create', $data);
     }
 
     public function edit($groupId)
     {
-        $id = Auth::user()->id;
         $data['user'] = Auth::user();
-        $data['users'] = User::where('id', '<>', $id)
-            ->where('is_admin', null)
+        $friendIds = Buddies::where('user_id', '=', Auth::user()->id)
+            ->pluck('connected_user_id')
+            ->toArray();
+        $data['users'] = User::where('users.user_type', '=', 0)
+            ->whereIn('users.id', $friendIds)
+            ->join('profiles', 'users.id', '=', 'profiles.user_id')
+            ->orderBy('profiles.first_name')
+            ->orderBy('profiles.last_name')
             ->get();
-        // $friendIds = Buddies::where('user_id', '=', $authUser->id)->pluck('connected_user_id')->toArray();
-        // $data['users'] = User::where('user_type', '=', 0)->whereIn('id', $friendIds)->get();
         $data['group'] = Group::find($groupId);
         if ( ! isset($data['group'])) {
-            return redirect()->route('group.create.index')->with('error', 'Group is not exist');
+            return redirect()->route('group.create.index')->with('error', 'Group does not exist');
         }
         $data['members'] = $data['group']->members->where('is_banned', '<>', 1)->pluck('user_id')->toArray();
 
@@ -94,6 +107,13 @@ class GroupsController extends Controller
             return redirect()->route('groups.index');
         }
         $data['channelInfo'] = $channelInfo;
+        $data['channelInfo']['members'] = array_merge(...array_map(function ($member) {
+            $memberUser = User::find($member['user_id']);
+
+            if (isset($memberUser)) {
+                return [$memberUser->username => $memberUser->getFullName()];
+            }
+        }, $channelInfo->members()->get()->toArray()));
 
         $twilio = new Client(config('app.TWILIO_AUTH_SID'), config('app.TWILIO_AUTH_TOKEN'));
 
@@ -176,10 +196,24 @@ class GroupsController extends Controller
             'logo' => $filename,
         ]);
 
-        Member::create([
-            'group_id' => $group->id,
-            'user_id' => $authUser->id,
-        ]);
+        $memberData = [
+            [
+                'group_id' => $group->id,
+                'user_id' => $authUser->id,
+                'is_banned' => 0,
+            ],
+        ];
+
+        // If we have a set of new member ids submitted, we should associate them to the new group.
+        if ($request->members) {
+            $submittedMembers = explode(',', $request->members);
+
+            foreach ($submittedMembers as $memberId) {
+                $memberData[] = ['group_id' => $group->id, 'user_id' => $memberId, 'is_banned' => 1];
+            }
+        }
+
+        Member::insert($memberData);
 
         // Fetch channel or create a new one if it doesn't exist
         try {
@@ -210,6 +244,23 @@ class GroupsController extends Controller
                 ->create($authUser->username, [
                     'roleSid' => config('app.MIX_CHANNEL_ADMIN_ROLE_SID'),
                 ]);
+        }
+
+        // Iterate through the members and send an invite for them.
+        if (isset($submittedMembers)) {
+            foreach ($submittedMembers as $newMember) {
+                $user = User::find($newMember);
+
+                if (isset($user)) {
+                    $member = Member::where('group_id', '=', $group->id)->where('user_id', '=', $user->id)->first();
+
+                    Invite::create([
+                        'requester' => $authUser->id,
+                        'user_id' => $user->id,
+                        'member_id' => $member->id,
+                    ]);
+                }
+            }
         }
 
         return response()->json(['status' => true, 'exist' => false]);
@@ -348,9 +399,9 @@ class GroupsController extends Controller
 
                 $this->twilio->chat->v2->services(config('app.TWILIO_SERVICE_SID'))
                     ->channels($member->group->channel_unique_name)
-                    ->members($requestInfo->user->username)
-                    ->update([
-                        'roleSid' => config('app.MIX_CHANNEL_MEMBER_ROLE_SID'),
+                    ->members
+                    ->create($requestInfo->user->username, [
+                        'roleSid' => config('app.MIX_CHANNEL_ADMIN_ROLE_SID'),
                     ]);
             } else {
                 return response()->json(['status' => false, 'message' => 'Member is not exist']);

@@ -6,7 +6,7 @@
 				<div v-for="message in group.messages" v-bind:key="message.id">
 					<div class="message-item" :class="{ 'my-message': message.author === user.username }">
 						<div class="message-body">
-							<div class="message-content text-capitalize">{{ message.author }}</div>
+							<div class="message-content text-capitalize">{{ message.authorName }}</div>
                             <div class="d-flex mt-1">
                                 <div class="message-content">{{ message.body }}</div>
                                 <div class="message-time">{{ formatTime(message.timestamp) }}</div>
@@ -165,6 +165,7 @@ export default {
 				  if (!groups[date]) {
 						groups[date] = [];
 				  }
+                  item.authorName = this.channelInfo.members[item.author] || item.author;
 				  groups[date].push(item);
 				  return groups;
 				}, {});

@@ -52,7 +52,7 @@
             <div class="optional-section">
               <img class="option-icon avatar-upload plus-post-image {{ $story->featured_image_url ? 'd-none' : '' }}" attr-data="thumbnail1" src="{{ asset('images/svg/ImageGreen.svg') }}">
               <span class="option-icon trash-avatar post-image {{ $story->featured_image_url ? '' : 'd-none' }}" attr-data="thumbnail1"><i class="fa fa-trash" aria-hidden="true"></i></span>
-              <input type="file" id="post-featured-image" style="display: none;" accept=".jpg,.jpeg,.png" onchange="avatar_upload()" />
+              <input type="file" id="post-featured-image" style="display: none;" accept=".jpg,.jpeg,.png,.heif" onchange="avatar_upload()" />
             </div>
             <div class="post-image image-container {{ $story->featured_image_url ? '' : 'd-none' }}"></div>
             <img src="{{ asset('uploads/posts/'.$story->featured_image_url.'?'.time()) }}" class="post-image w-100 {{ $story->featured_image_url ? '' : 'd-none' }}" />
@@ -118,8 +118,8 @@
       toastr['error']('You must upload image file', 'Error');
       return;
     }
-    if (file.size > 2097152) {
-      toastr['error']('File too large. File must be less than 2MB.', 'Error');
+    if (file.size > 10485760) {
+      toastr['error']('File too large. File must be less than 10MB.', 'Error');
       return;
     }
     isRemoveImage = false;

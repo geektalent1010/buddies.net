@@ -160,6 +160,17 @@ export default {
       async fetchMessages() {
           // this.messages = (await this.channel.getMessages()).items
           const data = (await this.channel.getMessages()).items;
+
+          if (data.length) {
+              if (this.channelInfo) {
+                  await axios.post("/api/update-member-last-message-id", {
+                      groupId: this.channelInfo.id,
+                      userId: this.user.id,
+                      messageSid: data[data.length - 1].sid
+                  });
+              }
+          }
+
           const groups = data.reduce((groups, item) => {
 				  const date = moment(moment.utc(item.timestamp).toDate()).format('DD/MM/yyyy');
 				  if (!groups[date]) {

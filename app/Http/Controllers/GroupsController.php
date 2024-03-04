@@ -10,6 +10,7 @@ use App\Models\User;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Twilio\Exceptions\RestException;
 use Twilio\Rest\Client;
 
@@ -25,7 +26,13 @@ class GroupsController extends Controller
     public function index()
     {
         $authUser = Auth::user();
-        $groups = Group::where('user_id', '=', $authUser->id)->get();
+        $groups = DB::table('groups')
+            ->select(['groups.*', 'members.last_read_message_sid'])
+            ->join('members', 'groups.id', '=', 'members.group_id')
+            ->where('groups.user_id', '=', $authUser->id)
+            ->where('members.user_id', '=', $authUser->id)
+            ->where('members.is_banned', '!=', 1)
+            ->get();
 
         return view('panel.groups.own', compact('groups', 'authUser'));
     }
@@ -84,10 +91,14 @@ class GroupsController extends Controller
     {
         $authUser = Auth::user();
         $invites = Invite::where('user_id', '=', $authUser->id)->where('is_active', '=', 1)->get();
-        $members = Member::whereHas('group', function ($query) use ($authUser): void {
-            $query->where('user_id', '<>', $authUser->id);
-        })
-            ->where('user_id', $authUser->id)->where('is_banned', '<>', 1)->get();
+
+        $members = DB::table('groups')
+            ->select(['groups.*', 'members.last_read_message_sid'])
+            ->join('members', 'groups.id', '=', 'members.group_id')
+            ->where('groups.user_id', '<>', $authUser->id)
+            ->where('members.user_id', '=', $authUser->id)
+            ->where('members.is_banned', '<>', 1)
+            ->get();
 
         return view('panel.groups.friends', compact('members', 'invites', 'authUser'));
     }

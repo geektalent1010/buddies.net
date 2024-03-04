@@ -10,59 +10,58 @@
 		name: "NewMessageNotifyForDashboard",
 		props: {
 			authUser: {
-				type: Object,
+				type: String,
 				required: true
 			},
-			channelInfo: {
-				type: Object,
+			channelsInfo: {
+				type: Array,
 				required: true
 			},
 		},
 		data() {
 			return {
 				unreadMessages: 0,
-				lastReadedAt: this.channelInfo.last_message_readed_at,
-				channel: ""
+				client: {}
 			};
 		},
 		async created() {
 			const token = await this.fetchToken();
 			await this.initializeClient(token);
-			await this.fetchMessages();
+
+            this.channelsInfo.map(channelInfo => this.fetchMessages(channelInfo));
 		},
 		methods: {
 			async fetchToken() {
 				const { data } = await axios.post("/api/token", {
-					email: this.authUser.email
+					email: this.authUser
 				});
 
 				return data.token;
 			},
 			async initializeClient(token) {
-				const client = await Twilio.Chat.Client.create(token);
+				this.client = await Twilio.Chat.Client.create(token);
 
-				client.on("tokenAboutToExpire", async () => {
+				this.client.on("tokenAboutToExpire", async () => {
 					const token = await this.fetchToken();
 
-					client.updateToken(token);
+					this.client.updateToken(token);
 				});
-
-				this.channel = await client.getChannelByUniqueName(
-					`${this.channelInfo.channel_unique_name}`
-				);
 			},
-			async fetchMessages() {
-				const lastMessageSid = this.channelInfo.last_read_message_sid;
-				const data = (await this.channel.getMessages()).items;
+			async fetchMessages(channelInfo) {
+				const lastMessageSid = channelInfo.last_read_message_sid;
+                const channel = await this.client.getChannelByUniqueName(
+                    `${channelInfo.channel_unique_name}`
+                )
+				const data = (await channel.getMessages()).items;
 				if (data.length) {
 					const reverseData = data.reverse();
 					if (lastMessageSid) {
 						const targetIndex = reverseData.findIndex(item => item.sid == lastMessageSid);
 						if (targetIndex) {
-							this.unreadMessages = reverseData.filter((item, index) => index < targetIndex).length;
+							this.unreadMessages = Math.max(reverseData.filter((item, index) => index < targetIndex).length, this.unreadMessages);
 						}
 					} else {
-						this.unreadMessages = data.length;
+						this.unreadMessages = Math.max(data.length, this.unreadMessages);
 					}
 				}
 			},

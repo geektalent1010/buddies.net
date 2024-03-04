@@ -20,7 +20,10 @@ class CompaniesController extends Controller
         if (isset($searchSetting)) {
             $companies = Profile::whereHas('user', function ($query): void {
                 $query->where('user_type', 1);
-                $query->where('is_admin', null);
+                $query->where(function ($subQuery): void {
+                    $subQuery->where('is_admin', '!=', 1)
+                        ->orWhereNull('is_admin');
+                });
             })
                 ->where(function ($query) use ($searchSetting): void {
                     /** @var Builder $query */
@@ -35,7 +38,10 @@ class CompaniesController extends Controller
         } else {
             $companies = Profile::whereHas('user', function ($query): void {
                 $query->where('user_type', 1);
-                $query->where('is_admin', null);
+                $query->where(function ($subQuery): void {
+                    $subQuery->where('is_admin', '!=', 1)
+                        ->orWhereNull('is_admin');
+                });
             })
                 ->where('user_id', '<>', $authUser->id)
                 ->orderBy('first_name', 'asc')
@@ -56,7 +62,10 @@ class CompaniesController extends Controller
     public function filter(Request $request)
     {
         $data = User::query()
-            ->where('is_admin', null)
+            ->where(function ($subQuery): void {
+                $subQuery->where('is_admin', '!=', 1)
+                    ->orWhereNull('is_admin');
+            })
             ->when($keyword = $request->get('keyword'), function ($query) use ($keyword): void {
                 /** @var Builder $query */
                 $query->where(function ($query) use ($keyword): void {

@@ -6,6 +6,10 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @endsection
 
+@section('PAGE_START')
+    <script src="https://media.twiliocdn.com/sdk/js/chat/v3.3/twilio-chat.min.js"></script>
+@endsection
+
 @section('PAGE_CONTENT')
 
 <div class="main-bg d-flex">
@@ -51,32 +55,11 @@
               [ NO GROUPS FOUND ]
           </div>
         @else
-          <div class="member-body flat-scroll mt-30px">
+          <div class="member-body flat-scroll mt-30px" id="app">
               @foreach ($members as $member)
-                  <div class="member-item" attr-fullname="{{ $member->group->name }}">
-                      <div class="member-link">
-                          <div class="member-avatar-wrp">
-                              <div class="member-avatar">
-                                @if ($member->group->logo)
-                                <img src="{{ asset('uploads/groups/'.$member->group->logo.'?'.time()) }}">
-                                @else
-                                <p class="first_letter">{{ substr($member->group->name, 0, 1) }}</p>
-                                @endif
-                              </div>
-                          </div>
-                          <div class="member-name">{{ $member->group->name }}</div>
-                      </div>
-                      <div class="option-icons-section">
-                          <a class="option-icon-btn" href="{{ route('group.chat.index', [ 'id' => $member->group->id ]) }}">
-                            <span class="option-icon"><i class="fa fa-comment" aria-hidden="true"></i></span>
-                          </a>
-                          <div class="option-icon-btn delete-group-chat" attr-data="{{ $member->group->id }}" attr-userId="{{ $authUser->id }}">
-                              <span class="option-icon"><i class="fa fa-trash" aria-hidden="true"></i></span>
-                          </div>
-                      </div>
-                  </div>
+                  <group-component :auth-user="{{ json_encode(auth()->user()) }}" :group-info="{{ json_encode($member) }}"></group-component>
                   <div class="description-input-section">
-                    <input id="groupDescription" type="text" class="form-control desc-body" name="description" value="{{ $member->group->description }}" readonly>
+                    <input id="groupDescription" type="text" class="form-control desc-body" name="description" value="{{ $member->description }}" readonly>
                   </div>
               @endforeach
           </div>
@@ -91,6 +74,7 @@
 @endsection
 
 @section('PAGE_LEVEL_SCRIPTS')
+<script src="{{ asset('js/app.js') }}"></script>
 <script type="text/javascript">
   $.ajaxSetup({
     headers: {

@@ -18,3 +18,4 @@ Route::middleware('auth:sanctum')->get('/user', fn (Request $request) => $reques
 
 Route::post('token', 'TokenController@generate');
 Route::post('update-last-message-id', 'TokenController@updateLastMessageSid');
+Route::post('update-member-last-message-id', 'TokenController@updateMemberLastMessageSid');

@@ -85,7 +85,7 @@
 @endsection
 
 @section('PAGE_CONTENT')
-<div class="main-bg d-flex align-items-center justify-content-center">
+<div class="main-bg d-flex align-items-center justify-content-center" id="app">
   <video autoplay muted loop class="wave-video-section" playsinline>
     <source type="video/mp4">
   </video>
@@ -158,7 +158,7 @@
         </div>
       </a>
     </div>
-    <div class="col-4 navItem" id="app">
+    <div class="col-4 navItem">
       <a class="navItem-wrp" href="{{ route('messages.index') }}">
         <div class="item">
           <div class="item-icon">
@@ -175,9 +175,7 @@
         </div>
       </a>
       @if (count($channels))
-      @foreach ($channels as $channel)
-      <new-message-notify :auth-user="{{ auth()->user() }}" :channel-info="{{ $channel }}"></new-message-notify>
-      @endforeach
+      <new-message-notify :auth-user="{{ json_encode(auth()->user()->email) }}" :channels-info="{{ $channels }}"></new-message-notify>
       @endif
     </div>
     <div class="col-4 navItem">
@@ -198,6 +196,15 @@
           <span>GROUPS</span>
         </div>
       </a>
+        @if ($isNewInvite)
+            <div class="notification-section">
+                <span class="notify-status blinking"><i class="fa-solid fa-circle"></i></span>
+            </div>
+        @else
+            @if (count($groupMemberships))
+                <new-message-notify :auth-user="{{ json_encode(auth()->user()->username) }}" :channels-info="{{ json_encode($groupMemberships) }}"></new-message-notify>
+            @endif
+        @endif
     </div>
     <div class="col-4 navItem">
       <a class="navItem-wrp" href="{{ route('stories.index') }}">

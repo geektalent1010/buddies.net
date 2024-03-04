@@ -39,7 +39,10 @@ class MessageController extends Controller
             ->with('user')
             ->whereHas('user', function ($query): void {
                 $query->where('user_type', 0);
-                $query->where('is_admin', null);
+                $query->where(function ($subQuery): void {
+                    $subQuery->where('is_admin', '!=', 1)
+                        ->orWhereNull('is_admin');
+                });
             })
             ->where('user_id', '<>', $authUser->id)
             ->whereNotIn('user_id', $activeUserIds)

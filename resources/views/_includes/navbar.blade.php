@@ -4,11 +4,11 @@
             <div class="navbarItem d-flex align-items-center justify-content-start">
                 @if (isset($ACTIVE_TITLE) && $ACTIVE_TITLE != 'buddies')
                 <a class="navbar-brand pl-1" href="{{ route('dashboard') }}">
-                    <img src="{{ asset('images/logo/LogoMenu.svg') }}" class="img-fluid" alt="Buddies.zone" title="Buddies.zone" />
+                    <img src="{{ asset('images/logo/LogoMenu.svg') }}" class="img-fluid" alt="Dashboard" title="Dashboard" />
                 </a>
                 @else
                 <a class="navbar-brand pl-1" href="{{ route('landing') }}">
-                    <img src="{{ asset('images/logo/LogoMenu.svg') }}" class="img-fluid" alt="Buddies.zone" title="Buddies.zone" />
+                    <img src="{{ asset('images/logo/LogoMenu.svg') }}" class="img-fluid" alt="Home" title="Home" />
                 </a>
                 @endif
             </div>
@@ -24,7 +24,7 @@
             <div class="navbarItem d-flex align-items-center justify-content-end" style="gap: 12px">
             @guest
                 {{-- @if ('register' != Route::current()->getName()) --}}
-                    <a href="{{ route('login') }}" class="py-3 pr-1">
+                    <a href="{{ route('login') }}" class="py-3 pr-1" title="Login">
                         <div class="login-out-icon">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 viewBox="0 0 22 16" style="enable-background:new 0 0 22 16;" xml:space="preserve" width="22px" height="22px">
@@ -42,8 +42,12 @@
                     </a>
                 {{-- @endif --}}
             @else
-                <a href="{{ route('logout') }}" class="py-3 pr-1"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a
+                    href="{{ route('logout') }}"
+                    class="py-3 pr-1"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    title="Logout"
+                >
                     <div class="login-out-icon">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 22 16" style="enable-background:new 0 0 22 16;" xml:space="preserve" width="22px" height="22px">

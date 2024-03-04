@@ -22,6 +22,7 @@ Vue.mixin(require('./assets'));
 
 Vue.component('chat-component', require('./components/ChatComponent.vue').default)
 Vue.component('group-chat-room', require('./components/GroupChatRoom.vue').default)
+Vue.component('group-component', require('./components/GroupComponent.vue').default)
 Vue.component('member-component', require('./components/MemberComponent.vue').default)
 Vue.component('new-message-notify', require('./components/NewMessageNotifyForDashboard.vue').default)
 

@@ -38,13 +38,17 @@ class ConnectController extends Controller
         $friendIds = Buddies::where('user_id', '=', $authUser->id)->pluck('connected_user_id')->toArray();
         $searchSetting = SearchSettings::where('user_id', $authUser->id)->where('type', 0)->first();
         $users = [];
+
         if (isset($searchSetting)) {
             $ages = isset($searchSetting->age) ? explode(',', $searchSetting->age) : [];
             $genders = isset($searchSetting->gender) ? explode(',', $searchSetting->gender) : [];
 
             $users = Profile::whereHas('user', function ($query): void {
                 $query->where('user_type', 0);
-                $query->where('is_admin', null);
+                $query->where(function ($subQuery): void {
+                    $subQuery->where('is_admin', '!=', 1)
+                        ->orWhereNull('is_admin');
+                });
             })
                 ->where(function ($query) use ($ages): void {
                     /** @var Builder $query */
@@ -68,7 +72,7 @@ class ConnectController extends Controller
                         $query->where('interest_based', 'LIKE', '%' . $authUser->profile->gender . '%');
                     }
                 })
-                ->where(function ($query) use ($searchSetting): void {
+                ->where(function ($query) use ($searchSetting, $authUser): void {
                     /** @var Builder $query */
                     // if ($searchSetting->interest_based === 'YES') {
                     //     $interests = isset($searchSetting->categories) ? explode(",", $searchSetting->categories) : [];
@@ -79,19 +83,14 @@ class ConnectController extends Controller
                     // }
 
                     if ($searchSetting->distance && 'GLOBAL' !== $searchSetting->distance) {
-                        $addressArray = explode(',', $searchSetting->address);
                         switch ($searchSetting->distance) {
                             case 'CITY':
-                                $query->where('city', '=', $addressArray[0])
-                                    ->where('state', '=', $addressArray[1])
-                                    ->where('country', '=', $addressArray[2]);
-                                break;
-                            case 'AREA':
-                                $query->where('state', '=', $addressArray[0])
-                                    ->where('country', '=', $addressArray[1]);
+                                $query->where('city', '=', $authUser->city)
+                                    ->where('state', '=', $authUser->state)
+                                    ->where('country', '=', $authUser->country);
                                 break;
                             case 'COUNTRY':
-                                $query->where('country', '=', $addressArray[0]);
+                                $query->where('country', '=', $authUser->country);
                                 break;
                             default:
                                 break;
@@ -103,7 +102,10 @@ class ConnectController extends Controller
         } else {
             $users = Profile::whereHas('user', function ($query): void {
                 $query->where('user_type', 0);
-                $query->where('is_admin', null);
+                $query->where(function ($subQuery): void {
+                    $subQuery->where('is_admin', '!=', 1)
+                        ->orWhereNull('is_admin');
+                });
             })
                 ->where('user_id', '<>', $authUser->id)->whereNotIn('user_id', $friendIds)->orderBy('first_name', 'asc')->get();
         }
@@ -125,28 +127,6 @@ class ConnectController extends Controller
     {
         $data['user'] = $user = Auth::user();
         $data['searchSetting'] = $setting = SearchSettings::where('user_id', $user->id)->where('type', 0)->first();
-        $data['address'] = '';
-        if (isset($setting) && 'GLOBAL' !== $setting->distance) {
-            $addressArray = explode(',', $setting->address);
-            switch ($setting->distance) {
-                case 'CITY':
-                    $city = $addressArray[0] ? City::find($addressArray[0])->name : '';
-                    $state = $addressArray[1] ? City::find($addressArray[1])->name : '';
-                    $country = $addressArray[2] ? Country::find($addressArray[2])->name : '';
-                    $data['address'] = $city . ', ' . $state . ', ' . $country;
-                    break;
-                case 'AREA':
-                    $state = $addressArray[0] ? City::find($addressArray[0])->name : '';
-                    $country = $addressArray[1] ? Country::find($addressArray[1])->name : '';
-                    $data['address'] = $state . ', ' . $country;
-                    break;
-                case 'COUNTRY':
-                    $data['address'] = $addressArray[0] ? Country::find($addressArray[0])->name : '';
-                    break;
-                default:
-                    break;
-            }
-        }
 
         return view('panel.connects.searchEngineSetting', $data);
     }
@@ -197,7 +177,10 @@ class ConnectController extends Controller
         $keyword = $request->get('keyword');
         $data = Profile::whereHas('user', function ($query) use ($keyword): void {
             /** @var Builder $query */
-            $query->where('is_admin', null);
+            $query->where(function ($subQuery): void {
+                $subQuery->where('is_admin', '!=', 1)
+                    ->orWhereNull('is_admin');
+            });
             $query->where(function ($query) use ($keyword): void {
                 /** @var Builder $query */
                 $query->whereRaw('concat(email," ",customer_id) LIKE ?', "%{$keyword}%");

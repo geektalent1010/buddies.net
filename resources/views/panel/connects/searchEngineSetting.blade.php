@@ -29,20 +29,9 @@
                     SELECT DISTANCE
                 </div>
                 <div class="row justify-content-center m-0 distancetab">
-                    <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == 'CITY') active @endif" onclick="select_distance(event)">MY CITY</div>
-                    <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == 'COUNTRY') active @endif" onclick="select_distance(event)">MY COUNTRY</div>
-                    <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == 'ALL') active @endif" onclick="select_distance(event)">ALL</div>
-                </div>
-                <div class="w-100 distance-search-section {{ isset($searchSetting) && $searchSetting->distance && $searchSetting->distance != 'GLOBAL' ? '' : 'd-none' }}">
-                    <div class="search-input-section">
-                        <input id="addressSearchKey" type="text" class="form-control" name="searchKey" placeholder="Search {{ isset($searchSetting) && $searchSetting->distance ? ucfirst(strtolower($searchSetting->distance)) : '' }}" value="{{ $address }}">
-                        <div id="addressSearchIcon" class="search-icon-section">
-                            <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="w-100 addresstab">
-                    </div>
+                    <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == 'CITY') active @endif" onclick="select_distance(event, 'CITY')">MY CITY</div>
+                    <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == 'COUNTRY') active @endif" onclick="select_distance(event, 'COUNTRY')">MY COUNTRY</div>
+                    <div class="distance_tablinks py-4 @if (isset($searchSetting) && $searchSetting->distance == 'GLOBAL') active @endif" onclick="select_distance(event, 'GLOBAL')">ALL</div>
                 </div>
 
                 <div class="row app-page-subtitle bg-color-section mb-30px">
@@ -646,7 +635,6 @@
     var selected_gender = genders ? genders.split(',') : [];
     var selected_distance = '{{ (isset($searchSetting) && $searchSetting->distance) ? $searchSetting->distance : '' }}', selected_based = '{{ (isset($searchSetting) && $searchSetting->based) ? $searchSetting->based : '' }}';
     var searchSettingId = '{{ isset($searchSetting) ? $searchSetting->id : 0 }}';
-    var selected_address = '{{ (isset($searchSetting) && $searchSetting->address) ? $searchSetting->address : '' }}';
 
     $('.interest-category-check').on('click', function() {
         var category = $(this).attr('attr-data');
@@ -668,34 +656,16 @@
         }
     })
 
-    function select_distance(evt) {
+    function select_distance(evt, value) {
         var tablinks = document.getElementsByClassName("distance_tablinks");
         for (var i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
-        if (selected_distance != evt.currentTarget.textContent) {
+        if (selected_distance != value) {
             evt.currentTarget.className += " active";
-            selected_distance = evt.currentTarget.textContent;
-            if (selected_distance == 'GLOBAL') {
-                $('.distance-search-section').hide();
-                $('.addresstab').hide();
-                $("#addressSearchKey").val('')
-                selected_address = ''
-            } else {
-                if ($('.distance-search-section').hasClass('d-none')) {
-                    $('.distance-search-section').removeClass('d-none');
-                }
-                $('.distance-search-section').show();
-                var key = selected_distance.toLowerCase();
-                var placeholder = "Search " + key.charAt(0).toUpperCase() + key.slice(1);
-                $('#addressSearchKey').attr("placeholder", placeholder);
-            }
+            selected_distance = value;
         } else {
             selected_distance = '';
-            $('.distance-search-section').hide();
-            $('.addresstab').hide();
-            $("#addressSearchKey").val('')
-            selected_address = ''
         }
     }
 
@@ -747,47 +717,10 @@
         }
     }
 
-    $('#addressSearchIcon').click(function () {
-        if($("#addressSearchKey").val() == '') {
-            $('.addresstab').hide();
-        } else {
-            var options = {
-                distance: selected_distance,
-                keyword: $("#addressSearchKey").val(),
-            };
-            $.ajax({
-                url: '{{ route("connect.address.search") }}',
-                method: "POST",
-                data: options,
-                success: function(res) {
-                    if (res.length) {
-                        var html = '';
-                        for(var resIndex = 0; resIndex < res.length; resIndex++) {
-                        html +=
-                            '<div class="address py-3" attr-data="' + res[resIndex].address + '"  attr-name="' + res[resIndex].name + '">' + res[resIndex].name + '</div>';
-                        }
-                        $('.addresstab').html(html);
-                        $('.addresstab').show();
-                    }
-                },
-                error:function(err){
-                    toastr['error']('Error');
-                }
-            })
-        }
-    });
-
-    $(document).on('click', '.address', function() {
-        selected_address = $(this).attr('attr-data');
-        $("#addressSearchKey").val($(this).attr('attr-name'))
-        $('.addresstab').hide();
-    })
-
     $('.setting-save-btn').on('click', function() {
         var send_data = {};
         send_data['id'] = searchSettingId;
         send_data['distance'] = selected_distance;
-        send_data['address'] = selected_address;
         // send_data['gender'] = selected_gender;
         send_data['gender'] = selected_gender.join(',');
         send_data['age'] = selected_age.join(',');

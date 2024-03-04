@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Channel;
+use App\Models\Member;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Twilio\Jwt\AccessToken;
@@ -37,5 +38,17 @@ class TokenController extends Controller
         $channel->save();
 
         return response()->json(['status' => true, 'result' => $channel]);
+    }
+
+    public function updateMemberLastMessageSid(Request $request)
+    {
+        $memberInfo = Member::where('group_id', $request->groupId)
+            ->where('user_id', $request->userId)
+            ->first();
+        $memberInfo->last_read_message_sid = $request->messageSid;
+
+        $memberInfo->save();
+
+        return response()->json(['status' => true, 'result' => $memberInfo]);
     }
 }

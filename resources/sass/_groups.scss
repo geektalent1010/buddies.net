@@ -223,6 +223,20 @@
                     color: $white;
                 }
             }
+            .unread-message-notify {
+                width: 20px;
+                height: 20px;
+                border-radius: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $light-green;
+                .unread-messages-number {
+                    color: $primary;
+                    font-size: 12px;
+                    font-family: "DinPro", sans-serif;
+                }
+            }
         }
     }
 
@@ -360,6 +374,20 @@
                         .option-icon {
                             color: $light-green;
                         }
+                    }
+                }
+                .unread-message-notify {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $light-green;
+                    .unread-messages-number {
+                        color: $primary;
+                        font-size: 12px;
+                        font-family: "DinPro", sans-serif;
                     }
                 }
             }

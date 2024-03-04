@@ -7,7 +7,9 @@
 @endsection
 
 @section('PAGE_START')
+    <script src="https://media.twiliocdn.com/sdk/js/chat/v3.3/twilio-chat.min.js"></script>
 @endsection
+
 
 @section('PAGE_CONTENT')
 
@@ -49,6 +51,7 @@
 @endsection
 
 @section('PAGE_LEVEL_SCRIPTS')
+<script src="{{ asset('js/app.js') }}"></script>
 <script type="text/javascript">
   $.ajaxSetup({
     headers: {

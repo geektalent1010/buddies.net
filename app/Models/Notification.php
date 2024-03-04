@@ -15,6 +15,7 @@ class Notification extends Model
         'last_read_trade_id',
         'last_read_deal_id',
         'last_read_job_id',
+        'last_read_invitation_id',
     ];
 
     public function user()
